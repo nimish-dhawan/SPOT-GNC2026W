@@ -2,6 +2,8 @@
 % users define all initials parameters and/or constants required for
 % simulation and experiment.
 
+%Sukriti
+
 clear;
 clc;
 close all force;
