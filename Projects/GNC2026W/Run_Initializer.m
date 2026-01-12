@@ -255,7 +255,7 @@ appHandle.SubAppInitialConditions.UpdateInitialConditions();
 % ylabel('Position - X [m]')
 
 % Edit subphase durations
-appHandle.SubPhase1EditField.Value = 10;      % [s]
+appHandle.SubPhase1EditField.Value = 0;      % [s]
 appHandle.SubPhase2EditField.Value = 80;     % [s]
 appHandle.SubPhase3EditField.Value = 100;       % [s]
 appHandle.SubPhase4EditField.Value = 0;       % [s]
