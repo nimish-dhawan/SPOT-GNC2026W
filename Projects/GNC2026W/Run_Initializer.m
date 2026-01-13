@@ -133,6 +133,8 @@ R = diag([0.05, 0.05, 0.05]);
 
 dt = 0.05;
 
+CVrate = 1/5; % Hz
+
 %% This section of the code contains parameters should not be modified
 
 % Set the PWM frequency
