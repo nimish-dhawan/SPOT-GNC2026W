@@ -14,18 +14,18 @@
       IsTestPoint  0\
     }\
     ChartData {\
-      Name         "q"\
+      Name         "counter"\
       Description  "EmlPersistent"\
       SFName       ""\
       Path         ""\
-      SrcLocation  "GNC2026W:31793:62-63"\
+      SrcLocation  "GNC2026W:31793:80-87"\
     }\
     ChartData {\
       Name         "firstfit"\
       Description  "EmlPersistent"\
       SFName       ""\
       Path         ""\
-      SrcLocation  "GNC2026W:31793:64-72"\
+      SrcLocation  "GNC2026W:31793:88-96"\
     }\
   }
   %return ChartDataElements

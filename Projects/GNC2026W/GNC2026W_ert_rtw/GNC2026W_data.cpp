@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'GNC2026W'.
 //
-// Model version                  : 4.1409
+// Model version                  : 4.1434
 // Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
-// C/C++ source code generated on : Mon Jan 12 16:37:19 2026
+// C/C++ source code generated on : Wed Jan 14 17:11:57 2026
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: ARM Compatible->ARM Cortex-A (64-bit)
@@ -25,34 +25,42 @@ P_GNC2026W_T GNC2026W_P = {
 
   { 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0 },
 
+  // Variable: CVrate
+  //  Referenced by:
+  //    '<S30>/First Fit Detector'
+  //    '<S130>/Unscented Kalman Filter'
+  //    '<S229>/Sample and Hold'
+
+  0.2,
+
   // Variable: F_red_X_nominal
   //  Referenced by:
-  //    '<S273>/MATLAB Function5'
-  //    '<S285>/MATLAB Function5'
-  //    '<S297>/MATLAB Function5'
+  //    '<S274>/MATLAB Function5'
+  //    '<S286>/MATLAB Function5'
+  //    '<S298>/MATLAB Function5'
 
   0.2825,
 
   // Variable: F_red_Y_nominal
   //  Referenced by:
-  //    '<S273>/MATLAB Function5'
-  //    '<S285>/MATLAB Function5'
-  //    '<S297>/MATLAB Function5'
+  //    '<S274>/MATLAB Function5'
+  //    '<S286>/MATLAB Function5'
+  //    '<S298>/MATLAB Function5'
 
   0.2825,
 
   // Variable: F_thrusters_BLACK
-  //  Referenced by: '<S276>/MATLAB Function'
+  //  Referenced by: '<S277>/MATLAB Function'
 
   { 0.2825, 0.2825, 0.2825, 0.2825, 0.2825, 0.2825, 0.2825, 0.2825 },
 
   // Variable: F_thrusters_BLUE
-  //  Referenced by: '<S288>/MATLAB Function'
+  //  Referenced by: '<S289>/MATLAB Function'
 
   { 0.2825, 0.2825, 0.2825, 0.2825, 0.2825, 0.2825, 0.2825, 0.2825 },
 
   // Variable: F_thrusters_RED
-  //  Referenced by: '<S300>/MATLAB Function'
+  //  Referenced by: '<S301>/MATLAB Function'
 
   { 0.2825, 0.2825, 0.2825, 0.2825, 0.2825, 0.2825, 0.2825, 0.2825 },
 
@@ -220,12 +228,12 @@ P_GNC2026W_T GNC2026W_P = {
   // Variable: PWMFreq
   //  Referenced by:
   //    '<S16>/PWM Frequency'
-  //    '<S273>/MATLAB Function1'
-  //    '<S285>/MATLAB Function1'
-  //    '<S297>/MATLAB Function8'
-  //    '<S275>/Constant1'
-  //    '<S287>/Constant1'
-  //    '<S299>/Constant1'
+  //    '<S274>/MATLAB Function1'
+  //    '<S286>/MATLAB Function1'
+  //    '<S298>/MATLAB Function8'
+  //    '<S276>/Constant1'
+  //    '<S288>/Constant1'
+  //    '<S300>/Constant1'
 
   5.0,
 
@@ -359,17 +367,21 @@ P_GNC2026W_T GNC2026W_P = {
   // Variable: baseRate
   //  Referenced by:
   //    '<S213>/Read Joint Positions using  Dynamixel Encoders'
-  //    '<S265>/WhoAmI'
-  //    '<S268>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
+  //    '<S266>/WhoAmI'
+  //    '<S269>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
+  //    '<S30>/First Fit Detector'
   //    '<S129>/MEKF'
+  //    '<S130>/Unscented Kalman Filter'
+  //    '<S229>/MATLAB Function1'
+  //    '<S229>/Sample and Hold'
 
   0.05,
 
   // Variable: dataRate
   //  Referenced by:
   //    '<S228>/Constant'
-  //    '<S245>/Constant'
-  //    '<S255>/Constant'
+  //    '<S246>/Constant'
+  //    '<S256>/Constant'
 
   0.1,
 
@@ -413,8 +425,8 @@ P_GNC2026W_T GNC2026W_P = {
   //    '<S136>/Delay1'
   //    '<S138>/Delay'
   //    '<S138>/Delay1'
-  //    '<S239>/Delay'
-  //    '<S239>/Delay1'
+  //    '<S240>/Delay'
+  //    '<S240>/Delay1'
 
   { 0.4, 0.4, -0.78539816339744828 },
 
@@ -464,14 +476,14 @@ P_GNC2026W_T GNC2026W_P = {
   0.0,
 
   // Variable: thruster_dist2CG_BLACK
-  //  Referenced by: '<S276>/MATLAB Function'
+  //  Referenced by: '<S277>/MATLAB Function'
 
   { 73.881766499134855, -64.118233500865131, 56.874845513718384,
     -84.6251544862816, 64.118233500865131, -66.281766499134861, 79.1251544862816,
     -49.874845513718391 },
 
   // Variable: thruster_dist2CG_BLUE
-  //  Referenced by: '<S288>/MATLAB Function'
+  //  Referenced by: '<S289>/MATLAB Function'
 
   { 73.815115806582682, -64.1848841934173, 57.054043071921981, -84.445956928078,
     64.1848841934173, -66.215115806582673, 78.945956928078, -50.054043071921988
@@ -479,10 +491,10 @@ P_GNC2026W_T GNC2026W_P = {
 
   // Variable: thruster_dist2CG_RED
   //  Referenced by:
-  //    '<S273>/MATLAB Function5'
-  //    '<S285>/MATLAB Function5'
-  //    '<S297>/MATLAB Function5'
-  //    '<S300>/MATLAB Function'
+  //    '<S274>/MATLAB Function5'
+  //    '<S286>/MATLAB Function5'
+  //    '<S298>/MATLAB Function5'
+  //    '<S301>/MATLAB Function'
 
   { 71.579508939606143, -60.420491060393836, 60.451141138666884,
     -84.0488588613331, 63.420491060393836, -70.579508939606143, 76.5488588613331,
@@ -618,32 +630,32 @@ P_GNC2026W_T GNC2026W_P = {
   0.0,
 
   // Mask Parameter: MATLABFunction5_max_iters
-  //  Referenced by: '<S273>/MATLAB Function5'
+  //  Referenced by: '<S274>/MATLAB Function5'
 
   20.0,
 
   // Mask Parameter: MATLABFunction5_max_iters_b
-  //  Referenced by: '<S285>/MATLAB Function5'
+  //  Referenced by: '<S286>/MATLAB Function5'
 
   20.0,
 
   // Mask Parameter: MATLABFunction5_max_iters_e
-  //  Referenced by: '<S297>/MATLAB Function5'
+  //  Referenced by: '<S298>/MATLAB Function5'
 
   20.0,
 
   // Mask Parameter: MATLABFunction5_tol
-  //  Referenced by: '<S273>/MATLAB Function5'
+  //  Referenced by: '<S274>/MATLAB Function5'
 
   1.0E-6,
 
   // Mask Parameter: MATLABFunction5_tol_j
-  //  Referenced by: '<S285>/MATLAB Function5'
+  //  Referenced by: '<S286>/MATLAB Function5'
 
   1.0E-6,
 
   // Mask Parameter: MATLABFunction5_tol_g
-  //  Referenced by: '<S297>/MATLAB Function5'
+  //  Referenced by: '<S298>/MATLAB Function5'
 
   1.0E-6,
 
@@ -1350,12 +1362,12 @@ P_GNC2026W_T GNC2026W_P = {
   0.0,
 
   // Computed Parameter: dytdt_Y0_j
-  //  Referenced by: '<S249>/dy(t)//dt'
+  //  Referenced by: '<S250>/dy(t)//dt'
 
   0.0,
 
   // Computed Parameter: dytdt_Y0_d
-  //  Referenced by: '<S259>/dy(t)//dt'
+  //  Referenced by: '<S260>/dy(t)//dt'
 
   0.0,
 
@@ -1440,17 +1452,27 @@ P_GNC2026W_T GNC2026W_P = {
   0.001,
 
   // Expression: 0
-  //  Referenced by: '<S245>/Delay2'
+  //  Referenced by: '<S246>/Delay2'
 
   0.0,
 
   // Expression: 0
-  //  Referenced by: '<S245>/Delay1'
+  //  Referenced by: '<S246>/Delay1'
 
   0.0,
 
   // Expression: 0
-  //  Referenced by: '<S245>/Constant3'
+  //  Referenced by: '<S246>/Constant3'
+
+  0.0,
+
+  // Expression: 0.0
+  //  Referenced by: '<S248>/Delay1'
+
+  0.0,
+
+  // Expression: 0
+  //  Referenced by: '<S248>/Constant3'
 
   0.0,
 
@@ -1461,16 +1483,6 @@ P_GNC2026W_T GNC2026W_P = {
 
   // Expression: 0
   //  Referenced by: '<S247>/Constant3'
-
-  0.0,
-
-  // Expression: 0.0
-  //  Referenced by: '<S246>/Delay1'
-
-  0.0,
-
-  // Expression: 0
-  //  Referenced by: '<S246>/Constant3'
 
   0.0,
 
@@ -1495,17 +1507,27 @@ P_GNC2026W_T GNC2026W_P = {
   0.001,
 
   // Expression: 0
-  //  Referenced by: '<S255>/Delay2'
+  //  Referenced by: '<S256>/Delay2'
 
   0.0,
 
   // Expression: 0
-  //  Referenced by: '<S255>/Delay1'
+  //  Referenced by: '<S256>/Delay1'
 
   0.0,
 
   // Expression: 0
-  //  Referenced by: '<S255>/Constant3'
+  //  Referenced by: '<S256>/Constant3'
+
+  0.0,
+
+  // Expression: 0.0
+  //  Referenced by: '<S258>/Delay1'
+
+  0.0,
+
+  // Expression: 0
+  //  Referenced by: '<S258>/Constant3'
 
   0.0,
 
@@ -1519,148 +1541,138 @@ P_GNC2026W_T GNC2026W_P = {
 
   0.0,
 
-  // Expression: 0.0
-  //  Referenced by: '<S256>/Delay1'
-
-  0.0,
-
-  // Expression: 0
-  //  Referenced by: '<S256>/Constant3'
-
-  0.0,
-
   // Expression: 1
   //  Referenced by: '<S220>/Constant'
 
   1.0,
 
   // Expression: 400
-  //  Referenced by: '<S268>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
+  //  Referenced by: '<S269>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
 
   400.0,
 
   // Expression: 0
-  //  Referenced by: '<S268>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
+  //  Referenced by: '<S269>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
 
   0.0,
 
   // Expression: 200
-  //  Referenced by: '<S268>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
+  //  Referenced by: '<S269>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
 
   200.0,
 
   // Expression: 3072
-  //  Referenced by: '<S268>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
+  //  Referenced by: '<S269>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
 
   3072.0,
 
   // Expression: 1024
-  //  Referenced by: '<S268>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
+  //  Referenced by: '<S269>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
 
   1024.0,
 
   // Expression: 0
-  //  Referenced by: '<S268>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
+  //  Referenced by: '<S269>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
 
   0.0,
 
   // Expression: 850
-  //  Referenced by: '<S268>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
+  //  Referenced by: '<S269>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
 
   850.0,
 
   // Expression: 400
-  //  Referenced by: '<S268>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
+  //  Referenced by: '<S269>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
 
   400.0,
 
   // Expression: 100
-  //  Referenced by: '<S268>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
+  //  Referenced by: '<S269>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
 
   100.0,
 
   // Expression: 20
-  //  Referenced by: '<S268>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
+  //  Referenced by: '<S269>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
 
   20.0,
 
   // Expression: 0
-  //  Referenced by: '<S268>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
+  //  Referenced by: '<S269>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
 
   0.0,
 
   // Computed Parameter: Out1_Y0
-  //  Referenced by: '<S280>/Out1'
-
-  0.0,
-
-  // Computed Parameter: Out1_Y0_j
   //  Referenced by: '<S281>/Out1'
 
   0.0,
 
+  // Computed Parameter: Out1_Y0_j
+  //  Referenced by: '<S282>/Out1'
+
+  0.0,
+
   // Computed Parameter: BLACKDC_Y0
-  //  Referenced by: '<S270>/BLACK DC'
+  //  Referenced by: '<S271>/BLACK DC'
 
   0.0,
 
   // Expression: 0.0
-  //  Referenced by: '<S275>/Delay'
+  //  Referenced by: '<S276>/Delay'
 
   0.0,
 
   // Expression: 0
-  //  Referenced by: '<S275>/Constant2'
+  //  Referenced by: '<S276>/Constant2'
 
   0.0,
 
   // Computed Parameter: Out1_Y0_n
-  //  Referenced by: '<S292>/Out1'
-
-  0.0,
-
-  // Computed Parameter: Out1_Y0_js
   //  Referenced by: '<S293>/Out1'
 
   0.0,
 
+  // Computed Parameter: Out1_Y0_js
+  //  Referenced by: '<S294>/Out1'
+
+  0.0,
+
   // Computed Parameter: BLUEDC_Y0
-  //  Referenced by: '<S271>/BLUE DC'
+  //  Referenced by: '<S272>/BLUE DC'
 
   0.0,
 
   // Expression: 0.0
-  //  Referenced by: '<S287>/Delay'
+  //  Referenced by: '<S288>/Delay'
 
   0.0,
 
   // Expression: 0
-  //  Referenced by: '<S287>/Constant2'
+  //  Referenced by: '<S288>/Constant2'
 
   0.0,
 
   // Computed Parameter: Out1_Y0_c
-  //  Referenced by: '<S304>/Out1'
-
-  0.0,
-
-  // Computed Parameter: Out1_Y0_d
   //  Referenced by: '<S305>/Out1'
 
   0.0,
 
+  // Computed Parameter: Out1_Y0_d
+  //  Referenced by: '<S306>/Out1'
+
+  0.0,
+
   // Computed Parameter: REDDC_Y0
-  //  Referenced by: '<S272>/RED DC'
+  //  Referenced by: '<S273>/RED DC'
 
   0.0,
 
   // Expression: 0.0
-  //  Referenced by: '<S299>/Delay'
+  //  Referenced by: '<S300>/Delay'
 
   0.0,
 
   // Expression: 0
-  //  Referenced by: '<S299>/Constant2'
+  //  Referenced by: '<S300>/Constant2'
 
   0.0,
 
@@ -2130,17 +2142,17 @@ P_GNC2026W_T GNC2026W_P = {
   48742,
 
   // Computed Parameter: UDPReceive_Port
-  //  Referenced by: '<S266>/UDP Receive'
+  //  Referenced by: '<S267>/UDP Receive'
 
   50005,
 
   // Computed Parameter: UDPReceive_Port_a
-  //  Referenced by: '<S267>/UDP Receive'
+  //  Referenced by: '<S268>/UDP Receive'
 
   36845,
 
   // Computed Parameter: UDPSend_Port
-  //  Referenced by: '<S269>/UDP Send'
+  //  Referenced by: '<S270>/UDP Send'
 
   46875,
 
@@ -2157,7 +2169,7 @@ P_GNC2026W_T GNC2026W_P = {
   // Start of '<S17>/Change RED Behavior'
   {
     // Computed Parameter: UDPSendClock_Port
-    //  Referenced by: '<S311>/UDP Send (Clock)'
+    //  Referenced by: '<S312>/UDP Send (Clock)'
 
     48740
   }
@@ -2168,7 +2180,7 @@ P_GNC2026W_T GNC2026W_P = {
   // Start of '<S17>/Change BLUE Behavior'
   {
     // Computed Parameter: UDPSendClock_Port
-    //  Referenced by: '<S310>/UDP Send (Clock)'
+    //  Referenced by: '<S311>/UDP Send (Clock)'
 
     48742
   }
@@ -2179,7 +2191,7 @@ P_GNC2026W_T GNC2026W_P = {
   // Start of '<S17>/Change BLACK Behavior'
   {
     // Computed Parameter: UDPSendClock_Port
-    //  Referenced by: '<S309>/UDP Send (Clock)'
+    //  Referenced by: '<S310>/UDP Send (Clock)'
 
     48741
   }
@@ -2187,20 +2199,41 @@ P_GNC2026W_T GNC2026W_P = {
 
   // End of '<S17>/Change BLACK Behavior'
 
-  // Start of '<S257>/Enabled Subsystem'
+  // Start of '<S258>/Enabled Subsystem'
   {
     // Computed Parameter: dydt_Y0
-    //  Referenced by: '<S263>/dy//dt'
+    //  Referenced by: '<S264>/dy//dt'
 
     0.0,
 
     // Expression: 0.1
-    //  Referenced by: '<S263>/Constant2'
+    //  Referenced by: '<S264>/Constant2'
 
     0.1,
 
     // Expression: 0.0
-    //  Referenced by: '<S263>/Delay'
+    //  Referenced by: '<S264>/Delay'
+
+    0.0
+  }
+  ,
+
+  // End of '<S258>/Enabled Subsystem'
+
+  // Start of '<S257>/Enabled Subsystem'
+  {
+    // Computed Parameter: dydt_Y0
+    //  Referenced by: '<S262>/dy//dt'
+
+    0.0,
+
+    // Expression: 0.1
+    //  Referenced by: '<S262>/Constant2'
+
+    0.1,
+
+    // Expression: 0.0
+    //  Referenced by: '<S262>/Delay'
 
     0.0
   }
@@ -2208,41 +2241,41 @@ P_GNC2026W_T GNC2026W_P = {
 
   // End of '<S257>/Enabled Subsystem'
 
-  // Start of '<S256>/Enabled Subsystem'
+  // Start of '<S248>/Enabled Subsystem'
   {
     // Computed Parameter: dydt_Y0
-    //  Referenced by: '<S261>/dy//dt'
+    //  Referenced by: '<S254>/dy//dt'
 
     0.0,
 
     // Expression: 0.1
-    //  Referenced by: '<S261>/Constant2'
+    //  Referenced by: '<S254>/Constant2'
 
     0.1,
 
     // Expression: 0.0
-    //  Referenced by: '<S261>/Delay'
+    //  Referenced by: '<S254>/Delay'
 
     0.0
   }
   ,
 
-  // End of '<S256>/Enabled Subsystem'
+  // End of '<S248>/Enabled Subsystem'
 
   // Start of '<S247>/Enabled Subsystem'
   {
     // Computed Parameter: dydt_Y0
-    //  Referenced by: '<S253>/dy//dt'
+    //  Referenced by: '<S252>/dy//dt'
 
     0.0,
 
     // Expression: 0.1
-    //  Referenced by: '<S253>/Constant2'
+    //  Referenced by: '<S252>/Constant2'
 
     0.1,
 
     // Expression: 0.0
-    //  Referenced by: '<S253>/Delay'
+    //  Referenced by: '<S252>/Delay'
 
     0.0
   }
@@ -2250,41 +2283,20 @@ P_GNC2026W_T GNC2026W_P = {
 
   // End of '<S247>/Enabled Subsystem'
 
-  // Start of '<S246>/Enabled Subsystem'
-  {
-    // Computed Parameter: dydt_Y0
-    //  Referenced by: '<S251>/dy//dt'
-
-    0.0,
-
-    // Expression: 0.1
-    //  Referenced by: '<S251>/Constant2'
-
-    0.1,
-
-    // Expression: 0.0
-    //  Referenced by: '<S251>/Delay'
-
-    0.0
-  }
-  ,
-
-  // End of '<S246>/Enabled Subsystem'
-
   // Start of '<S231>/Enabled Subsystem'
   {
     // Computed Parameter: dydt_Y0
-    //  Referenced by: '<S243>/dy//dt'
+    //  Referenced by: '<S244>/dy//dt'
 
     0.0,
 
     // Expression: 0.1
-    //  Referenced by: '<S243>/Constant2'
+    //  Referenced by: '<S244>/Constant2'
 
     0.1,
 
     // Expression: 0.0
-    //  Referenced by: '<S243>/Delay'
+    //  Referenced by: '<S244>/Delay'
 
     0.0
   }
@@ -2295,17 +2307,17 @@ P_GNC2026W_T GNC2026W_P = {
   // Start of '<S230>/Enabled Subsystem'
   {
     // Computed Parameter: dydt_Y0
-    //  Referenced by: '<S241>/dy//dt'
+    //  Referenced by: '<S242>/dy//dt'
 
     0.0,
 
     // Expression: 0.1
-    //  Referenced by: '<S241>/Constant2'
+    //  Referenced by: '<S242>/Constant2'
 
     0.1,
 
     // Expression: 0.0
-    //  Referenced by: '<S241>/Delay'
+    //  Referenced by: '<S242>/Delay'
 
     0.0
   }
