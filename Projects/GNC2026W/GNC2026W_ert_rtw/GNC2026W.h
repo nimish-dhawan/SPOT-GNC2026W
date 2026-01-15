@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'GNC2026W'.
 //
-// Model version                  : 4.1434
+// Model version                  : 4.1460
 // Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
-// C/C++ source code generated on : Wed Jan 14 17:11:57 2026
+// C/C++ source code generated on : Thu Jan 15 17:02:55 2026
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: ARM Compatible->ARM Cortex-A (64-bit)
@@ -48,36 +48,36 @@ extern "C"
 
 // Block states (default storage) for system '<S4>/Change BLACK Behavior'
 struct DW_ChangeBLACKBehavior_GNC202_T {
-  real_T UDPSend_NetworkLib[137];      // '<S202>/UDP Send'
+  real_T UDPSend_NetworkLib[137];      // '<S199>/UDP Send'
 };
 
-// Block states (default storage) for system '<S224>/Change BLACK Behavior'
+// Block states (default storage) for system '<S221>/Change BLACK Behavior'
 struct DW_ChangeBLACKBehavior_GNC2_l_T {
-  real_T UDPSendGUI_NetworkLib[137];   // '<S225>/UDP Send (GUI)'
+  real_T UDPSendGUI_NetworkLib[137];   // '<S222>/UDP Send (GUI)'
 };
 
-// Block signals for system '<S230>/Enabled Subsystem'
+// Block signals for system '<S227>/Enabled Subsystem'
 struct B_EnabledSubsystem_GNC2026W_T {
-  real_T Delay[3];                     // '<S242>/Delay'
-  real_T ema[3];                       // '<S242>/MATLAB Function'
+  real_T Delay[3];                     // '<S239>/Delay'
+  real_T ema[3];                       // '<S239>/MATLAB Function'
 };
 
-// Block states (default storage) for system '<S230>/Enabled Subsystem'
+// Block states (default storage) for system '<S227>/Enabled Subsystem'
 struct DW_EnabledSubsystem_GNC2026W_T {
-  real_T Delay_DSTATE[3];              // '<S242>/Delay'
-  boolean_T EnabledSubsystem_MODE;     // '<S230>/Enabled Subsystem'
+  real_T Delay_DSTATE[3];              // '<S239>/Delay'
+  boolean_T EnabledSubsystem_MODE;     // '<S227>/Enabled Subsystem'
 };
 
-// Block signals for system '<S231>/Enabled Subsystem'
+// Block signals for system '<S228>/Enabled Subsystem'
 struct B_EnabledSubsystem_GNC2026W_h_T {
-  real_T Delay[3];                     // '<S244>/Delay'
-  real_T ema[3];                       // '<S244>/MATLAB Function'
+  real_T Delay[3];                     // '<S241>/Delay'
+  real_T ema[3];                       // '<S241>/MATLAB Function'
 };
 
-// Block states (default storage) for system '<S231>/Enabled Subsystem'
+// Block states (default storage) for system '<S228>/Enabled Subsystem'
 struct DW_EnabledSubsystem_GNC2026_c_T {
-  real_T Delay_DSTATE[3];              // '<S244>/Delay'
-  boolean_T EnabledSubsystem_MODE;     // '<S231>/Enabled Subsystem'
+  real_T Delay_DSTATE[3];              // '<S241>/Delay'
+  boolean_T EnabledSubsystem_MODE;     // '<S228>/Enabled Subsystem'
 };
 
 // Block signals for system '<S277>/Pseudoinverse1'
@@ -117,102 +117,102 @@ struct B_GNC2026W_T {
   real_T ThrustPer_Final_h5[8];        // '<S282>/ThrustPer_Final'
   real_T In1_g2;                       // '<S281>/In1'
   real_T TmpSignalConversionAtUDPSendI_o[28];
-  real_T ReceivePhaseSpaceData_o1[19]; // '<S216>/Receive PhaseSpace Data'
-  real_T ConvertBLAXfrommmtom;        // '<S217>/Convert BLAX from [mm] to [m]'
-  real_T ConvertBLUXfrommmtom;        // '<S218>/Convert BLUX from [mm] to [m]'
-  real_T ConvertREDXfrommmtom;        // '<S219>/Convert REDX from [mm] to [m]'
-  real_T UDPReceiveREDClock_o1;        // '<S220>/UDP Receive (RED Clock)'
-  real_T UDPReceiveBLACKClock_o1;      // '<S220>/UDP Receive (BLACK Clock)'
-  real_T UDPReceiveBLUEClock_o1;       // '<S220>/UDP Receive (BLUE Clock)'
-  real_T dy[3];                        // '<S264>/MATLAB Function'
-  real_T dy_h[3];                      // '<S262>/MATLAB Function'
-  real_T y2y1;                         // '<S260>/y2-y1'
-  real_T dy_c[3];                      // '<S254>/MATLAB Function'
-  real_T dy_d[3];                      // '<S252>/MATLAB Function'
-  real_T y2y1_o;                       // '<S250>/y2-y1'
-  real_T dy_p[3];                      // '<S244>/MATLAB Function'
-  real_T dy_g[3];                      // '<S242>/MATLAB Function'
-  real_T y;                            // '<S240>/MATLAB Function'
-  real_T u_next;                       // '<S240>/MATLAB Function'
-  real_T y2y1_ob;                      // '<S233>/y2-y1'
-  real_T In1_g20;                      // '<S221>/In1'
+  real_T ReceivePhaseSpaceData_o1[19]; // '<S213>/Receive PhaseSpace Data'
+  real_T ConvertBLAXfrommmtom;        // '<S214>/Convert BLAX from [mm] to [m]'
+  real_T ConvertBLUXfrommmtom;        // '<S215>/Convert BLUX from [mm] to [m]'
+  real_T ConvertREDXfrommmtom;        // '<S216>/Convert REDX from [mm] to [m]'
+  real_T UDPReceiveREDClock_o1;        // '<S217>/UDP Receive (RED Clock)'
+  real_T UDPReceiveBLACKClock_o1;      // '<S217>/UDP Receive (BLACK Clock)'
+  real_T UDPReceiveBLUEClock_o1;       // '<S217>/UDP Receive (BLUE Clock)'
+  real_T dy[3];                        // '<S261>/MATLAB Function'
+  real_T dy_h[3];                      // '<S259>/MATLAB Function'
+  real_T y2y1;                         // '<S257>/y2-y1'
+  real_T dy_c[3];                      // '<S251>/MATLAB Function'
+  real_T dy_d[3];                      // '<S249>/MATLAB Function'
+  real_T y2y1_o;                       // '<S247>/y2-y1'
+  real_T dy_p[3];                      // '<S241>/MATLAB Function'
+  real_T dy_g[3];                      // '<S239>/MATLAB Function'
+  real_T y;                            // '<S237>/MATLAB Function'
+  real_T u_next;                       // '<S237>/MATLAB Function'
+  real_T y2y1_ob;                      // '<S230>/y2-y1'
+  real_T In1_g20;                      // '<S218>/In1'
   real32_T UDPReceive_o1[4];           // '<S268>/UDP Receive'
-  real32_T UDPReceive_o1_a[4];         // '<S267>/UDP Receive'
-  uint8_T StringtoASCII[31];           // '<S211>/String to ASCII'
-  uint8_T StringtoASCII2[31];          // '<S210>/String to ASCII2'
-  uint8_T StringtoASCII1[31];          // '<S209>/String to ASCII1'
+  real32_T UDPReceive_o1_a[4];         // '<S264>/UDP Receive'
+  uint8_T StringtoASCII[31];           // '<S208>/String to ASCII'
+  uint8_T StringtoASCII2[31];          // '<S207>/String to ASCII2'
+  uint8_T StringtoASCII1[31];          // '<S206>/String to ASCII1'
   B_ChangeBLACKBehavior_GNC20_m_T ChangeREDBehavior_h;// '<S17>/Change RED Behavior' 
   B_ChangeBLACKBehavior_GNC20_m_T ChangeBLUEBehavior_e;// '<S17>/Change BLUE Behavior' 
   B_ChangeBLACKBehavior_GNC20_m_T ChangeBLACKBehavior_i;// '<S17>/Change BLACK Behavior' 
   B_Pseudoinverse1_GNC2026W_T Pseudoinverse1_pn;// '<S277>/Pseudoinverse1'
   B_Pseudoinverse1_GNC2026W_T Pseudoinverse1_p;// '<S277>/Pseudoinverse1'
   B_Pseudoinverse1_GNC2026W_T Pseudoinverse1;// '<S277>/Pseudoinverse1'
-  B_EnabledSubsystem_GNC2026W_h_T EnabledSubsystem_l1;// '<S258>/Enabled Subsystem' 
-  B_EnabledSubsystem_GNC2026W_T EnabledSubsystem_k;// '<S257>/Enabled Subsystem' 
-  B_EnabledSubsystem_GNC2026W_h_T EnabledSubsystem_d;// '<S248>/Enabled Subsystem' 
-  B_EnabledSubsystem_GNC2026W_T EnabledSubsystem_l;// '<S247>/Enabled Subsystem' 
-  B_EnabledSubsystem_GNC2026W_h_T EnabledSubsystem_g;// '<S231>/Enabled Subsystem' 
-  B_EnabledSubsystem_GNC2026W_T EnabledSubsystem;// '<S230>/Enabled Subsystem'
+  B_EnabledSubsystem_GNC2026W_h_T EnabledSubsystem_l1;// '<S255>/Enabled Subsystem' 
+  B_EnabledSubsystem_GNC2026W_T EnabledSubsystem_k;// '<S254>/Enabled Subsystem' 
+  B_EnabledSubsystem_GNC2026W_h_T EnabledSubsystem_d;// '<S245>/Enabled Subsystem' 
+  B_EnabledSubsystem_GNC2026W_T EnabledSubsystem_l;// '<S244>/Enabled Subsystem' 
+  B_EnabledSubsystem_GNC2026W_h_T EnabledSubsystem_g;// '<S228>/Enabled Subsystem' 
+  B_EnabledSubsystem_GNC2026W_T EnabledSubsystem;// '<S227>/Enabled Subsystem'
 };
 
 // Block states (default storage) for system '<Root>'
 struct DW_GNC2026W_T {
   Dynamixel_Controller_GNC2026W_T obj;
   // '<S269>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes' 
-  GPIO_Write_GNC2026W_T obj_l;         // '<S212>/GPIO Write1'
+  GPIO_Write_GNC2026W_T obj_l;         // '<S209>/GPIO Write1'
   ReadArm_Position_Rates_GNC202_T obj_d;
-                     // '<S213>/Read Joint Positions using  Dynamixel Encoders'
-  IdentifyPlatform_GNC2026W_T obj_dk;  // '<S266>/WhoAmI'
-  CustomDataLogger_GNC2026W_T obj_f;   // '<S205>/MATLAB System'
+                     // '<S210>/Read Joint Positions using  Dynamixel Encoders'
+  IdentifyPlatform_GNC2026W_T obj_dk;  // '<S263>/WhoAmI'
+  CustomDataLogger_GNC2026W_T obj_f;   // '<S202>/MATLAB System'
   real_T Delay_DSTATE;                 // '<S300>/Delay'
   real_T Delay_DSTATE_k;               // '<S288>/Delay'
   real_T Delay_DSTATE_kz;              // '<S276>/Delay'
-  real_T Delay2_DSTATE;                // '<S228>/Delay2'
-  real_T Delay1_DSTATE;                // '<S228>/Delay1'
-  real_T Delay1_DSTATE_g[3];           // '<S231>/Delay1'
-  real_T Delay1_DSTATE_b[3];           // '<S230>/Delay1'
-  real_T Delay_DSTATE_c;               // '<S240>/Delay'
-  real_T Delay1_DSTATE_m;              // '<S240>/Delay1'
-  real_T Delay2_DSTATE_l;              // '<S246>/Delay2'
-  real_T Delay1_DSTATE_l;              // '<S246>/Delay1'
-  real_T Delay1_DSTATE_mf[3];          // '<S248>/Delay1'
-  real_T Delay1_DSTATE_lv[3];          // '<S247>/Delay1'
-  real_T Delay2_DSTATE_l0;             // '<S256>/Delay2'
-  real_T Delay1_DSTATE_ld;             // '<S256>/Delay1'
-  real_T Delay1_DSTATE_c[3];           // '<S258>/Delay1'
-  real_T Delay1_DSTATE_cq[3];          // '<S257>/Delay1'
-  real_T Delay_DSTATE_o;               // '<S213>/Delay'
-  real_T Delay1_DSTATE_cg;             // '<S213>/Delay1'
-  real_T Delay2_DSTATE_h;              // '<S213>/Delay2'
-  real_T UD_DSTATE;                    // '<S184>/UD'
-  real_T UD_DSTATE_e;                  // '<S185>/UD'
-  real_T UD_DSTATE_a;                  // '<S186>/UD'
-  real_T UD_DSTATE_l;                  // '<S170>/UD'
-  real_T UD_DSTATE_k;                  // '<S171>/UD'
-  real_T UD_DSTATE_h;                  // '<S172>/UD'
-  real_T UD_DSTATE_o;                  // '<S193>/UD'
-  real_T UD_DSTATE_n;                  // '<S194>/UD'
-  real_T UD_DSTATE_hu;                 // '<S195>/UD'
-  real_T UD_DSTATE_j;                  // '<S165>/UD'
-  real_T UD_DSTATE_c;                  // '<S166>/UD'
-  real_T UD_DSTATE_d;                  // '<S167>/UD'
-  real_T UD_DSTATE_eh;                 // '<S188>/UD'
-  real_T UD_DSTATE_hv;                 // '<S189>/UD'
-  real_T UD_DSTATE_kv;                 // '<S190>/UD'
-  real_T Delay_DSTATE_l;               // '<S162>/Delay'
-  real_T Delay1_DSTATE_ba;             // '<S162>/Delay1'
-  real_T UD_DSTATE_aq;                 // '<S175>/UD'
-  real_T UD_DSTATE_p;                  // '<S176>/UD'
-  real_T UD_DSTATE_pr;                 // '<S177>/UD'
-  real_T UD_DSTATE_eg;                 // '<S198>/UD'
-  real_T UD_DSTATE_cd;                 // '<S199>/UD'
-  real_T UD_DSTATE_hd;                 // '<S200>/UD'
-  real_T Delay_DSTATE_ol;              // '<S140>/Delay'
-  real_T Delay1_DSTATE_e;              // '<S140>/Delay1'
-  real_T Delay_DSTATE_b;               // '<S136>/Delay'
-  real_T Delay1_DSTATE_a;              // '<S136>/Delay1'
-  real_T Delay_DSTATE_f;               // '<S138>/Delay'
-  real_T Delay1_DSTATE_k;              // '<S138>/Delay1'
+  real_T Delay_DSTATE_f;               // '<S266>/Delay'
+  real_T Delay1_DSTATE;                // '<S266>/Delay1'
+  real_T Delay2_DSTATE;                // '<S225>/Delay2'
+  real_T Delay1_DSTATE_i;              // '<S225>/Delay1'
+  real_T Delay1_DSTATE_g[3];           // '<S228>/Delay1'
+  real_T Delay1_DSTATE_b[3];           // '<S227>/Delay1'
+  real_T Delay_DSTATE_h;               // '<S237>/Delay'
+  real_T Delay1_DSTATE_f;              // '<S237>/Delay1'
+  real_T Delay2_DSTATE_l;              // '<S243>/Delay2'
+  real_T Delay1_DSTATE_l;              // '<S243>/Delay1'
+  real_T Delay1_DSTATE_m[3];           // '<S245>/Delay1'
+  real_T Delay1_DSTATE_lv[3];          // '<S244>/Delay1'
+  real_T Delay2_DSTATE_l0;             // '<S253>/Delay2'
+  real_T Delay1_DSTATE_ld;             // '<S253>/Delay1'
+  real_T Delay1_DSTATE_c[3];           // '<S255>/Delay1'
+  real_T Delay1_DSTATE_cq[3];          // '<S254>/Delay1'
+  real_T Delay_DSTATE_o;               // '<S210>/Delay'
+  real_T Delay1_DSTATE_cg;             // '<S210>/Delay1'
+  real_T Delay2_DSTATE_h;              // '<S210>/Delay2'
+  real_T UD_DSTATE;                    // '<S181>/UD'
+  real_T UD_DSTATE_e;                  // '<S182>/UD'
+  real_T UD_DSTATE_a;                  // '<S183>/UD'
+  real_T UD_DSTATE_l;                  // '<S167>/UD'
+  real_T UD_DSTATE_k;                  // '<S168>/UD'
+  real_T UD_DSTATE_h;                  // '<S169>/UD'
+  real_T UD_DSTATE_o;                  // '<S190>/UD'
+  real_T UD_DSTATE_n;                  // '<S191>/UD'
+  real_T UD_DSTATE_hu;                 // '<S192>/UD'
+  real_T UD_DSTATE_j;                  // '<S162>/UD'
+  real_T UD_DSTATE_c;                  // '<S163>/UD'
+  real_T UD_DSTATE_d;                  // '<S164>/UD'
+  real_T UD_DSTATE_eh;                 // '<S185>/UD'
+  real_T UD_DSTATE_hv;                 // '<S186>/UD'
+  real_T UD_DSTATE_kv;                 // '<S187>/UD'
+  real_T Delay_DSTATE_l;               // '<S159>/Delay'
+  real_T Delay1_DSTATE_ba;             // '<S159>/Delay1'
+  real_T UD_DSTATE_aq;                 // '<S172>/UD'
+  real_T UD_DSTATE_p;                  // '<S173>/UD'
+  real_T UD_DSTATE_pr;                 // '<S174>/UD'
+  real_T UD_DSTATE_eg;                 // '<S195>/UD'
+  real_T UD_DSTATE_cd;                 // '<S196>/UD'
+  real_T UD_DSTATE_hd;                 // '<S197>/UD'
+  real_T Delay_DSTATE_ol;              // '<S137>/Delay'
+  real_T Delay1_DSTATE_e;              // '<S137>/Delay1'
+  real_T Delay_DSTATE_b;               // '<S135>/Delay'
+  real_T Delay1_DSTATE_a;              // '<S135>/Delay1'
   real_T UnitDelay1_DSTATE[6];         // '<S130>/Unit Delay1'
   real_T UnitDelay2_DSTATE[36];        // '<S130>/Unit Delay2'
   real_T NextOutput;                   // '<Root>/Gaussian Noise'
@@ -253,22 +253,21 @@ struct DW_GNC2026W_T {
   real_T VIS_Confidence;               // '<Root>/Universal_Time9'
   real_T UDPSend_NetworkLib_m[137];    // '<S270>/UDP Send'
   real_T UDPReceive_NetworkLib[137];   // '<S268>/UDP Receive'
-  real_T UDPReceive_NetworkLib_i[137]; // '<S267>/UDP Receive'
-  real_T ReceivePhaseSpaceData_NetworkLi[137];// '<S216>/Receive PhaseSpace Data' 
-  real_T UDPReceiveREDClock_NetworkLib[137];// '<S220>/UDP Receive (RED Clock)'
-  real_T UDPReceiveBLACKClock_NetworkLib[137];// '<S220>/UDP Receive (BLACK Clock)' 
-  real_T UDPReceiveBLUEClock_NetworkLib[137];// '<S220>/UDP Receive (BLUE Clock)' 
-  real_T k;                            // '<S229>/Sample and Hold'
-  real_T y_hold[3];                    // '<S229>/Sample and Hold'
-  real_T k_h;                          // '<S229>/MATLAB Function1'
-  real_T UDPSend3_NetworkLib[137];     // '<S211>/UDP Send3'
-  real_T UDPSend2_NetworkLib[137];     // '<S210>/UDP Send2'
-  real_T UDPSend1_NetworkLib[137];     // '<S209>/UDP Send1'
+  real_T UDPReceive_NetworkLib_i[137]; // '<S264>/UDP Receive'
+  real_T ReceivePhaseSpaceData_NetworkLi[137];// '<S213>/Receive PhaseSpace Data' 
+  real_T UDPReceiveREDClock_NetworkLib[137];// '<S217>/UDP Receive (RED Clock)'
+  real_T UDPReceiveBLACKClock_NetworkLib[137];// '<S217>/UDP Receive (BLACK Clock)' 
+  real_T UDPReceiveBLUEClock_NetworkLib[137];// '<S217>/UDP Receive (BLUE Clock)' 
+  real_T k;                            // '<S226>/Sample and Hold'
+  real_T y_hold[3];                    // '<S226>/Sample and Hold'
+  real_T UDPSend3_NetworkLib[137];     // '<S208>/UDP Send3'
+  real_T UDPSend2_NetworkLib[137];     // '<S207>/UDP Send2'
+  real_T UDPSend1_NetworkLib[137];     // '<S206>/UDP Send1'
   real_T x[6];                         // '<S129>/MEKF'
   real_T P[36];                        // '<S129>/MEKF'
   real_T theta;                        // '<S129>/MEKF'
   real_T theta_prev;                   // '<S129>/MEKF'
-  real_T k_hq;                         // '<S130>/Unscented Kalman Filter'
+  real_T k_h;                          // '<S130>/Unscented Kalman Filter'
   real_T counter;                      // '<S30>/First Fit Detector'
   real_T firstfit;                     // '<S30>/First Fit Detector'
   char_T RED_Logger[256];              // '<Root>/RED_Tz3'
@@ -276,13 +275,13 @@ struct DW_GNC2026W_T {
   char_T BLUE_Logger[256];             // '<Root>/RED_Tz5'
   comm_internal_BernoulliBinary_T obj_fv;// '<Root>/Dropped Frames'
   uint32_T RandSeed;                   // '<Root>/Gaussian Noise'
-  uint32_T method;                     // '<S229>/CV Noise'
-  uint32_T state;                      // '<S229>/CV Noise'
-  uint32_T state_o[2];                 // '<S229>/CV Noise'
-  uint32_T state_p[625];               // '<S229>/CV Noise'
+  uint32_T method;                     // '<S226>/CV Noise'
+  uint32_T state;                      // '<S226>/CV Noise'
+  uint32_T state_g[2];                 // '<S226>/CV Noise'
+  uint32_T state_j[625];               // '<S226>/CV Noise'
   uint32_T method_e;                   // '<Root>/Dropped Frames'
   uint32_T state_d[625];               // '<Root>/Dropped Frames'
-  uint32_T state_j[2];                 // '<Root>/Dropped Frames'
+  uint32_T state_jw[2];                // '<Root>/Dropped Frames'
   uint32_T state_b;                    // '<Root>/Dropped Frames'
   int8_T Ifperforminganexperimentgrabthe;
   // '<S9>/If performing an experiment, grab the PhaseSpace data. Otherwise, use a clock to set time in SIM.' 
@@ -293,12 +292,12 @@ struct DW_GNC2026W_T {
   int8_T ThisIFblockdetermineswhethero_c;
     // '<S17>/This IF block determines whether or not to run the RED sim//exp '
   int8_T ThisIFblockdetermineswhether_ch;
-  // '<S224>/This IF block determines whether or not to run the BLACK sim//exp'
+  // '<S221>/This IF block determines whether or not to run the BLACK sim//exp'
   int8_T ThisIFblockdetermineswhether_cs;
-  // '<S224>/This IF block determines whether or not to run the BLUE sim//exp'
+  // '<S221>/This IF block determines whether or not to run the BLUE sim//exp'
   int8_T ThisIFblockdetermineswhethero_d;
-  // '<S224>/This IF block determines whether or not to run the RED sim//exp '
-  boolean_T k_not_empty;               // '<S229>/Sample and Hold'
+  // '<S221>/This IF block determines whether or not to run the RED sim//exp '
+  boolean_T k_not_empty;               // '<S226>/Sample and Hold'
   boolean_T initial_theta;             // '<S129>/MEKF'
   DW_ChangeBLACKBehavior_GNC2_g_T ChangeREDBehavior_h;// '<S17>/Change RED Behavior' 
   DW_ChangeBLACKBehavior_GNC2_g_T ChangeBLUEBehavior_e;// '<S17>/Change BLUE Behavior' 
@@ -306,15 +305,15 @@ struct DW_GNC2026W_T {
   DW_Pseudoinverse1_GNC2026W_T Pseudoinverse1_pn;// '<S277>/Pseudoinverse1'
   DW_Pseudoinverse1_GNC2026W_T Pseudoinverse1_p;// '<S277>/Pseudoinverse1'
   DW_Pseudoinverse1_GNC2026W_T Pseudoinverse1;// '<S277>/Pseudoinverse1'
-  DW_EnabledSubsystem_GNC2026_c_T EnabledSubsystem_l1;// '<S258>/Enabled Subsystem' 
-  DW_EnabledSubsystem_GNC2026W_T EnabledSubsystem_k;// '<S257>/Enabled Subsystem' 
-  DW_EnabledSubsystem_GNC2026_c_T EnabledSubsystem_d;// '<S248>/Enabled Subsystem' 
-  DW_EnabledSubsystem_GNC2026W_T EnabledSubsystem_l;// '<S247>/Enabled Subsystem' 
-  DW_EnabledSubsystem_GNC2026_c_T EnabledSubsystem_g;// '<S231>/Enabled Subsystem' 
-  DW_EnabledSubsystem_GNC2026W_T EnabledSubsystem;// '<S230>/Enabled Subsystem'
-  DW_ChangeBLACKBehavior_GNC2_l_T ChangeREDBehavior_d;// '<S224>/Change RED Behavior' 
-  DW_ChangeBLACKBehavior_GNC2_l_T ChangeBLUEBehavior_f;// '<S224>/Change BLUE Behavior' 
-  DW_ChangeBLACKBehavior_GNC2_l_T ChangeBLACKBehavior_e;// '<S224>/Change BLACK Behavior' 
+  DW_EnabledSubsystem_GNC2026_c_T EnabledSubsystem_l1;// '<S255>/Enabled Subsystem' 
+  DW_EnabledSubsystem_GNC2026W_T EnabledSubsystem_k;// '<S254>/Enabled Subsystem' 
+  DW_EnabledSubsystem_GNC2026_c_T EnabledSubsystem_d;// '<S245>/Enabled Subsystem' 
+  DW_EnabledSubsystem_GNC2026W_T EnabledSubsystem_l;// '<S244>/Enabled Subsystem' 
+  DW_EnabledSubsystem_GNC2026_c_T EnabledSubsystem_g;// '<S228>/Enabled Subsystem' 
+  DW_EnabledSubsystem_GNC2026W_T EnabledSubsystem;// '<S227>/Enabled Subsystem'
+  DW_ChangeBLACKBehavior_GNC2_l_T ChangeREDBehavior_d;// '<S221>/Change RED Behavior' 
+  DW_ChangeBLACKBehavior_GNC2_l_T ChangeBLUEBehavior_f;// '<S221>/Change BLUE Behavior' 
+  DW_ChangeBLACKBehavior_GNC2_l_T ChangeBLACKBehavior_e;// '<S221>/Change BLACK Behavior' 
   DW_ChangeBLACKBehavior_GNC202_T ChangeREDBehavior;// '<S4>/Change RED Behavior' 
   DW_ChangeBLACKBehavior_GNC202_T ChangeBLUEBehavior;// '<S4>/Change BLUE Behavior' 
   DW_ChangeBLACKBehavior_GNC202_T ChangeBLACKBehavior;// '<S4>/Change BLACK Behavior' 
@@ -412,57 +411,57 @@ struct P_Phase4ReturnHome_GNC2026W_T_ {
 // Parameters for system: '<S3>/Disable Thrusters (RED)'
 struct P_DisableThrustersRED_GNC2026_T_ {
   real_T Zero_Value;                   // Expression: 0
-                                          //  Referenced by: '<S158>/Zero'
+                                          //  Referenced by: '<S155>/Zero'
 
 };
 
 // Parameters for system: '<S3>/Disable Thrusters (BLACK)'
 struct P_DisableThrustersBLACK_GNC20_T_ {
   real_T Zero_Value;                   // Expression: 0
-                                          //  Referenced by: '<S156>/Zero'
+                                          //  Referenced by: '<S153>/Zero'
 
 };
 
 // Parameters for system: '<S4>/Change BLACK Behavior'
 struct P_ChangeBLACKBehavior_GNC2026_T_ {
   int32_T Constant1_Value;             // Computed Parameter: Constant1_Value
-                                          //  Referenced by: '<S202>/Constant1'
+                                          //  Referenced by: '<S199>/Constant1'
 
   int32_T UDPSend_Port;                // Computed Parameter: UDPSend_Port
-                                          //  Referenced by: '<S202>/UDP Send'
+                                          //  Referenced by: '<S199>/UDP Send'
 
 };
 
-// Parameters for system: '<S224>/Change BLACK Behavior'
+// Parameters for system: '<S221>/Change BLACK Behavior'
 struct P_ChangeBLACKBehavior_GNC20_p_T_ {
   int32_T UDPSendGUI_Port;             // Computed Parameter: UDPSendGUI_Port
-                                          //  Referenced by: '<S225>/UDP Send (GUI)'
+                                          //  Referenced by: '<S222>/UDP Send (GUI)'
 
 };
 
-// Parameters for system: '<S230>/Enabled Subsystem'
+// Parameters for system: '<S227>/Enabled Subsystem'
 struct P_EnabledSubsystem_GNC2026W_T_ {
   real_T dydt_Y0;                      // Computed Parameter: dydt_Y0
-                                          //  Referenced by: '<S242>/dy//dt'
+                                          //  Referenced by: '<S239>/dy//dt'
 
   real_T Constant2_Value;              // Expression: 0.1
-                                          //  Referenced by: '<S242>/Constant2'
+                                          //  Referenced by: '<S239>/Constant2'
 
   real_T Delay_InitialCondition;       // Expression: 0.0
-                                          //  Referenced by: '<S242>/Delay'
+                                          //  Referenced by: '<S239>/Delay'
 
 };
 
-// Parameters for system: '<S231>/Enabled Subsystem'
+// Parameters for system: '<S228>/Enabled Subsystem'
 struct P_EnabledSubsystem_GNC2026W_c_T_ {
   real_T dydt_Y0;                      // Computed Parameter: dydt_Y0
-                                          //  Referenced by: '<S244>/dy//dt'
+                                          //  Referenced by: '<S241>/dy//dt'
 
   real_T Constant2_Value;              // Expression: 0.1
-                                          //  Referenced by: '<S244>/Constant2'
+                                          //  Referenced by: '<S241>/Constant2'
 
   real_T Delay_InitialCondition;       // Expression: 0.0
-                                          //  Referenced by: '<S244>/Delay'
+                                          //  Referenced by: '<S241>/Delay'
 
 };
 
@@ -476,13 +475,13 @@ struct P_ChangeBLACKBehavior_GNC20_b_T_ {
 // Parameters (default storage)
 struct P_GNC2026W_T_ {
   real_T A_c[9];                       // Variable: A_c
-                                          //  Referenced by: '<S147>/Constant7'
+                                          //  Referenced by: '<S144>/Constant7'
 
   real_T CVrate;                       // Variable: CVrate
                                           //  Referenced by:
                                           //    '<S30>/First Fit Detector'
                                           //    '<S130>/Unscented Kalman Filter'
-                                          //    '<S229>/Sample and Hold'
+                                          //    '<S226>/Sample and Hold'
 
   real_T F_red_X_nominal;              // Variable: F_red_X_nominal
                                           //  Referenced by:
@@ -506,91 +505,91 @@ struct P_GNC2026W_T_ {
                                           //  Referenced by: '<S301>/MATLAB Function'
 
   real_T F_u[3];                       // Variable: F_u
-                                          //  Referenced by: '<S147>/Constant3'
+                                          //  Referenced by: '<S144>/Constant3'
 
   real_T K_BLACK[18];                  // Variable: K_BLACK
-                                          //  Referenced by: '<S148>/Constant2'
+                                          //  Referenced by: '<S145>/Constant2'
 
   real_T K_BLUE[18];                   // Variable: K_BLUE
-                                          //  Referenced by: '<S149>/Constant2'
+                                          //  Referenced by: '<S146>/Constant2'
 
   real_T K_RED[18];                    // Variable: K_RED
-                                          //  Referenced by: '<S150>/Constant2'
+                                          //  Referenced by: '<S147>/Constant2'
 
   real_T Kd_elarm;                     // Variable: Kd_elarm
-                                          //  Referenced by: '<S181>/kd_elarm'
+                                          //  Referenced by: '<S178>/kd_elarm'
 
   real_T Kd_sharm;                     // Variable: Kd_sharm
-                                          //  Referenced by: '<S182>/kd_sharm'
+                                          //  Referenced by: '<S179>/kd_sharm'
 
   real_T Kd_tb;                        // Variable: Kd_tb
-                                          //  Referenced by: '<S152>/Gain5'
+                                          //  Referenced by: '<S149>/Gain5'
 
   real_T Kd_tblue;                     // Variable: Kd_tblue
-                                          //  Referenced by: '<S153>/Gain5'
+                                          //  Referenced by: '<S150>/Gain5'
 
   real_T Kd_tr;                        // Variable: Kd_tr
-                                          //  Referenced by: '<S154>/Gain5'
+                                          //  Referenced by: '<S151>/Gain5'
 
   real_T Kd_wrarm;                     // Variable: Kd_wrarm
-                                          //  Referenced by: '<S183>/kd_wrarm'
+                                          //  Referenced by: '<S180>/kd_wrarm'
 
   real_T Kd_xb;                        // Variable: Kd_xb
-                                          //  Referenced by: '<S152>/Gain3'
+                                          //  Referenced by: '<S149>/Gain3'
 
   real_T Kd_xblue;                     // Variable: Kd_xblue
-                                          //  Referenced by: '<S153>/Gain3'
+                                          //  Referenced by: '<S150>/Gain3'
 
   real_T Kd_xr;                        // Variable: Kd_xr
-                                          //  Referenced by: '<S154>/Gain3'
+                                          //  Referenced by: '<S151>/Gain3'
 
   real_T Kd_yb;                        // Variable: Kd_yb
-                                          //  Referenced by: '<S152>/Gain4'
+                                          //  Referenced by: '<S149>/Gain4'
 
   real_T Kd_yblue;                     // Variable: Kd_yblue
-                                          //  Referenced by: '<S153>/Gain4'
+                                          //  Referenced by: '<S150>/Gain4'
 
   real_T Kd_yr;                        // Variable: Kd_yr
-                                          //  Referenced by: '<S154>/Gain4'
+                                          //  Referenced by: '<S151>/Gain4'
 
   real_T Kp_elarm;                     // Variable: Kp_elarm
-                                          //  Referenced by: '<S181>/kp_elarm'
+                                          //  Referenced by: '<S178>/kp_elarm'
 
   real_T Kp_sharm;                     // Variable: Kp_sharm
-                                          //  Referenced by: '<S182>/kp_sharm'
+                                          //  Referenced by: '<S179>/kp_sharm'
 
   real_T Kp_tb;                        // Variable: Kp_tb
-                                          //  Referenced by: '<S152>/Gain2'
+                                          //  Referenced by: '<S149>/Gain2'
 
   real_T Kp_tblue;                     // Variable: Kp_tblue
-                                          //  Referenced by: '<S153>/Gain2'
+                                          //  Referenced by: '<S150>/Gain2'
 
   real_T Kp_tr;                        // Variable: Kp_tr
-                                          //  Referenced by: '<S154>/Gain2'
+                                          //  Referenced by: '<S151>/Gain2'
 
   real_T Kp_wrarm;                     // Variable: Kp_wrarm
-                                          //  Referenced by: '<S183>/kp_wrarm'
+                                          //  Referenced by: '<S180>/kp_wrarm'
 
   real_T Kp_xb;                        // Variable: Kp_xb
-                                          //  Referenced by: '<S152>/Gain'
+                                          //  Referenced by: '<S149>/Gain'
 
   real_T Kp_xblue;                     // Variable: Kp_xblue
-                                          //  Referenced by: '<S153>/Gain'
+                                          //  Referenced by: '<S150>/Gain'
 
   real_T Kp_xr;                        // Variable: Kp_xr
-                                          //  Referenced by: '<S154>/Gain'
+                                          //  Referenced by: '<S151>/Gain'
 
   real_T Kp_yb;                        // Variable: Kp_yb
-                                          //  Referenced by: '<S152>/Gain1'
+                                          //  Referenced by: '<S149>/Gain1'
 
   real_T Kp_yblue;                     // Variable: Kp_yblue
-                                          //  Referenced by: '<S153>/Gain1'
+                                          //  Referenced by: '<S150>/Gain1'
 
   real_T Kp_yr;                        // Variable: Kp_yr
-                                          //  Referenced by: '<S154>/Gain1'
+                                          //  Referenced by: '<S151>/Gain1'
 
   real_T Mc_inv[9];                    // Variable: Mc_inv
-                                          //  Referenced by: '<S147>/Constant6'
+                                          //  Referenced by: '<S144>/Constant6'
 
   real_T PWMFreq;                      // Variable: PWMFreq
                                           //  Referenced by:
@@ -653,13 +652,13 @@ struct P_GNC2026W_T_ {
                                           //  Referenced by: '<S130>/Unscented Kalman Filter'
 
   real_T Tz_lim_elarm;                 // Variable: Tz_lim_elarm
-                                          //  Referenced by: '<S180>/Saturation1'
+                                          //  Referenced by: '<S177>/Saturation1'
 
   real_T Tz_lim_sharm;                 // Variable: Tz_lim_sharm
-                                          //  Referenced by: '<S180>/Saturation'
+                                          //  Referenced by: '<S177>/Saturation'
 
   real_T Tz_lim_wrarm;                 // Variable: Tz_lim_wrarm
-                                          //  Referenced by: '<S180>/Saturation3'
+                                          //  Referenced by: '<S177>/Saturation3'
 
   real_T X1_blk;                       // Variable: X1_blk
                                           //  Referenced by: '<S38>/Desired X-Position (BLACK)'
@@ -687,20 +686,19 @@ struct P_GNC2026W_T_ {
 
   real_T baseRate;                     // Variable: baseRate
                                           //  Referenced by:
-                                          //    '<S213>/Read Joint Positions using  Dynamixel Encoders'
-                                          //    '<S266>/WhoAmI'
+                                          //    '<S210>/Read Joint Positions using  Dynamixel Encoders'
+                                          //    '<S263>/WhoAmI'
                                           //    '<S269>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
                                           //    '<S30>/First Fit Detector'
                                           //    '<S129>/MEKF'
                                           //    '<S130>/Unscented Kalman Filter'
-                                          //    '<S229>/MATLAB Function1'
-                                          //    '<S229>/Sample and Hold'
+                                          //    '<S226>/Sample and Hold'
 
   real_T dataRate;                     // Variable: dataRate
                                           //  Referenced by:
-                                          //    '<S228>/Constant'
-                                          //    '<S246>/Constant'
-                                          //    '<S256>/Constant'
+                                          //    '<S225>/Constant'
+                                          //    '<S243>/Constant'
+                                          //    '<S253>/Constant'
 
   real_T dt;                           // Variable: dt
                                           //  Referenced by: '<S130>/Unscented Kalman Filter'
@@ -726,14 +724,14 @@ struct P_GNC2026W_T_ {
   real_T init_states_BLACK[3];         // Variable: init_states_BLACK
                                           //  Referenced by:
                                           //    '<S26>/Desired States (BLACK)'
-                                          //    '<S140>/Delay'
-                                          //    '<S140>/Delay1'
-                                          //    '<S136>/Delay'
-                                          //    '<S136>/Delay1'
-                                          //    '<S138>/Delay'
-                                          //    '<S138>/Delay1'
-                                          //    '<S240>/Delay'
-                                          //    '<S240>/Delay1'
+                                          //    '<S137>/Delay'
+                                          //    '<S137>/Delay1'
+                                          //    '<S266>/Delay'
+                                          //    '<S266>/Delay1'
+                                          //    '<S135>/Delay'
+                                          //    '<S135>/Delay1'
+                                          //    '<S237>/Delay'
+                                          //    '<S237>/Delay1'
 
   real_T init_states_BLUE[3];          // Variable: init_states_BLUE
                                           //  Referenced by: '<S27>/Desired States (BLUE)'
@@ -743,14 +741,14 @@ struct P_GNC2026W_T_ {
                                           //    '<S28>/Constant2'
                                           //    '<S36>/Constant2'
                                           //    '<S55>/Constant2'
-                                          //    '<S162>/Delay'
-                                          //    '<S162>/Delay1'
+                                          //    '<S159>/Delay'
+                                          //    '<S159>/Delay1'
 
   real_T k;                            // Variable: k
                                           //  Referenced by: '<S130>/Unscented Kalman Filter'
 
   real_T platformSelection;            // Variable: platformSelection
-                                          //  Referenced by: '<S220>/MATLAB Function'
+                                          //  Referenced by: '<S217>/MATLAB Function'
 
   real_T sep1;                         // Variable: sep1
                                           //  Referenced by: '<S36>/Separation'
@@ -799,87 +797,87 @@ struct P_GNC2026W_T_ {
 
   real_T DiscreteDerivative_ICPrevScaled;
                               // Mask Parameter: DiscreteDerivative_ICPrevScaled
-                                 //  Referenced by: '<S198>/UD'
+                                 //  Referenced by: '<S195>/UD'
 
   real_T DiscreteDerivative1_ICPrevScale;
                               // Mask Parameter: DiscreteDerivative1_ICPrevScale
-                                 //  Referenced by: '<S199>/UD'
+                                 //  Referenced by: '<S196>/UD'
 
   real_T DiscreteDerivative2_ICPrevScale;
                               // Mask Parameter: DiscreteDerivative2_ICPrevScale
-                                 //  Referenced by: '<S200>/UD'
+                                 //  Referenced by: '<S197>/UD'
 
   real_T DiscreteDerivative_ICPrevScal_i;
                               // Mask Parameter: DiscreteDerivative_ICPrevScal_i
-                                 //  Referenced by: '<S175>/UD'
+                                 //  Referenced by: '<S172>/UD'
 
   real_T DiscreteDerivative1_ICPrevSca_e;
                               // Mask Parameter: DiscreteDerivative1_ICPrevSca_e
-                                 //  Referenced by: '<S176>/UD'
+                                 //  Referenced by: '<S173>/UD'
 
   real_T DiscreteDerivative2_ICPrevSca_o;
                               // Mask Parameter: DiscreteDerivative2_ICPrevSca_o
-                                 //  Referenced by: '<S177>/UD'
+                                 //  Referenced by: '<S174>/UD'
 
   real_T DiscreteDerivative_ICPrevScal_p;
                               // Mask Parameter: DiscreteDerivative_ICPrevScal_p
-                                 //  Referenced by: '<S188>/UD'
+                                 //  Referenced by: '<S185>/UD'
 
   real_T DiscreteDerivative1_ICPrevSca_m;
                               // Mask Parameter: DiscreteDerivative1_ICPrevSca_m
-                                 //  Referenced by: '<S189>/UD'
+                                 //  Referenced by: '<S186>/UD'
 
   real_T DiscreteDerivative2_ICPrevSca_a;
                               // Mask Parameter: DiscreteDerivative2_ICPrevSca_a
-                                 //  Referenced by: '<S190>/UD'
+                                 //  Referenced by: '<S187>/UD'
 
   real_T DiscreteDerivative_ICPrevScal_d;
                               // Mask Parameter: DiscreteDerivative_ICPrevScal_d
-                                 //  Referenced by: '<S165>/UD'
+                                 //  Referenced by: '<S162>/UD'
 
   real_T DiscreteDerivative1_ICPrevSca_i;
                               // Mask Parameter: DiscreteDerivative1_ICPrevSca_i
-                                 //  Referenced by: '<S166>/UD'
+                                 //  Referenced by: '<S163>/UD'
 
   real_T DiscreteDerivative2_ICPrevSc_oo;
                               // Mask Parameter: DiscreteDerivative2_ICPrevSc_oo
-                                 //  Referenced by: '<S167>/UD'
+                                 //  Referenced by: '<S164>/UD'
 
   real_T DiscreteDerivative_ICPrevSca_pf;
                               // Mask Parameter: DiscreteDerivative_ICPrevSca_pf
-                                 //  Referenced by: '<S193>/UD'
+                                 //  Referenced by: '<S190>/UD'
 
   real_T DiscreteDerivative1_ICPrevSca_l;
                               // Mask Parameter: DiscreteDerivative1_ICPrevSca_l
-                                 //  Referenced by: '<S194>/UD'
+                                 //  Referenced by: '<S191>/UD'
 
   real_T DiscreteDerivative2_ICPrevSc_on;
                               // Mask Parameter: DiscreteDerivative2_ICPrevSc_on
-                                 //  Referenced by: '<S195>/UD'
+                                 //  Referenced by: '<S192>/UD'
 
   real_T DiscreteDerivative_ICPrevScal_n;
                               // Mask Parameter: DiscreteDerivative_ICPrevScal_n
-                                 //  Referenced by: '<S170>/UD'
+                                 //  Referenced by: '<S167>/UD'
 
   real_T DiscreteDerivative1_ICPrevSca_f;
                               // Mask Parameter: DiscreteDerivative1_ICPrevSca_f
-                                 //  Referenced by: '<S171>/UD'
+                                 //  Referenced by: '<S168>/UD'
 
   real_T DiscreteDerivative2_ICPrevSca_g;
                               // Mask Parameter: DiscreteDerivative2_ICPrevSca_g
-                                 //  Referenced by: '<S172>/UD'
+                                 //  Referenced by: '<S169>/UD'
 
   real_T DiscreteDerivative1_ICPrevSca_j;
                               // Mask Parameter: DiscreteDerivative1_ICPrevSca_j
-                                 //  Referenced by: '<S184>/UD'
+                                 //  Referenced by: '<S181>/UD'
 
   real_T DiscreteDerivative1_ICPrevSca_a;
                               // Mask Parameter: DiscreteDerivative1_ICPrevSca_a
-                                 //  Referenced by: '<S185>/UD'
+                                 //  Referenced by: '<S182>/UD'
 
   real_T DiscreteDerivative1_ICPrevSca_k;
                               // Mask Parameter: DiscreteDerivative1_ICPrevSca_k
-                                 //  Referenced by: '<S186>/UD'
+                                 //  Referenced by: '<S183>/UD'
 
   real_T MATLABFunction5_max_iters; // Mask Parameter: MATLABFunction5_max_iters
                                        //  Referenced by: '<S274>/MATLAB Function5'
@@ -1188,250 +1186,253 @@ struct P_GNC2026W_T_ {
                                       //  Referenced by: '<S130>/Unit Delay2'
 
   real_T TSamp_WtEt;                   // Computed Parameter: TSamp_WtEt
-                                          //  Referenced by: '<S198>/TSamp'
-
-  real_T TSamp_WtEt_f;                 // Computed Parameter: TSamp_WtEt_f
-                                          //  Referenced by: '<S199>/TSamp'
-
-  real_T TSamp_WtEt_c;                 // Computed Parameter: TSamp_WtEt_c
-                                          //  Referenced by: '<S200>/TSamp'
-
-  real_T Gain6_Gain;                   // Expression: -1
-                                          //  Referenced by: '<S154>/Gain6'
-
-  real_T Gain7_Gain;                   // Expression: -1
-                                          //  Referenced by: '<S154>/Gain7'
-
-  real_T Gain8_Gain;                   // Expression: -1
-                                          //  Referenced by: '<S154>/Gain8'
-
-  real_T TSamp_WtEt_h;                 // Computed Parameter: TSamp_WtEt_h
-                                          //  Referenced by: '<S175>/TSamp'
-
-  real_T TSamp_WtEt_e;                 // Computed Parameter: TSamp_WtEt_e
-                                          //  Referenced by: '<S176>/TSamp'
-
-  real_T TSamp_WtEt_n;                 // Computed Parameter: TSamp_WtEt_n
-                                          //  Referenced by: '<S177>/TSamp'
-
-  real_T Constant8_Value_e[9];         // Expression: diag(alpha)
-                                          //  Referenced by: '<S147>/Constant8'
-
-  real_T Constant9_Value[9];           // Expression: diag(gamma)
-                                          //  Referenced by: '<S147>/Constant9'
-
-  real_T TSamp_WtEt_i;                 // Computed Parameter: TSamp_WtEt_i
-                                          //  Referenced by: '<S188>/TSamp'
-
-  real_T TSamp_WtEt_hr;                // Computed Parameter: TSamp_WtEt_hr
-                                          //  Referenced by: '<S189>/TSamp'
-
-  real_T TSamp_WtEt_ca;                // Computed Parameter: TSamp_WtEt_ca
-                                          //  Referenced by: '<S190>/TSamp'
-
-  real_T Gain6_Gain_g;                 // Expression: -1
-                                          //  Referenced by: '<S152>/Gain6'
-
-  real_T Gain7_Gain_b;                 // Expression: -1
-                                          //  Referenced by: '<S152>/Gain7'
-
-  real_T Gain8_Gain_m;                 // Expression: -1
-                                          //  Referenced by: '<S152>/Gain8'
-
-  real_T TSamp_WtEt_nd;                // Computed Parameter: TSamp_WtEt_nd
-                                          //  Referenced by: '<S165>/TSamp'
-
-  real_T TSamp_WtEt_co;                // Computed Parameter: TSamp_WtEt_co
-                                          //  Referenced by: '<S166>/TSamp'
-
-  real_T TSamp_WtEt_no;                // Computed Parameter: TSamp_WtEt_no
-                                          //  Referenced by: '<S167>/TSamp'
-
-  real_T TSamp_WtEt_p;                 // Computed Parameter: TSamp_WtEt_p
-                                          //  Referenced by: '<S193>/TSamp'
-
-  real_T TSamp_WtEt_o;                 // Computed Parameter: TSamp_WtEt_o
-                                          //  Referenced by: '<S194>/TSamp'
-
-  real_T TSamp_WtEt_px;                // Computed Parameter: TSamp_WtEt_px
                                           //  Referenced by: '<S195>/TSamp'
 
-  real_T Gain6_Gain_a;                 // Expression: -1
-                                          //  Referenced by: '<S153>/Gain6'
+  real_T TSamp_WtEt_f;                 // Computed Parameter: TSamp_WtEt_f
+                                          //  Referenced by: '<S196>/TSamp'
 
-  real_T Gain7_Gain_e;                 // Expression: -1
-                                          //  Referenced by: '<S153>/Gain7'
+  real_T TSamp_WtEt_c;                 // Computed Parameter: TSamp_WtEt_c
+                                          //  Referenced by: '<S197>/TSamp'
 
-  real_T Gain8_Gain_g;                 // Expression: -1
-                                          //  Referenced by: '<S153>/Gain8'
+  real_T Gain6_Gain;                   // Expression: -1
+                                          //  Referenced by: '<S151>/Gain6'
 
-  real_T TSamp_WtEt_ft;                // Computed Parameter: TSamp_WtEt_ft
-                                          //  Referenced by: '<S170>/TSamp'
+  real_T Gain7_Gain;                   // Expression: -1
+                                          //  Referenced by: '<S151>/Gain7'
 
-  real_T TSamp_WtEt_eh;                // Computed Parameter: TSamp_WtEt_eh
-                                          //  Referenced by: '<S171>/TSamp'
+  real_T Gain8_Gain;                   // Expression: -1
+                                          //  Referenced by: '<S151>/Gain8'
 
-  real_T TSamp_WtEt_ii;                // Computed Parameter: TSamp_WtEt_ii
+  real_T TSamp_WtEt_h;                 // Computed Parameter: TSamp_WtEt_h
                                           //  Referenced by: '<S172>/TSamp'
 
-  real_T TSamp_WtEt_pu;                // Computed Parameter: TSamp_WtEt_pu
-                                          //  Referenced by: '<S184>/TSamp'
+  real_T TSamp_WtEt_e;                 // Computed Parameter: TSamp_WtEt_e
+                                          //  Referenced by: '<S173>/TSamp'
 
-  real_T TSamp_WtEt_f0;                // Computed Parameter: TSamp_WtEt_f0
+  real_T TSamp_WtEt_n;                 // Computed Parameter: TSamp_WtEt_n
+                                          //  Referenced by: '<S174>/TSamp'
+
+  real_T Constant8_Value_e[9];         // Expression: diag(alpha)
+                                          //  Referenced by: '<S144>/Constant8'
+
+  real_T Constant9_Value[9];           // Expression: diag(gamma)
+                                          //  Referenced by: '<S144>/Constant9'
+
+  real_T TSamp_WtEt_i;                 // Computed Parameter: TSamp_WtEt_i
                                           //  Referenced by: '<S185>/TSamp'
 
-  real_T TSamp_WtEt_nz;                // Computed Parameter: TSamp_WtEt_nz
+  real_T TSamp_WtEt_hr;                // Computed Parameter: TSamp_WtEt_hr
                                           //  Referenced by: '<S186>/TSamp'
 
+  real_T TSamp_WtEt_ca;                // Computed Parameter: TSamp_WtEt_ca
+                                          //  Referenced by: '<S187>/TSamp'
+
+  real_T Gain6_Gain_g;                 // Expression: -1
+                                          //  Referenced by: '<S149>/Gain6'
+
+  real_T Gain7_Gain_b;                 // Expression: -1
+                                          //  Referenced by: '<S149>/Gain7'
+
+  real_T Gain8_Gain_m;                 // Expression: -1
+                                          //  Referenced by: '<S149>/Gain8'
+
+  real_T TSamp_WtEt_nd;                // Computed Parameter: TSamp_WtEt_nd
+                                          //  Referenced by: '<S162>/TSamp'
+
+  real_T TSamp_WtEt_co;                // Computed Parameter: TSamp_WtEt_co
+                                          //  Referenced by: '<S163>/TSamp'
+
+  real_T TSamp_WtEt_no;                // Computed Parameter: TSamp_WtEt_no
+                                          //  Referenced by: '<S164>/TSamp'
+
+  real_T TSamp_WtEt_p;                 // Computed Parameter: TSamp_WtEt_p
+                                          //  Referenced by: '<S190>/TSamp'
+
+  real_T TSamp_WtEt_o;                 // Computed Parameter: TSamp_WtEt_o
+                                          //  Referenced by: '<S191>/TSamp'
+
+  real_T TSamp_WtEt_px;                // Computed Parameter: TSamp_WtEt_px
+                                          //  Referenced by: '<S192>/TSamp'
+
+  real_T Gain6_Gain_a;                 // Expression: -1
+                                          //  Referenced by: '<S150>/Gain6'
+
+  real_T Gain7_Gain_e;                 // Expression: -1
+                                          //  Referenced by: '<S150>/Gain7'
+
+  real_T Gain8_Gain_g;                 // Expression: -1
+                                          //  Referenced by: '<S150>/Gain8'
+
+  real_T TSamp_WtEt_ft;                // Computed Parameter: TSamp_WtEt_ft
+                                          //  Referenced by: '<S167>/TSamp'
+
+  real_T TSamp_WtEt_eh;                // Computed Parameter: TSamp_WtEt_eh
+                                          //  Referenced by: '<S168>/TSamp'
+
+  real_T TSamp_WtEt_ii;                // Computed Parameter: TSamp_WtEt_ii
+                                          //  Referenced by: '<S169>/TSamp'
+
+  real_T TSamp_WtEt_pu;                // Computed Parameter: TSamp_WtEt_pu
+                                          //  Referenced by: '<S181>/TSamp'
+
+  real_T TSamp_WtEt_f0;                // Computed Parameter: TSamp_WtEt_f0
+                                          //  Referenced by: '<S182>/TSamp'
+
+  real_T TSamp_WtEt_nz;                // Computed Parameter: TSamp_WtEt_nz
+                                          //  Referenced by: '<S183>/TSamp'
+
   real_T Constant7_Value;              // Expression: 1
-                                          //  Referenced by: '<S151>/Constant7'
+                                          //  Referenced by: '<S148>/Constant7'
 
   real_T Merge3_InitialOutput;       // Computed Parameter: Merge3_InitialOutput
-                                        //  Referenced by: '<S151>/Merge3'
+                                        //  Referenced by: '<S148>/Merge3'
 
   real_T Merge4_InitialOutput;       // Computed Parameter: Merge4_InitialOutput
-                                        //  Referenced by: '<S151>/Merge4'
+                                        //  Referenced by: '<S148>/Merge4'
 
   real_T Merge5_InitialOutput;       // Computed Parameter: Merge5_InitialOutput
-                                        //  Referenced by: '<S151>/Merge5'
+                                        //  Referenced by: '<S148>/Merge5'
 
   real_T Constant7_Value_h;            // Expression: 0
-                                          //  Referenced by: '<S155>/Constant7'
+                                          //  Referenced by: '<S152>/Constant7'
 
   real_T Zero_Value;                   // Expression: 0
-                                          //  Referenced by: '<S155>/Zero'
+                                          //  Referenced by: '<S152>/Zero'
 
   real_T GPIOWrite1_gpioPin;           // Expression: 428
-                                          //  Referenced by: '<S212>/GPIO Write1'
+                                          //  Referenced by: '<S209>/GPIO Write1'
 
   real_T GPIOWrite1_pinDirection;      // Expression: 1
-                                          //  Referenced by: '<S212>/GPIO Write1'
+                                          //  Referenced by: '<S209>/GPIO Write1'
 
   real_T Delay_InitialCondition;       // Expression: 0.0
-                                          //  Referenced by: '<S213>/Delay'
+                                          //  Referenced by: '<S210>/Delay'
 
   real_T Delay1_InitialCondition;      // Expression: 0.0
-                                          //  Referenced by: '<S213>/Delay1'
+                                          //  Referenced by: '<S210>/Delay1'
 
   real_T Delay2_InitialCondition;      // Expression: 0.0
-                                          //  Referenced by: '<S213>/Delay2'
+                                          //  Referenced by: '<S210>/Delay2'
 
   real_T UniversalTime_Y0;             // Computed Parameter: UniversalTime_Y0
-                                          //  Referenced by: '<S221>/Universal Time'
+                                          //  Referenced by: '<S218>/Universal Time'
 
   real_T dytdt_Y0;                     // Computed Parameter: dytdt_Y0
-                                          //  Referenced by: '<S233>/dy(t)//dt'
+                                          //  Referenced by: '<S230>/dy(t)//dt'
 
   real_T dytdt_Y0_j;                   // Computed Parameter: dytdt_Y0_j
-                                          //  Referenced by: '<S250>/dy(t)//dt'
+                                          //  Referenced by: '<S247>/dy(t)//dt'
 
   real_T dytdt_Y0_d;                   // Computed Parameter: dytdt_Y0_d
-                                          //  Referenced by: '<S260>/dy(t)//dt'
+                                          //  Referenced by: '<S257>/dy(t)//dt'
 
   real_T ConvertBLAXfrommmtom_Gain;    // Expression: 1/1000
-                                          //  Referenced by: '<S217>/Convert BLAX from [mm] to [m]'
+                                          //  Referenced by: '<S214>/Convert BLAX from [mm] to [m]'
 
   real_T ConvertBLAYfrommmtom_Gain;    // Expression: 1/1000
-                                          //  Referenced by: '<S217>/Convert BLAY from [mm] to [m]'
+                                          //  Referenced by: '<S214>/Convert BLAY from [mm] to [m]'
 
   real_T ConvertBLACKVXfrommmtom_Gain; // Expression: 1/1000
-                                          //  Referenced by: '<S217>/Convert BLACKVX from [mm] to [m]'
+                                          //  Referenced by: '<S214>/Convert BLACKVX from [mm] to [m]'
 
   real_T ConvertBLACKVYfrommmtom_Gain; // Expression: 1/1000
-                                          //  Referenced by: '<S217>/Convert BLACKVY from [mm] to [m]'
+                                          //  Referenced by: '<S214>/Convert BLACKVY from [mm] to [m]'
 
   real_T Delay2_InitialCondition_e;    // Expression: 0
-                                          //  Referenced by: '<S228>/Delay2'
+                                          //  Referenced by: '<S225>/Delay2'
 
   real_T Delay1_InitialCondition_m;    // Expression: 0
-                                          //  Referenced by: '<S228>/Delay1'
+                                          //  Referenced by: '<S225>/Delay1'
 
   real_T Constant3_Value_eq;           // Expression: 0
-                                          //  Referenced by: '<S228>/Constant3'
+                                          //  Referenced by: '<S225>/Constant3'
 
   real_T Delay1_InitialCondition_i;    // Expression: 0.0
-                                          //  Referenced by: '<S231>/Delay1'
+                                          //  Referenced by: '<S228>/Delay1'
 
   real_T Constant3_Value_a;            // Expression: 0
-                                          //  Referenced by: '<S231>/Constant3'
+                                          //  Referenced by: '<S228>/Constant3'
 
   real_T Delay1_InitialCondition_it;   // Expression: 0.0
-                                          //  Referenced by: '<S230>/Delay1'
+                                          //  Referenced by: '<S227>/Delay1'
 
   real_T Constant3_Value_d;            // Expression: 0
-                                          //  Referenced by: '<S230>/Constant3'
-
-  real_T Constant_Value_g;             // Expression: 1
-                                          //  Referenced by: '<S229>/Constant'
+                                          //  Referenced by: '<S227>/Constant3'
 
   real_T ConvertBLUXfrommmtom_Gain;    // Expression: 1/1000
-                                          //  Referenced by: '<S218>/Convert BLUX from [mm] to [m]'
+                                          //  Referenced by: '<S215>/Convert BLUX from [mm] to [m]'
 
   real_T ConvertBLUYfrommmtom_Gain;    // Expression: 1/1000
-                                          //  Referenced by: '<S218>/Convert BLUY from [mm] to [m]'
+                                          //  Referenced by: '<S215>/Convert BLUY from [mm] to [m]'
 
   real_T ConvertBLUEVXfrommmtom_Gain;  // Expression: 1/1000
-                                          //  Referenced by: '<S218>/Convert BLUEVX from [mm] to [m]'
+                                          //  Referenced by: '<S215>/Convert BLUEVX from [mm] to [m]'
 
   real_T ConvertBLUEVYfrommmtom_Gain;  // Expression: 1/1000
-                                          //  Referenced by: '<S218>/Convert BLUEVY from [mm] to [m]'
+                                          //  Referenced by: '<S215>/Convert BLUEVY from [mm] to [m]'
 
   real_T Delay2_InitialCondition_a;    // Expression: 0
-                                          //  Referenced by: '<S246>/Delay2'
+                                          //  Referenced by: '<S243>/Delay2'
 
   real_T Delay1_InitialCondition_i3;   // Expression: 0
-                                          //  Referenced by: '<S246>/Delay1'
+                                          //  Referenced by: '<S243>/Delay1'
 
   real_T Constant3_Value_o;            // Expression: 0
-                                          //  Referenced by: '<S246>/Constant3'
+                                          //  Referenced by: '<S243>/Constant3'
 
   real_T Delay1_InitialCondition_h;    // Expression: 0.0
-                                          //  Referenced by: '<S248>/Delay1'
+                                          //  Referenced by: '<S245>/Delay1'
 
   real_T Constant3_Value_c;            // Expression: 0
-                                          //  Referenced by: '<S248>/Constant3'
+                                          //  Referenced by: '<S245>/Constant3'
 
   real_T Delay1_InitialCondition_j;    // Expression: 0.0
-                                          //  Referenced by: '<S247>/Delay1'
+                                          //  Referenced by: '<S244>/Delay1'
 
   real_T Constant3_Value_ke;           // Expression: 0
-                                          //  Referenced by: '<S247>/Constant3'
+                                          //  Referenced by: '<S244>/Constant3'
 
   real_T ConvertREDXfrommmtom_Gain;    // Expression: 1/1000
-                                          //  Referenced by: '<S219>/Convert REDX from [mm] to [m]'
+                                          //  Referenced by: '<S216>/Convert REDX from [mm] to [m]'
 
   real_T ConvertREDYfrommmtom_Gain;    // Expression: 1/1000
-                                          //  Referenced by: '<S219>/Convert REDY from [mm] to [m]'
+                                          //  Referenced by: '<S216>/Convert REDY from [mm] to [m]'
 
   real_T ConvertREDVXfrommmtom_Gain;   // Expression: 1/1000
-                                          //  Referenced by: '<S219>/Convert REDVX from [mm] to [m]'
+                                          //  Referenced by: '<S216>/Convert REDVX from [mm] to [m]'
 
   real_T ConvertREDVYfrommmtom_Gain;   // Expression: 1/1000
-                                          //  Referenced by: '<S219>/Convert REDVY from [mm] to [m]'
+                                          //  Referenced by: '<S216>/Convert REDVY from [mm] to [m]'
 
   real_T Delay2_InitialCondition_m;    // Expression: 0
-                                          //  Referenced by: '<S256>/Delay2'
+                                          //  Referenced by: '<S253>/Delay2'
 
   real_T Delay1_InitialCondition_l;    // Expression: 0
-                                          //  Referenced by: '<S256>/Delay1'
+                                          //  Referenced by: '<S253>/Delay1'
 
   real_T Constant3_Value_f;            // Expression: 0
-                                          //  Referenced by: '<S256>/Constant3'
+                                          //  Referenced by: '<S253>/Constant3'
 
   real_T Delay1_InitialCondition_k;    // Expression: 0.0
-                                          //  Referenced by: '<S258>/Delay1'
+                                          //  Referenced by: '<S255>/Delay1'
 
   real_T Constant3_Value_dh;           // Expression: 0
-                                          //  Referenced by: '<S258>/Constant3'
+                                          //  Referenced by: '<S255>/Constant3'
 
   real_T Delay1_InitialCondition_c;    // Expression: 0.0
-                                          //  Referenced by: '<S257>/Delay1'
+                                          //  Referenced by: '<S254>/Delay1'
 
   real_T Constant3_Value_dz;           // Expression: 0
-                                          //  Referenced by: '<S257>/Constant3'
+                                          //  Referenced by: '<S254>/Constant3'
 
   real_T Constant_Value_i;             // Expression: 1
-                                          //  Referenced by: '<S220>/Constant'
+                                          //  Referenced by: '<S217>/Constant'
+
+  real_T Gain_Gain_k;                  // Expression: -1
+                                          //  Referenced by: '<S264>/Gain'
+
+  real_T Gain1_Gain_p;                 // Expression: -1
+                                          //  Referenced by: '<S264>/Gain1'
 
   real_T ControlDynamixelActuatorsineith;// Expression: 400
                                             //  Referenced by: '<S269>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
@@ -1782,31 +1783,31 @@ struct P_GNC2026W_T_ {
                                         //  Referenced by: '<Root>/RED_Tz5'
 
   int32_T UDPSend1_Port;               // Computed Parameter: UDPSend1_Port
-                                          //  Referenced by: '<S209>/UDP Send1'
+                                          //  Referenced by: '<S206>/UDP Send1'
 
   int32_T UDPSend2_Port;               // Computed Parameter: UDPSend2_Port
-                                          //  Referenced by: '<S210>/UDP Send2'
+                                          //  Referenced by: '<S207>/UDP Send2'
 
   int32_T UDPSend3_Port;               // Computed Parameter: UDPSend3_Port
-                                          //  Referenced by: '<S211>/UDP Send3'
+                                          //  Referenced by: '<S208>/UDP Send3'
 
   int32_T ReceivePhaseSpaceData_Port;
                                // Computed Parameter: ReceivePhaseSpaceData_Port
-                                  //  Referenced by: '<S216>/Receive PhaseSpace Data'
+                                  //  Referenced by: '<S213>/Receive PhaseSpace Data'
 
   int32_T UDPReceiveREDClock_Port;// Computed Parameter: UDPReceiveREDClock_Port
-                                     //  Referenced by: '<S220>/UDP Receive (RED Clock)'
+                                     //  Referenced by: '<S217>/UDP Receive (RED Clock)'
 
   int32_T UDPReceiveBLACKClock_Port;
                                 // Computed Parameter: UDPReceiveBLACKClock_Port
-                                   //  Referenced by: '<S220>/UDP Receive (BLACK Clock)'
+                                   //  Referenced by: '<S217>/UDP Receive (BLACK Clock)'
 
   int32_T UDPReceiveBLUEClock_Port;
                                  // Computed Parameter: UDPReceiveBLUEClock_Port
-                                    //  Referenced by: '<S220>/UDP Receive (BLUE Clock)'
+                                    //  Referenced by: '<S217>/UDP Receive (BLUE Clock)'
 
   int32_T UDPReceive_Port;             // Computed Parameter: UDPReceive_Port
-                                          //  Referenced by: '<S267>/UDP Receive'
+                                          //  Referenced by: '<S264>/UDP Receive'
 
   int32_T UDPReceive_Port_a;           // Computed Parameter: UDPReceive_Port_a
                                           //  Referenced by: '<S268>/UDP Receive'
@@ -1824,15 +1825,15 @@ struct P_GNC2026W_T_ {
   P_ChangeBLACKBehavior_GNC20_b_T ChangeREDBehavior_h;// '<S17>/Change RED Behavior' 
   P_ChangeBLACKBehavior_GNC20_b_T ChangeBLUEBehavior_e;// '<S17>/Change BLUE Behavior' 
   P_ChangeBLACKBehavior_GNC20_b_T ChangeBLACKBehavior_i;// '<S17>/Change BLACK Behavior' 
-  P_EnabledSubsystem_GNC2026W_c_T EnabledSubsystem_l1;// '<S258>/Enabled Subsystem' 
-  P_EnabledSubsystem_GNC2026W_T EnabledSubsystem_k;// '<S257>/Enabled Subsystem' 
-  P_EnabledSubsystem_GNC2026W_c_T EnabledSubsystem_d;// '<S248>/Enabled Subsystem' 
-  P_EnabledSubsystem_GNC2026W_T EnabledSubsystem_l;// '<S247>/Enabled Subsystem' 
-  P_EnabledSubsystem_GNC2026W_c_T EnabledSubsystem_g;// '<S231>/Enabled Subsystem' 
-  P_EnabledSubsystem_GNC2026W_T EnabledSubsystem;// '<S230>/Enabled Subsystem'
-  P_ChangeBLACKBehavior_GNC20_p_T ChangeREDBehavior_d;// '<S224>/Change RED Behavior' 
-  P_ChangeBLACKBehavior_GNC20_p_T ChangeBLUEBehavior_f;// '<S224>/Change BLUE Behavior' 
-  P_ChangeBLACKBehavior_GNC20_p_T ChangeBLACKBehavior_e;// '<S224>/Change BLACK Behavior' 
+  P_EnabledSubsystem_GNC2026W_c_T EnabledSubsystem_l1;// '<S255>/Enabled Subsystem' 
+  P_EnabledSubsystem_GNC2026W_T EnabledSubsystem_k;// '<S254>/Enabled Subsystem' 
+  P_EnabledSubsystem_GNC2026W_c_T EnabledSubsystem_d;// '<S245>/Enabled Subsystem' 
+  P_EnabledSubsystem_GNC2026W_T EnabledSubsystem_l;// '<S244>/Enabled Subsystem' 
+  P_EnabledSubsystem_GNC2026W_c_T EnabledSubsystem_g;// '<S228>/Enabled Subsystem' 
+  P_EnabledSubsystem_GNC2026W_T EnabledSubsystem;// '<S227>/Enabled Subsystem'
+  P_ChangeBLACKBehavior_GNC20_p_T ChangeREDBehavior_d;// '<S221>/Change RED Behavior' 
+  P_ChangeBLACKBehavior_GNC20_p_T ChangeBLUEBehavior_f;// '<S221>/Change BLUE Behavior' 
+  P_ChangeBLACKBehavior_GNC20_p_T ChangeBLACKBehavior_e;// '<S221>/Change BLACK Behavior' 
   P_ChangeBLACKBehavior_GNC2026_T ChangeREDBehavior;// '<S4>/Change RED Behavior' 
   P_ChangeBLACKBehavior_GNC2026_T ChangeBLUEBehavior;// '<S4>/Change BLUE Behavior' 
   P_ChangeBLACKBehavior_GNC2026_T ChangeBLACKBehavior;// '<S4>/Change BLACK Behavior' 
@@ -1995,44 +1996,43 @@ extern volatile boolean_T runModel;
 //  Block '<S130>/Scope2' : Unused code path elimination
 //  Block '<S118>/Scope1' : Unused code path elimination
 //  Block '<S118>/Scope2' : Unused code path elimination
+//  Block '<S118>/Scope3' : Unused code path elimination
 //  Block '<S118>/Sum' : Unused code path elimination
-//  Block '<S165>/Data Type Duplicate' : Unused code path elimination
-//  Block '<S166>/Data Type Duplicate' : Unused code path elimination
+//  Block '<S162>/Data Type Duplicate' : Unused code path elimination
+//  Block '<S163>/Data Type Duplicate' : Unused code path elimination
+//  Block '<S164>/Data Type Duplicate' : Unused code path elimination
 //  Block '<S167>/Data Type Duplicate' : Unused code path elimination
-//  Block '<S170>/Data Type Duplicate' : Unused code path elimination
-//  Block '<S171>/Data Type Duplicate' : Unused code path elimination
+//  Block '<S168>/Data Type Duplicate' : Unused code path elimination
+//  Block '<S169>/Data Type Duplicate' : Unused code path elimination
 //  Block '<S172>/Data Type Duplicate' : Unused code path elimination
-//  Block '<S175>/Data Type Duplicate' : Unused code path elimination
-//  Block '<S176>/Data Type Duplicate' : Unused code path elimination
-//  Block '<S177>/Data Type Duplicate' : Unused code path elimination
-//  Block '<S151>/Scope' : Unused code path elimination
-//  Block '<S184>/Data Type Duplicate' : Unused code path elimination
+//  Block '<S173>/Data Type Duplicate' : Unused code path elimination
+//  Block '<S174>/Data Type Duplicate' : Unused code path elimination
+//  Block '<S148>/Scope' : Unused code path elimination
+//  Block '<S181>/Data Type Duplicate' : Unused code path elimination
+//  Block '<S182>/Data Type Duplicate' : Unused code path elimination
+//  Block '<S183>/Data Type Duplicate' : Unused code path elimination
 //  Block '<S185>/Data Type Duplicate' : Unused code path elimination
 //  Block '<S186>/Data Type Duplicate' : Unused code path elimination
-//  Block '<S188>/Data Type Duplicate' : Unused code path elimination
-//  Block '<S189>/Data Type Duplicate' : Unused code path elimination
+//  Block '<S187>/Data Type Duplicate' : Unused code path elimination
 //  Block '<S190>/Data Type Duplicate' : Unused code path elimination
-//  Block '<S193>/Data Type Duplicate' : Unused code path elimination
-//  Block '<S194>/Data Type Duplicate' : Unused code path elimination
+//  Block '<S191>/Data Type Duplicate' : Unused code path elimination
+//  Block '<S192>/Data Type Duplicate' : Unused code path elimination
 //  Block '<S195>/Data Type Duplicate' : Unused code path elimination
-//  Block '<S198>/Data Type Duplicate' : Unused code path elimination
-//  Block '<S199>/Data Type Duplicate' : Unused code path elimination
-//  Block '<S200>/Data Type Duplicate' : Unused code path elimination
+//  Block '<S196>/Data Type Duplicate' : Unused code path elimination
+//  Block '<S197>/Data Type Duplicate' : Unused code path elimination
 //  Block '<S5>/Scope' : Unused code path elimination
 //  Block '<Root>/If 'simMode' set to '1', then this is a simulation and the dynamics will be simulated. Otherwise, this is an experiment, and the simulation will not be run.' : Unused code path elimination
-//  Block '<S229>/Scope' : Unused code path elimination
-//  Block '<S229>/Scope1' : Unused code path elimination
-//  Block '<S229>/Scope2' : Unused code path elimination
-//  Block '<S229>/Scope3' : Unused code path elimination
-//  Block '<S267>/Cast To Double3' : Unused code path elimination
-//  Block '<S267>/Scope' : Unused code path elimination
-//  Block '<S209>/Data Type Conversion1' : Eliminate redundant data type conversion
-//  Block '<S210>/Data Type Conversion2' : Eliminate redundant data type conversion
-//  Block '<S211>/Data Type Conversion' : Eliminate redundant data type conversion
+//  Block '<S226>/Scope1' : Unused code path elimination
+//  Block '<S226>/Scope2' : Unused code path elimination
+//  Block '<S226>/Scope3' : Unused code path elimination
+//  Block '<S264>/Scope' : Unused code path elimination
+//  Block '<S206>/Data Type Conversion1' : Eliminate redundant data type conversion
+//  Block '<S207>/Data Type Conversion2' : Eliminate redundant data type conversion
+//  Block '<S208>/Data Type Conversion' : Eliminate redundant data type conversion
+//  Block '<S213>/Reshape' : Reshape block reduction
+//  Block '<S214>/Reshape' : Reshape block reduction
+//  Block '<S215>/Reshape' : Reshape block reduction
 //  Block '<S216>/Reshape' : Reshape block reduction
-//  Block '<S217>/Reshape' : Reshape block reduction
-//  Block '<S218>/Reshape' : Reshape block reduction
-//  Block '<S219>/Reshape' : Reshape block reduction
 
 
 //-
@@ -2184,139 +2184,139 @@ extern volatile boolean_T runModel;
 //  '<S132>' : 'GNC2026W/2 - Guidance/Custom PPL (RED)/Navigation Filter/UKF/Camera to Inertial Frame'
 //  '<S133>' : 'GNC2026W/2 - Guidance/Custom PPL (RED)/Navigation Filter/UKF/Unscented Kalman Filter'
 //  '<S134>' : 'GNC2026W/2 - Guidance/Custom PPL (RED)/Navigation Filter/UKF/Unwrap'
-//  '<S135>' : 'GNC2026W/2 - Guidance/Custom PPL (RED)/Navigation Filter/UKF/Unwrap1'
-//  '<S136>' : 'GNC2026W/2 - Guidance/Custom PPL (RED)/Navigation Filter/UKF/Unwrap/Unwrap'
-//  '<S137>' : 'GNC2026W/2 - Guidance/Custom PPL (RED)/Navigation Filter/UKF/Unwrap/Unwrap/MATLAB Function'
-//  '<S138>' : 'GNC2026W/2 - Guidance/Custom PPL (RED)/Navigation Filter/UKF/Unwrap1/Unwrap'
-//  '<S139>' : 'GNC2026W/2 - Guidance/Custom PPL (RED)/Navigation Filter/UKF/Unwrap1/Unwrap/MATLAB Function'
-//  '<S140>' : 'GNC2026W/2 - Guidance/Custom PPL (RED)/Unwrap/Unwrap'
-//  '<S141>' : 'GNC2026W/2 - Guidance/Custom PPL (RED)/Unwrap/Unwrap/MATLAB Function'
-//  '<S142>' : 'GNC2026W/2 - Guidance/Disable PPL (ARM)/Desired Position'
-//  '<S143>' : 'GNC2026W/2 - Guidance/Disable PPL (BLACK)/Desired Position'
-//  '<S144>' : 'GNC2026W/2 - Guidance/Disable PPL (BLUE)/Desired Position'
-//  '<S145>' : 'GNC2026W/2 - Guidance/Disable PPL (RED)/Desired Position'
-//  '<S146>' : 'GNC2026W/3 - Control/Custom Control (ARM)'
-//  '<S147>' : 'GNC2026W/3 - Control/Custom Control (RED)'
-//  '<S148>' : 'GNC2026W/3 - Control/Default LQR Control (BLACK)'
-//  '<S149>' : 'GNC2026W/3 - Control/Default LQR Control (BLUE)'
-//  '<S150>' : 'GNC2026W/3 - Control/Default LQR Control (RED)'
-//  '<S151>' : 'GNC2026W/3 - Control/Default PD (ARM)'
-//  '<S152>' : 'GNC2026W/3 - Control/Default PD Control (BLACK)'
-//  '<S153>' : 'GNC2026W/3 - Control/Default PD Control (BLUE)'
-//  '<S154>' : 'GNC2026W/3 - Control/Default PD Control (RED)'
-//  '<S155>' : 'GNC2026W/3 - Control/Disable Control (ARM)'
-//  '<S156>' : 'GNC2026W/3 - Control/Disable Thrusters (BLACK)'
-//  '<S157>' : 'GNC2026W/3 - Control/Disable Thrusters (BLUE)'
-//  '<S158>' : 'GNC2026W/3 - Control/Disable Thrusters (RED)'
-//  '<S159>' : 'GNC2026W/3 - Control/Custom Control (RED)/MATLAB Function2'
-//  '<S160>' : 'GNC2026W/3 - Control/Custom Control (RED)/MATLAB Function3'
-//  '<S161>' : 'GNC2026W/3 - Control/Custom Control (RED)/Unwrap'
-//  '<S162>' : 'GNC2026W/3 - Control/Custom Control (RED)/Unwrap/Unwrap'
-//  '<S163>' : 'GNC2026W/3 - Control/Custom Control (RED)/Unwrap/Unwrap/MATLAB Function'
-//  '<S164>' : 'GNC2026W/3 - Control/Default LQR Control (BLACK)/Calculate Error'
-//  '<S165>' : 'GNC2026W/3 - Control/Default LQR Control (BLACK)/Discrete Derivative'
-//  '<S166>' : 'GNC2026W/3 - Control/Default LQR Control (BLACK)/Discrete Derivative1'
-//  '<S167>' : 'GNC2026W/3 - Control/Default LQR Control (BLACK)/Discrete Derivative2'
-//  '<S168>' : 'GNC2026W/3 - Control/Default LQR Control (BLACK)/Calculate Error/MATLAB Function'
-//  '<S169>' : 'GNC2026W/3 - Control/Default LQR Control (BLUE)/Calculate Error'
-//  '<S170>' : 'GNC2026W/3 - Control/Default LQR Control (BLUE)/Discrete Derivative'
-//  '<S171>' : 'GNC2026W/3 - Control/Default LQR Control (BLUE)/Discrete Derivative1'
-//  '<S172>' : 'GNC2026W/3 - Control/Default LQR Control (BLUE)/Discrete Derivative2'
-//  '<S173>' : 'GNC2026W/3 - Control/Default LQR Control (BLUE)/Calculate Error/MATLAB Function'
-//  '<S174>' : 'GNC2026W/3 - Control/Default LQR Control (RED)/Calculate Error'
-//  '<S175>' : 'GNC2026W/3 - Control/Default LQR Control (RED)/Discrete Derivative'
-//  '<S176>' : 'GNC2026W/3 - Control/Default LQR Control (RED)/Discrete Derivative1'
-//  '<S177>' : 'GNC2026W/3 - Control/Default LQR Control (RED)/Discrete Derivative2'
-//  '<S178>' : 'GNC2026W/3 - Control/Default LQR Control (RED)/Calculate Error/MATLAB Function'
-//  '<S179>' : 'GNC2026W/3 - Control/Default PD (ARM)/Passthrough for Experiment'
-//  '<S180>' : 'GNC2026W/3 - Control/Default PD (ARM)/Simulated Position Controller'
-//  '<S181>' : 'GNC2026W/3 - Control/Default PD (ARM)/Simulated Position Controller/Custom Discrete PD (Elbow)'
-//  '<S182>' : 'GNC2026W/3 - Control/Default PD (ARM)/Simulated Position Controller/Custom Discrete PD (Shoulder)'
-//  '<S183>' : 'GNC2026W/3 - Control/Default PD (ARM)/Simulated Position Controller/Custom Discrete PD (Wrist)'
-//  '<S184>' : 'GNC2026W/3 - Control/Default PD (ARM)/Simulated Position Controller/Custom Discrete PD (Elbow)/Discrete Derivative1'
-//  '<S185>' : 'GNC2026W/3 - Control/Default PD (ARM)/Simulated Position Controller/Custom Discrete PD (Shoulder)/Discrete Derivative1'
-//  '<S186>' : 'GNC2026W/3 - Control/Default PD (ARM)/Simulated Position Controller/Custom Discrete PD (Wrist)/Discrete Derivative1'
-//  '<S187>' : 'GNC2026W/3 - Control/Default PD Control (BLACK)/Calculate Error'
-//  '<S188>' : 'GNC2026W/3 - Control/Default PD Control (BLACK)/Discrete Derivative'
-//  '<S189>' : 'GNC2026W/3 - Control/Default PD Control (BLACK)/Discrete Derivative1'
-//  '<S190>' : 'GNC2026W/3 - Control/Default PD Control (BLACK)/Discrete Derivative2'
-//  '<S191>' : 'GNC2026W/3 - Control/Default PD Control (BLACK)/Calculate Error/MATLAB Function'
-//  '<S192>' : 'GNC2026W/3 - Control/Default PD Control (BLUE)/Calculate Error'
-//  '<S193>' : 'GNC2026W/3 - Control/Default PD Control (BLUE)/Discrete Derivative'
-//  '<S194>' : 'GNC2026W/3 - Control/Default PD Control (BLUE)/Discrete Derivative1'
-//  '<S195>' : 'GNC2026W/3 - Control/Default PD Control (BLUE)/Discrete Derivative2'
-//  '<S196>' : 'GNC2026W/3 - Control/Default PD Control (BLUE)/Calculate Error/MATLAB Function'
-//  '<S197>' : 'GNC2026W/3 - Control/Default PD Control (RED)/Calculate Error'
-//  '<S198>' : 'GNC2026W/3 - Control/Default PD Control (RED)/Discrete Derivative'
-//  '<S199>' : 'GNC2026W/3 - Control/Default PD Control (RED)/Discrete Derivative1'
-//  '<S200>' : 'GNC2026W/3 - Control/Default PD Control (RED)/Discrete Derivative2'
-//  '<S201>' : 'GNC2026W/3 - Control/Default PD Control (RED)/Calculate Error/MATLAB Function'
-//  '<S202>' : 'GNC2026W/Check  Connection/Change BLACK Behavior'
-//  '<S203>' : 'GNC2026W/Check  Connection/Change BLUE Behavior'
-//  '<S204>' : 'GNC2026W/Check  Connection/Change RED Behavior'
-//  '<S205>' : 'GNC2026W/Data Logger Subsystem/Data Logger'
-//  '<S206>' : 'GNC2026W/Data Logger Subsystem/Separation'
-//  '<S207>' : 'GNC2026W/Data Logger Subsystem/Data Logger/MATLAB Function'
-//  '<S208>' : 'GNC2026W/Data Logger Subsystem/Separation/MATLAB Function'
-//  '<S209>' : 'GNC2026W/Debugger/Change BLACK Behavior'
-//  '<S210>' : 'GNC2026W/Debugger/Change BLUE Behavior'
-//  '<S211>' : 'GNC2026W/Debugger/Change RED Behavior'
-//  '<S212>' : 'GNC2026W/Float Code/Enable Pucks'
-//  '<S213>' : 'GNC2026W/Manipulator Encoder Data/Change ARM Behavior'
-//  '<S214>' : 'GNC2026W/PhaseSpace Camera Code/Initialize Universal Time (Simulation)'
-//  '<S215>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States'
-//  '<S216>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Receive and Process Phasespace Data'
-//  '<S217>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLACK Data'
-//  '<S218>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLUE Data'
-//  '<S219>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store RED Data'
-//  '<S220>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Receive and Process Phasespace Data/Check for Sychronization (Updated)'
-//  '<S221>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Receive and Process Phasespace Data/Check for Sychronization (Updated)/Enabled Subsystem2'
-//  '<S222>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Receive and Process Phasespace Data/Check for Sychronization (Updated)/MATLAB Function'
-//  '<S223>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Receive and Process Phasespace Data/Check for Sychronization (Updated)/MATLAB Function1'
-//  '<S224>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Receive and Process Phasespace Data/Check for Sychronization (Updated)/Send Sync. Time'
-//  '<S225>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Receive and Process Phasespace Data/Check for Sychronization (Updated)/Send Sync. Time/Change BLACK Behavior'
-//  '<S226>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Receive and Process Phasespace Data/Check for Sychronization (Updated)/Send Sync. Time/Change BLUE Behavior'
-//  '<S227>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Receive and Process Phasespace Data/Check for Sychronization (Updated)/Send Sync. Time/Change RED Behavior'
-//  '<S228>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLACK Data/Calculate True  Time Step'
-//  '<S229>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLACK Data/Simulated Noise '
-//  '<S230>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLACK Data/Subsystem1'
-//  '<S231>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLACK Data/Subsystem2'
-//  '<S232>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLACK Data/Wrap'
-//  '<S233>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLACK Data/Calculate True  Time Step/Enabled Subsystem3'
-//  '<S234>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLACK Data/Calculate True  Time Step/MATLAB Function'
-//  '<S235>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLACK Data/Simulated Noise /CV Noise'
-//  '<S236>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLACK Data/Simulated Noise /Inertial to Camera Frame (HARDWARE)'
-//  '<S237>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLACK Data/Simulated Noise /MATLAB Function1'
-//  '<S238>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLACK Data/Simulated Noise /Sample and Hold'
-//  '<S239>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLACK Data/Simulated Noise /Unwrap'
-//  '<S240>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLACK Data/Simulated Noise /Unwrap/Unwrap'
-//  '<S241>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLACK Data/Simulated Noise /Unwrap/Unwrap/MATLAB Function'
-//  '<S242>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLACK Data/Subsystem1/Enabled Subsystem'
-//  '<S243>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLACK Data/Subsystem1/Enabled Subsystem/MATLAB Function'
-//  '<S244>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLACK Data/Subsystem2/Enabled Subsystem'
-//  '<S245>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLACK Data/Subsystem2/Enabled Subsystem/MATLAB Function'
-//  '<S246>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLUE Data/Calculate True  Time Step'
-//  '<S247>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLUE Data/Subsystem1'
-//  '<S248>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLUE Data/Subsystem2'
-//  '<S249>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLUE Data/Wrap'
-//  '<S250>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLUE Data/Calculate True  Time Step/Enabled Subsystem3'
-//  '<S251>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLUE Data/Calculate True  Time Step/MATLAB Function'
-//  '<S252>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLUE Data/Subsystem1/Enabled Subsystem'
-//  '<S253>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLUE Data/Subsystem1/Enabled Subsystem/MATLAB Function'
-//  '<S254>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLUE Data/Subsystem2/Enabled Subsystem'
-//  '<S255>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLUE Data/Subsystem2/Enabled Subsystem/MATLAB Function'
-//  '<S256>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store RED Data/Calculate True  Time Step'
-//  '<S257>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store RED Data/Subsystem1'
-//  '<S258>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store RED Data/Subsystem2'
-//  '<S259>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store RED Data/Wrap'
-//  '<S260>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store RED Data/Calculate True  Time Step/Enabled Subsystem3'
-//  '<S261>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store RED Data/Calculate True  Time Step/MATLAB Function'
-//  '<S262>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store RED Data/Subsystem1/Enabled Subsystem'
-//  '<S263>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store RED Data/Subsystem1/Enabled Subsystem/MATLAB Function'
-//  '<S264>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store RED Data/Subsystem2/Enabled Subsystem'
-//  '<S265>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store RED Data/Subsystem2/Enabled Subsystem/MATLAB Function'
-//  '<S266>' : 'GNC2026W/Platform  Identification/Subsystem'
-//  '<S267>' : 'GNC2026W/Receive CV Data/CV UDP'
+//  '<S135>' : 'GNC2026W/2 - Guidance/Custom PPL (RED)/Navigation Filter/UKF/Unwrap/Unwrap'
+//  '<S136>' : 'GNC2026W/2 - Guidance/Custom PPL (RED)/Navigation Filter/UKF/Unwrap/Unwrap/MATLAB Function'
+//  '<S137>' : 'GNC2026W/2 - Guidance/Custom PPL (RED)/Unwrap/Unwrap'
+//  '<S138>' : 'GNC2026W/2 - Guidance/Custom PPL (RED)/Unwrap/Unwrap/MATLAB Function'
+//  '<S139>' : 'GNC2026W/2 - Guidance/Disable PPL (ARM)/Desired Position'
+//  '<S140>' : 'GNC2026W/2 - Guidance/Disable PPL (BLACK)/Desired Position'
+//  '<S141>' : 'GNC2026W/2 - Guidance/Disable PPL (BLUE)/Desired Position'
+//  '<S142>' : 'GNC2026W/2 - Guidance/Disable PPL (RED)/Desired Position'
+//  '<S143>' : 'GNC2026W/3 - Control/Custom Control (ARM)'
+//  '<S144>' : 'GNC2026W/3 - Control/Custom Control (RED)'
+//  '<S145>' : 'GNC2026W/3 - Control/Default LQR Control (BLACK)'
+//  '<S146>' : 'GNC2026W/3 - Control/Default LQR Control (BLUE)'
+//  '<S147>' : 'GNC2026W/3 - Control/Default LQR Control (RED)'
+//  '<S148>' : 'GNC2026W/3 - Control/Default PD (ARM)'
+//  '<S149>' : 'GNC2026W/3 - Control/Default PD Control (BLACK)'
+//  '<S150>' : 'GNC2026W/3 - Control/Default PD Control (BLUE)'
+//  '<S151>' : 'GNC2026W/3 - Control/Default PD Control (RED)'
+//  '<S152>' : 'GNC2026W/3 - Control/Disable Control (ARM)'
+//  '<S153>' : 'GNC2026W/3 - Control/Disable Thrusters (BLACK)'
+//  '<S154>' : 'GNC2026W/3 - Control/Disable Thrusters (BLUE)'
+//  '<S155>' : 'GNC2026W/3 - Control/Disable Thrusters (RED)'
+//  '<S156>' : 'GNC2026W/3 - Control/Custom Control (RED)/MATLAB Function2'
+//  '<S157>' : 'GNC2026W/3 - Control/Custom Control (RED)/MATLAB Function3'
+//  '<S158>' : 'GNC2026W/3 - Control/Custom Control (RED)/Unwrap'
+//  '<S159>' : 'GNC2026W/3 - Control/Custom Control (RED)/Unwrap/Unwrap'
+//  '<S160>' : 'GNC2026W/3 - Control/Custom Control (RED)/Unwrap/Unwrap/MATLAB Function'
+//  '<S161>' : 'GNC2026W/3 - Control/Default LQR Control (BLACK)/Calculate Error'
+//  '<S162>' : 'GNC2026W/3 - Control/Default LQR Control (BLACK)/Discrete Derivative'
+//  '<S163>' : 'GNC2026W/3 - Control/Default LQR Control (BLACK)/Discrete Derivative1'
+//  '<S164>' : 'GNC2026W/3 - Control/Default LQR Control (BLACK)/Discrete Derivative2'
+//  '<S165>' : 'GNC2026W/3 - Control/Default LQR Control (BLACK)/Calculate Error/MATLAB Function'
+//  '<S166>' : 'GNC2026W/3 - Control/Default LQR Control (BLUE)/Calculate Error'
+//  '<S167>' : 'GNC2026W/3 - Control/Default LQR Control (BLUE)/Discrete Derivative'
+//  '<S168>' : 'GNC2026W/3 - Control/Default LQR Control (BLUE)/Discrete Derivative1'
+//  '<S169>' : 'GNC2026W/3 - Control/Default LQR Control (BLUE)/Discrete Derivative2'
+//  '<S170>' : 'GNC2026W/3 - Control/Default LQR Control (BLUE)/Calculate Error/MATLAB Function'
+//  '<S171>' : 'GNC2026W/3 - Control/Default LQR Control (RED)/Calculate Error'
+//  '<S172>' : 'GNC2026W/3 - Control/Default LQR Control (RED)/Discrete Derivative'
+//  '<S173>' : 'GNC2026W/3 - Control/Default LQR Control (RED)/Discrete Derivative1'
+//  '<S174>' : 'GNC2026W/3 - Control/Default LQR Control (RED)/Discrete Derivative2'
+//  '<S175>' : 'GNC2026W/3 - Control/Default LQR Control (RED)/Calculate Error/MATLAB Function'
+//  '<S176>' : 'GNC2026W/3 - Control/Default PD (ARM)/Passthrough for Experiment'
+//  '<S177>' : 'GNC2026W/3 - Control/Default PD (ARM)/Simulated Position Controller'
+//  '<S178>' : 'GNC2026W/3 - Control/Default PD (ARM)/Simulated Position Controller/Custom Discrete PD (Elbow)'
+//  '<S179>' : 'GNC2026W/3 - Control/Default PD (ARM)/Simulated Position Controller/Custom Discrete PD (Shoulder)'
+//  '<S180>' : 'GNC2026W/3 - Control/Default PD (ARM)/Simulated Position Controller/Custom Discrete PD (Wrist)'
+//  '<S181>' : 'GNC2026W/3 - Control/Default PD (ARM)/Simulated Position Controller/Custom Discrete PD (Elbow)/Discrete Derivative1'
+//  '<S182>' : 'GNC2026W/3 - Control/Default PD (ARM)/Simulated Position Controller/Custom Discrete PD (Shoulder)/Discrete Derivative1'
+//  '<S183>' : 'GNC2026W/3 - Control/Default PD (ARM)/Simulated Position Controller/Custom Discrete PD (Wrist)/Discrete Derivative1'
+//  '<S184>' : 'GNC2026W/3 - Control/Default PD Control (BLACK)/Calculate Error'
+//  '<S185>' : 'GNC2026W/3 - Control/Default PD Control (BLACK)/Discrete Derivative'
+//  '<S186>' : 'GNC2026W/3 - Control/Default PD Control (BLACK)/Discrete Derivative1'
+//  '<S187>' : 'GNC2026W/3 - Control/Default PD Control (BLACK)/Discrete Derivative2'
+//  '<S188>' : 'GNC2026W/3 - Control/Default PD Control (BLACK)/Calculate Error/MATLAB Function'
+//  '<S189>' : 'GNC2026W/3 - Control/Default PD Control (BLUE)/Calculate Error'
+//  '<S190>' : 'GNC2026W/3 - Control/Default PD Control (BLUE)/Discrete Derivative'
+//  '<S191>' : 'GNC2026W/3 - Control/Default PD Control (BLUE)/Discrete Derivative1'
+//  '<S192>' : 'GNC2026W/3 - Control/Default PD Control (BLUE)/Discrete Derivative2'
+//  '<S193>' : 'GNC2026W/3 - Control/Default PD Control (BLUE)/Calculate Error/MATLAB Function'
+//  '<S194>' : 'GNC2026W/3 - Control/Default PD Control (RED)/Calculate Error'
+//  '<S195>' : 'GNC2026W/3 - Control/Default PD Control (RED)/Discrete Derivative'
+//  '<S196>' : 'GNC2026W/3 - Control/Default PD Control (RED)/Discrete Derivative1'
+//  '<S197>' : 'GNC2026W/3 - Control/Default PD Control (RED)/Discrete Derivative2'
+//  '<S198>' : 'GNC2026W/3 - Control/Default PD Control (RED)/Calculate Error/MATLAB Function'
+//  '<S199>' : 'GNC2026W/Check  Connection/Change BLACK Behavior'
+//  '<S200>' : 'GNC2026W/Check  Connection/Change BLUE Behavior'
+//  '<S201>' : 'GNC2026W/Check  Connection/Change RED Behavior'
+//  '<S202>' : 'GNC2026W/Data Logger Subsystem/Data Logger'
+//  '<S203>' : 'GNC2026W/Data Logger Subsystem/Separation'
+//  '<S204>' : 'GNC2026W/Data Logger Subsystem/Data Logger/MATLAB Function'
+//  '<S205>' : 'GNC2026W/Data Logger Subsystem/Separation/MATLAB Function'
+//  '<S206>' : 'GNC2026W/Debugger/Change BLACK Behavior'
+//  '<S207>' : 'GNC2026W/Debugger/Change BLUE Behavior'
+//  '<S208>' : 'GNC2026W/Debugger/Change RED Behavior'
+//  '<S209>' : 'GNC2026W/Float Code/Enable Pucks'
+//  '<S210>' : 'GNC2026W/Manipulator Encoder Data/Change ARM Behavior'
+//  '<S211>' : 'GNC2026W/PhaseSpace Camera Code/Initialize Universal Time (Simulation)'
+//  '<S212>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States'
+//  '<S213>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Receive and Process Phasespace Data'
+//  '<S214>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLACK Data'
+//  '<S215>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLUE Data'
+//  '<S216>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store RED Data'
+//  '<S217>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Receive and Process Phasespace Data/Check for Sychronization (Updated)'
+//  '<S218>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Receive and Process Phasespace Data/Check for Sychronization (Updated)/Enabled Subsystem2'
+//  '<S219>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Receive and Process Phasespace Data/Check for Sychronization (Updated)/MATLAB Function'
+//  '<S220>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Receive and Process Phasespace Data/Check for Sychronization (Updated)/MATLAB Function1'
+//  '<S221>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Receive and Process Phasespace Data/Check for Sychronization (Updated)/Send Sync. Time'
+//  '<S222>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Receive and Process Phasespace Data/Check for Sychronization (Updated)/Send Sync. Time/Change BLACK Behavior'
+//  '<S223>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Receive and Process Phasespace Data/Check for Sychronization (Updated)/Send Sync. Time/Change BLUE Behavior'
+//  '<S224>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Receive and Process Phasespace Data/Check for Sychronization (Updated)/Send Sync. Time/Change RED Behavior'
+//  '<S225>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLACK Data/Calculate True  Time Step'
+//  '<S226>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLACK Data/Simulated Noise '
+//  '<S227>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLACK Data/Subsystem1'
+//  '<S228>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLACK Data/Subsystem2'
+//  '<S229>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLACK Data/Wrap'
+//  '<S230>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLACK Data/Calculate True  Time Step/Enabled Subsystem3'
+//  '<S231>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLACK Data/Calculate True  Time Step/MATLAB Function'
+//  '<S232>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLACK Data/Simulated Noise /BLK CoM to LAR'
+//  '<S233>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLACK Data/Simulated Noise /CV Noise'
+//  '<S234>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLACK Data/Simulated Noise /Inertial to Camera Frame (HARDWARE)'
+//  '<S235>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLACK Data/Simulated Noise /Sample and Hold'
+//  '<S236>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLACK Data/Simulated Noise /Unwrap'
+//  '<S237>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLACK Data/Simulated Noise /Unwrap/Unwrap'
+//  '<S238>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLACK Data/Simulated Noise /Unwrap/Unwrap/MATLAB Function'
+//  '<S239>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLACK Data/Subsystem1/Enabled Subsystem'
+//  '<S240>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLACK Data/Subsystem1/Enabled Subsystem/MATLAB Function'
+//  '<S241>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLACK Data/Subsystem2/Enabled Subsystem'
+//  '<S242>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLACK Data/Subsystem2/Enabled Subsystem/MATLAB Function'
+//  '<S243>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLUE Data/Calculate True  Time Step'
+//  '<S244>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLUE Data/Subsystem1'
+//  '<S245>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLUE Data/Subsystem2'
+//  '<S246>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLUE Data/Wrap'
+//  '<S247>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLUE Data/Calculate True  Time Step/Enabled Subsystem3'
+//  '<S248>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLUE Data/Calculate True  Time Step/MATLAB Function'
+//  '<S249>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLUE Data/Subsystem1/Enabled Subsystem'
+//  '<S250>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLUE Data/Subsystem1/Enabled Subsystem/MATLAB Function'
+//  '<S251>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLUE Data/Subsystem2/Enabled Subsystem'
+//  '<S252>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLUE Data/Subsystem2/Enabled Subsystem/MATLAB Function'
+//  '<S253>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store RED Data/Calculate True  Time Step'
+//  '<S254>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store RED Data/Subsystem1'
+//  '<S255>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store RED Data/Subsystem2'
+//  '<S256>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store RED Data/Wrap'
+//  '<S257>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store RED Data/Calculate True  Time Step/Enabled Subsystem3'
+//  '<S258>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store RED Data/Calculate True  Time Step/MATLAB Function'
+//  '<S259>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store RED Data/Subsystem1/Enabled Subsystem'
+//  '<S260>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store RED Data/Subsystem1/Enabled Subsystem/MATLAB Function'
+//  '<S261>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store RED Data/Subsystem2/Enabled Subsystem'
+//  '<S262>' : 'GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store RED Data/Subsystem2/Enabled Subsystem/MATLAB Function'
+//  '<S263>' : 'GNC2026W/Platform  Identification/Subsystem'
+//  '<S264>' : 'GNC2026W/Receive CV Data/CV UDP'
+//  '<S265>' : 'GNC2026W/Receive CV Data/CV UDP/Unwrap'
+//  '<S266>' : 'GNC2026W/Receive CV Data/CV UDP/Unwrap/Unwrap'
+//  '<S267>' : 'GNC2026W/Receive CV Data/CV UDP/Unwrap/Unwrap/MATLAB Function'
 //  '<S268>' : 'GNC2026W/Receive Data from Orin/Subsystem'
 //  '<S269>' : 'GNC2026W/Robotic  Arm Code/Change ARM Behavior'
 //  '<S270>' : 'GNC2026W/Send Data  to Orin/Subsystem'

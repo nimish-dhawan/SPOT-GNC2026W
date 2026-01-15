@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'GNC2026W'.
 //
-// Model version                  : 4.1434
+// Model version                  : 4.1460
 // Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
-// C/C++ source code generated on : Wed Jan 14 17:11:57 2026
+// C/C++ source code generated on : Thu Jan 15 17:02:55 2026
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: ARM Compatible->ARM Cortex-A (64-bit)
@@ -21,7 +21,7 @@
 // Block parameters (default storage)
 P_GNC2026W_T GNC2026W_P = {
   // Variable: A_c
-  //  Referenced by: '<S147>/Constant7'
+  //  Referenced by: '<S144>/Constant7'
 
   { 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0 },
 
@@ -29,7 +29,7 @@ P_GNC2026W_T GNC2026W_P = {
   //  Referenced by:
   //    '<S30>/First Fit Detector'
   //    '<S130>/Unscented Kalman Filter'
-  //    '<S229>/Sample and Hold'
+  //    '<S226>/Sample and Hold'
 
   0.2,
 
@@ -65,12 +65,12 @@ P_GNC2026W_T GNC2026W_P = {
   { 0.2825, 0.2825, 0.2825, 0.2825, 0.2825, 0.2825, 0.2825, 0.2825 },
 
   // Variable: F_u
-  //  Referenced by: '<S147>/Constant3'
+  //  Referenced by: '<S144>/Constant3'
 
   { 0.0, 0.0, 0.0 },
 
   // Variable: K_BLACK
-  //  Referenced by: '<S148>/Constant2'
+  //  Referenced by: '<S145>/Constant2'
 
   { 0.40261011025699511, -3.4287825942218297E-15, -7.6568971511887352E-15,
     4.896176968930996E-15, 0.40261011025700855, -3.7902115134773985E-15,
@@ -80,7 +80,7 @@ P_GNC2026W_T GNC2026W_P = {
     -7.5643673053589907E-16, -7.9653463685425227E-16, 0.40690949597934273 },
 
   // Variable: K_BLUE
-  //  Referenced by: '<S149>/Constant2'
+  //  Referenced by: '<S146>/Constant2'
 
   { 0.40261011025701493, 1.2206182528119487E-14, -1.4639288893715909E-15,
     -9.4230274216387939E-15, 0.40261011025700266, 4.1197784005288409E-15,
@@ -90,7 +90,7 @@ P_GNC2026W_T GNC2026W_P = {
     -6.4042550040150137E-16, 3.4893935173859177E-16, 0.40554915553132265 },
 
   // Variable: K_RED
-  //  Referenced by: '<S150>/Constant2'
+  //  Referenced by: '<S147>/Constant2'
 
   { 0.40256594667683754, 2.0662088914679269E-14, -1.7996031327371092E-15,
     2.6520865059578737E-16, 0.40256594667684487, 1.2018851384452491E-14,
@@ -100,127 +100,127 @@ P_GNC2026W_T GNC2026W_P = {
     -5.8460770909695588E-17, 4.1601121670017965E-17, 0.40636232022479712 },
 
   // Variable: Kd_elarm
-  //  Referenced by: '<S181>/kd_elarm'
+  //  Referenced by: '<S178>/kd_elarm'
 
   0.8,
 
   // Variable: Kd_sharm
-  //  Referenced by: '<S182>/kd_sharm'
+  //  Referenced by: '<S179>/kd_sharm'
 
   1.0,
 
   // Variable: Kd_tb
-  //  Referenced by: '<S152>/Gain5'
+  //  Referenced by: '<S149>/Gain5'
 
   1.8,
 
   // Variable: Kd_tblue
-  //  Referenced by: '<S153>/Gain5'
+  //  Referenced by: '<S150>/Gain5'
 
   1.8,
 
   // Variable: Kd_tr
-  //  Referenced by: '<S154>/Gain5'
+  //  Referenced by: '<S151>/Gain5'
 
   1.8,
 
   // Variable: Kd_wrarm
-  //  Referenced by: '<S183>/kd_wrarm'
+  //  Referenced by: '<S180>/kd_wrarm'
 
   0.6,
 
   // Variable: Kd_xb
-  //  Referenced by: '<S152>/Gain3'
+  //  Referenced by: '<S149>/Gain3'
 
   3.6,
 
   // Variable: Kd_xblue
-  //  Referenced by: '<S153>/Gain3'
+  //  Referenced by: '<S150>/Gain3'
 
   3.6,
 
   // Variable: Kd_xr
-  //  Referenced by: '<S154>/Gain3'
+  //  Referenced by: '<S151>/Gain3'
 
   3.6,
 
   // Variable: Kd_yb
-  //  Referenced by: '<S152>/Gain4'
+  //  Referenced by: '<S149>/Gain4'
 
   3.6,
 
   // Variable: Kd_yblue
-  //  Referenced by: '<S153>/Gain4'
+  //  Referenced by: '<S150>/Gain4'
 
   3.6,
 
   // Variable: Kd_yr
-  //  Referenced by: '<S154>/Gain4'
+  //  Referenced by: '<S151>/Gain4'
 
   3.6,
 
   // Variable: Kp_elarm
-  //  Referenced by: '<S181>/kp_elarm'
+  //  Referenced by: '<S178>/kp_elarm'
 
   1.2,
 
   // Variable: Kp_sharm
-  //  Referenced by: '<S182>/kp_sharm'
+  //  Referenced by: '<S179>/kp_sharm'
 
   1.5,
 
   // Variable: Kp_tb
-  //  Referenced by: '<S152>/Gain2'
+  //  Referenced by: '<S149>/Gain2'
 
   0.5,
 
   // Variable: Kp_tblue
-  //  Referenced by: '<S153>/Gain2'
+  //  Referenced by: '<S150>/Gain2'
 
   0.5,
 
   // Variable: Kp_tr
-  //  Referenced by: '<S154>/Gain2'
+  //  Referenced by: '<S151>/Gain2'
 
   0.5,
 
   // Variable: Kp_wrarm
-  //  Referenced by: '<S183>/kp_wrarm'
+  //  Referenced by: '<S180>/kp_wrarm'
 
   1.0,
 
   // Variable: Kp_xb
-  //  Referenced by: '<S152>/Gain'
+  //  Referenced by: '<S149>/Gain'
 
   1.0,
 
   // Variable: Kp_xblue
-  //  Referenced by: '<S153>/Gain'
+  //  Referenced by: '<S150>/Gain'
 
   1.0,
 
   // Variable: Kp_xr
-  //  Referenced by: '<S154>/Gain'
+  //  Referenced by: '<S151>/Gain'
 
   1.0,
 
   // Variable: Kp_yb
-  //  Referenced by: '<S152>/Gain1'
+  //  Referenced by: '<S149>/Gain1'
 
   1.0,
 
   // Variable: Kp_yblue
-  //  Referenced by: '<S153>/Gain1'
+  //  Referenced by: '<S150>/Gain1'
 
   1.0,
 
   // Variable: Kp_yr
-  //  Referenced by: '<S154>/Gain1'
+  //  Referenced by: '<S151>/Gain1'
 
   1.0,
 
   // Variable: Mc_inv
-  //  Referenced by: '<S147>/Constant6'
+  //  Referenced by: '<S144>/Constant6'
 
   { 0.082392683529702554, 0.0, 0.0, 0.0, 0.082392683529702554, 0.0, 0.0, 0.0,
     5.0463923588119766 },
@@ -310,17 +310,17 @@ P_GNC2026W_T GNC2026W_P = {
   { 0.05, 0.0, 0.0, 0.0, 0.05, 0.0, 0.0, 0.0, 0.05 },
 
   // Variable: Tz_lim_elarm
-  //  Referenced by: '<S180>/Saturation1'
+  //  Referenced by: '<S177>/Saturation1'
 
   0.1,
 
   // Variable: Tz_lim_sharm
-  //  Referenced by: '<S180>/Saturation'
+  //  Referenced by: '<S177>/Saturation'
 
   0.1,
 
   // Variable: Tz_lim_wrarm
-  //  Referenced by: '<S180>/Saturation3'
+  //  Referenced by: '<S177>/Saturation3'
 
   0.1,
 
@@ -366,22 +366,21 @@ P_GNC2026W_T GNC2026W_P = {
 
   // Variable: baseRate
   //  Referenced by:
-  //    '<S213>/Read Joint Positions using  Dynamixel Encoders'
-  //    '<S266>/WhoAmI'
+  //    '<S210>/Read Joint Positions using  Dynamixel Encoders'
+  //    '<S263>/WhoAmI'
   //    '<S269>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
   //    '<S30>/First Fit Detector'
   //    '<S129>/MEKF'
   //    '<S130>/Unscented Kalman Filter'
-  //    '<S229>/MATLAB Function1'
-  //    '<S229>/Sample and Hold'
+  //    '<S226>/Sample and Hold'
 
   0.05,
 
   // Variable: dataRate
   //  Referenced by:
-  //    '<S228>/Constant'
-  //    '<S246>/Constant'
-  //    '<S256>/Constant'
+  //    '<S225>/Constant'
+  //    '<S243>/Constant'
+  //    '<S253>/Constant'
 
   0.1,
 
@@ -419,14 +418,14 @@ P_GNC2026W_T GNC2026W_P = {
   // Variable: init_states_BLACK
   //  Referenced by:
   //    '<S26>/Desired States (BLACK)'
-  //    '<S140>/Delay'
-  //    '<S140>/Delay1'
-  //    '<S136>/Delay'
-  //    '<S136>/Delay1'
-  //    '<S138>/Delay'
-  //    '<S138>/Delay1'
-  //    '<S240>/Delay'
-  //    '<S240>/Delay1'
+  //    '<S137>/Delay'
+  //    '<S137>/Delay1'
+  //    '<S266>/Delay'
+  //    '<S266>/Delay1'
+  //    '<S135>/Delay'
+  //    '<S135>/Delay1'
+  //    '<S237>/Delay'
+  //    '<S237>/Delay1'
 
   { 0.4, 0.4, -0.78539816339744828 },
 
@@ -440,8 +439,8 @@ P_GNC2026W_T GNC2026W_P = {
   //    '<S28>/Constant2'
   //    '<S36>/Constant2'
   //    '<S55>/Constant2'
-  //    '<S162>/Delay'
-  //    '<S162>/Delay1'
+  //    '<S159>/Delay'
+  //    '<S159>/Delay1'
 
   { 3.0, 1.5, 3.1415926535897931 },
 
@@ -451,7 +450,7 @@ P_GNC2026W_T GNC2026W_P = {
   5.0,
 
   // Variable: platformSelection
-  //  Referenced by: '<S220>/MATLAB Function'
+  //  Referenced by: '<S217>/MATLAB Function'
 
   3.0,
 
@@ -525,107 +524,107 @@ P_GNC2026W_T GNC2026W_P = {
   2.41935,
 
   // Mask Parameter: DiscreteDerivative_ICPrevScaled
-  //  Referenced by: '<S198>/UD'
-
-  0.0,
-
-  // Mask Parameter: DiscreteDerivative1_ICPrevScale
-  //  Referenced by: '<S199>/UD'
-
-  0.0,
-
-  // Mask Parameter: DiscreteDerivative2_ICPrevScale
-  //  Referenced by: '<S200>/UD'
-
-  0.0,
-
-  // Mask Parameter: DiscreteDerivative_ICPrevScal_i
-  //  Referenced by: '<S175>/UD'
-
-  0.0,
-
-  // Mask Parameter: DiscreteDerivative1_ICPrevSca_e
-  //  Referenced by: '<S176>/UD'
-
-  0.0,
-
-  // Mask Parameter: DiscreteDerivative2_ICPrevSca_o
-  //  Referenced by: '<S177>/UD'
-
-  0.0,
-
-  // Mask Parameter: DiscreteDerivative_ICPrevScal_p
-  //  Referenced by: '<S188>/UD'
-
-  0.0,
-
-  // Mask Parameter: DiscreteDerivative1_ICPrevSca_m
-  //  Referenced by: '<S189>/UD'
-
-  0.0,
-
-  // Mask Parameter: DiscreteDerivative2_ICPrevSca_a
-  //  Referenced by: '<S190>/UD'
-
-  0.0,
-
-  // Mask Parameter: DiscreteDerivative_ICPrevScal_d
-  //  Referenced by: '<S165>/UD'
-
-  0.0,
-
-  // Mask Parameter: DiscreteDerivative1_ICPrevSca_i
-  //  Referenced by: '<S166>/UD'
-
-  0.0,
-
-  // Mask Parameter: DiscreteDerivative2_ICPrevSc_oo
-  //  Referenced by: '<S167>/UD'
-
-  0.0,
-
-  // Mask Parameter: DiscreteDerivative_ICPrevSca_pf
-  //  Referenced by: '<S193>/UD'
-
-  0.0,
-
-  // Mask Parameter: DiscreteDerivative1_ICPrevSca_l
-  //  Referenced by: '<S194>/UD'
-
-  0.0,
-
-  // Mask Parameter: DiscreteDerivative2_ICPrevSc_on
   //  Referenced by: '<S195>/UD'
 
   0.0,
 
-  // Mask Parameter: DiscreteDerivative_ICPrevScal_n
-  //  Referenced by: '<S170>/UD'
+  // Mask Parameter: DiscreteDerivative1_ICPrevScale
+  //  Referenced by: '<S196>/UD'
 
   0.0,
 
-  // Mask Parameter: DiscreteDerivative1_ICPrevSca_f
-  //  Referenced by: '<S171>/UD'
+  // Mask Parameter: DiscreteDerivative2_ICPrevScale
+  //  Referenced by: '<S197>/UD'
 
   0.0,
 
-  // Mask Parameter: DiscreteDerivative2_ICPrevSca_g
+  // Mask Parameter: DiscreteDerivative_ICPrevScal_i
   //  Referenced by: '<S172>/UD'
 
   0.0,
 
-  // Mask Parameter: DiscreteDerivative1_ICPrevSca_j
-  //  Referenced by: '<S184>/UD'
+  // Mask Parameter: DiscreteDerivative1_ICPrevSca_e
+  //  Referenced by: '<S173>/UD'
 
   0.0,
 
-  // Mask Parameter: DiscreteDerivative1_ICPrevSca_a
+  // Mask Parameter: DiscreteDerivative2_ICPrevSca_o
+  //  Referenced by: '<S174>/UD'
+
+  0.0,
+
+  // Mask Parameter: DiscreteDerivative_ICPrevScal_p
   //  Referenced by: '<S185>/UD'
 
   0.0,
 
-  // Mask Parameter: DiscreteDerivative1_ICPrevSca_k
+  // Mask Parameter: DiscreteDerivative1_ICPrevSca_m
   //  Referenced by: '<S186>/UD'
+
+  0.0,
+
+  // Mask Parameter: DiscreteDerivative2_ICPrevSca_a
+  //  Referenced by: '<S187>/UD'
+
+  0.0,
+
+  // Mask Parameter: DiscreteDerivative_ICPrevScal_d
+  //  Referenced by: '<S162>/UD'
+
+  0.0,
+
+  // Mask Parameter: DiscreteDerivative1_ICPrevSca_i
+  //  Referenced by: '<S163>/UD'
+
+  0.0,
+
+  // Mask Parameter: DiscreteDerivative2_ICPrevSc_oo
+  //  Referenced by: '<S164>/UD'
+
+  0.0,
+
+  // Mask Parameter: DiscreteDerivative_ICPrevSca_pf
+  //  Referenced by: '<S190>/UD'
+
+  0.0,
+
+  // Mask Parameter: DiscreteDerivative1_ICPrevSca_l
+  //  Referenced by: '<S191>/UD'
+
+  0.0,
+
+  // Mask Parameter: DiscreteDerivative2_ICPrevSc_on
+  //  Referenced by: '<S192>/UD'
+
+  0.0,
+
+  // Mask Parameter: DiscreteDerivative_ICPrevScal_n
+  //  Referenced by: '<S167>/UD'
+
+  0.0,
+
+  // Mask Parameter: DiscreteDerivative1_ICPrevSca_f
+  //  Referenced by: '<S168>/UD'
+
+  0.0,
+
+  // Mask Parameter: DiscreteDerivative2_ICPrevSca_g
+  //  Referenced by: '<S169>/UD'
+
+  0.0,
+
+  // Mask Parameter: DiscreteDerivative1_ICPrevSca_j
+  //  Referenced by: '<S181>/UD'
+
+  0.0,
+
+  // Mask Parameter: DiscreteDerivative1_ICPrevSca_a
+  //  Referenced by: '<S182>/UD'
+
+  0.0,
+
+  // Mask Parameter: DiscreteDerivative1_ICPrevSca_k
+  //  Referenced by: '<S183>/UD'
 
   0.0,
 
@@ -1137,266 +1136,276 @@ P_GNC2026W_T GNC2026W_P = {
     0.0, 0.0, 0.0, 0.0, 0.0, 0.05 },
 
   // Computed Parameter: TSamp_WtEt
-  //  Referenced by: '<S198>/TSamp'
-
-  20.0,
-
-  // Computed Parameter: TSamp_WtEt_f
-  //  Referenced by: '<S199>/TSamp'
-
-  20.0,
-
-  // Computed Parameter: TSamp_WtEt_c
-  //  Referenced by: '<S200>/TSamp'
-
-  20.0,
-
-  // Expression: -1
-  //  Referenced by: '<S154>/Gain6'
-
-  -1.0,
-
-  // Expression: -1
-  //  Referenced by: '<S154>/Gain7'
-
-  -1.0,
-
-  // Expression: -1
-  //  Referenced by: '<S154>/Gain8'
-
-  -1.0,
-
-  // Computed Parameter: TSamp_WtEt_h
-  //  Referenced by: '<S175>/TSamp'
-
-  20.0,
-
-  // Computed Parameter: TSamp_WtEt_e
-  //  Referenced by: '<S176>/TSamp'
-
-  20.0,
-
-  // Computed Parameter: TSamp_WtEt_n
-  //  Referenced by: '<S177>/TSamp'
-
-  20.0,
-
-  // Expression: diag(alpha)
-  //  Referenced by: '<S147>/Constant8'
-
-  { 2.0, 0.0, 0.0, 0.0, 2.0, 0.0, 0.0, 0.0, 2.0 },
-
-  // Expression: diag(gamma)
-  //  Referenced by: '<S147>/Constant9'
-
-  { 0.1, 0.0, 0.0, 0.0, 0.1, 0.0, 0.0, 0.0, 0.5 },
-
-  // Computed Parameter: TSamp_WtEt_i
-  //  Referenced by: '<S188>/TSamp'
-
-  20.0,
-
-  // Computed Parameter: TSamp_WtEt_hr
-  //  Referenced by: '<S189>/TSamp'
-
-  20.0,
-
-  // Computed Parameter: TSamp_WtEt_ca
-  //  Referenced by: '<S190>/TSamp'
-
-  20.0,
-
-  // Expression: -1
-  //  Referenced by: '<S152>/Gain6'
-
-  -1.0,
-
-  // Expression: -1
-  //  Referenced by: '<S152>/Gain7'
-
-  -1.0,
-
-  // Expression: -1
-  //  Referenced by: '<S152>/Gain8'
-
-  -1.0,
-
-  // Computed Parameter: TSamp_WtEt_nd
-  //  Referenced by: '<S165>/TSamp'
-
-  20.0,
-
-  // Computed Parameter: TSamp_WtEt_co
-  //  Referenced by: '<S166>/TSamp'
-
-  20.0,
-
-  // Computed Parameter: TSamp_WtEt_no
-  //  Referenced by: '<S167>/TSamp'
-
-  20.0,
-
-  // Computed Parameter: TSamp_WtEt_p
-  //  Referenced by: '<S193>/TSamp'
-
-  20.0,
-
-  // Computed Parameter: TSamp_WtEt_o
-  //  Referenced by: '<S194>/TSamp'
-
-  20.0,
-
-  // Computed Parameter: TSamp_WtEt_px
   //  Referenced by: '<S195>/TSamp'
 
   20.0,
 
-  // Expression: -1
-  //  Referenced by: '<S153>/Gain6'
-
-  -1.0,
-
-  // Expression: -1
-  //  Referenced by: '<S153>/Gain7'
-
-  -1.0,
-
-  // Expression: -1
-  //  Referenced by: '<S153>/Gain8'
-
-  -1.0,
-
-  // Computed Parameter: TSamp_WtEt_ft
-  //  Referenced by: '<S170>/TSamp'
+  // Computed Parameter: TSamp_WtEt_f
+  //  Referenced by: '<S196>/TSamp'
 
   20.0,
 
-  // Computed Parameter: TSamp_WtEt_eh
-  //  Referenced by: '<S171>/TSamp'
+  // Computed Parameter: TSamp_WtEt_c
+  //  Referenced by: '<S197>/TSamp'
 
   20.0,
 
-  // Computed Parameter: TSamp_WtEt_ii
+  // Expression: -1
+  //  Referenced by: '<S151>/Gain6'
+
+  -1.0,
+
+  // Expression: -1
+  //  Referenced by: '<S151>/Gain7'
+
+  -1.0,
+
+  // Expression: -1
+  //  Referenced by: '<S151>/Gain8'
+
+  -1.0,
+
+  // Computed Parameter: TSamp_WtEt_h
   //  Referenced by: '<S172>/TSamp'
 
   20.0,
 
-  // Computed Parameter: TSamp_WtEt_pu
-  //  Referenced by: '<S184>/TSamp'
+  // Computed Parameter: TSamp_WtEt_e
+  //  Referenced by: '<S173>/TSamp'
 
   20.0,
 
-  // Computed Parameter: TSamp_WtEt_f0
+  // Computed Parameter: TSamp_WtEt_n
+  //  Referenced by: '<S174>/TSamp'
+
+  20.0,
+
+  // Expression: diag(alpha)
+  //  Referenced by: '<S144>/Constant8'
+
+  { 2.0, 0.0, 0.0, 0.0, 2.0, 0.0, 0.0, 0.0, 2.0 },
+
+  // Expression: diag(gamma)
+  //  Referenced by: '<S144>/Constant9'
+
+  { 0.1, 0.0, 0.0, 0.0, 0.1, 0.0, 0.0, 0.0, 0.5 },
+
+  // Computed Parameter: TSamp_WtEt_i
   //  Referenced by: '<S185>/TSamp'
 
   20.0,
 
-  // Computed Parameter: TSamp_WtEt_nz
+  // Computed Parameter: TSamp_WtEt_hr
   //  Referenced by: '<S186>/TSamp'
 
   20.0,
 
+  // Computed Parameter: TSamp_WtEt_ca
+  //  Referenced by: '<S187>/TSamp'
+
+  20.0,
+
+  // Expression: -1
+  //  Referenced by: '<S149>/Gain6'
+
+  -1.0,
+
+  // Expression: -1
+  //  Referenced by: '<S149>/Gain7'
+
+  -1.0,
+
+  // Expression: -1
+  //  Referenced by: '<S149>/Gain8'
+
+  -1.0,
+
+  // Computed Parameter: TSamp_WtEt_nd
+  //  Referenced by: '<S162>/TSamp'
+
+  20.0,
+
+  // Computed Parameter: TSamp_WtEt_co
+  //  Referenced by: '<S163>/TSamp'
+
+  20.0,
+
+  // Computed Parameter: TSamp_WtEt_no
+  //  Referenced by: '<S164>/TSamp'
+
+  20.0,
+
+  // Computed Parameter: TSamp_WtEt_p
+  //  Referenced by: '<S190>/TSamp'
+
+  20.0,
+
+  // Computed Parameter: TSamp_WtEt_o
+  //  Referenced by: '<S191>/TSamp'
+
+  20.0,
+
+  // Computed Parameter: TSamp_WtEt_px
+  //  Referenced by: '<S192>/TSamp'
+
+  20.0,
+
+  // Expression: -1
+  //  Referenced by: '<S150>/Gain6'
+
+  -1.0,
+
+  // Expression: -1
+  //  Referenced by: '<S150>/Gain7'
+
+  -1.0,
+
+  // Expression: -1
+  //  Referenced by: '<S150>/Gain8'
+
+  -1.0,
+
+  // Computed Parameter: TSamp_WtEt_ft
+  //  Referenced by: '<S167>/TSamp'
+
+  20.0,
+
+  // Computed Parameter: TSamp_WtEt_eh
+  //  Referenced by: '<S168>/TSamp'
+
+  20.0,
+
+  // Computed Parameter: TSamp_WtEt_ii
+  //  Referenced by: '<S169>/TSamp'
+
+  20.0,
+
+  // Computed Parameter: TSamp_WtEt_pu
+  //  Referenced by: '<S181>/TSamp'
+
+  20.0,
+
+  // Computed Parameter: TSamp_WtEt_f0
+  //  Referenced by: '<S182>/TSamp'
+
+  20.0,
+
+  // Computed Parameter: TSamp_WtEt_nz
+  //  Referenced by: '<S183>/TSamp'
+
+  20.0,
+
   // Expression: 1
-  //  Referenced by: '<S151>/Constant7'
+  //  Referenced by: '<S148>/Constant7'
 
   1.0,
 
   // Computed Parameter: Merge3_InitialOutput
-  //  Referenced by: '<S151>/Merge3'
+  //  Referenced by: '<S148>/Merge3'
 
   0.0,
 
   // Computed Parameter: Merge4_InitialOutput
-  //  Referenced by: '<S151>/Merge4'
+  //  Referenced by: '<S148>/Merge4'
 
   0.0,
 
   // Computed Parameter: Merge5_InitialOutput
-  //  Referenced by: '<S151>/Merge5'
+  //  Referenced by: '<S148>/Merge5'
 
   0.0,
 
   // Expression: 0
-  //  Referenced by: '<S155>/Constant7'
+  //  Referenced by: '<S152>/Constant7'
 
   0.0,
 
   // Expression: 0
-  //  Referenced by: '<S155>/Zero'
+  //  Referenced by: '<S152>/Zero'
 
   0.0,
 
   // Expression: 428
-  //  Referenced by: '<S212>/GPIO Write1'
+  //  Referenced by: '<S209>/GPIO Write1'
 
   428.0,
 
   // Expression: 1
-  //  Referenced by: '<S212>/GPIO Write1'
+  //  Referenced by: '<S209>/GPIO Write1'
 
   1.0,
 
   // Expression: 0.0
-  //  Referenced by: '<S213>/Delay'
+  //  Referenced by: '<S210>/Delay'
 
   0.0,
 
   // Expression: 0.0
-  //  Referenced by: '<S213>/Delay1'
+  //  Referenced by: '<S210>/Delay1'
 
   0.0,
 
   // Expression: 0.0
-  //  Referenced by: '<S213>/Delay2'
+  //  Referenced by: '<S210>/Delay2'
 
   0.0,
 
   // Computed Parameter: UniversalTime_Y0
-  //  Referenced by: '<S221>/Universal Time'
+  //  Referenced by: '<S218>/Universal Time'
 
   0.0,
 
   // Computed Parameter: dytdt_Y0
-  //  Referenced by: '<S233>/dy(t)//dt'
+  //  Referenced by: '<S230>/dy(t)//dt'
 
   0.0,
 
   // Computed Parameter: dytdt_Y0_j
-  //  Referenced by: '<S250>/dy(t)//dt'
+  //  Referenced by: '<S247>/dy(t)//dt'
 
   0.0,
 
   // Computed Parameter: dytdt_Y0_d
-  //  Referenced by: '<S260>/dy(t)//dt'
+  //  Referenced by: '<S257>/dy(t)//dt'
 
   0.0,
 
   // Expression: 1/1000
-  //  Referenced by: '<S217>/Convert BLAX from [mm] to [m]'
+  //  Referenced by: '<S214>/Convert BLAX from [mm] to [m]'
 
   0.001,
 
   // Expression: 1/1000
-  //  Referenced by: '<S217>/Convert BLAY from [mm] to [m]'
+  //  Referenced by: '<S214>/Convert BLAY from [mm] to [m]'
 
   0.001,
 
   // Expression: 1/1000
-  //  Referenced by: '<S217>/Convert BLACKVX from [mm] to [m]'
+  //  Referenced by: '<S214>/Convert BLACKVX from [mm] to [m]'
 
   0.001,
 
   // Expression: 1/1000
-  //  Referenced by: '<S217>/Convert BLACKVY from [mm] to [m]'
+  //  Referenced by: '<S214>/Convert BLACKVY from [mm] to [m]'
 
   0.001,
 
   // Expression: 0
-  //  Referenced by: '<S228>/Delay2'
+  //  Referenced by: '<S225>/Delay2'
 
   0.0,
 
   // Expression: 0
+  //  Referenced by: '<S225>/Delay1'
+
+  0.0,
+
+  // Expression: 0
+  //  Referenced by: '<S225>/Constant3'
+
+  0.0,
+
+  // Expression: 0.0
   //  Referenced by: '<S228>/Delay1'
 
   0.0,
@@ -1407,144 +1416,139 @@ P_GNC2026W_T GNC2026W_P = {
   0.0,
 
   // Expression: 0.0
-  //  Referenced by: '<S231>/Delay1'
+  //  Referenced by: '<S227>/Delay1'
 
   0.0,
 
   // Expression: 0
-  //  Referenced by: '<S231>/Constant3'
+  //  Referenced by: '<S227>/Constant3'
+
+  0.0,
+
+  // Expression: 1/1000
+  //  Referenced by: '<S215>/Convert BLUX from [mm] to [m]'
+
+  0.001,
+
+  // Expression: 1/1000
+  //  Referenced by: '<S215>/Convert BLUY from [mm] to [m]'
+
+  0.001,
+
+  // Expression: 1/1000
+  //  Referenced by: '<S215>/Convert BLUEVX from [mm] to [m]'
+
+  0.001,
+
+  // Expression: 1/1000
+  //  Referenced by: '<S215>/Convert BLUEVY from [mm] to [m]'
+
+  0.001,
+
+  // Expression: 0
+  //  Referenced by: '<S243>/Delay2'
+
+  0.0,
+
+  // Expression: 0
+  //  Referenced by: '<S243>/Delay1'
+
+  0.0,
+
+  // Expression: 0
+  //  Referenced by: '<S243>/Constant3'
 
   0.0,
 
   // Expression: 0.0
-  //  Referenced by: '<S230>/Delay1'
+  //  Referenced by: '<S245>/Delay1'
 
   0.0,
 
   // Expression: 0
-  //  Referenced by: '<S230>/Constant3'
+  //  Referenced by: '<S245>/Constant3'
+
+  0.0,
+
+  // Expression: 0.0
+  //  Referenced by: '<S244>/Delay1'
+
+  0.0,
+
+  // Expression: 0
+  //  Referenced by: '<S244>/Constant3'
+
+  0.0,
+
+  // Expression: 1/1000
+  //  Referenced by: '<S216>/Convert REDX from [mm] to [m]'
+
+  0.001,
+
+  // Expression: 1/1000
+  //  Referenced by: '<S216>/Convert REDY from [mm] to [m]'
+
+  0.001,
+
+  // Expression: 1/1000
+  //  Referenced by: '<S216>/Convert REDVX from [mm] to [m]'
+
+  0.001,
+
+  // Expression: 1/1000
+  //  Referenced by: '<S216>/Convert REDVY from [mm] to [m]'
+
+  0.001,
+
+  // Expression: 0
+  //  Referenced by: '<S253>/Delay2'
+
+  0.0,
+
+  // Expression: 0
+  //  Referenced by: '<S253>/Delay1'
+
+  0.0,
+
+  // Expression: 0
+  //  Referenced by: '<S253>/Constant3'
+
+  0.0,
+
+  // Expression: 0.0
+  //  Referenced by: '<S255>/Delay1'
+
+  0.0,
+
+  // Expression: 0
+  //  Referenced by: '<S255>/Constant3'
+
+  0.0,
+
+  // Expression: 0.0
+  //  Referenced by: '<S254>/Delay1'
+
+  0.0,
+
+  // Expression: 0
+  //  Referenced by: '<S254>/Constant3'
 
   0.0,
 
   // Expression: 1
-  //  Referenced by: '<S229>/Constant'
+  //  Referenced by: '<S217>/Constant'
 
   1.0,
 
-  // Expression: 1/1000
-  //  Referenced by: '<S218>/Convert BLUX from [mm] to [m]'
+  // Expression: -1
+  //  Referenced by: '<S264>/Gain'
 
-  0.001,
+  -1.0,
 
-  // Expression: 1/1000
-  //  Referenced by: '<S218>/Convert BLUY from [mm] to [m]'
+  // Expression: -1
+  //  Referenced by: '<S264>/Gain1'
 
-  0.001,
-
-  // Expression: 1/1000
-  //  Referenced by: '<S218>/Convert BLUEVX from [mm] to [m]'
-
-  0.001,
-
-  // Expression: 1/1000
-  //  Referenced by: '<S218>/Convert BLUEVY from [mm] to [m]'
-
-  0.001,
-
-  // Expression: 0
-  //  Referenced by: '<S246>/Delay2'
-
-  0.0,
-
-  // Expression: 0
-  //  Referenced by: '<S246>/Delay1'
-
-  0.0,
-
-  // Expression: 0
-  //  Referenced by: '<S246>/Constant3'
-
-  0.0,
-
-  // Expression: 0.0
-  //  Referenced by: '<S248>/Delay1'
-
-  0.0,
-
-  // Expression: 0
-  //  Referenced by: '<S248>/Constant3'
-
-  0.0,
-
-  // Expression: 0.0
-  //  Referenced by: '<S247>/Delay1'
-
-  0.0,
-
-  // Expression: 0
-  //  Referenced by: '<S247>/Constant3'
-
-  0.0,
-
-  // Expression: 1/1000
-  //  Referenced by: '<S219>/Convert REDX from [mm] to [m]'
-
-  0.001,
-
-  // Expression: 1/1000
-  //  Referenced by: '<S219>/Convert REDY from [mm] to [m]'
-
-  0.001,
-
-  // Expression: 1/1000
-  //  Referenced by: '<S219>/Convert REDVX from [mm] to [m]'
-
-  0.001,
-
-  // Expression: 1/1000
-  //  Referenced by: '<S219>/Convert REDVY from [mm] to [m]'
-
-  0.001,
-
-  // Expression: 0
-  //  Referenced by: '<S256>/Delay2'
-
-  0.0,
-
-  // Expression: 0
-  //  Referenced by: '<S256>/Delay1'
-
-  0.0,
-
-  // Expression: 0
-  //  Referenced by: '<S256>/Constant3'
-
-  0.0,
-
-  // Expression: 0.0
-  //  Referenced by: '<S258>/Delay1'
-
-  0.0,
-
-  // Expression: 0
-  //  Referenced by: '<S258>/Constant3'
-
-  0.0,
-
-  // Expression: 0.0
-  //  Referenced by: '<S257>/Delay1'
-
-  0.0,
-
-  // Expression: 0
-  //  Referenced by: '<S257>/Constant3'
-
-  0.0,
-
-  // Expression: 1
-  //  Referenced by: '<S220>/Constant'
-
-  1.0,
+  -1.0,
 
   // Expression: 400
   //  Referenced by: '<S269>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
@@ -2107,42 +2111,42 @@ P_GNC2026W_T GNC2026W_P = {
   "",
 
   // Computed Parameter: UDPSend1_Port
-  //  Referenced by: '<S209>/UDP Send1'
+  //  Referenced by: '<S206>/UDP Send1'
 
   55000,
 
   // Computed Parameter: UDPSend2_Port
-  //  Referenced by: '<S210>/UDP Send2'
+  //  Referenced by: '<S207>/UDP Send2'
 
   55000,
 
   // Computed Parameter: UDPSend3_Port
-  //  Referenced by: '<S211>/UDP Send3'
+  //  Referenced by: '<S208>/UDP Send3'
 
   55000,
 
   // Computed Parameter: ReceivePhaseSpaceData_Port
-  //  Referenced by: '<S216>/Receive PhaseSpace Data'
+  //  Referenced by: '<S213>/Receive PhaseSpace Data'
 
   31534,
 
   // Computed Parameter: UDPReceiveREDClock_Port
-  //  Referenced by: '<S220>/UDP Receive (RED Clock)'
+  //  Referenced by: '<S217>/UDP Receive (RED Clock)'
 
   48740,
 
   // Computed Parameter: UDPReceiveBLACKClock_Port
-  //  Referenced by: '<S220>/UDP Receive (BLACK Clock)'
+  //  Referenced by: '<S217>/UDP Receive (BLACK Clock)'
 
   48741,
 
   // Computed Parameter: UDPReceiveBLUEClock_Port
-  //  Referenced by: '<S220>/UDP Receive (BLUE Clock)'
+  //  Referenced by: '<S217>/UDP Receive (BLUE Clock)'
 
   48742,
 
   // Computed Parameter: UDPReceive_Port
-  //  Referenced by: '<S267>/UDP Receive'
+  //  Referenced by: '<S264>/UDP Receive'
 
   50005,
 
@@ -2164,7 +2168,7 @@ P_GNC2026W_T GNC2026W_P = {
   // Computed Parameter: ManualSwitch_CurrentSetting
   //  Referenced by: '<S130>/Manual Switch'
 
-  1U,
+  0U,
 
   // Start of '<S17>/Change RED Behavior'
   {
@@ -2199,174 +2203,174 @@ P_GNC2026W_T GNC2026W_P = {
 
   // End of '<S17>/Change BLACK Behavior'
 
-  // Start of '<S258>/Enabled Subsystem'
+  // Start of '<S255>/Enabled Subsystem'
   {
     // Computed Parameter: dydt_Y0
-    //  Referenced by: '<S264>/dy//dt'
+    //  Referenced by: '<S261>/dy//dt'
 
     0.0,
 
     // Expression: 0.1
-    //  Referenced by: '<S264>/Constant2'
+    //  Referenced by: '<S261>/Constant2'
 
     0.1,
 
     // Expression: 0.0
-    //  Referenced by: '<S264>/Delay'
+    //  Referenced by: '<S261>/Delay'
 
     0.0
   }
   ,
 
-  // End of '<S258>/Enabled Subsystem'
+  // End of '<S255>/Enabled Subsystem'
 
-  // Start of '<S257>/Enabled Subsystem'
+  // Start of '<S254>/Enabled Subsystem'
   {
     // Computed Parameter: dydt_Y0
-    //  Referenced by: '<S262>/dy//dt'
+    //  Referenced by: '<S259>/dy//dt'
 
     0.0,
 
     // Expression: 0.1
-    //  Referenced by: '<S262>/Constant2'
+    //  Referenced by: '<S259>/Constant2'
 
     0.1,
 
     // Expression: 0.0
-    //  Referenced by: '<S262>/Delay'
+    //  Referenced by: '<S259>/Delay'
 
     0.0
   }
   ,
 
-  // End of '<S257>/Enabled Subsystem'
+  // End of '<S254>/Enabled Subsystem'
 
-  // Start of '<S248>/Enabled Subsystem'
+  // Start of '<S245>/Enabled Subsystem'
   {
     // Computed Parameter: dydt_Y0
-    //  Referenced by: '<S254>/dy//dt'
+    //  Referenced by: '<S251>/dy//dt'
 
     0.0,
 
     // Expression: 0.1
-    //  Referenced by: '<S254>/Constant2'
+    //  Referenced by: '<S251>/Constant2'
 
     0.1,
 
     // Expression: 0.0
-    //  Referenced by: '<S254>/Delay'
+    //  Referenced by: '<S251>/Delay'
 
     0.0
   }
   ,
 
-  // End of '<S248>/Enabled Subsystem'
+  // End of '<S245>/Enabled Subsystem'
 
-  // Start of '<S247>/Enabled Subsystem'
+  // Start of '<S244>/Enabled Subsystem'
   {
     // Computed Parameter: dydt_Y0
-    //  Referenced by: '<S252>/dy//dt'
+    //  Referenced by: '<S249>/dy//dt'
 
     0.0,
 
     // Expression: 0.1
-    //  Referenced by: '<S252>/Constant2'
+    //  Referenced by: '<S249>/Constant2'
 
     0.1,
 
     // Expression: 0.0
-    //  Referenced by: '<S252>/Delay'
+    //  Referenced by: '<S249>/Delay'
 
     0.0
   }
   ,
 
-  // End of '<S247>/Enabled Subsystem'
+  // End of '<S244>/Enabled Subsystem'
 
-  // Start of '<S231>/Enabled Subsystem'
+  // Start of '<S228>/Enabled Subsystem'
   {
     // Computed Parameter: dydt_Y0
-    //  Referenced by: '<S244>/dy//dt'
+    //  Referenced by: '<S241>/dy//dt'
 
     0.0,
 
     // Expression: 0.1
-    //  Referenced by: '<S244>/Constant2'
+    //  Referenced by: '<S241>/Constant2'
 
     0.1,
 
     // Expression: 0.0
-    //  Referenced by: '<S244>/Delay'
+    //  Referenced by: '<S241>/Delay'
 
     0.0
   }
   ,
 
-  // End of '<S231>/Enabled Subsystem'
+  // End of '<S228>/Enabled Subsystem'
 
-  // Start of '<S230>/Enabled Subsystem'
+  // Start of '<S227>/Enabled Subsystem'
   {
     // Computed Parameter: dydt_Y0
-    //  Referenced by: '<S242>/dy//dt'
+    //  Referenced by: '<S239>/dy//dt'
 
     0.0,
 
     // Expression: 0.1
-    //  Referenced by: '<S242>/Constant2'
+    //  Referenced by: '<S239>/Constant2'
 
     0.1,
 
     // Expression: 0.0
-    //  Referenced by: '<S242>/Delay'
+    //  Referenced by: '<S239>/Delay'
 
     0.0
   }
   ,
 
-  // End of '<S230>/Enabled Subsystem'
+  // End of '<S227>/Enabled Subsystem'
 
-  // Start of '<S224>/Change RED Behavior'
+  // Start of '<S221>/Change RED Behavior'
   {
     // Computed Parameter: UDPSendGUI_Port
-    //  Referenced by: '<S227>/UDP Send (GUI)'
+    //  Referenced by: '<S224>/UDP Send (GUI)'
 
     48720
   }
   ,
 
-  // End of '<S224>/Change RED Behavior'
+  // End of '<S221>/Change RED Behavior'
 
-  // Start of '<S224>/Change BLUE Behavior'
+  // Start of '<S221>/Change BLUE Behavior'
   {
     // Computed Parameter: UDPSendGUI_Port
-    //  Referenced by: '<S226>/UDP Send (GUI)'
+    //  Referenced by: '<S223>/UDP Send (GUI)'
 
     48722
   }
   ,
 
-  // End of '<S224>/Change BLUE Behavior'
+  // End of '<S221>/Change BLUE Behavior'
 
-  // Start of '<S224>/Change BLACK Behavior'
+  // Start of '<S221>/Change BLACK Behavior'
   {
     // Computed Parameter: UDPSendGUI_Port
-    //  Referenced by: '<S225>/UDP Send (GUI)'
+    //  Referenced by: '<S222>/UDP Send (GUI)'
 
     48721
   }
   ,
 
-  // End of '<S224>/Change BLACK Behavior'
+  // End of '<S221>/Change BLACK Behavior'
 
   // Start of '<S4>/Change RED Behavior'
   {
     // Computed Parameter: Constant1_Value
-    //  Referenced by: '<S204>/Constant1'
+    //  Referenced by: '<S201>/Constant1'
 
     1,
 
     // Computed Parameter: UDPSend_Port
-    //  Referenced by: '<S204>/UDP Send'
+    //  Referenced by: '<S201>/UDP Send'
 
     33001
   }
@@ -2377,12 +2381,12 @@ P_GNC2026W_T GNC2026W_P = {
   // Start of '<S4>/Change BLUE Behavior'
   {
     // Computed Parameter: Constant1_Value
-    //  Referenced by: '<S203>/Constant1'
+    //  Referenced by: '<S200>/Constant1'
 
     1,
 
     // Computed Parameter: UDPSend_Port
-    //  Referenced by: '<S203>/UDP Send'
+    //  Referenced by: '<S200>/UDP Send'
 
     33003
   }
@@ -2393,12 +2397,12 @@ P_GNC2026W_T GNC2026W_P = {
   // Start of '<S4>/Change BLACK Behavior'
   {
     // Computed Parameter: Constant1_Value
-    //  Referenced by: '<S202>/Constant1'
+    //  Referenced by: '<S199>/Constant1'
 
     1,
 
     // Computed Parameter: UDPSend_Port
-    //  Referenced by: '<S202>/UDP Send'
+    //  Referenced by: '<S199>/UDP Send'
 
     33002
   }
@@ -2409,7 +2413,7 @@ P_GNC2026W_T GNC2026W_P = {
   // Start of '<S3>/Custom Control (ARM)'
   {
     // Expression: 0
-    //  Referenced by: '<S146>/Zero'
+    //  Referenced by: '<S143>/Zero'
 
     0.0
   }
@@ -2420,7 +2424,7 @@ P_GNC2026W_T GNC2026W_P = {
   // Start of '<S3>/Disable Thrusters (BLUE)'
   {
     // Expression: 0
-    //  Referenced by: '<S157>/Zero'
+    //  Referenced by: '<S154>/Zero'
 
     0.0
   }
@@ -2431,7 +2435,7 @@ P_GNC2026W_T GNC2026W_P = {
   // Start of '<S3>/Disable Thrusters (BLACK)'
   {
     // Expression: 0
-    //  Referenced by: '<S156>/Zero'
+    //  Referenced by: '<S153>/Zero'
 
     0.0
   }
@@ -2442,7 +2446,7 @@ P_GNC2026W_T GNC2026W_P = {
   // Start of '<S3>/Disable Thrusters (RED)'
   {
     // Expression: 0
-    //  Referenced by: '<S158>/Zero'
+    //  Referenced by: '<S155>/Zero'
 
     0.0
   }
