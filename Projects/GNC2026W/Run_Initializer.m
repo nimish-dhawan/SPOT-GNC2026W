@@ -131,9 +131,9 @@ k = 5;
 % Measurement noise covariance for UKF
 R = diag([0.05, 0.05, 0.05]);
 
-dt = 0.05;
+dt = baseRate;
 
-CVrate = 1/5; % Hz
+CVrate = 1/5; % sec
 
 %% This section of the code contains parameters should not be modified
 
