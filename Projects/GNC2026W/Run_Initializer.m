@@ -93,12 +93,12 @@ F_u = zeros(3,1); % No external forces/torques
 a1 = 2;
 a2 = 2;
 a3 = 2;
-alpha = [a1; a2; a3];
+alpha = diag([a1; a2; a3]);
 
 g1 = 1e-01;
 g2 = 1e-01;
 g3 = 5e-01;
-gamma = [g1; g2; g3];
+gamma = diag([g1; g2; g3]);
 
 % SUBPHASE 1
 X1_blk = 0.4;
