@@ -119,9 +119,16 @@ sep3 = 0.30;            % Desired separation between the platforms (m)
 % Filter Parameters
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Select what filtering technique to use
+<<<<<<< Updated upstream
 % For UKF: fNum = 1
 % For EKF: fNum = 0
 fNum = 0;   
+=======
+% For UKF : fNum = 1
+% For MEKF: fNum = 2
+% For EKF : fNum = 3
+fNum = 2;   
+>>>>>>> Stashed changes
 
 % Unscented transform parameters
 a = 1;
