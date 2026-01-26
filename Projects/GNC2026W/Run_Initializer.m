@@ -2,7 +2,7 @@
 % users define all initials parameters and/or constants required for
 % simulation and experiment.
 
-% Chris
+% Nimish
 
 clear;
 clc;
@@ -93,12 +93,12 @@ F_u = zeros(3,1); % No external forces/torques
 a1 = 2;
 a2 = 2;
 a3 = 2;
-alpha = [a1; a2; a3];
+alpha = diag([a1; a2; a3]);
 
 g1 = 1e-01;
 g2 = 1e-01;
 g3 = 5e-01;
-gamma = [g1; g2; g3];
+gamma = diag([g1; g2; g3]);
 
 % SUBPHASE 1
 X1_blk = 0.4;
@@ -119,16 +119,10 @@ sep3 = 0.30;            % Desired separation between the platforms (m)
 % Filter Parameters
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Select what filtering technique to use
-<<<<<<< Updated upstream
-% For UKF: fNum = 1
-% For EKF: fNum = 0
-fNum = 0;   
-=======
 % For UKF : fNum = 1
 % For MEKF: fNum = 2
 % For EKF : fNum = 3
-fNum = 2;   
->>>>>>> Stashed changes
+fNum = 1;   
 
 % Unscented transform parameters
 a = 1;
@@ -138,7 +132,9 @@ k = 5;
 % Measurement noise covariance for UKF
 R = diag([0.05, 0.05, 0.05]);
 
-dt = 0.05;
+dt = baseRate;
+
+CVrate = 1/5; % sec
 
 %% This section of the code contains parameters should not be modified
 
@@ -262,7 +258,7 @@ appHandle.SubAppInitialConditions.UpdateInitialConditions();
 % ylabel('Position - X [m]')
 
 % Edit subphase durations
-appHandle.SubPhase1EditField.Value = 10;      % [s]
+appHandle.SubPhase1EditField.Value = 0;      % [s]
 appHandle.SubPhase2EditField.Value = 80;     % [s]
 appHandle.SubPhase3EditField.Value = 100;       % [s]
 appHandle.SubPhase4EditField.Value = 0;       % [s]
