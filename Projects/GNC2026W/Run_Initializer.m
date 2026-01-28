@@ -2,7 +2,7 @@
 % users define all initials parameters and/or constants required for
 % simulation and experiment.
 
-% Nimish
+% Chris
 
 clear;
 clc;
