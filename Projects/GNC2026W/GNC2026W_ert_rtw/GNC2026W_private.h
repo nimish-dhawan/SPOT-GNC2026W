@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'GNC2026W'.
 //
-// Model version                  : 4.1542
+// Model version                  : 4.1691
 // Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
-// C/C++ source code generated on : Mon Jan 26 10:17:37 2026
+// C/C++ source code generated on : Mon Feb  2 11:47:54 2026
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: ARM Compatible->ARM Cortex-A (64-bit)
@@ -37,6 +37,8 @@ extern void GNC2026W_Phase0Synchronization(real_T *rtd_ARM_Control_Law_Enabler,
   *rtd_BLUE_Path_Planner_Selection, real_T *rtd_Float_State, real_T
   *rtd_RED_Control_Law_Enabler, char_T rtd_RED_Logger[256], real_T
   *rtd_RED_Path_Planner_Selection, P_Phase0Synchronization_GNC20_T *localP);
+extern void GNC2026W_IfActionSubsystem(real_T *rtd_RED_Control_Law_Enabler,
+  real_T *rtd_RED_Path_Planner_Selection, P_IfActionSubsystem_GNC2026W_T *localP);
 extern void GNC2026W_Phase4ReturnHome(real_T *rtd_ARM_Control_Law_Enabler,
   real_T rtd_ARM_Desired_States[3], real_T *rtd_ARM_Path_Planner_Selection,
   real_T *rtd_BLACK_Control_Law_Enabler, real_T rtd_BLACK_Desired_States[3],
@@ -48,8 +50,6 @@ extern void GNC2026W_Phase4ReturnHome(real_T *rtd_ARM_Control_Law_Enabler,
   *rtd_RED_Path_Planner_Selection, P_Phase4ReturnHome_GNC2026W_T *localP);
 extern void GNC2026W_MATLABFunction(real_T rtu_u, real_T rtu_u_pre, real_T
   rtu_y_pre, real_T *rty_y, real_T *rty_u_next);
-extern void GNC2026W_CameratoInertialFrame(const real_T rtu_r_C_I[2], real_T
-  rtu_r_C_I_a, const real_T rtu_r_REL_C[3], real_T rty_r_T_I[3]);
 extern void GNC2026W_MATLABFunction_n(real_T rtu_Rz_path, real_T rtu_Rz_measured,
   real_T *rty_Rz_error);
 extern void GNC2026W_DisableThrustersRED(real_T rty_u[3],
@@ -62,6 +62,8 @@ extern void GNC202_ChangeBLACKBehavior_Init(RT_MODEL_GNC2026W_T * const
 extern void GNC2026W_ChangeBLACKBehavior(RT_MODEL_GNC2026W_T * const GNC2026W_M,
   DW_ChangeBLACKBehavior_GNC202_T *localDW, P_ChangeBLACKBehavior_GNC2026_T
   *localP);
+extern void GNC2026W_CameratoInertialFrame(const real_T rtu_r_C_I[2], real_T
+  rtu_r_C_I_a, const real_T rtu_r_REL_C[3], real_T rty_r_T_I[3]);
 extern void GNC2_ChangeBLACKBehavior_j_Init(RT_MODEL_GNC2026W_T * const
   GNC2026W_M, DW_ChangeBLACKBehavior_GNC2_l_T *localDW,
   P_ChangeBLACKBehavior_GNC20_p_T *localP);

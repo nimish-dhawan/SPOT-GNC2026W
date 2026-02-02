@@ -108,7 +108,7 @@ sep1 = 0.60;            % Desired separation between the platforms (m)
 % SUBPHASE 2
 X2_blk = 0.4;
 Y2_blk = 0.4;
-sep2 = 0.60;            % Desired separation between the platforms (m)
+sep2 = 0.30;            % Desired separation between the platforms (m)
 
 % SUBPHASE 3
 X3_blk = 0.4;

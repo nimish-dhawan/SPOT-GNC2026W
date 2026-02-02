@@ -7,18 +7,25 @@
 %endfunction
 %function ChartDataMap(block, system) void
   %createrecord ChartDataElements {\
-    NumChartData   1 \
+    NumChartData   2 \
     ChartDataDefaults {\
       RecordType   "ChartData"\
       Dimensions   []\
       IsTestPoint  0\
     }\
     ChartData {\
+      Name         "converge"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "GNC2026W:31205:770-778"\
+    }\
+    ChartData {\
       Name         "k"\
       Description  "EmlPersistent"\
       SFName       ""\
       Path         ""\
-      SrcLocation  "GNC2026W:31205:4434-4435"\
+      SrcLocation  "GNC2026W:31205:3696-3697"\
     }\
   }
   %return ChartDataElements
