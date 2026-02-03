@@ -103,6 +103,9 @@ function [sc] = ShapeSpacecraft(param)
     SOLAR_PANEL_LENGTH = 0.45;  % m
     SOLAR_PANEL_WIDTH  = 0.02;  % m
     SOLAR_PANEL_HEIGHT = 0.27;  % m
+    LAR_inwidth = 0.20;         % m
+    LAR_outwidth = 0.30;        % m
+    LAR_thickness = 0.05;       % m
     
     gamma = r - (excess + shrink + bracketwidth); % m
     
@@ -189,21 +192,25 @@ function [sc] = ShapeSpacecraft(param)
               cx+r+chaselength, cy-gamma-bracketwidth+chaselength*sin(chaseangle);
               cx+r, cy-gamma-bracketwidth;
               cx+r, cy];
-    elseif id == 7 % generic platform (with solar panels)
+    elseif id == 7 % LAR platform (with solar panels)
         sc = [cx,   cy;
               cx+r, cy;
+              cx+r, cy+LAR_inwidth/2;
+              cx+r+LAR_thickness, cy+LAR_outwidth/2;
+              cx+r+LAR_thickness, cy-LAR_outwidth/2;
+              cx+r, cy-LAR_inwidth/2;
               cx+r, cy+r;
+              cx-SOLAR_PANEL_WIDTH/2, cy+r;
+              cx-SOLAR_PANEL_WIDTH/2, cy+r+SOLAR_PANEL_LENGTH;
+              cx+SOLAR_PANEL_WIDTH/2, cy+r+SOLAR_PANEL_LENGTH;
+              cx+SOLAR_PANEL_WIDTH/2, cy+r;
               cx-r, cy+r;
-              cx-r, cy-SOLAR_PANEL_WIDTH/2;
-              cx-r-SOLAR_PANEL_LENGTH, cy-SOLAR_PANEL_WIDTH/2;
-              cx-r-SOLAR_PANEL_LENGTH, cy+SOLAR_PANEL_WIDTH/2;
-              cx-r, cy+SOLAR_PANEL_WIDTH/2;
               cx-r, cy-r;
+              cx+SOLAR_PANEL_WIDTH/2, cy-r;
+              cx+SOLAR_PANEL_WIDTH/2, cy-r-SOLAR_PANEL_LENGTH;
+              cx-SOLAR_PANEL_WIDTH/2, cy-r-SOLAR_PANEL_LENGTH;
+              cx-SOLAR_PANEL_WIDTH/2, cy-r;
               cx+r, cy-r;
-              cx+r, cy+SOLAR_PANEL_WIDTH/2;
-              cx+r+SOLAR_PANEL_LENGTH, cy+SOLAR_PANEL_WIDTH/2;
-              cx+r+SOLAR_PANEL_LENGTH, cy-SOLAR_PANEL_WIDTH/2;
-              cx+r, cy-SOLAR_PANEL_WIDTH/2;
               cx+r, cy];
     end
     

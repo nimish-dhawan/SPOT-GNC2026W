@@ -42,7 +42,7 @@
 function formatfig(width, height, linewidth)
 
 % Location of the figure on screen from left bottom 
-location = [1,1];
+location = [100,100];
 
 if nargin < 1 || isempty(width)
     width = 0.8;
@@ -53,14 +53,11 @@ if nargin < 2 || isempty(height)
 end
 
 if nargin < 3 || isempty(linenwidth)
-    linewidth = 7;
+    linewidth = 612;
 end
 
 scale = [width*linewidth, height*linewidth];
 
-set(gcf, 'Units', 'inches', 'Position', [location, scale])
-set(gcf, 'DefaultAxesFontName', 'Times', ...
-         'DefaultAxesFontSize', 9, 'DefaultTextFontName',...
-         'Times', 'DefaultTextFontSize', 9);
+set(gcf, 'Units', 'points', 'Position', [location, scale])
 
 end
