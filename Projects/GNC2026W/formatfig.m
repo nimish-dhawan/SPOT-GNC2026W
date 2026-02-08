@@ -9,28 +9,24 @@
 % subfigures, the width scaling factors of the two subfigures must sum to 
 % 0.9 or less, AND the height scaling factor for ALL figures must be equal.
 % Provide the linewidth in inches if it is known. The default linewidth is 
-% 7 inches. For consistency, use this defined width scale in LaTeX:
+% 612 points. For consistency, use this defined width scale in LaTeX:
 % \includegraphics[width=width\linewidth]{...} 
 % =========================================================================
 % Examples:
 % =========================================================================
-% Use before plot() function and after figure function:
+% Use after plot() and figure() function:
 % Ex.1 --------------------------------------------------------------------
-% figure
+% figure()
+% plot(...)
 % formatfig() -> uses default width, height and linewidth
-% plot(...)
 % Ex.2 --------------------------------------------------------------------
-% figure
+% figure()
+% plot(...)
 % formatfig(0.4) -> uses default height and linewidth
-% plot(...)
 % Ex.3 --------------------------------------------------------------------
-% figure
+% figure()
+% plot(...)
 % formatfig(0.4,0.6) -> uses default linewidth
-% plot(...)
-% Ex.4 --------------------------------------------------------------------
-% figure
-% formatfig(0.4,0.6,8) -> all user defined arguments
-% plot(...)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Input(s)
