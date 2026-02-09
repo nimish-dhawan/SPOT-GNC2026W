@@ -16,6 +16,9 @@ dat = load(filename);
 savefigs = 0;
 % Toggle on/off animation
 anim = 1;
+% Time frame for plotting
+% For successful experiment : period = [t(1100), t(4700)];
+period = [t(1), t(end)];
 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Plotting Data
@@ -36,7 +39,7 @@ hold on; grid on;
 plot(t,dat.dataClass_rt.BLACK_Py_Filtered_m.Data, '--k')
 plot(t,dat.dataClass_rt.BLACK_Rz_Filtered_rad.Data, '-.k')
 ylabel('Pose'); xlabel('Time [s]')
-xlim([t(1100), t(4700)])
+xlim(period)
 legend('x [m]', 'y [m]', '\theta [rad]',Location='northwest')
 ax = gca();
 ax.FontSize = 10;
@@ -47,7 +50,7 @@ hold on; grid on;
 plot(t,dat.dataClass_rt.BLACK_Py_m.Data, '--k')
 plot(t,unwrap(dat.dataClass_rt.BLACK_Rz_rad.Data), '-.k')
 ylabel('Pose'); xlabel('Time [s]')
-xlim([t(1100), t(4700)])
+xlim(period)
 formatfig(1,0.3);
 ax = gca();
 ax.FontSize = 10;
@@ -70,7 +73,7 @@ subplot(3,1,1)
 plot(t,dx,'k')
 grid on;
 ylabel('\deltax [m]')
-xlim([t(1100), t(4700)])
+xlim(period)
 ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
@@ -78,7 +81,7 @@ subplot(3,1,2)
 plot(t,dy,'k')
 grid on;
 ylabel('\deltay [m]')
-xlim([t(1100), t(4700)])
+xlim(period)
 ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
@@ -86,7 +89,7 @@ subplot(3,1,3)
 plot(t,dth,'k')
 grid on;
 ylabel('\delta\theta [rad]'); xlabel('Time [s]')
-xlim([t(1100), t(4700)])
+xlim(period)
 formatfig(0.4,0.4);
 ax = gca();
 ax.FontSize = 10;
@@ -102,7 +105,7 @@ subplot(3,1,1)
 plot(t,dat.dataClass_rt.RED_Fx_Sat_N.Data,'k')
 grid on;
 ylabel('F_x [N]')
-xlim([t(1100), t(4700)])
+xlim(period)
 ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
@@ -110,7 +113,7 @@ subplot(3,1,2)
 plot(t,dat.dataClass_rt.RED_Fy_Sat_N.Data,'k')
 grid on;
 ylabel('F_y [mN]')
-xlim([t(1100), t(4700)])
+xlim(period)
 ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
@@ -118,7 +121,7 @@ subplot(3,1,3)
 plot(t,dat.dataClass_rt.RED_Tz_Sat_Nm.Data,'k')
 grid on;
 ylabel('\tau_z [N.m]'); xlabel('Time [s]')
-xlim([t(1100), t(4700)])
+xlim(period)
 formatfig(0.4,0.4);
 ax = gca();
 ax.FontSize = 10;
@@ -132,7 +135,7 @@ plot(t, dat.dataClass_rt.Separation_m.Data, 'k')
 hold on; grid on;
 plot(t, dat.dataClass_rt.Desired_Separation_m.Data, '--k')
 xlabel('Time [s]'); ylabel('Separation [m]');
-xlim([t(1100), t(4700)])
+xlim(period)
 legend('Actual', 'Desired')
 formatfig(0.45,0.2)
 ax = gca();
@@ -207,7 +210,7 @@ plot(t, dat.dataClass_rt.BLACK_RzD_radpers.Data, 'k')
 hold on; grid on;
 plot(t, dat.dataClass_rt.RED_RzD_radpers.Data, 'r')
 xlabel('Time [s]'); ylabel('$\dot{\theta}$ [rad/s]', 'Interpreter', 'latex');
-xlim([t(1100), t(4700)]);
+xlim(period);
 legend('Target', 'Chaser')
 formatfig(0.45,0.2)
 ax = gca();
