@@ -15,8 +15,9 @@ dat = load(filename);
 % Toggle on/off saving all the plots automatically
 savefigs = 0;
 % Toggle on/off animation
-anim = 1;
+anim = 0;
 % Time frame for plotting
+t = dat.dataClass_rt.Time_s.Data;
 % For successful experiment : period = [t(1100), t(4700)];
 period = [t(1), t(end)];
 %%
@@ -27,7 +28,12 @@ period = [t(1), t(end)];
 % pdf files 
 
 wrap = @(x) atan2(sin(x), cos(x));
-t = dat.dataClass_rt.Time_s.Data;
+
+% Example(s):
+% 1) Trajectory plot fitted with a [3x1] plot:
+    % \includegraphics[width=0.55\linewidth]{Figures/Trajectory.pdf}
+    % \includegraphics[width=0.375\linewidth]{Figures/Filter Performance.pdf}
+
 
 % =========================================================================
 % Target pose estimates and ground truth
@@ -237,6 +243,7 @@ if anim == 1 % Trajectory animation
         plot(expdata_BLACK_pos_x(1:frame),expdata_BLACK_pos_y(1:frame), 'k-','Linewidth',1)
         
         % Plotting spacecraft shapes
+
         spacecraft = DrawSpacecraft([expdata_RED_pos_x(frame),expdata_RED_pos_y(frame),expdata_RED_pos_th(frame),3]);
         patch(spacecraft(:,1), spacecraft(:,2), 'w', 'facealpha', 0.5, 'edgecolor', 'r', 'edgealpha',1,'Linewidth',0.5)
     

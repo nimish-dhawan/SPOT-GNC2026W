@@ -136,6 +136,14 @@ dt = baseRate;
 
 CVrate = 1/5; % sec
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% VIS Integration
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% VISinLoop = 1; for having CV states run in the loop
+% VISinLoop = 0; otherwise
+
+VISinLoop = 0;
+
 %% This section of the code contains parameters should not be modified
 
 % Set the PWM frequency
