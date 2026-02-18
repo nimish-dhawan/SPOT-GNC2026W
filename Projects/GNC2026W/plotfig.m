@@ -3,23 +3,27 @@
 % plotfig
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-clc
+% clc
 close all
 
 % Loading the datafile
 [file,location] = uigetfile;
 filename = [location, file];
-dat = load(filename);
+if isempty(file) || strcmp(file," ")
+    return
+else
+    dat = load(filename);
+end
 
 %%
 % Toggle on/off saving all the plots automatically
-savefigs = 0;
+savefigs = 1;
 % Toggle on/off animation
 anim = 0;
 % Time frame for plotting
 t = dat.dataClass_rt.Time_s.Data;
 % For successful experiment : period = [t(1100), t(4700)];
-period = [t(1), t(end)];
+period = [t(1100), t(end)];
 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Plotting Data
@@ -118,7 +122,7 @@ ax.FontName = "Times New Roman";
 subplot(3,1,2)
 plot(t,dat.dataClass_rt.RED_Fy_Sat_N.Data,'k')
 grid on;
-ylabel('F_y [mN]')
+ylabel('F_y [N]')
 xlim(period)
 ax = gca();
 ax.FontSize = 10;
@@ -128,6 +132,46 @@ plot(t,dat.dataClass_rt.RED_Tz_Sat_Nm.Data,'k')
 grid on;
 ylabel('\tau_z [N.m]'); xlabel('Time [s]')
 xlim(period)
+formatfig(0.4,0.4);
+ax = gca();
+ax.FontSize = 10;
+ax.FontName = "Times New Roman";
+
+% =========================================================================
+% LOS Angle
+% =========================================================================
+% For 3x1 plots, 0.4x0.4 size is recommended for placing next to trajectory
+% plot
+figure('Name','LOS Angle')
+subplot(3,1,1)
+plot(t,dat.dataClass_rt.lambdaFirstOrder_rad.Data,'r')
+hold on
+plot(t,dat.dataClass_rt.lambda_rad.Data,'k')
+grid on;
+ylabel('\lambda [rad]')
+xlim(period)
+legend('First Order Approximation', 'Kalman Filter Estimates')
+ax = gca();
+ax.FontSize = 10;
+ax.FontName = "Times New Roman";
+subplot(3,1,2)
+plot(t,dat.dataClass_rt.lambdaDotFirstOrder_radpers.Data,'r')
+hold on
+plot(t,dat.dataClass_rt.lambdaDot_radpers.Data,'k')
+grid on;
+ylabel("$\dot{\lambda}$ [rad/s]","Interpreter","latex")
+ylim([-0.2,0.2]); xlim(period)
+ax = gca();
+ax.FontSize = 10;
+ax.FontName = "Times New Roman";
+subplot(3,1,3)
+plot(t,dat.dataClass_rt.lambdaDdotFirstOrder_radpers2.Data,'r')
+hold on
+plot(t,dat.dataClass_rt.lambdaDdot_radpers2.Data,'k')
+grid on;
+ylabel('$\ddot{\lambda}$ [rad/s$^{2}$]', 'Interpreter', 'latex')
+xlabel('Time [s]')
+ylim([-0.5,0.5]); xlim(period)
 formatfig(0.4,0.4);
 ax = gca();
 ax.FontSize = 10;
@@ -176,7 +220,7 @@ figure('Name','Trajectory')
 % User can specify indices to show snapshots of the platforms. Typically, 
 % these would be the initial and final conditions, but can also include 
 % intermediate snapshots
-plotting_indices = [1, 100, 150, 200, 250, 300, 1100, 1150, 1200, 1250, 3200, 3300, 3400]; 
+plotting_indices = [1, 100, 150, 200, 250, 300, 1100, 1150, 1200, 1250, 3200, 3250, 3300]; 
 alpha_values     = [0.2*ones(1,length(plotting_indices)-1) 1];    % transparency for each snapshot; must be same length as 'plotting_indices'
 
 % Plotting trajectory
@@ -287,8 +331,13 @@ if savefigs == 1
     figs = findall(groot, 'Type', 'figure');
     
     for k = 1:numel(figs)
-        fig = figs(k);
-        name = get(fig, 'Name');
-        exportgraphics(fig,[savedplotsfolder, name, '.pdf'])
+        try
+            fig = figs(k);
+            name = get(fig, 'Name');
+            exportgraphics(fig,[savedplotsfolder, name, '.pdf'])
+        catch ME
+            uialert(fig, ['Cannot save the following figure:', name],...
+                    'Error saving plots', 'Modal', true);
+        end
     end
 end

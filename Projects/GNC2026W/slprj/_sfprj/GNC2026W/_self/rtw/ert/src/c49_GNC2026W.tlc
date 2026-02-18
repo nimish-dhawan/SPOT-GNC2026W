@@ -7,18 +7,32 @@
 %endfunction
 %function ChartDataMap(block, system) void
   %createrecord ChartDataElements {\
-    NumChartData   3 \
+    NumChartData   5 \
     ChartDataDefaults {\
       RecordType   "ChartData"\
       Dimensions   []\
       IsTestPoint  0\
     }\
     ChartData {\
+      Name         "l1"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "GNC2026W:30819:429-431"\
+    }\
+    ChartData {\
+      Name         "l2"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "GNC2026W:30819:432-434"\
+    }\
+    ChartData {\
       Name         "x"\
       Description  "EmlPersistent"\
       SFName       ""\
       Path         ""\
-      SrcLocation  "GNC2026W:30819:716-717"\
+      SrcLocation  "GNC2026W:30819:966-967"\
       Dimensions   [3]\
     }\
     ChartData {\
@@ -26,14 +40,14 @@
       Description  "EmlPersistentSentinel"\
       SFName       ""\
       Path         ""\
-      SrcLocation  "GNC2026W:30819:716-717"\
+      SrcLocation  "GNC2026W:30819:966-967"\
     }\
     ChartData {\
       Name         "P"\
       Description  "EmlPersistent"\
       SFName       ""\
       Path         ""\
-      SrcLocation  "GNC2026W:30819:718-719"\
+      SrcLocation  "GNC2026W:30819:968-969"\
       Dimensions   [3,3]\
     }\
   }
