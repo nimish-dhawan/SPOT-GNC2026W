@@ -98,6 +98,6 @@ ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
 
-legend([exphdl], 'Location', 'NorthWest')
+legend(exphdl, 'Location', 'NorthWest')
 saveas(gcf,'SAMPLEFIG-example-1.pdf')
 
