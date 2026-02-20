@@ -122,11 +122,15 @@ sep3 = 0.30;            % Desired separation between the platforms (m)
 % For UKF : fNum = 1
 % For MEKF: fNum = 2
 % For EKF : fNum = 3
-fNum = 2;   
+fNum = 1;   
 
 % Unscented transform parameters
-a = 1;
-b = 0;
+% a = 1;
+% b = 0;
+% k = 5;
+
+a = 3;
+b = 2;
 k = 5;
 
 % Measurement noise covariance for UKF

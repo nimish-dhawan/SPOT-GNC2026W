@@ -122,7 +122,7 @@ sep3 = 0.30;            % Desired separation between the platforms (m)
 % For UKF : fNum = 1
 % For MEKF: fNum = 2
 % For EKF : fNum = 3
-fNum = 2;   
+fNum = 1;   
 
 % Unscented transform parameters
 a = 1;
