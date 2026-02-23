@@ -19,7 +19,7 @@ end
 % Toggle on/off saving all the plots automatically
 savefigs = 1;
 % Toggle on/off animation
-anim = 0;
+anim = 1;
 % Time frame for plotting
 t = dat.dataClass_rt.Time_s.Data;
 % For successful experiment : period = [t(1100), t(4700)];
@@ -178,6 +178,45 @@ ax.FontSize = 10;
 ax.FontName = "Times New Roman";
 
 % =========================================================================
+% Plotting VIS LAR States
+% =========================================================================
+% For 3x1 plots, 0.4x0.4 size is recommended for placing next to trajectory
+% plot
+figure('Name','VIS LAR States')
+subplot(3,1,1)
+plot(t,dat.dataClass_rt.VIS_LAR_States_Px_mm.Data,'k')
+grid on;
+ylabel('x_{LAR} [mm]')
+xlim(period)
+ax = gca();
+annotation('textbox', ...
+    [0.45 0.79 0.26 0.12], ...
+    'String','LAR outside camera FOV', ...
+    'FontName','Times New Roman', ...
+    'FitBoxToText','off', ...
+    'BackgroundColor',[1 1 1]);
+ax.FontSize = 10;
+ax.FontName = "Times New Roman";
+subplot(3,1,2)
+plot(t,dat.dataClass_rt.VIS_LAR_States_Py_mm.Data,'k')
+grid on;
+ylabel('y_{LAR} [mm]')
+xlim(period)
+ax = gca();
+ax.FontSize = 10;
+ax.FontName = "Times New Roman";
+subplot(3,1,3)
+plot(t,dat.dataClass_rt.VIS_LAR_States_Rz_rad.Data,'k')
+grid on;
+ylabel('\theta_{LAR} [rad]')
+xlabel('Time [s]')
+xlim(period)
+formatfig(0.4,0.4);
+ax = gca();
+ax.FontSize = 10;
+ax.FontName = "Times New Roman";
+
+% =========================================================================
 % Plotting separation
 % =========================================================================
 figure('Name', 'Separation Distance')
@@ -220,11 +259,12 @@ figure('Name','Trajectory')
 % User can specify indices to show snapshots of the platforms. Typically, 
 % these would be the initial and final conditions, but can also include 
 % intermediate snapshots
-plotting_indices = [1, 100, 150, 200, 250, 300, 1100, 1150, 1200, 1250, 3200, 3250, 3300]; 
-alpha_values     = [0.2*ones(1,length(plotting_indices)-1) 1];    % transparency for each snapshot; must be same length as 'plotting_indices'
+plotting_indices = [1, 950, 1000, 1050, 1100, 3300]; 
+alpha_values     = [0.2, 0.2, 0.2, 0.2, 0.7, 1];
+% alpha_values     = [0.2*ones(1,length(plotting_indices)-1) 1];    % transparency for each snapshot; must be same length as 'plotting_indices'
 
 % Plotting trajectory
-exphdl = plot(expdata_RED_pos_x(1:plotting_indices(end)),expdata_RED_pos_y(1:plotting_indices(end)), 'r','Linewidth',1,'DisplayName','Trial');
+exphdl = plot(expdata_RED_pos_x(1:plotting_indices(end)),expdata_RED_pos_y(1:plotting_indices(end)), 'r','Linewidth',1,'DisplayName','Trial 4');
 hold on
 plot(expdata_BLACK_pos_x(1:plotting_indices(end)),expdata_BLACK_pos_y(1:plotting_indices(end)), 'k','Linewidth',1)
 plot(expdata_BLUE_pos_x(1:plotting_indices(end)),expdata_BLUE_pos_y(1:plotting_indices(end)), 'b','Linewidth',1)
@@ -273,7 +313,7 @@ ax.FontName = "Times New Roman";
 % =========================================================================
 
 if anim == 1 % Trajectory animation
-    stepsize = 5; % This controls how many frames of data are plotted
+    stepsize = 15; % This controls how many frames of data are plotted
     
     fig = figure();
     set(gcf,'color','w')
