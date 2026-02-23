@@ -103,9 +103,9 @@ function [sc] = ShapeSpacecraft(param)
     SOLAR_PANEL_LENGTH = 0.45;  % m
     SOLAR_PANEL_WIDTH  = 0.02;  % m
     SOLAR_PANEL_HEIGHT = 0.27;  % m
-    LAR_inwidth = 0.20;         % m
+    LAR_inwidth = 0.18;         % m
     LAR_outwidth = 0.30;        % m
-    LAR_thickness = 0.05;       % m
+    LAR_thickness = 0.07;       % m
     
     gamma = r - (excess + shrink + bracketwidth); % m
     

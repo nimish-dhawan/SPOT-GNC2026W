@@ -200,12 +200,10 @@ function [x, y] = drawCircle(data, idx)
     y = data.RED_Py_m.Data(idx) + r*sin(t);
 end
 
+appHandle.register
+
 appHandle.registerCustomDrawing("Circle", @drawCircle, @patch, ...
     {'FaceColor', 'red', 'EdgeColor', 'red', 'FaceAlpha', 0.1, 'LineStyle', '--'})
-
-appHandle.registerCustomDrawing("Cone", @DrawPositionCone, @patch, ...
-    {'k', 'facealpha', 0.05, 'edgecolor', 'k', 'edgealpha', 0.7, 'Linewidth',0.5})
-
 
 %% For those who want to run simulations without using the GUI:
 
