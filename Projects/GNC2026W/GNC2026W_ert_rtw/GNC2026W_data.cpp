@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'GNC2026W'.
 //
-// Model version                  : 4.1759
+// Model version                  : 4.1765
 // Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
-// C/C++ source code generated on : Wed Feb 18 14:43:45 2026
+// C/C++ source code generated on : Mon Feb 23 09:25:19 2026
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: ARM Compatible->ARM Cortex-A (64-bit)
@@ -30,38 +30,38 @@ P_GNC2026W_T GNC2026W_P = {
   //    '<S214>/EKF'
   //    '<S215>/MEKF'
   //    '<S216>/Unscented Kalman Filter'
-  //    '<S249>/Sample and Hold'
+  //    '<S251>/Sample and Hold'
 
   0.2,
 
   // Variable: F_red_X_nominal
   //  Referenced by:
-  //    '<S297>/MATLAB Function5'
-  //    '<S309>/MATLAB Function5'
-  //    '<S321>/MATLAB Function5'
+  //    '<S299>/MATLAB Function5'
+  //    '<S311>/MATLAB Function5'
+  //    '<S323>/MATLAB Function5'
 
   0.2825,
 
   // Variable: F_red_Y_nominal
   //  Referenced by:
-  //    '<S297>/MATLAB Function5'
-  //    '<S309>/MATLAB Function5'
-  //    '<S321>/MATLAB Function5'
+  //    '<S299>/MATLAB Function5'
+  //    '<S311>/MATLAB Function5'
+  //    '<S323>/MATLAB Function5'
 
   0.2825,
 
   // Variable: F_thrusters_BLACK
-  //  Referenced by: '<S300>/MATLAB Function'
+  //  Referenced by: '<S302>/MATLAB Function'
 
   { 0.2825, 0.2825, 0.2825, 0.2825, 0.2825, 0.2825, 0.2825, 0.2825 },
 
   // Variable: F_thrusters_BLUE
-  //  Referenced by: '<S312>/MATLAB Function'
+  //  Referenced by: '<S314>/MATLAB Function'
 
   { 0.2825, 0.2825, 0.2825, 0.2825, 0.2825, 0.2825, 0.2825, 0.2825 },
 
   // Variable: F_thrusters_RED
-  //  Referenced by: '<S324>/MATLAB Function'
+  //  Referenced by: '<S326>/MATLAB Function'
 
   { 0.2825, 0.2825, 0.2825, 0.2825, 0.2825, 0.2825, 0.2825, 0.2825 },
 
@@ -229,12 +229,12 @@ P_GNC2026W_T GNC2026W_P = {
   // Variable: PWMFreq
   //  Referenced by:
   //    '<S17>/PWM Frequency'
-  //    '<S297>/MATLAB Function1'
-  //    '<S309>/MATLAB Function1'
-  //    '<S321>/MATLAB Function8'
-  //    '<S299>/Constant1'
-  //    '<S311>/Constant1'
-  //    '<S323>/Constant1'
+  //    '<S299>/MATLAB Function1'
+  //    '<S311>/MATLAB Function1'
+  //    '<S323>/MATLAB Function8'
+  //    '<S301>/Constant1'
+  //    '<S313>/Constant1'
+  //    '<S325>/Constant1'
 
   5.0,
 
@@ -329,11 +329,11 @@ P_GNC2026W_T GNC2026W_P = {
 
   // Variable: VISinLoop
   //  Referenced by:
-  //    '<S289>/Constant'
+  //    '<S291>/Constant'
   //    '<S216>/Constant'
-  //    '<S249>/Constant'
+  //    '<S251>/Constant'
 
-  0.0,
+  1.0,
 
   // Variable: X1_blk
   //  Referenced by: '<S39>/Desired X-Position (BLACK)'
@@ -373,7 +373,7 @@ P_GNC2026W_T GNC2026W_P = {
   // Variable: alpha
   //  Referenced by: '<S144>/MATLAB Function3'
 
-  1.0,
+  { 2.0, 0.0, 0.0, 0.0, 2.0, 0.0, 0.0, 0.0, 2.0 },
 
   // Variable: b
   //  Referenced by: '<S216>/Unscented Kalman Filter'
@@ -384,21 +384,21 @@ P_GNC2026W_T GNC2026W_P = {
   //  Referenced by:
   //    '<S144>/MATLAB Function2'
   //    '<S212>/Read Joint Positions using  Dynamixel Encoders'
-  //    '<S288>/WhoAmI'
-  //    '<S292>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
+  //    '<S290>/WhoAmI'
+  //    '<S294>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
   //    '<S214>/EKF'
   //    '<S215>/MEKF'
   //    '<S216>/Unscented Kalman Filter'
-  //    '<S249>/Sample and Hold'
-  //    '<S255>/MATLAB Function1'
+  //    '<S251>/Sample and Hold'
+  //    '<S257>/MATLAB Function1'
 
   0.05,
 
   // Variable: dataRate
   //  Referenced by:
-  //    '<S248>/Constant'
-  //    '<S268>/Constant'
-  //    '<S278>/Constant'
+  //    '<S250>/Constant'
+  //    '<S270>/Constant'
+  //    '<S280>/Constant'
 
   0.1,
 
@@ -447,10 +447,10 @@ P_GNC2026W_T GNC2026W_P = {
   //    '<S220>/Delay1'
   //    '<S225>/Delay'
   //    '<S225>/Delay1'
-  //    '<S232>/Delay'
-  //    '<S232>/Delay1'
-  //    '<S262>/Delay'
-  //    '<S262>/Delay1'
+  //    '<S234>/Delay'
+  //    '<S234>/Delay1'
+  //    '<S264>/Delay'
+  //    '<S264>/Delay1'
 
   { 0.4, 0.4, -0.78539816339744828 },
 
@@ -474,10 +474,10 @@ P_GNC2026W_T GNC2026W_P = {
   // Variable: k
   //  Referenced by: '<S216>/Unscented Kalman Filter'
 
-  12.0,
+  5.0,
 
   // Variable: platformSelection
-  //  Referenced by: '<S240>/MATLAB Function'
+  //  Referenced by: '<S242>/MATLAB Function'
 
   3.0,
 
@@ -502,14 +502,14 @@ P_GNC2026W_T GNC2026W_P = {
   0.0,
 
   // Variable: thruster_dist2CG_BLACK
-  //  Referenced by: '<S300>/MATLAB Function'
+  //  Referenced by: '<S302>/MATLAB Function'
 
   { 73.881766499134855, -64.118233500865131, 56.874845513718384,
     -84.6251544862816, 64.118233500865131, -66.281766499134861, 79.1251544862816,
     -49.874845513718391 },
 
   // Variable: thruster_dist2CG_BLUE
-  //  Referenced by: '<S312>/MATLAB Function'
+  //  Referenced by: '<S314>/MATLAB Function'
 
   { 73.815115806582682, -64.1848841934173, 57.054043071921981, -84.445956928078,
     64.1848841934173, -66.215115806582673, 78.945956928078, -50.054043071921988
@@ -517,10 +517,10 @@ P_GNC2026W_T GNC2026W_P = {
 
   // Variable: thruster_dist2CG_RED
   //  Referenced by:
-  //    '<S297>/MATLAB Function5'
-  //    '<S309>/MATLAB Function5'
-  //    '<S321>/MATLAB Function5'
-  //    '<S324>/MATLAB Function'
+  //    '<S299>/MATLAB Function5'
+  //    '<S311>/MATLAB Function5'
+  //    '<S323>/MATLAB Function5'
+  //    '<S326>/MATLAB Function'
 
   { 71.579508939606143, -60.420491060393836, 60.451141138666884,
     -84.0488588613331, 63.420491060393836, -70.579508939606143, 76.5488588613331,
@@ -656,32 +656,32 @@ P_GNC2026W_T GNC2026W_P = {
   0.0,
 
   // Mask Parameter: MATLABFunction5_max_iters
-  //  Referenced by: '<S297>/MATLAB Function5'
+  //  Referenced by: '<S299>/MATLAB Function5'
 
   20.0,
 
   // Mask Parameter: MATLABFunction5_max_iters_b
-  //  Referenced by: '<S309>/MATLAB Function5'
+  //  Referenced by: '<S311>/MATLAB Function5'
 
   20.0,
 
   // Mask Parameter: MATLABFunction5_max_iters_e
-  //  Referenced by: '<S321>/MATLAB Function5'
+  //  Referenced by: '<S323>/MATLAB Function5'
 
   20.0,
 
   // Mask Parameter: MATLABFunction5_tol
-  //  Referenced by: '<S297>/MATLAB Function5'
+  //  Referenced by: '<S299>/MATLAB Function5'
 
   1.0E-6,
 
   // Mask Parameter: MATLABFunction5_tol_j
-  //  Referenced by: '<S309>/MATLAB Function5'
+  //  Referenced by: '<S311>/MATLAB Function5'
 
   1.0E-6,
 
   // Mask Parameter: MATLABFunction5_tol_g
-  //  Referenced by: '<S321>/MATLAB Function5'
+  //  Referenced by: '<S323>/MATLAB Function5'
 
   1.0E-6,
 
@@ -1378,71 +1378,51 @@ P_GNC2026W_T GNC2026W_P = {
   0.0,
 
   // Computed Parameter: UniversalTime_Y0
-  //  Referenced by: '<S241>/Universal Time'
+  //  Referenced by: '<S243>/Universal Time'
 
   0.0,
 
   // Computed Parameter: dytdt_Y0
-  //  Referenced by: '<S253>/dy(t)//dt'
+  //  Referenced by: '<S255>/dy(t)//dt'
 
   0.0,
 
   // Computed Parameter: dytdt_Y0_j
-  //  Referenced by: '<S272>/dy(t)//dt'
+  //  Referenced by: '<S274>/dy(t)//dt'
 
   0.0,
 
   // Computed Parameter: dytdt_Y0_d
-  //  Referenced by: '<S282>/dy(t)//dt'
+  //  Referenced by: '<S284>/dy(t)//dt'
 
   0.0,
 
   // Expression: 1/1000
-  //  Referenced by: '<S237>/Convert BLAX from [mm] to [m]'
+  //  Referenced by: '<S239>/Convert BLAX from [mm] to [m]'
 
   0.001,
 
   // Expression: 1/1000
-  //  Referenced by: '<S237>/Convert BLAY from [mm] to [m]'
+  //  Referenced by: '<S239>/Convert BLAY from [mm] to [m]'
 
   0.001,
 
   // Expression: 1/1000
-  //  Referenced by: '<S237>/Convert BLACKVX from [mm] to [m]'
+  //  Referenced by: '<S239>/Convert BLACKVX from [mm] to [m]'
 
   0.001,
 
   // Expression: 1/1000
-  //  Referenced by: '<S237>/Convert BLACKVY from [mm] to [m]'
+  //  Referenced by: '<S239>/Convert BLACKVY from [mm] to [m]'
 
   0.001,
 
   // Expression: 0
-  //  Referenced by: '<S248>/Delay2'
+  //  Referenced by: '<S250>/Delay2'
 
   0.0,
 
   // Expression: 0
-  //  Referenced by: '<S248>/Delay1'
-
-  0.0,
-
-  // Expression: 0
-  //  Referenced by: '<S248>/Constant3'
-
-  0.0,
-
-  // Expression: 0.0
-  //  Referenced by: '<S251>/Delay1'
-
-  0.0,
-
-  // Expression: 0
-  //  Referenced by: '<S251>/Constant3'
-
-  0.0,
-
-  // Expression: 0.0
   //  Referenced by: '<S250>/Delay1'
 
   0.0,
@@ -1452,42 +1432,52 @@ P_GNC2026W_T GNC2026W_P = {
 
   0.0,
 
-  // Expression: 1/1000
-  //  Referenced by: '<S238>/Convert BLUX from [mm] to [m]'
-
-  0.001,
-
-  // Expression: 1/1000
-  //  Referenced by: '<S238>/Convert BLUY from [mm] to [m]'
-
-  0.001,
-
-  // Expression: 1/1000
-  //  Referenced by: '<S238>/Convert BLUEVX from [mm] to [m]'
-
-  0.001,
-
-  // Expression: 1/1000
-  //  Referenced by: '<S238>/Convert BLUEVY from [mm] to [m]'
-
-  0.001,
-
-  // Expression: 0
-  //  Referenced by: '<S268>/Delay2'
+  // Expression: 0.0
+  //  Referenced by: '<S253>/Delay1'
 
   0.0,
 
   // Expression: 0
-  //  Referenced by: '<S268>/Delay1'
-
-  0.0,
-
-  // Expression: 0
-  //  Referenced by: '<S268>/Constant3'
+  //  Referenced by: '<S253>/Constant3'
 
   0.0,
 
   // Expression: 0.0
+  //  Referenced by: '<S252>/Delay1'
+
+  0.0,
+
+  // Expression: 0
+  //  Referenced by: '<S252>/Constant3'
+
+  0.0,
+
+  // Expression: 1/1000
+  //  Referenced by: '<S240>/Convert BLUX from [mm] to [m]'
+
+  0.001,
+
+  // Expression: 1/1000
+  //  Referenced by: '<S240>/Convert BLUY from [mm] to [m]'
+
+  0.001,
+
+  // Expression: 1/1000
+  //  Referenced by: '<S240>/Convert BLUEVX from [mm] to [m]'
+
+  0.001,
+
+  // Expression: 1/1000
+  //  Referenced by: '<S240>/Convert BLUEVY from [mm] to [m]'
+
+  0.001,
+
+  // Expression: 0
+  //  Referenced by: '<S270>/Delay2'
+
+  0.0,
+
+  // Expression: 0
   //  Referenced by: '<S270>/Delay1'
 
   0.0,
@@ -1498,51 +1488,51 @@ P_GNC2026W_T GNC2026W_P = {
   0.0,
 
   // Expression: 0.0
-  //  Referenced by: '<S269>/Delay1'
+  //  Referenced by: '<S272>/Delay1'
 
   0.0,
 
   // Expression: 0
-  //  Referenced by: '<S269>/Constant3'
-
-  0.0,
-
-  // Expression: 1/1000
-  //  Referenced by: '<S239>/Convert REDX from [mm] to [m]'
-
-  0.001,
-
-  // Expression: 1/1000
-  //  Referenced by: '<S239>/Convert REDY from [mm] to [m]'
-
-  0.001,
-
-  // Expression: 1/1000
-  //  Referenced by: '<S239>/Convert REDVX from [mm] to [m]'
-
-  0.001,
-
-  // Expression: 1/1000
-  //  Referenced by: '<S239>/Convert REDVY from [mm] to [m]'
-
-  0.001,
-
-  // Expression: 0
-  //  Referenced by: '<S278>/Delay2'
-
-  0.0,
-
-  // Expression: 0
-  //  Referenced by: '<S278>/Delay1'
-
-  0.0,
-
-  // Expression: 0
-  //  Referenced by: '<S278>/Constant3'
+  //  Referenced by: '<S272>/Constant3'
 
   0.0,
 
   // Expression: 0.0
+  //  Referenced by: '<S271>/Delay1'
+
+  0.0,
+
+  // Expression: 0
+  //  Referenced by: '<S271>/Constant3'
+
+  0.0,
+
+  // Expression: 1/1000
+  //  Referenced by: '<S241>/Convert REDX from [mm] to [m]'
+
+  0.001,
+
+  // Expression: 1/1000
+  //  Referenced by: '<S241>/Convert REDY from [mm] to [m]'
+
+  0.001,
+
+  // Expression: 1/1000
+  //  Referenced by: '<S241>/Convert REDVX from [mm] to [m]'
+
+  0.001,
+
+  // Expression: 1/1000
+  //  Referenced by: '<S241>/Convert REDVY from [mm] to [m]'
+
+  0.001,
+
+  // Expression: 0
+  //  Referenced by: '<S280>/Delay2'
+
+  0.0,
+
+  // Expression: 0
   //  Referenced by: '<S280>/Delay1'
 
   0.0,
@@ -1553,152 +1543,162 @@ P_GNC2026W_T GNC2026W_P = {
   0.0,
 
   // Expression: 0.0
-  //  Referenced by: '<S279>/Delay1'
+  //  Referenced by: '<S282>/Delay1'
 
   0.0,
 
   // Expression: 0
-  //  Referenced by: '<S279>/Constant3'
+  //  Referenced by: '<S282>/Constant3'
+
+  0.0,
+
+  // Expression: 0.0
+  //  Referenced by: '<S281>/Delay1'
+
+  0.0,
+
+  // Expression: 0
+  //  Referenced by: '<S281>/Constant3'
 
   0.0,
 
   // Expression: 1
-  //  Referenced by: '<S240>/Constant'
+  //  Referenced by: '<S242>/Constant'
 
   1.0,
 
   // Expression: -1
-  //  Referenced by: '<S289>/Gain'
+  //  Referenced by: '<S291>/Gain'
 
   -1.0,
 
   // Expression: 400
-  //  Referenced by: '<S292>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
+  //  Referenced by: '<S294>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
 
   400.0,
 
   // Expression: 0
-  //  Referenced by: '<S292>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
+  //  Referenced by: '<S294>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
 
   0.0,
 
   // Expression: 200
-  //  Referenced by: '<S292>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
+  //  Referenced by: '<S294>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
 
   200.0,
 
   // Expression: 3072
-  //  Referenced by: '<S292>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
+  //  Referenced by: '<S294>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
 
   3072.0,
 
   // Expression: 1024
-  //  Referenced by: '<S292>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
+  //  Referenced by: '<S294>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
 
   1024.0,
 
   // Expression: 0
-  //  Referenced by: '<S292>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
+  //  Referenced by: '<S294>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
 
   0.0,
 
   // Expression: 850
-  //  Referenced by: '<S292>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
+  //  Referenced by: '<S294>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
 
   850.0,
 
   // Expression: 400
-  //  Referenced by: '<S292>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
+  //  Referenced by: '<S294>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
 
   400.0,
 
   // Expression: 100
-  //  Referenced by: '<S292>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
+  //  Referenced by: '<S294>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
 
   100.0,
 
   // Expression: 20
-  //  Referenced by: '<S292>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
+  //  Referenced by: '<S294>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
 
   20.0,
 
   // Expression: 0
-  //  Referenced by: '<S292>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
+  //  Referenced by: '<S294>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
 
   0.0,
 
   // Computed Parameter: Out1_Y0
-  //  Referenced by: '<S304>/Out1'
+  //  Referenced by: '<S306>/Out1'
 
   0.0,
 
   // Computed Parameter: Out1_Y0_j
-  //  Referenced by: '<S305>/Out1'
+  //  Referenced by: '<S307>/Out1'
 
   0.0,
 
   // Computed Parameter: BLACKDC_Y0
-  //  Referenced by: '<S294>/BLACK DC'
+  //  Referenced by: '<S296>/BLACK DC'
 
   0.0,
 
   // Expression: 0.0
-  //  Referenced by: '<S299>/Delay'
+  //  Referenced by: '<S301>/Delay'
 
   0.0,
 
   // Expression: 0
-  //  Referenced by: '<S299>/Constant2'
+  //  Referenced by: '<S301>/Constant2'
 
   0.0,
 
   // Computed Parameter: Out1_Y0_n
-  //  Referenced by: '<S316>/Out1'
+  //  Referenced by: '<S318>/Out1'
 
   0.0,
 
   // Computed Parameter: Out1_Y0_js
-  //  Referenced by: '<S317>/Out1'
+  //  Referenced by: '<S319>/Out1'
 
   0.0,
 
   // Computed Parameter: BLUEDC_Y0
-  //  Referenced by: '<S295>/BLUE DC'
+  //  Referenced by: '<S297>/BLUE DC'
 
   0.0,
 
   // Expression: 0.0
-  //  Referenced by: '<S311>/Delay'
+  //  Referenced by: '<S313>/Delay'
 
   0.0,
 
   // Expression: 0
-  //  Referenced by: '<S311>/Constant2'
+  //  Referenced by: '<S313>/Constant2'
 
   0.0,
 
   // Computed Parameter: Out1_Y0_c
-  //  Referenced by: '<S328>/Out1'
+  //  Referenced by: '<S330>/Out1'
 
   0.0,
 
   // Computed Parameter: Out1_Y0_d
-  //  Referenced by: '<S329>/Out1'
+  //  Referenced by: '<S331>/Out1'
 
   0.0,
 
   // Computed Parameter: REDDC_Y0
-  //  Referenced by: '<S296>/RED DC'
+  //  Referenced by: '<S298>/RED DC'
 
   0.0,
 
   // Expression: 0.0
-  //  Referenced by: '<S323>/Delay'
+  //  Referenced by: '<S325>/Delay'
 
   0.0,
 
   // Expression: 0
-  //  Referenced by: '<S323>/Constant2'
+  //  Referenced by: '<S325>/Constant2'
 
   0.0,
 
@@ -2173,37 +2173,37 @@ P_GNC2026W_T GNC2026W_P = {
   55000,
 
   // Computed Parameter: ReceivePhaseSpaceData_Port
-  //  Referenced by: '<S236>/Receive PhaseSpace Data'
+  //  Referenced by: '<S238>/Receive PhaseSpace Data'
 
   31534,
 
   // Computed Parameter: UDPReceiveREDClock_Port
-  //  Referenced by: '<S240>/UDP Receive (RED Clock)'
+  //  Referenced by: '<S242>/UDP Receive (RED Clock)'
 
   48740,
 
   // Computed Parameter: UDPReceiveBLACKClock_Port
-  //  Referenced by: '<S240>/UDP Receive (BLACK Clock)'
+  //  Referenced by: '<S242>/UDP Receive (BLACK Clock)'
 
   48741,
 
   // Computed Parameter: UDPReceiveBLUEClock_Port
-  //  Referenced by: '<S240>/UDP Receive (BLUE Clock)'
+  //  Referenced by: '<S242>/UDP Receive (BLUE Clock)'
 
   48742,
 
   // Computed Parameter: UDPReceive_Port
-  //  Referenced by: '<S289>/UDP Receive'
+  //  Referenced by: '<S291>/UDP Receive'
 
   50005,
 
   // Computed Parameter: UDPReceive_Port_a
-  //  Referenced by: '<S291>/UDP Receive'
+  //  Referenced by: '<S293>/UDP Receive'
 
   36845,
 
   // Computed Parameter: UDPSend_Port
-  //  Referenced by: '<S293>/UDP Send'
+  //  Referenced by: '<S295>/UDP Send'
 
   46875,
 
@@ -2215,7 +2215,7 @@ P_GNC2026W_T GNC2026W_P = {
   // Start of '<S18>/Change RED Behavior'
   {
     // Computed Parameter: UDPSendClock_Port
-    //  Referenced by: '<S335>/UDP Send (Clock)'
+    //  Referenced by: '<S337>/UDP Send (Clock)'
 
     48740
   }
@@ -2226,7 +2226,7 @@ P_GNC2026W_T GNC2026W_P = {
   // Start of '<S18>/Change BLUE Behavior'
   {
     // Computed Parameter: UDPSendClock_Port
-    //  Referenced by: '<S334>/UDP Send (Clock)'
+    //  Referenced by: '<S336>/UDP Send (Clock)'
 
     48742
   }
@@ -2237,7 +2237,7 @@ P_GNC2026W_T GNC2026W_P = {
   // Start of '<S18>/Change BLACK Behavior'
   {
     // Computed Parameter: UDPSendClock_Port
-    //  Referenced by: '<S333>/UDP Send (Clock)'
+    //  Referenced by: '<S335>/UDP Send (Clock)'
 
     48741
   }
@@ -2245,7 +2245,28 @@ P_GNC2026W_T GNC2026W_P = {
 
   // End of '<S18>/Change BLACK Behavior'
 
-  // Start of '<S280>/Enabled Subsystem'
+  // Start of '<S282>/Enabled Subsystem'
+  {
+    // Computed Parameter: dydt_Y0
+    //  Referenced by: '<S288>/dy//dt'
+
+    0.0,
+
+    // Expression: 0.1
+    //  Referenced by: '<S288>/Constant2'
+
+    0.1,
+
+    // Expression: 0.0
+    //  Referenced by: '<S288>/Delay'
+
+    0.0
+  }
+  ,
+
+  // End of '<S282>/Enabled Subsystem'
+
+  // Start of '<S281>/Enabled Subsystem'
   {
     // Computed Parameter: dydt_Y0
     //  Referenced by: '<S286>/dy//dt'
@@ -2264,30 +2285,30 @@ P_GNC2026W_T GNC2026W_P = {
   }
   ,
 
-  // End of '<S280>/Enabled Subsystem'
+  // End of '<S281>/Enabled Subsystem'
 
-  // Start of '<S279>/Enabled Subsystem'
+  // Start of '<S272>/Enabled Subsystem'
   {
     // Computed Parameter: dydt_Y0
-    //  Referenced by: '<S284>/dy//dt'
+    //  Referenced by: '<S278>/dy//dt'
 
     0.0,
 
     // Expression: 0.1
-    //  Referenced by: '<S284>/Constant2'
+    //  Referenced by: '<S278>/Constant2'
 
     0.1,
 
     // Expression: 0.0
-    //  Referenced by: '<S284>/Delay'
+    //  Referenced by: '<S278>/Delay'
 
     0.0
   }
   ,
 
-  // End of '<S279>/Enabled Subsystem'
+  // End of '<S272>/Enabled Subsystem'
 
-  // Start of '<S270>/Enabled Subsystem'
+  // Start of '<S271>/Enabled Subsystem'
   {
     // Computed Parameter: dydt_Y0
     //  Referenced by: '<S276>/dy//dt'
@@ -2306,30 +2327,30 @@ P_GNC2026W_T GNC2026W_P = {
   }
   ,
 
-  // End of '<S270>/Enabled Subsystem'
+  // End of '<S271>/Enabled Subsystem'
 
-  // Start of '<S269>/Enabled Subsystem'
+  // Start of '<S253>/Enabled Subsystem'
   {
     // Computed Parameter: dydt_Y0
-    //  Referenced by: '<S274>/dy//dt'
+    //  Referenced by: '<S268>/dy//dt'
 
     0.0,
 
     // Expression: 0.1
-    //  Referenced by: '<S274>/Constant2'
+    //  Referenced by: '<S268>/Constant2'
 
     0.1,
 
     // Expression: 0.0
-    //  Referenced by: '<S274>/Delay'
+    //  Referenced by: '<S268>/Delay'
 
     0.0
   }
   ,
 
-  // End of '<S269>/Enabled Subsystem'
+  // End of '<S253>/Enabled Subsystem'
 
-  // Start of '<S251>/Enabled Subsystem'
+  // Start of '<S252>/Enabled Subsystem'
   {
     // Computed Parameter: dydt_Y0
     //  Referenced by: '<S266>/dy//dt'
@@ -2348,61 +2369,40 @@ P_GNC2026W_T GNC2026W_P = {
   }
   ,
 
-  // End of '<S251>/Enabled Subsystem'
+  // End of '<S252>/Enabled Subsystem'
 
-  // Start of '<S250>/Enabled Subsystem'
-  {
-    // Computed Parameter: dydt_Y0
-    //  Referenced by: '<S264>/dy//dt'
-
-    0.0,
-
-    // Expression: 0.1
-    //  Referenced by: '<S264>/Constant2'
-
-    0.1,
-
-    // Expression: 0.0
-    //  Referenced by: '<S264>/Delay'
-
-    0.0
-  }
-  ,
-
-  // End of '<S250>/Enabled Subsystem'
-
-  // Start of '<S244>/Change RED Behavior'
+  // Start of '<S246>/Change RED Behavior'
   {
     // Computed Parameter: UDPSendGUI_Port
-    //  Referenced by: '<S247>/UDP Send (GUI)'
+    //  Referenced by: '<S249>/UDP Send (GUI)'
 
     48720
   }
   ,
 
-  // End of '<S244>/Change RED Behavior'
+  // End of '<S246>/Change RED Behavior'
 
-  // Start of '<S244>/Change BLUE Behavior'
+  // Start of '<S246>/Change BLUE Behavior'
   {
     // Computed Parameter: UDPSendGUI_Port
-    //  Referenced by: '<S246>/UDP Send (GUI)'
+    //  Referenced by: '<S248>/UDP Send (GUI)'
 
     48722
   }
   ,
 
-  // End of '<S244>/Change BLUE Behavior'
+  // End of '<S246>/Change BLUE Behavior'
 
-  // Start of '<S244>/Change BLACK Behavior'
+  // Start of '<S246>/Change BLACK Behavior'
   {
     // Computed Parameter: UDPSendGUI_Port
-    //  Referenced by: '<S245>/UDP Send (GUI)'
+    //  Referenced by: '<S247>/UDP Send (GUI)'
 
     48721
   }
   ,
 
-  // End of '<S244>/Change BLACK Behavior'
+  // End of '<S246>/Change BLACK Behavior'
 
   // Start of '<S4>/Change RED Behavior'
   {

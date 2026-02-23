@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'GNC2026W'.
 //
-// Model version                  : 4.1759
+// Model version                  : 4.1765
 // Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
-// C/C++ source code generated on : Wed Feb 18 14:43:45 2026
+// C/C++ source code generated on : Mon Feb 23 09:25:19 2026
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: ARM Compatible->ARM Cortex-A (64-bit)
@@ -137,13 +137,13 @@ typedef struct P_DisableThrustersBLACK_GNC20_T_ P_DisableThrustersBLACK_GNC20_T;
 // Parameters for system: '<S4>/Change BLACK Behavior'
 typedef struct P_ChangeBLACKBehavior_GNC2026_T_ P_ChangeBLACKBehavior_GNC2026_T;
 
-// Parameters for system: '<S244>/Change BLACK Behavior'
+// Parameters for system: '<S246>/Change BLACK Behavior'
 typedef struct P_ChangeBLACKBehavior_GNC20_p_T_ P_ChangeBLACKBehavior_GNC20_p_T;
 
-// Parameters for system: '<S250>/Enabled Subsystem'
+// Parameters for system: '<S252>/Enabled Subsystem'
 typedef struct P_EnabledSubsystem_GNC2026W_T_ P_EnabledSubsystem_GNC2026W_T;
 
-// Parameters for system: '<S251>/Enabled Subsystem'
+// Parameters for system: '<S253>/Enabled Subsystem'
 typedef struct P_EnabledSubsystem_GNC2026W_c_T_ P_EnabledSubsystem_GNC2026W_c_T;
 
 // Parameters for system: '<S18>/Change BLACK Behavior'
