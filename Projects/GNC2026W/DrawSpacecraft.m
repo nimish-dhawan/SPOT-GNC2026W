@@ -103,9 +103,9 @@ function [sc] = ShapeSpacecraft(param)
     SOLAR_PANEL_LENGTH = 0.45;  % m
     SOLAR_PANEL_WIDTH  = 0.02;  % m
     SOLAR_PANEL_HEIGHT = 0.27;  % m
-    LAR_inwidth = 0.18;         % m
-    LAR_outwidth = 0.30;        % m
-    LAR_thickness = 0.07;       % m
+    LAR_innerD = 0.18;          % m
+    LAR_outerD = 0.30;          % m
+    LAR_width  = 0.07;          % m
     
     gamma = r - (excess + shrink + bracketwidth); % m
     
@@ -195,10 +195,10 @@ function [sc] = ShapeSpacecraft(param)
     elseif id == 7 % LAR platform (with solar panels)
         sc = [cx,   cy;
               cx+r, cy;
-              cx+r, cy+LAR_inwidth/2;
-              cx+r+LAR_thickness, cy+LAR_outwidth/2;
-              cx+r+LAR_thickness, cy-LAR_outwidth/2;
-              cx+r, cy-LAR_inwidth/2;
+              cx+r, cy+LAR_innerD/2;
+              cx+r+LAR_width, cy+LAR_outerD/2;
+              cx+r+LAR_width, cy-LAR_outerD/2;
+              cx+r, cy-LAR_innerD/2;
               cx+r, cy+r;
               cx-SOLAR_PANEL_WIDTH/2, cy+r;
               cx-SOLAR_PANEL_WIDTH/2, cy+r+SOLAR_PANEL_LENGTH;

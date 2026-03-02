@@ -204,6 +204,9 @@ end
 appHandle.registerCustomDrawing("Circle", @drawCircle, @patch, ...
     {'FaceColor', 'red', 'EdgeColor', 'red', 'FaceAlpha', 0.1, 'LineStyle', '--'})
 
+% appHandle.registerCustomDrawing("Cone", @DrawPositionCone, @patch, ...
+%     {'FaceColor', 'red', 'EdgeColor', 'red', 'FaceAlpha', 0.1, 'LineStyle', '--'})
+
 
 function [x,y] = DrawPositionCone(data,idx)  
 
@@ -247,14 +250,13 @@ function [x,y] = DrawPositionCone(data,idx)
     
     % Transform the spacecraft back to its correct position at cx,cy
     conepose = coneorigin_rot + conecenter;
-    x = conepose(1);
-    y = conepose(2);
+    x = conepose(:,1);
+    y = conepose(:,2);
 
 end
 
 appHandle.registerCustomDrawing("Cone", @DrawPositionCone, @patch, ...
-    {'k', 'facealpha', 0.05, 'edgecolor', 'k', 'edgealpha', 0.7, 'LineStyle', '--'})
-
+    {'FaceColor','k','FaceAlpha', 0.05, 'EdgeColor', 'k', 'EdgeAlpha', 0.7, 'LineStyle', '--'})
 
 %% For those who want to run simulations without using the GUI:
 
