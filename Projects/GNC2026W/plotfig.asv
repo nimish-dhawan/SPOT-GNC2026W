@@ -372,8 +372,8 @@ hold on; grid on;
 subplot(3,1,3)
 plot(dataClass_rt.RED_Control_Law_Enabler.Time,dataClass_rt.RED_Control_Law_Enabler.Data, 'r')
 % title('Control Mode')
-ylabel('Control Mode')
-ylim([0 3.5])
+ylabel('Control Mode Index')
+ylim([0 3])
 %ylabel('Pose'); xlabel('Time [s]')
 %xlim(period)
 ax = gca();
