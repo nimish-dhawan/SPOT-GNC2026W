@@ -126,11 +126,12 @@ fNum = 1;
 
 % Unscented transform parameters
 a = 1;
-b = 0;
+b = 2;
 k = 5;
 
 % Measurement noise covariance for UKF
-R = diag([0.05, 0.05, 0.05]);
+R = diag([0.000025, 0.000025, 0.000025]); % Results quicker filter convergence
+% R = diag([0.05, 0.05, 0.05]);
 
 dt = baseRate;
 
@@ -142,7 +143,7 @@ CVrate = 1/5; % sec
 % VISinLoop = 1; for having CV states run in the loop
 % VISinLoop = 0; otherwise
 
-VISinLoop = 0;
+VISinLoop = 1;
 
 %% This section of the code contains parameters should not be modified
 
@@ -202,6 +203,60 @@ end
 
 appHandle.registerCustomDrawing("Circle", @drawCircle, @patch, ...
     {'FaceColor', 'red', 'EdgeColor', 'red', 'FaceAlpha', 0.1, 'LineStyle', '--'})
+
+% appHandle.registerCustomDrawing("Cone", @DrawPositionCone, @patch, ...
+%     {'FaceColor', 'red', 'EdgeColor', 'red', 'FaceAlpha', 0.1, 'LineStyle', '--'})
+
+
+function [x,y] = DrawPositionCone(data,idx)  
+
+    cx    = data.BLACK_Px_m.Data(idx);
+    cy    = data.BLACK_Py_m.Data(idx);
+    theta = data.BLACK_Rz_rad.Data(idx);
+
+    % S/C Measurements;
+    r = 0.15; % m
+
+    % LAR Measurements
+    LARinnerD = 0.18; % m
+    LARouterD = 0.25; % m, not the same as the outermost diameter
+    LARdepth  = 0.07; % m
+
+    % Cone lines
+    x1 = cx+5;
+    x2 = x1;
+    y1 = ((LARouterD/2-LARinnerD/2)/LARdepth)*(x1-cx-r) + cy+LARinnerD/2;
+    y2 = ((-LARouterD/2+LARinnerD/2)/LARdepth)*(x2-cx-r) + cy-LARinnerD/2;
+
+    % Defining the shape of the cone
+    cone = [cx+r, cy+LARinnerD/2;
+            x1, y1;
+            x2, y2;
+            cx+r, cy-LARinnerD/2];
+    
+    % Mapping cone to the BoF
+    conecenter = [ones(1,length(cone))*cx; ones(1,length(cone))*cy].' ;
+    coneorigin = cone - conecenter;
+
+    % Defining rotation matrix
+    rotmat = [cos(theta), -sin(theta); 
+              sin(theta), cos(theta)];
+    
+    % Rotating the cone origin
+    coneorigin_rot = zeros(size(coneorigin));
+    for i=1:length(cone)
+        coneorigin_rot(i,:) = rotmat*coneorigin(i,:).';
+    end
+    
+    % Transform the spacecraft back to its correct position at cx,cy
+    conepose = coneorigin_rot + conecenter;
+    x = conepose(:,1);
+    y = conepose(:,2);
+
+end
+
+appHandle.registerCustomDrawing("Cone", @DrawPositionCone, @patch, ...
+    {'FaceColor','k','FaceAlpha', 0.05, 'EdgeColor', 'k', 'EdgeAlpha', 0.7, 'LineStyle', '--'})
 
 %% For those who want to run simulations without using the GUI:
 
@@ -267,10 +322,12 @@ appHandle.SubAppInitialConditions.UpdateInitialConditions();
 
 % Edit subphase durations
 appHandle.SubPhase1EditField.Value = 0;      % [s]
-appHandle.SubPhase2EditField.Value = 80;     % [s]
-appHandle.SubPhase3EditField.Value = 100;       % [s]
+appHandle.SubPhase2EditField.Value = 180;     % [s]
+appHandle.SubPhase3EditField.Value = 0;       % [s]
 appHandle.SubPhase4EditField.Value = 0;       % [s]
 
 appHandle.UpdateTimes();
 
 appHandle.OpenInitialConditionAppButton.set('Enable','on');
+appHandle.UseVISintheLoopSwitch.Value = 'On';
+appHandle.VISlamp.Color = [0 1 0];
