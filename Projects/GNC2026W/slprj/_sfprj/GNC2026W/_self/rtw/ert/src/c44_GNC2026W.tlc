@@ -7,15 +7,36 @@
 %endfunction
 %function ChartDataMap(block, system) void
   %createrecord ChartDataElements {\
-    NumChartData   4 \
+    NumChartData   10 \
     ChartDataDefaults {\
       RecordType   "ChartData"\
       Dimensions   []\
       IsTestPoint  0\
     }\
     ChartData {\
+      Name         "sfEvent"\
+      Description  "ActiveChartEvent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "doneDoubleBufferReInit"\
+      Description  "DoubleBufferInitCheck"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+    ChartData {\
       Name         "counter"\
       Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "GNC2026W:31793:64-71"\
+    }\
+    ChartData {\
+      Name         "counter_not_empty"\
+      Description  "EmlPersistentSentinel"\
       SFName       ""\
       Path         ""\
       SrcLocation  "GNC2026W:31793:64-71"\
@@ -28,6 +49,13 @@
       SrcLocation  "GNC2026W:31793:72-80"\
     }\
     ChartData {\
+      Name         "firstfit_not_empty"\
+      Description  "EmlPersistentSentinel"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "GNC2026W:31793:72-80"\
+    }\
+    ChartData {\
       Name         "prev"\
       Description  "EmlPersistent"\
       SFName       ""\
@@ -35,8 +63,22 @@
       SrcLocation  "GNC2026W:31793:81-85"\
     }\
     ChartData {\
+      Name         "prev_not_empty"\
+      Description  "EmlPersistentSentinel"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "GNC2026W:31793:81-85"\
+    }\
+    ChartData {\
       Name         "phase"\
       Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "GNC2026W:31793:86-91"\
+    }\
+    ChartData {\
+      Name         "phase_not_empty"\
+      Description  "EmlPersistentSentinel"\
       SFName       ""\
       Path         ""\
       SrcLocation  "GNC2026W:31793:86-91"\

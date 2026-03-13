@@ -7,11 +7,25 @@
 %endfunction
 %function ChartDataMap(block, system) void
   %createrecord ChartDataElements {\
-    NumChartData   5 \
+    NumChartData   14 \
     ChartDataDefaults {\
       RecordType   "ChartData"\
       Dimensions   []\
       IsTestPoint  0\
+    }\
+    ChartData {\
+      Name         "sfEvent"\
+      Description  "ActiveChartEvent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "doneDoubleBufferReInit"\
+      Description  "DoubleBufferInitCheck"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
     }\
     ChartData {\
       Name         "x"\
@@ -22,6 +36,13 @@
       Dimensions   [6]\
     }\
     ChartData {\
+      Name         "x_not_empty"\
+      Description  "EmlPersistentSentinel"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "GNC2026W:31560:415-416"\
+    }\
+    ChartData {\
       Name         "P"\
       Description  "EmlPersistent"\
       SFName       ""\
@@ -30,8 +51,36 @@
       Dimensions   [6,6]\
     }\
     ChartData {\
+      Name         "P_not_empty"\
+      Description  "EmlPersistentSentinel"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "GNC2026W:31560:417-418"\
+    }\
+    ChartData {\
+      Name         "run"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "GNC2026W:31560:419-422"\
+    }\
+    ChartData {\
+      Name         "run_not_empty"\
+      Description  "EmlPersistentSentinel"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "GNC2026W:31560:419-422"\
+    }\
+    ChartData {\
       Name         "theta"\
       Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "GNC2026W:31560:423-428"\
+    }\
+    ChartData {\
+      Name         "theta_not_empty"\
+      Description  "EmlPersistentSentinel"\
       SFName       ""\
       Path         ""\
       SrcLocation  "GNC2026W:31560:423-428"\
@@ -44,8 +93,22 @@
       SrcLocation  "GNC2026W:31560:429-439"\
     }\
     ChartData {\
+      Name         "theta_prev_not_empty"\
+      Description  "EmlPersistentSentinel"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "GNC2026W:31560:429-439"\
+    }\
+    ChartData {\
       Name         "initial_theta"\
       Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "GNC2026W:31560:440-453"\
+    }\
+    ChartData {\
+      Name         "initial_theta_not_empty"\
+      Description  "EmlPersistentSentinel"\
       SFName       ""\
       Path         ""\
       SrcLocation  "GNC2026W:31560:440-453"\
