@@ -17,7 +17,7 @@ end
 
 %%
 % Toggle on/off saving all the plots automatically
-savefigs = 1;
+savefigs = 0;
 % Toggle on/off animation
 anim = 1;
 % Time frame for plotting
@@ -142,40 +142,40 @@ ax.FontName = "Times New Roman";
 % =========================================================================
 % For 3x1 plots, 0.4x0.4 size is recommended for placing next to trajectory
 % plot
-figure('Name','LOS Angle')
-subplot(3,1,1)
-plot(t,dat.dataClass_rt.lambdaFirstOrder_rad.Data,'r')
-hold on
-plot(t,dat.dataClass_rt.lambda_rad.Data,'k')
-grid on;
-ylabel('\lambda [rad]')
-xlim(period)
-legend('First Order Approximation', 'Kalman Filter Estimates')
-ax = gca();
-ax.FontSize = 10;
-ax.FontName = "Times New Roman";
-subplot(3,1,2)
-plot(t,dat.dataClass_rt.lambdaDotFirstOrder_radpers.Data,'r')
-hold on
-plot(t,dat.dataClass_rt.lambdaDot_radpers.Data,'k')
-grid on;
-ylabel("$\dot{\lambda}$ [rad/s]","Interpreter","latex")
-ylim([-0.2,0.2]); xlim(period)
-ax = gca();
-ax.FontSize = 10;
-ax.FontName = "Times New Roman";
-subplot(3,1,3)
-plot(t,dat.dataClass_rt.lambdaDdotFirstOrder_radpers2.Data,'r')
-hold on
-plot(t,dat.dataClass_rt.lambdaDdot_radpers2.Data,'k')
-grid on;
-ylabel('$\ddot{\lambda}$ [rad/s$^{2}$]', 'Interpreter', 'latex')
-xlabel('Time [s]')
-ylim([-0.5,0.5]); xlim(period)
-formatfig(0.4,0.4);
-ax = gca();
-ax.FontSize = 10;
-ax.FontName = "Times New Roman";
+% figure('Name','LOS Angle')
+% subplot(3,1,1)
+% plot(t,dat.dataClass_rt.lambdaFirstOrder_rad.Data,'r')
+% hold on
+% plot(t,dat.dataClass_rt.lambda_rad.Data,'k')
+% grid on;
+% ylabel('\lambda [rad]')
+% xlim(period)
+% legend('First Order Approximation', 'Kalman Filter Estimates')
+% ax = gca();
+% ax.FontSize = 10;
+% ax.FontName = "Times New Roman";
+% subplot(3,1,2)
+% plot(t,dat.dataClass_rt.lambdaDotFirstOrder_radpers.Data,'r')
+% hold on
+% plot(t,dat.dataClass_rt.lambdaDot_radpers.Data,'k')
+% grid on;
+% ylabel("$\dot{\lambda}$ [rad/s]","Interpreter","latex")
+% ylim([-0.2,0.2]); xlim(period)
+% ax = gca();
+% ax.FontSize = 10;
+% ax.FontName = "Times New Roman";
+% subplot(3,1,3)
+% plot(t,dat.dataClass_rt.lambdaDdotFirstOrder_radpers2.Data,'r')
+% hold on
+% plot(t,dat.dataClass_rt.lambdaDdot_radpers2.Data,'k')
+% grid on;
+% ylabel('$\ddot{\lambda}$ [rad/s$^{2}$]', 'Interpreter', 'latex')
+% xlabel('Time [s]')
+% ylim([-0.5,0.5]); xlim(period)
+% formatfig(0.4,0.4);
+% ax = gca();
+% ax.FontSize = 10;
+% ax.FontName = "Times New Roman";
 
 % =========================================================================
 % Plotting VIS LAR States
@@ -189,12 +189,12 @@ grid on;
 ylabel('x_{LAR} [mm]')
 xlim(period)
 ax = gca();
-annotation('textbox', ...
-    [0.45 0.79 0.26 0.12], ...
-    'String','LAR outside camera FOV', ...
-    'FontName','Times New Roman', ...
-    'FitBoxToText','off', ...
-    'BackgroundColor',[1 1 1]);
+% annotation('textbox', ...
+%     [0.45 0.79 0.26 0.12], ...
+%     'String','LAR outside camera FOV', ...
+%     'FontName','Times New Roman', ...
+%     'FitBoxToText','off', ...
+%     'BackgroundColor',[1 1 1]);
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
 subplot(3,1,2)
@@ -264,7 +264,7 @@ alpha_values     = [0.2, 0.2, 0.2, 0.2, 0.7, 1];
 % alpha_values     = [0.2*ones(1,length(plotting_indices)-1) 1];    % transparency for each snapshot; must be same length as 'plotting_indices'
 
 % Plotting trajectory
-exphdl = plot(expdata_RED_pos_x(1:plotting_indices(end)),expdata_RED_pos_y(1:plotting_indices(end)), 'r','Linewidth',1,'DisplayName','Trial 4');
+exphdl = plot(expdata_RED_pos_x(1:plotting_indices(end)),expdata_RED_pos_y(1:plotting_indices(end)), 'r','Linewidth',1,'DisplayName','Trial');
 hold on
 plot(expdata_BLACK_pos_x(1:plotting_indices(end)),expdata_BLACK_pos_y(1:plotting_indices(end)), 'k','Linewidth',1)
 plot(expdata_BLUE_pos_x(1:plotting_indices(end)),expdata_BLUE_pos_y(1:plotting_indices(end)), 'b','Linewidth',1)
@@ -333,6 +333,9 @@ if anim == 1 % Trajectory animation
     
         spacecraft = DrawSpacecraft([expdata_BLACK_pos_x(frame),expdata_BLACK_pos_y(frame),expdata_BLACK_pos_th(frame),7]);
         patch(spacecraft(:,1), spacecraft(:,2), 'w', 'facealpha', 0.5, 'edgecolor', 'k', 'edgealpha',1,'Linewidth',0.5)
+
+        cone = DrawPositionCone([expdata_BLACK_pos_x(frame),expdata_BLACK_pos_y(frame),expdata_BLACK_pos_th(frame)]);
+        patch(cone(:,1), cone(:,2), 'k', 'facealpha', 0.05, 'edgecolor', 'k', 'edgealpha', 0.7, 'Linewidth',0.5)
     
         xlabel('X-Position [m]')
         ylabel('Y-Position [m]')
