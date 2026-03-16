@@ -7,36 +7,15 @@
 %endfunction
 %function ChartDataMap(block, system) void
   %createrecord ChartDataElements {\
-    NumChartData   10 \
+    NumChartData   4 \
     ChartDataDefaults {\
       RecordType   "ChartData"\
       Dimensions   []\
       IsTestPoint  0\
     }\
     ChartData {\
-      Name         "sfEvent"\
-      Description  "ActiveChartEvent"\
-      SFName       ""\
-      Path         ""\
-      SrcLocation  ""\
-    }\
-    ChartData {\
-      Name         "doneDoubleBufferReInit"\
-      Description  "DoubleBufferInitCheck"\
-      SFName       ""\
-      Path         ""\
-      SrcLocation  ""\
-    }\
-    ChartData {\
       Name         "converge"\
       Description  "EmlPersistent"\
-      SFName       ""\
-      Path         ""\
-      SrcLocation  "GNC2026W:31205:764-772"\
-    }\
-    ChartData {\
-      Name         "converge_not_empty"\
-      Description  "EmlPersistentSentinel"\
       SFName       ""\
       Path         ""\
       SrcLocation  "GNC2026W:31205:764-772"\
@@ -50,13 +29,6 @@
       Dimensions   [6]\
     }\
     ChartData {\
-      Name         "x_not_empty"\
-      Description  "EmlPersistentSentinel"\
-      SFName       ""\
-      Path         ""\
-      SrcLocation  "GNC2026W:31205:773-774"\
-    }\
-    ChartData {\
       Name         "P"\
       Description  "EmlPersistent"\
       SFName       ""\
@@ -65,22 +37,8 @@
       Dimensions   [6,6]\
     }\
     ChartData {\
-      Name         "P_not_empty"\
-      Description  "EmlPersistentSentinel"\
-      SFName       ""\
-      Path         ""\
-      SrcLocation  "GNC2026W:31205:775-776"\
-    }\
-    ChartData {\
       Name         "k"\
       Description  "EmlPersistent"\
-      SFName       ""\
-      Path         ""\
-      SrcLocation  "GNC2026W:31205:4338-4339"\
-    }\
-    ChartData {\
-      Name         "k_not_empty"\
-      Description  "EmlPersistentSentinel"\
       SFName       ""\
       Path         ""\
       SrcLocation  "GNC2026W:31205:4338-4339"\

@@ -7,25 +7,11 @@
 %endfunction
 %function ChartDataMap(block, system) void
   %createrecord ChartDataElements {\
-    NumChartData   10 \
+    NumChartData   5 \
     ChartDataDefaults {\
       RecordType   "ChartData"\
       Dimensions   []\
       IsTestPoint  0\
-    }\
-    ChartData {\
-      Name         "sfEvent"\
-      Description  "ActiveChartEvent"\
-      SFName       ""\
-      Path         ""\
-      SrcLocation  ""\
-    }\
-    ChartData {\
-      Name         "doneDoubleBufferReInit"\
-      Description  "DoubleBufferInitCheck"\
-      SFName       ""\
-      Path         ""\
-      SrcLocation  ""\
     }\
     ChartData {\
       Name         "l1"\
@@ -35,22 +21,8 @@
       SrcLocation  "GNC2026W:30819:429-431"\
     }\
     ChartData {\
-      Name         "l1_not_empty"\
-      Description  "EmlPersistentSentinel"\
-      SFName       ""\
-      Path         ""\
-      SrcLocation  "GNC2026W:30819:429-431"\
-    }\
-    ChartData {\
       Name         "l2"\
       Description  "EmlPersistent"\
-      SFName       ""\
-      Path         ""\
-      SrcLocation  "GNC2026W:30819:432-434"\
-    }\
-    ChartData {\
-      Name         "l2_not_empty"\
-      Description  "EmlPersistentSentinel"\
       SFName       ""\
       Path         ""\
       SrcLocation  "GNC2026W:30819:432-434"\
@@ -77,13 +49,6 @@
       Path         ""\
       SrcLocation  "GNC2026W:30819:962-963"\
       Dimensions   [3,3]\
-    }\
-    ChartData {\
-      Name         "P_not_empty"\
-      Description  "EmlPersistentSentinel"\
-      SFName       ""\
-      Path         ""\
-      SrcLocation  "GNC2026W:30819:962-963"\
     }\
   }
   %return ChartDataElements

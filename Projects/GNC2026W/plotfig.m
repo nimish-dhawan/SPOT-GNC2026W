@@ -6,6 +6,7 @@
 % clc
 close all
 
+
 % Loading the datafile
 [file,location] = uigetfile;
 filename = [location, file];
@@ -14,6 +15,8 @@ if isempty(file) || strcmp(file," ")
 else
     dat = load(filename);
 end
+
+wrap = @(theta) atan2(sin(theta), cos(theta));
 
 %%
 % Toggle on/off saving all the plots automatically
@@ -43,25 +46,68 @@ wrap = @(x) atan2(sin(x), cos(x));
 % Target pose estimates and ground truth
 % =========================================================================
 figure('Name','Target Pose Estimates and Ground Truth')
-subplot(1,2,1)
+subplot(3,2,1)
 plot(t,dat.dataClass_rt.BLACK_Px_Filtered_m.Data,'k')
-hold on; grid on;
-plot(t,dat.dataClass_rt.BLACK_Py_Filtered_m.Data, '--k')
-plot(t,dat.dataClass_rt.BLACK_Rz_Filtered_rad.Data, '-.k')
-ylabel('Pose'); xlabel('Time [s]')
+hold on
+plot(t,dat.dataClass_rt.BLACK_Px_m.Data,'--r')
+grid on;
+ylabel('x [m]')
 xlim(period)
-legend('x [m]', 'y [m]', '\theta [rad]',Location='northwest')
+legend('Estimates', 'Ground Truth', 'Location','Best')
 ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
-subplot(1,2,2)
-plot(t,dat.dataClass_rt.BLACK_Px_m.Data,'k')
-hold on; grid on;
-plot(t,dat.dataClass_rt.BLACK_Py_m.Data, '--k')
-plot(t,unwrap(dat.dataClass_rt.BLACK_Rz_rad.Data), '-.k')
-ylabel('Pose'); xlabel('Time [s]')
+subplot(3,2,3)
+plot(t,dat.dataClass_rt.BLACK_Py_Filtered_m.Data,'k')
+hold on
+plot(t,dat.dataClass_rt.BLACK_Py_m.Data,'--r')
+grid on;
+ylabel("y [m]")
 xlim(period)
-formatfig(1,0.3);
+ax = gca();
+ax.FontSize = 10;
+ax.FontName = "Times New Roman";
+subplot(3,2,5)
+plot(t,wrap(dat.dataClass_rt.BLACK_Rz_Filtered_rad.Data),'k')
+hold on
+plot(t,dat.dataClass_rt.BLACK_Rz_rad.Data,'--r')
+grid on;
+ylabel('\theta_Z [rad]')
+xlabel('Time [s]')
+xlim(period)
+ax = gca();
+ax.FontSize = 10;
+ax.FontName = "Times New Roman";
+
+dx  = dat.dataClass_rt.BLACK_Px_m.Data...
+      - dat.dataClass_rt.BLACK_Px_Filtered_m.Data;
+dy  = dat.dataClass_rt.BLACK_Py_m.Data ...
+      - dat.dataClass_rt.BLACK_Py_Filtered_m.Data;
+dth = wrap(dat.dataClass_rt.BLACK_Rz_rad.Data ...
+      - dat.dataClass_rt.BLACK_Rz_Filtered_rad.Data );
+
+subplot(3,2,2)
+plot(t,dx,'k')
+grid on;
+ylabel('\deltax [m]')
+xlim(period)
+ax = gca();
+ax.FontSize = 10;
+ax.FontName = "Times New Roman";
+subplot(3,2,4)
+plot(t,dy,'k')
+grid on;
+ylabel('\deltay [m]')
+xlim(period)
+ax = gca();
+ax.FontSize = 10;
+ax.FontName = "Times New Roman";
+subplot(3,2,6)
+plot(t,dth,'k')
+grid on;
+ylabel('\delta\theta [rad]'); xlabel('Time [s]')
+xlim(period)
+formatfig(0.8,0.4);
 ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
@@ -141,41 +187,34 @@ ax.FontName = "Times New Roman";
 % LOS Angle
 % =========================================================================
 % For 3x1 plots, 0.4x0.4 size is recommended for placing next to trajectory
-% plot
-% figure('Name','LOS Angle')
-% subplot(3,1,1)
-% plot(t,dat.dataClass_rt.lambdaFirstOrder_rad.Data,'r')
-% hold on
-% plot(t,dat.dataClass_rt.lambda_rad.Data,'k')
-% grid on;
-% ylabel('\lambda [rad]')
-% xlim(period)
-% legend('First Order Approximation', 'Kalman Filter Estimates')
-% ax = gca();
-% ax.FontSize = 10;
-% ax.FontName = "Times New Roman";
-% subplot(3,1,2)
-% plot(t,dat.dataClass_rt.lambdaDotFirstOrder_radpers.Data,'r')
-% hold on
-% plot(t,dat.dataClass_rt.lambdaDot_radpers.Data,'k')
-% grid on;
-% ylabel("$\dot{\lambda}$ [rad/s]","Interpreter","latex")
-% ylim([-0.2,0.2]); xlim(period)
-% ax = gca();
-% ax.FontSize = 10;
-% ax.FontName = "Times New Roman";
-% subplot(3,1,3)
-% plot(t,dat.dataClass_rt.lambdaDdotFirstOrder_radpers2.Data,'r')
-% hold on
-% plot(t,dat.dataClass_rt.lambdaDdot_radpers2.Data,'k')
-% grid on;
-% ylabel('$\ddot{\lambda}$ [rad/s$^{2}$]', 'Interpreter', 'latex')
-% xlabel('Time [s]')
-% ylim([-0.5,0.5]); xlim(period)
-% formatfig(0.4,0.4);
-% ax = gca();
-% ax.FontSize = 10;
-% ax.FontName = "Times New Roman";
+
+figure('Name','LOS Angle')
+subplot(3,1,1)
+plot(t,dat.dataClass_rt.lambda_rad.Data,'k')
+grid on;
+ylabel('\lambda [rad]')
+xlim(period)
+ax = gca();
+ax.FontSize = 10;
+ax.FontName = "Times New Roman";
+subplot(3,1,2)
+plot(t,dat.dataClass_rt.lambdaDot_radpers.Data,'k')
+grid on;
+ylabel("$\dot{\lambda}$ [rad/s]","Interpreter","latex")
+xlim(period)
+ax = gca();
+ax.FontSize = 10;
+ax.FontName = "Times New Roman";
+subplot(3,1,3)
+plot(t,dat.dataClass_rt.lambdaDdot_radpers2.Data,'k')
+grid on;
+ylabel('$\ddot{\lambda}$ [rad/s$^{2}$]', 'Interpreter', 'latex')
+xlabel('Time [s]')
+xlim(period)
+formatfig(0.4,0.4);
+ax = gca();
+ax.FontSize = 10;
+ax.FontName = "Times New Roman";
 
 % =========================================================================
 % Plotting VIS LAR States
@@ -252,6 +291,10 @@ expdata_BLACK_pos_th   = dat.dataClass_rt.BLACK_Rz_rad.Data(unique_inds);
 expdata_BLUE_pos_x     = dat.dataClass_rt.BLUE_Px_m.Data(unique_inds);
 expdata_BLUE_pos_y     = dat.dataClass_rt.BLUE_Py_m.Data(unique_inds);
 expdata_BLUE_pos_th    = dat.dataClass_rt.BLUE_Rz_rad.Data(unique_inds);
+
+% ARMq1 = dataClass_rt.ARM_Shoulder_Rz_rad(unique_inds);
+% ARMq2 = dataClass_rt.ARM_Elbow_Rz_rad(unique_inds);
+% ARMq3 = dataClass_rt.ARM_Wrist_Rz_rad(unique_inds);
 
 % Static plot 
 figure('Name','Trajectory')
