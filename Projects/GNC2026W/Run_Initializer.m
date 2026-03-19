@@ -130,8 +130,8 @@ b = 2;
 k = 5;
 
 % Measurement noise covariance for UKF
-% R = diag([0.000025, 0.000025, 0.000025]); % Results quicker filter convergence
-R = diag([0.05, 0.05, 0.05]);
+R = diag([0.0025, 0.0025, 0.0025]); % Results quicker filter convergence
+% R = diag([0.05, 0.05, 0.05]);
 
 dt = baseRate;
 

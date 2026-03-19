@@ -302,8 +302,9 @@ figure('Name','Trajectory')
 % User can specify indices to show snapshots of the platforms. Typically, 
 % these would be the initial and final conditions, but can also include 
 % intermediate snapshots
-plotting_indices = [1, 950, 1000, 1050, 1100, 3300]; 
-alpha_values     = [0.2, 0.2, 0.2, 0.2, 0.7, 1];
+plotting_indices = [1,1836]; 
+% plotting_indices = [1, unique_inds(end)]; 
+alpha_values     = [0.2, 1];
 % alpha_values     = [0.2*ones(1,length(plotting_indices)-1) 1];    % transparency for each snapshot; must be same length as 'plotting_indices'
 
 % Plotting trajectory
@@ -356,7 +357,7 @@ ax.FontName = "Times New Roman";
 % =========================================================================
 
 if anim == 1 % Trajectory animation
-    stepsize = 15; % This controls how many frames of data are plotted
+    stepsize = 5; % This controls how many frames of data are plotted
     
     fig = figure();
     set(gcf,'color','w')
