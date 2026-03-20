@@ -16,8 +16,6 @@ else
     dat = load(filename);
 end
 
-wrap = @(theta) atan2(sin(theta), cos(theta));
-
 %%
 % Toggle on/off saving all the plots automatically
 savefigs = 0;

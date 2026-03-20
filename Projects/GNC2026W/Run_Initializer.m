@@ -145,6 +145,12 @@ CVrate = 1/5; % sec
 
 VISinLoop = 1;
 
+% Experiment scenario
+% scenario = 1 for rotational + translation 1
+% scenario = 2 for rotational + translation 2
+% scenario = 3 for rotation only
+scenario  = 1;
+
 %% This section of the code contains parameters should not be modified
 
 % Set the PWM frequency
