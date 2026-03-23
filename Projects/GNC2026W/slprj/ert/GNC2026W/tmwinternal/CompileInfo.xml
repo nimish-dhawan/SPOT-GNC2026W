@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MF0 version="1.1" packageUris="http://schema.mathworks.com/mf0/ci/19700101 http://schema.mathworks.com/mf0/sl_modelref_info/R2024b http://schema.mathworks.com/mf0/slexec_mm_sto/R2024a_202305081229 http://schema.mathworks.com/mf0/sltp_mm/R2024b_202402211119">
-  <ModelRefInfoRepo.ModelRefInfoRoot type="ModelRefInfoRepo.ModelRefInfoRoot" uuid="9787e1b9-cfff-4fa0-a0bf-7bdc3222a5d7">
+  <ModelRefInfoRepo.ModelRefInfoRoot type="ModelRefInfoRepo.ModelRefInfoRoot" uuid="cbeaef52-0ea3-4a13-92fb-7a200f7a74d2">
     <JITEngines>s09zo5GQwV7LqL8NknHdKlE</JITEngines>
     <JITEngines>s52qTmDhGSQU9RjMFvVfOiG</JITEngines>
     <JITEngines>s5HnWst3E9XmmBJJj6rduQE</JITEngines>
+    <JITEngines>sACHBL4EzWwzvQjuKNp9tKG</JITEngines>
     <JITEngines>sBK86gGYVIHVQkRxyPhp8vE</JITEngines>
     <JITEngines>sCgH3zeFA9HkRTyk23a2yo</JITEngines>
     <JITEngines>sFHH56wqluqDO2VYtuKnmfF</JITEngines>
     <JITEngines>sGY4sWYvhVzPYbul8dcZBMH</JITEngines>
     <JITEngines>sHS9jCFWO2BkH4dU2phSv1C</JITEngines>
-    <JITEngines>sIUIb4pPeaqEnQQ3VPfRdfC</JITEngines>
+    <JITEngines>sJH8hA5YhyBSTbvnWFiWQHG</JITEngines>
     <JITEngines>sJrGKyW4yZ5cNo3qzfaI9kD</JITEngines>
     <JITEngines>sL5vegtH0mLcnP286BnhbaD</JITEngines>
     <JITEngines>sLLCvAQoecaV5VNgs1Vzx1B</JITEngines>
@@ -21,29 +22,28 @@
     <JITEngines>sYAjZ6bdYeH2tp1DSV7yey</JITEngines>
     <JITEngines>sZPrlcqi5pSz1EqWhyagICB</JITEngines>
     <JITEngines>sZn3AKh04hF6iEcSPvRhFtB</JITEngines>
+    <JITEngines>sZzuCTtouLyQhKlK4T8APL</JITEngines>
     <JITEngines>saiuiantE6wqXQB1yf4to9F</JITEngines>
-    <JITEngines>sekn8sD2vlKkEcqs7eispnC</JITEngines>
+    <JITEngines>scIoUHCd32ajA9SaLddorBC</JITEngines>
     <JITEngines>sgQLGazDSIQ6h33C6wd1z0C</JITEngines>
-    <JITEngines>sgghisJw1PmwCcVgMfhUbIB</JITEngines>
     <JITEngines>siWQA664D1FFKsvumn30voH</JITEngines>
     <JITEngines>sk4GqoDFzxPGh5iOcyx324</JITEngines>
     <JITEngines>snSMKh4Vu0j1wGKY3z3VpzF</JITEngines>
     <JITEngines>snnZ7reu6ngqFvv51QONGI</JITEngines>
-    <JITEngines>soGMUTWrLCnUZVwO6HlavLH</JITEngines>
     <JITEngines>sppjgj5kFzJmYRTYA94054G</JITEngines>
     <JITEngines>srwaFliJZonp0ICBfahcaUE</JITEngines>
-    <JITEngines>ssQivgNC3FoHIHkdgh1qYyG</JITEngines>
+    <JITEngines>stHND6f1Kt5E2lme0LLEzwD</JITEngines>
     <JITEngines>szjRV5faCdZ4qjPSPu2EH7E</JITEngines>
     <JITEngines>szrHgClZJWv2X3vcjRIsUi</JITEngines>
-    <calibrationData type="ModelRefInfoRepo.CalibrationData" uuid="a1e0092f-6ae7-44c2-babd-2efddb6117ca">
-      <InternalData>[{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;ARM_Control_Mode&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;RED_Control_Law_Enabler&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;RED_Path_Planner_Selection&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;ARM_Path_Planner_Selection&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;ARM_Control_Law_Enabler&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;Float_State&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;Univ_Time&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;RED_Duty_Cycle&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;WhoAmI&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;isSim&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;RED_Measured_States&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;RED_Controls&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;RED_Saturated_Controls&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;RED_Desired_States&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;RED_Path&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;RED_IMU_Measurements&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;RED_True_States&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLACK_Path&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLACK_Desired_States&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLACK_Saturated_Controls&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLACK_Controls&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLACK_Measured_States&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLACK_Duty_Cycles&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLACK_True_States&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLACK_IMU_Measurements&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLACK_Path_Planner_Selection&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLACK_Control_Law_Enabler&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLUE_IMU_Measurements&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLUE_Path&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLUE_Desired_States&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLUE_True_States&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLUE_Controls&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLUE_Measured_States&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLUE_Duty_Cycles&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLUE_Path_Planner_Selection&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLUE_Saturated_Controls&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLUE_Control_Law_Enabler&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;ARM_Path&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;ARM_Desired_States&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;ARM_True_States&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;ARM_Controls&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;ARM_Measured_States&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;RED_Logger&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLACK_Logger&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLUE_Logger&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;VIS_Measured_States&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;VIS_Confidence&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;L0&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;RED_desired&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLACK_CV_States&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLACK_Exp_Noise&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLACK_Dropped_Frames&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLACK_Filtered_States&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;VIS_LAR_States&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;sigma3&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;isValid&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;LOS_Angle&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;enable_UKE&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;filterConfidence&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;lambda&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;lambdaFirstOrder&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;L_act&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;Sep_difference&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;Binary_Sep_difference&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;ARM_Grab_Complete&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;ARM_Joint_Angles_rad&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;ARM_Extend&quot;,&quot;Profile&quot;:&quot;&quot;}]</InternalData>
+    <calibrationData type="ModelRefInfoRepo.CalibrationData" uuid="3c6173bb-4398-40ec-a419-33e4d3f404b0">
+      <InternalData>[{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;ARM_Control_Mode&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;RED_Control_Law_Enabler&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;RED_Path_Planner_Selection&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;ARM_Path_Planner_Selection&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;ARM_Control_Law_Enabler&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;Float_State&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;Univ_Time&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;RED_Duty_Cycle&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;WhoAmI&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;isSim&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;RED_Measured_States&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;RED_Controls&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;RED_Saturated_Controls&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;RED_Desired_States&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;RED_Path&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;RED_IMU_Measurements&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;RED_True_States&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLACK_Path&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLACK_Desired_States&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLACK_Saturated_Controls&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLACK_Controls&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLACK_Measured_States&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLACK_Duty_Cycles&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLACK_True_States&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLACK_IMU_Measurements&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLACK_Path_Planner_Selection&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLACK_Control_Law_Enabler&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLUE_IMU_Measurements&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLUE_Path&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLUE_Desired_States&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLUE_True_States&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLUE_Controls&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLUE_Measured_States&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLUE_Duty_Cycles&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLUE_Path_Planner_Selection&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLUE_Saturated_Controls&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLUE_Control_Law_Enabler&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;ARM_Path&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;ARM_Desired_States&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;ARM_True_States&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;ARM_Controls&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;ARM_Measured_States&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;RED_Logger&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLACK_Logger&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLUE_Logger&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;VIS_Measured_States&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;VIS_Confidence&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;L0&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;RED_desired&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLACK_CV_States&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLACK_Exp_Noise&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLACK_Dropped_Frames&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;BLACK_Filtered_States&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;VIS_LAR_States&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;sigma3&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;isValid&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;LOS_Angle&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;enable_UKE&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;filterConfidence&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;lambda&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;lambdaFirstOrder&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;L_act&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;Sep_difference&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;Binary_Sep_difference&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;ARM_Grab_Complete&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;ARM_Joint_Angles_rad&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;ARM_Extend&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;P_est&quot;,&quot;Profile&quot;:&quot;&quot;},{&quot;Name&quot;:&quot;residual&quot;,&quot;Profile&quot;:&quot;&quot;}]</InternalData>
       <ModelName>GNC2026W</ModelName>
     </calibrationData>
-    <childModelRefInfo type="ModelRefInfoRepo.ChildModelRefInfo" uuid="c0cd3c31-0abd-455c-a812-7220c5846a42">
+    <childModelRefInfo type="ModelRefInfoRepo.ChildModelRefInfo" uuid="24b9a9a2-b07a-4f14-8cb2-2e0a31a0eefe">
       <modelName>GNC2026W</modelName>
       <modelPath>GNC2026W</modelPath>
     </childModelRefInfo>
-    <clockResolutions type="ModelRefInfoRepo.ClockResolutionInfo" uuid="3cbfc670-174e-4fa0-8fbc-1ce5dfb11f2f">
+    <clockResolutions type="ModelRefInfoRepo.ClockResolutionInfo" uuid="48f5c5fb-4d23-4ab8-a8fe-09ec9a1c7c8f">
       <rateIdx>1</rateIdx>
       <resolution>.05</resolution>
       <source>DeducedFromSampleTime</source>
@@ -51,8 +51,8 @@
     <compDerivCacheNeedsReset>false</compDerivCacheNeedsReset>
     <compZcCacheNeedsReset>false</compZcCacheNeedsReset>
     <compiledTFinal>285.0</compiledTFinal>
-    <dataSourceInfo type="ModelRefInfoRepo.DataSourceInfo" uuid="6cef3a07-fb67-4fc8-a3e9-414bd7b9c15f">
-      <dataSources type="ModelRefInfoRepo.SourceInfo" uuid="9773e862-135d-4126-830f-c2593bbf8c94">
+    <dataSourceInfo type="ModelRefInfoRepo.DataSourceInfo" uuid="34c56b1e-acbd-4562-b077-e1f8cb5653ab">
+      <dataSources type="ModelRefInfoRepo.SourceInfo" uuid="fbcdde91-5d16-4492-93b6-45b7ff50c617">
         <includeAllSections>true</includeAllSections>
         <sourceName>base workspace</sourceName>
         <type>BaseWorkspace</type>
@@ -136,6 +136,7 @@
     <globalVariables>init_states_RED</globalVariables>
     <globalVariables>k</globalVariables>
     <globalVariables>platformSelection</globalVariables>
+    <globalVariables>scenario</globalVariables>
     <globalVariables>sep1</globalVariables>
     <globalVariables>sep3</globalVariables>
     <globalVariables>simMode</globalVariables>
@@ -156,10 +157,10 @@
     <needAbsoluteTimeDisallowInitPort>true</needAbsoluteTimeDisallowInitPort>
     <needsAbsoluteTime>true</needsAbsoluteTime>
     <nonTunableVariables>baseRate</nonTunableVariables>
-    <numDStateRecs>59</numDStateRecs>
+    <numDStateRecs>55</numDStateRecs>
     <numDataInputPorts>0</numDataInputPorts>
-    <numLoggableDStateRecs>59</numLoggableDStateRecs>
-    <numLoggableJacobianDStates>83</numLoggableJacobianDStates>
+    <numLoggableDStateRecs>55</numLoggableDStateRecs>
+    <numLoggableJacobianDStates>79</numLoggableJacobianDStates>
     <removeResetFunc>true</removeResetFunc>
     <runtimeNonFcnCallRateInfos type="ModelRefInfoRepo.RateInfo">
       <compiled>true</compiled>
@@ -180,51 +181,51 @@
     <solverStatusFlags>323</solverStatusFlags>
     <timingAndTaskingRegistry>&lt;?xml version=&quot;1.0&quot;?&gt;
 &lt;slexec_sto version=&quot;1.1&quot; packageUris=&quot;http://schema.mathworks.com/mf0/slexec_mm_sto/R2024a_202305081229&quot;&gt;
-  &lt;sto.Registry type=&quot;sto.Registry&quot; uuid=&quot;81714a9e-9296-4fab-96f9-0f2afd946a71&quot;&gt;
+  &lt;sto.Registry type=&quot;sto.Registry&quot; uuid=&quot;e111aaa9-e5f0-4d02-81dc-76db4c3cc6a7&quot;&gt;
     &lt;executionSpec&gt;Undetermined&lt;/executionSpec&gt;
     &lt;identifier&gt;GNC2026W&lt;/identifier&gt;
-    &lt;clockRegistry type=&quot;sto.ClockRegistry&quot; uuid=&quot;5511ac6e-ca68-4f24-930b-5add12a6d478&quot;&gt;
-      &lt;clocks type=&quot;sto.Timer&quot; uuid=&quot;8be93e0d-9e9f-4f49-9599-fb6abf05627b&quot;&gt;
+    &lt;clockRegistry type=&quot;sto.ClockRegistry&quot; uuid=&quot;92c76a77-9bb7-48ae-997f-a68378a14da1&quot;&gt;
+      &lt;clocks type=&quot;sto.Timer&quot; uuid=&quot;427215dd-9d87-43ad-81b8-85ca6380c390&quot;&gt;
         &lt;computedFundamentalDiscretePeriod&gt;.05&lt;/computedFundamentalDiscretePeriod&gt;
-        &lt;fastestDiscreteRate type=&quot;sto.ClassicPeriodicDiscreteRate&quot; uuid=&quot;4e4a46bf-4273-404d-a6e9-e262a2425f42&quot;/&gt;
+        &lt;fastestDiscreteRate type=&quot;sto.ClassicPeriodicDiscreteRate&quot; uuid=&quot;ded9a066-0549-44e2-a289-ce73f35f9207&quot;/&gt;
         &lt;isDefaultTimer&gt;true&lt;/isDefaultTimer&gt;
         &lt;resolution&gt;.05&lt;/resolution&gt;
         &lt;timeAdvanceMode&gt;FixedStep&lt;/timeAdvanceMode&gt;
         &lt;identifier&gt;GNC2026W::defaultTimer&lt;/identifier&gt;
-        &lt;rates type=&quot;sto.ContinuousRate&quot; uuid=&quot;2bccaf63-6b51-4b29-acc2-0203951d339c&quot;&gt;
+        &lt;rates type=&quot;sto.ContinuousRate&quot; uuid=&quot;a5bee393-36b5-46de-946a-a1d35e4050e6&quot;&gt;
           &lt;annotation&gt;Cont&lt;/annotation&gt;
           &lt;clockId&gt;GNC2026W::defaultTimer&lt;/clockId&gt;
           &lt;colorIndex&gt;-1&lt;/colorIndex&gt;
           &lt;description&gt;Continuous&lt;/description&gt;
           &lt;taskId&gt;_task0&lt;/taskId&gt;
-          &lt;rateSpec type=&quot;sto.RateSpec&quot; uuid=&quot;ca6ef9e7-c5eb-467a-b340-fb7734cca2ba&quot;/&gt;
+          &lt;rateSpec type=&quot;sto.RateSpec&quot; uuid=&quot;77e5b23e-f542-4ec2-a7f1-50e935b5abd8&quot;/&gt;
         &lt;/rates&gt;
-        &lt;rates type=&quot;sto.ClassicPeriodicDiscreteRate&quot; uuid=&quot;4e4a46bf-4273-404d-a6e9-e262a2425f42&quot;&gt;
+        &lt;rates type=&quot;sto.ClassicPeriodicDiscreteRate&quot; uuid=&quot;ded9a066-0549-44e2-a289-ce73f35f9207&quot;&gt;
           &lt;annotation&gt;D1&lt;/annotation&gt;
           &lt;clockId&gt;GNC2026W::defaultTimer&lt;/clockId&gt;
           &lt;description&gt;Discrete 1&lt;/description&gt;
           &lt;rateIdx&gt;1&lt;/rateIdx&gt;
           &lt;taskId&gt;_task0&lt;/taskId&gt;
-          &lt;rateSpec type=&quot;sto.RateSpec&quot; uuid=&quot;badd2812-64f7-46e6-84f0-0b9272b44442&quot;&gt;
+          &lt;rateSpec type=&quot;sto.RateSpec&quot; uuid=&quot;727edb6c-af9b-410e-829b-0d33f40d79b6&quot;&gt;
             &lt;period&gt;.05&lt;/period&gt;
             &lt;rateType&gt;ClassicPeriodicDiscrete&lt;/rateType&gt;
           &lt;/rateSpec&gt;
         &lt;/rates&gt;
-        &lt;baseRate type=&quot;sto.ContinuousRate&quot; uuid=&quot;2c13a2b9-681e-49a6-ab66-d5e47c91f783&quot;&gt;
+        &lt;baseRate type=&quot;sto.ContinuousRate&quot; uuid=&quot;8387df8a-6bbe-47b6-9f00-34bbec4f0c68&quot;&gt;
           &lt;annotation&gt;Cont&lt;/annotation&gt;
           &lt;clockId&gt;GNC2026W::defaultTimer&lt;/clockId&gt;
           &lt;colorIndex&gt;-1&lt;/colorIndex&gt;
           &lt;description&gt;Continuous&lt;/description&gt;
           &lt;taskId&gt;_task0&lt;/taskId&gt;
-          &lt;rateSpec type=&quot;sto.RateSpec&quot; uuid=&quot;2bd6f1c1-d7a2-4d7e-ba87-18f352aabe47&quot;/&gt;
+          &lt;rateSpec type=&quot;sto.RateSpec&quot; uuid=&quot;8a4fef46-ecae-4f8c-a666-8723f4c3e284&quot;/&gt;
         &lt;/baseRate&gt;
       &lt;/clocks&gt;
-      &lt;clocks type=&quot;sto.Event&quot; uuid=&quot;efee5019-38a6-4512-aee5-68801b9dcd2d&quot;&gt;
+      &lt;clocks type=&quot;sto.Event&quot; uuid=&quot;b52b5170-b106-420a-bf5a-944fcc62146e&quot;&gt;
         &lt;eventType&gt;PARAMETER_CHANGE_EVENT&lt;/eventType&gt;
         &lt;cNum&gt;1&lt;/cNum&gt;
         &lt;clockType&gt;Event&lt;/clockType&gt;
         &lt;identifier&gt;ParameterChangeEvent&lt;/identifier&gt;
-        &lt;rates type=&quot;sto.ModelWideEventRate&quot; uuid=&quot;6913eea8-1178-463c-8ae4-b71940ba4739&quot;&gt;
+        &lt;rates type=&quot;sto.ModelWideEventRate&quot; uuid=&quot;3004f16e-4b0a-40d8-8d69-644856e9a54b&quot;&gt;
           &lt;annotation&gt;Inf&lt;/annotation&gt;
           &lt;clockId&gt;ParameterChangeEvent&lt;/clockId&gt;
           &lt;colorIndex&gt;-1&lt;/colorIndex&gt;
@@ -232,7 +233,7 @@
           &lt;rateIdx&gt;-1&lt;/rateIdx&gt;
           &lt;taskId&gt;ModelWideParameterChangeEvent&lt;/taskId&gt;
           &lt;useForExecution&gt;NotForExecution&lt;/useForExecution&gt;
-          &lt;rateSpec type=&quot;sto.RateSpec&quot; uuid=&quot;8888a6c7-6107-46a6-bcff-113996130765&quot;&gt;
+          &lt;rateSpec type=&quot;sto.RateSpec&quot; uuid=&quot;e00c0b7c-6456-494c-bc65-3981fac53ba9&quot;&gt;
             &lt;period&gt;inf&lt;/period&gt;
             &lt;rateType&gt;ModelWideParameterChangeEvent&lt;/rateType&gt;
           &lt;/rateSpec&gt;
@@ -240,10 +241,10 @@
       &lt;/clocks&gt;
       &lt;timeAdvanceMode&gt;FixedStep&lt;/timeAdvanceMode&gt;
     &lt;/clockRegistry&gt;
-    &lt;taskRegistry type=&quot;sto.TaskRegistry&quot; uuid=&quot;96b67cbc-ca8a-41f1-a2ed-38e4319c4641&quot;&gt;
-      &lt;rootTaskHierarchyElements type=&quot;sto.Task&quot; uuid=&quot;fd3427dc-5a94-4b5e-80ea-f9d9a4473604&quot;&gt;
+    &lt;taskRegistry type=&quot;sto.TaskRegistry&quot; uuid=&quot;457552e6-ca31-46b1-a8af-208ef9673250&quot;&gt;
+      &lt;rootTaskHierarchyElements type=&quot;sto.Task&quot; uuid=&quot;fe02fff0-21b6-46d8-a6a0-1bae73eb2947&quot;&gt;
         &lt;isExplicit&gt;true&lt;/isExplicit&gt;
-        &lt;rates type=&quot;sto.ModelWideEventRate&quot; uuid=&quot;2d2a635b-e6ba-40d8-82ad-4ae1b86a5297&quot;&gt;
+        &lt;rates type=&quot;sto.ModelWideEventRate&quot; uuid=&quot;41edc3b0-7da7-43fe-bbe2-f1e5aea5d493&quot;&gt;
           &lt;annotation&gt;Inf&lt;/annotation&gt;
           &lt;clockId&gt;ParameterChangeEvent&lt;/clockId&gt;
           &lt;colorIndex&gt;-1&lt;/colorIndex&gt;
@@ -251,7 +252,7 @@
           &lt;rateIdx&gt;-1&lt;/rateIdx&gt;
           &lt;taskId&gt;ModelWideParameterChangeEvent&lt;/taskId&gt;
           &lt;useForExecution&gt;NotForExecution&lt;/useForExecution&gt;
-          &lt;rateSpec type=&quot;sto.RateSpec&quot; uuid=&quot;d8662610-bb8b-4ced-82dc-4aedd2b125be&quot;&gt;
+          &lt;rateSpec type=&quot;sto.RateSpec&quot; uuid=&quot;19094032-570f-43f0-a8b1-58d04505f96f&quot;&gt;
             &lt;period&gt;inf&lt;/period&gt;
             &lt;rateType&gt;ModelWideParameterChangeEvent&lt;/rateType&gt;
           &lt;/rateSpec&gt;
@@ -262,24 +263,24 @@
         &lt;identifier&gt;ModelWideParameterChangeEvent&lt;/identifier&gt;
         &lt;priority&gt;-1&lt;/priority&gt;
       &lt;/rootTaskHierarchyElements&gt;
-      &lt;rootTaskHierarchyElements type=&quot;sto.Task&quot; uuid=&quot;1caa1b44-7876-407b-b5ca-5dd815be4a05&quot;&gt;
+      &lt;rootTaskHierarchyElements type=&quot;sto.Task&quot; uuid=&quot;5093974b-fc67-49a8-8779-631cdce8c99c&quot;&gt;
         &lt;isExecutable&gt;true&lt;/isExecutable&gt;
         &lt;orderIndex&gt;1&lt;/orderIndex&gt;
-        &lt;rates type=&quot;sto.ContinuousRate&quot; uuid=&quot;5eccb46f-bdf2-442b-bb6b-1d6351437ec9&quot;&gt;
+        &lt;rates type=&quot;sto.ContinuousRate&quot; uuid=&quot;01ced550-ec30-4d85-8116-fed8afec427d&quot;&gt;
           &lt;annotation&gt;Cont&lt;/annotation&gt;
           &lt;clockId&gt;GNC2026W::defaultTimer&lt;/clockId&gt;
           &lt;colorIndex&gt;-1&lt;/colorIndex&gt;
           &lt;description&gt;Continuous&lt;/description&gt;
           &lt;taskId&gt;_task0&lt;/taskId&gt;
-          &lt;rateSpec type=&quot;sto.RateSpec&quot; uuid=&quot;ea168da0-0c3c-40a0-8691-2ca12c4d2dee&quot;/&gt;
+          &lt;rateSpec type=&quot;sto.RateSpec&quot; uuid=&quot;31b36d04-1bb0-444e-b8cd-0b16ae287ce3&quot;/&gt;
         &lt;/rates&gt;
-        &lt;rates type=&quot;sto.ClassicPeriodicDiscreteRate&quot; uuid=&quot;b46a556e-eed5-4b10-b795-71f6822e717f&quot;&gt;
+        &lt;rates type=&quot;sto.ClassicPeriodicDiscreteRate&quot; uuid=&quot;5201661c-c3d6-4e8c-833b-59558eb09046&quot;&gt;
           &lt;annotation&gt;D1&lt;/annotation&gt;
           &lt;clockId&gt;GNC2026W::defaultTimer&lt;/clockId&gt;
           &lt;description&gt;Discrete 1&lt;/description&gt;
           &lt;rateIdx&gt;1&lt;/rateIdx&gt;
           &lt;taskId&gt;_task0&lt;/taskId&gt;
-          &lt;rateSpec type=&quot;sto.RateSpec&quot; uuid=&quot;41e37242-957c-4895-abf7-17a1e01cbdf6&quot;&gt;
+          &lt;rateSpec type=&quot;sto.RateSpec&quot; uuid=&quot;933e6fdf-cbcb-47de-9597-e305e0aa2ea3&quot;&gt;
             &lt;period&gt;.05&lt;/period&gt;
             &lt;rateType&gt;ClassicPeriodicDiscrete&lt;/rateType&gt;
           &lt;/rateSpec&gt;
@@ -290,11 +291,11 @@
         &lt;identifier&gt;_task0&lt;/identifier&gt;
         &lt;priority&gt;40&lt;/priority&gt;
       &lt;/rootTaskHierarchyElements&gt;
-      &lt;taskDependencyGraph type=&quot;sto.SerializedTaskConnectionList&quot; uuid=&quot;7a518a07-021b-4062-a715-68adb7648a8b&quot;&gt;
+      &lt;taskDependencyGraph type=&quot;sto.SerializedTaskConnectionList&quot; uuid=&quot;520c5836-2db3-4058-b313-970cc1512884&quot;&gt;
         &lt;clockIdentifier&gt;ParameterChangeEvent&lt;/clockIdentifier&gt;
         &lt;taskIdentifier&gt;ModelWideParameterChangeEvent&lt;/taskIdentifier&gt;
       &lt;/taskDependencyGraph&gt;
-      &lt;taskDependencyGraph type=&quot;sto.SerializedTaskConnectionList&quot; uuid=&quot;626d0bd6-3d1a-4179-aa5a-83943323657a&quot;&gt;
+      &lt;taskDependencyGraph type=&quot;sto.SerializedTaskConnectionList&quot; uuid=&quot;6ebb066b-8e8e-4e04-8623-56f47c21efa6&quot;&gt;
         &lt;clockIdentifier&gt;GNC2026W::defaultTimer&lt;/clockIdentifier&gt;
         &lt;taskIdentifier&gt;_task0&lt;/taskIdentifier&gt;
       &lt;/taskDependencyGraph&gt;
@@ -303,10 +304,10 @@
   &lt;/sto.Registry&gt;
 &lt;/slexec_sto&gt;</timingAndTaskingRegistry>
     <zeroInternalMemoryAtStartupUnchecked>true</zeroInternalMemoryAtStartupUnchecked>
-    <FMUBlockMap type="ModelRefInfoRepo.FMUBlockInfo" uuid="aded2400-6c05-4731-a639-1261025e03a6"/>
-    <codeGenInfo type="ModelRefInfoRepo.CodeGenInformation" uuid="795bc9ae-ff4f-45f3-8006-1554291fc29b"/>
-    <compiledVariantInfos type="ModelRefInfoRepo.CompiledVariantInfoMap" uuid="e090691a-9e07-4d6e-ba9c-3a7add67adc0"/>
-    <configSettingsForConsistencyChecks type="ModelRefInfoRepo.ConfigSettingsForConsistencyChecks" uuid="4a0036cc-15f8-4390-871a-5398ecb56c7e">
+    <FMUBlockMap type="ModelRefInfoRepo.FMUBlockInfo" uuid="54e47d6f-288d-4c0b-8f88-0dd334df544f"/>
+    <codeGenInfo type="ModelRefInfoRepo.CodeGenInformation" uuid="d37101fa-3708-4ba4-92b8-7b9478043209"/>
+    <compiledVariantInfos type="ModelRefInfoRepo.CompiledVariantInfoMap" uuid="9111350a-8b84-4027-80a0-1865e8fade1b"/>
+    <configSettingsForConsistencyChecks type="ModelRefInfoRepo.ConfigSettingsForConsistencyChecks" uuid="4a309bb4-4974-46de-a67c-582e66fdf4a6">
       <consistentOutportInitialization>true</consistentOutportInitialization>
       <fixedStepSize>.05</fixedStepSize>
       <frameDiagnosticSetting>2</frameDiagnosticSetting>
@@ -316,7 +317,7 @@
       <simSIMDOptimization>1</simSIMDOptimization>
       <solverName>FixedStepDiscrete</solverName>
       <solverType>SOLVER_TYPE_FIXEDSTEP</solverType>
-      <hardwareSettings type="ModelRefInfoRepo.HardwareSettings" uuid="765b2acf-664c-4919-af8e-3e9a1a026389">
+      <hardwareSettings type="ModelRefInfoRepo.HardwareSettings" uuid="ac3090a4-0572-48d8-93d7-5e6d0982001d">
         <prodBitPerChar>8</prodBitPerChar>
         <prodBitPerDouble>64</prodBitPerDouble>
         <prodBitPerFloat>32</prodBitPerFloat>
@@ -335,12 +336,12 @@
         <prodWordSize>64</prodWordSize>
       </hardwareSettings>
     </configSettingsForConsistencyChecks>
-    <controllableInputRatesMap type="ModelRefInfoRepo.VarTsUIDMap" uuid="dff5fe15-2166-4426-8399-4c6414fceaff"/>
-    <controllableOutputRatesMap type="ModelRefInfoRepo.VarTsUIDMap" uuid="ed2d3882-9bb5-4c74-8049-75e30f622906"/>
-    <dataPortGroup type="ModelRefInfoRepo.DataPortGroup" uuid="33d60f9f-f0f3-4292-b603-f09070f19e2b"/>
-    <expFcnUnconnectedDataPortGroup type="ModelRefInfoRepo.DataPortGroup" uuid="bcabc114-82d8-4fe0-b7f2-0aa70a6a1abf"/>
-    <interfaceParameterInfo type="ModelRefInfoRepo.InterfaceParameterInfo" uuid="1a46015b-12d2-4f73-9574-ee626f3756db">
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="dd32a902-6904-4fab-bc87-c117f78f86f7">
+    <controllableInputRatesMap type="ModelRefInfoRepo.VarTsUIDMap" uuid="b774b49d-f500-462b-9763-5eac98852603"/>
+    <controllableOutputRatesMap type="ModelRefInfoRepo.VarTsUIDMap" uuid="001723c3-2e52-4616-a4d0-fd4238a35147"/>
+    <dataPortGroup type="ModelRefInfoRepo.DataPortGroup" uuid="b3aea2a4-4d7c-4b5d-85be-1881a8020d2f"/>
+    <expFcnUnconnectedDataPortGroup type="ModelRefInfoRepo.DataPortGroup" uuid="e0543819-74a9-45c9-9ad3-e2c2069be618"/>
+    <interfaceParameterInfo type="ModelRefInfoRepo.InterfaceParameterInfo" uuid="21645dc5-d8e6-4bfb-af22-deb2e789857f">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="13cba610-a726-47c4-8285-30f266c081ee">
         <dimensions>3</dimensions>
         <dimensions>3</dimensions>
         <isUsed>true</isUsed>
@@ -348,7 +349,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>A_c</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="1880e64e-839f-427c-84d5-068d67d1cd6c">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="2e4523a5-0943-4023-8d10-512cedc7bad9">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -356,7 +357,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>CVrate</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="28950271-15d6-46a2-b9f3-76c74f453f72">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="52faaa71-fef3-40dc-be64-48f9e0a311e9">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -364,7 +365,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>F_red_X_nominal</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="b915b58c-6d28-44f8-8138-f74024c3546b">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="039ec721-6857-41a0-9368-98a208e5ce24">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -372,7 +373,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>F_red_Y_nominal</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="3c14a286-731f-4b94-801f-565e4e83888a">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="5d1d63fd-a2bf-4b41-803c-dcf1207bdc1f">
         <dimensions>8</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -380,7 +381,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>F_thrusters_BLACK</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="38393a32-d311-4107-b976-eba4427221ae">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="4b299c34-2eac-481a-bf04-aa2ed9abe091">
         <dimensions>8</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -388,7 +389,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>F_thrusters_BLUE</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="e3ee06b1-0018-487c-a7fa-d64a76c374fd">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="e13105ec-499c-4fde-aa38-716f82c67a36">
         <dimensions>8</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -396,7 +397,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>F_thrusters_RED</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="a40532fd-107f-4441-8d0a-15f46092fa36">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="29be5a02-b68f-4548-a2c2-228e405cb4a4">
         <dimensions>3</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -404,7 +405,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>F_u</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="089c94ba-8a52-4cf7-a6f7-4a0bb919e9b3">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="6bf5fec8-936f-4377-8357-c1f1580e1fff">
         <dimensions>3</dimensions>
         <dimensions>6</dimensions>
         <isUsed>true</isUsed>
@@ -412,7 +413,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>K_BLACK</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="f5d46eb0-893a-49ed-bf4b-5938b8ff68c7">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="061c369f-09df-43cd-b39f-c80e417d982e">
         <dimensions>3</dimensions>
         <dimensions>6</dimensions>
         <isUsed>true</isUsed>
@@ -420,7 +421,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>K_BLUE</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="36d276fd-aa1d-4841-8d90-6763f492cf4d">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="fcbdf21d-be16-49c9-b013-179ba23ed53e">
         <dimensions>3</dimensions>
         <dimensions>6</dimensions>
         <isUsed>true</isUsed>
@@ -428,7 +429,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>K_RED</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="dcf12c8a-9f22-47fb-b73a-5e041f89a7d7">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="9ea8f92f-9924-4eed-979f-23845ec154d8">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -436,7 +437,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>Kd_elarm</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="6862591f-2fef-47a0-8a0b-f0aa072d5bda">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="be40470c-51bd-43b1-a77a-76483a80b3ff">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -444,7 +445,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>Kd_sharm</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="7c7e031d-006d-4657-839b-5cfc32e97e7d">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="5d41c3af-584a-4897-b038-4b5ecd1a1fe6">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -452,7 +453,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>Kd_tb</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="e6c199d9-e941-43f9-9ca3-9465a8ec46a5">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="22c9a4fe-31f7-4319-8939-809c1e2d68d4">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -460,7 +461,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>Kd_tblue</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="9ebb9c8e-5cc8-483a-ba63-1f263a1cb7fd">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="60af3b13-f268-48c8-8698-355fc843fd52">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -468,7 +469,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>Kd_tr</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="76b040e0-6e55-4cc0-9a91-c6a9efbcf1c3">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="99af4a74-8b3c-4dec-80e7-a0e4e1de581a">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -476,7 +477,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>Kd_wrarm</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="c1d6b0b7-5680-4c3a-a2a7-c5c39e5e79b7">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="41b92718-7e57-4529-a660-cd43a556841a">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -484,7 +485,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>Kd_xb</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="727d2c03-edc7-4c80-8d2e-4544445e1046">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="649f5974-799e-4fd3-848a-089a31ded3d6">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -492,7 +493,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>Kd_xblue</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="ce39cc52-c01b-4365-81f1-bde308eb72bf">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="4760e87e-ed4e-4b6d-94a0-a02b4794688d">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -500,7 +501,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>Kd_xr</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="7655e388-d652-465a-8559-4867d9706d88">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="3227d8c7-d991-4ec2-bfd5-cd17d259abea">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -508,7 +509,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>Kd_yb</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="f1f3686d-dff4-49c3-a90d-6ff498ef1de8">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="de90493c-bdfd-4292-a55e-c9c3542caec6">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -516,7 +517,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>Kd_yblue</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="3d7ead9d-ab1d-4a3a-8922-31b9c36221f0">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="2671b8c2-782b-4288-8994-318de0598331">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -524,7 +525,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>Kd_yr</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="c0a0fbf8-82f1-4dc3-8a33-a6d72fb855d1">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="57e84dd5-a86f-4e03-bccc-998254d05105">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -532,7 +533,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>Kp_elarm</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="9298156e-2530-4daa-b530-3bc825034402">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="7a2d34a5-7d05-4dbc-b91e-d7fd6a968d2c">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -540,7 +541,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>Kp_sharm</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="667bda4a-7ecc-4d75-aa20-e4f2a963eb6c">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="11237ee0-3a78-4bb2-9a42-c553a61c99eb">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -548,7 +549,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>Kp_tb</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="e440e306-49b1-4794-ba7b-9a3bd6096d5e">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="1e5228ef-64d9-48e8-92d6-4af469f35c0b">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -556,7 +557,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>Kp_tblue</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="3c134fe1-ffaa-4b6f-a38b-70e1576e2cbf">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="ba63b4a2-2bd2-423e-95b4-e54278cb747a">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -564,7 +565,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>Kp_tr</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="c395b773-b20a-4286-a7f4-094f0211a72e">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="e34e9eac-5019-4cd6-b71c-f23223c065fb">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -572,7 +573,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>Kp_wrarm</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="ca3820c3-51e9-4f12-a21a-b2c83f1d73c4">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="bd5c8b47-4e86-41c6-8bab-69570bff6704">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -580,7 +581,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>Kp_xb</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="9c7cccee-6cf4-45de-aa30-81e16e2c7c58">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="a8cf1c96-dc8b-4333-9fcb-ca5bf15372ec">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -588,7 +589,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>Kp_xblue</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="565fd0df-3b9a-4629-b79f-e7adb36f028f">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="2fde3b6a-f4de-44e1-bd16-c849c6db2959">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -596,7 +597,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>Kp_xr</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="e1dfdce4-edd4-4271-8377-4782bbb5b6dd">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="38a1ffa0-b0c5-4555-a287-71dfecf0a324">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -604,7 +605,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>Kp_yb</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="81c22db9-e251-4796-9776-5ecd63c95378">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="656b646e-7cbd-4af7-9073-05043d3203b0">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -612,7 +613,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>Kp_yblue</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="7d51133e-f99c-4cef-835b-b5f25bd1b1bb">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="3ba8b48d-8d16-4c2c-af5b-e1c7b4113afa">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -620,7 +621,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>Kp_yr</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="58cd1cf5-8999-4aee-91fb-3ddb6ae7bee8">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="4e4c2d4c-2af4-4e19-850f-dea063028c1a">
         <dimensions>3</dimensions>
         <dimensions>3</dimensions>
         <isUsed>true</isUsed>
@@ -628,7 +629,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>Mc_inv</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="0fa39700-1566-4e24-9a4d-5f9f167f1fcf">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="3f8d4a3e-87f0-4c0f-8c78-38f6136daeca">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -636,7 +637,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>PWMFreq</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="ba479573-cea2-4f24-806a-5cd8fc86dfba">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="3942dcba-4e31-40e9-9b6f-8b6dc0aa9ff4">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -644,7 +645,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>Phase0_End</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="0afe160e-7919-4d74-b91e-078f3070adce">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="ff8479cb-bbb4-48d0-a131-8621cfd44004">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -652,7 +653,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>Phase1_End</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="ff795d11-817f-4637-ab1b-ee52ae3a5ad9">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="1d2839f8-1259-4682-a4e9-facc73d14791">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -660,7 +661,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>Phase2_End</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="0a6c2423-6c90-40dc-b116-59d9c341b166">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="212d8ea2-5b5d-48b6-81ef-ece1aadd6239">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -668,7 +669,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>Phase3_End</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="1812ab44-7f52-4c4b-98fa-df485453b4d1">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="5090d974-b467-4224-b6ff-76d55f1f3338">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -676,7 +677,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>Phase3_SubPhase1_End</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="a5dd21e9-22a5-4df8-a8dc-204c5957fdd0">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="5ac03354-dd31-4841-bd61-11d2c6fa38fc">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -684,7 +685,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>Phase3_SubPhase2_End</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="7c5b8f2b-5536-47af-a493-def137837748">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="98235af3-3dc3-4cee-a2d1-8dae2f32a251">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -692,7 +693,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>Phase3_SubPhase3_End</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="dbb0fb72-afbe-4cb6-8d83-33b7d1b9de39">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="3a4dcd6b-21a8-4dd3-9a3a-2c7eb9cd58f5">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -700,7 +701,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>Phase3_SubPhase4_End</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="2cee3bc3-f8f3-44fe-b654-d86b281f5faa">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="e93a1fce-5732-4426-923d-81c3d9779316">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -708,7 +709,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>Phase4_End</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="e2d12220-9666-4881-9748-b31071241947">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="b3f1dad6-fdf9-434b-bdd2-56a8ae9d1352">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -716,7 +717,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>Phase5_End</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="f1ff2994-e69c-4619-889c-5d6c4f5c535d">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="23f221c3-7d75-4a0c-bf55-8ecdf8ebc5ba">
         <dimensions>3</dimensions>
         <dimensions>3</dimensions>
         <isUsed>true</isUsed>
@@ -724,7 +725,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>R</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="68bb3dae-316c-4ae8-9ae5-125128e3c6a1">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="cde81a9d-2f28-4080-b849-9f3215dc9ec0">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -732,7 +733,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>Tz_lim_elarm</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="993f6040-03a0-44b8-adaa-b50c9b1dabb9">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="36e718ca-3fb1-4aad-b423-f1909d2542de">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -740,7 +741,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>Tz_lim_sharm</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="aaa2dc27-88fd-44b9-8446-3e867c207149">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="290e915c-fd42-4d99-963b-b0e9496240d1">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -748,7 +749,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>Tz_lim_wrarm</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="57693013-3601-4db7-aee1-880c4dc9ec57">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="a3a6b484-89fa-412e-b8c4-8fa7378ef857">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -756,7 +757,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>VISinLoop</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="132dd436-c30d-43d0-a210-f472c7527b1e">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="38c78c8b-620c-4012-ac5e-04bb7852d403">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -764,15 +765,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>X1_blk</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="21ba3481-d9f1-4618-a7dc-c810a0ae40ae">
-        <dimensions>1</dimensions>
-        <dimensions>1</dimensions>
-        <isUsed>true</isUsed>
-        <netSVCE>true</netSVCE>
-        <numDimensions>2</numDimensions>
-        <parameterName>X2_blk</parameterName>
-      </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="423ccd66-db2d-46ff-a29e-1f7d805ade95">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="4e1c49d3-1025-49c3-bfb2-0f54dae0d085">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -780,7 +773,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>X3_blk</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="058de52e-32b3-4b4d-aa4b-9687e87cb2aa">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="a2162dff-5ccc-41fe-949a-be7044df5b3b">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -788,15 +781,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>Y1_blk</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="8df7cbff-9ae4-4a16-9304-c710a865b3d0">
-        <dimensions>1</dimensions>
-        <dimensions>1</dimensions>
-        <isUsed>true</isUsed>
-        <netSVCE>true</netSVCE>
-        <numDimensions>2</numDimensions>
-        <parameterName>Y2_blk</parameterName>
-      </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="070d1fc7-ec4b-4c20-8503-af7b693c3018">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="9dc528e0-792d-4275-9012-53b746007469">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -804,7 +789,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>Y3_blk</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="2e558985-d56f-4ec9-9318-d2c4b12ae139">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="947eba39-274c-4ec5-a34f-a85ee027bb19">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -812,7 +797,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>a</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="bac5bc83-11f8-4635-98e1-07203fbd4ea1">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="896a75db-c020-48cd-9bb1-d6e1a493b27e">
         <dimensions>3</dimensions>
         <dimensions>3</dimensions>
         <isUsed>true</isUsed>
@@ -820,7 +805,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>alpha</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="a4344511-74f0-49a6-a5c6-2b00ab050300">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="921dae45-f0ce-4dbf-be29-a704027cecb0">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -828,7 +813,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>b</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="56e0630d-0fcb-4249-947c-2e85c136547f">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="c03668e0-c8c3-4fa0-98b8-d02ff310edda">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -837,7 +822,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>baseRate</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="375b7926-73b8-434d-a0f9-f2061389a363">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="89a7cf7d-0d5c-4583-815b-bedfd80e60c2">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -845,7 +830,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>dataRate</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="ff44b158-8b7a-4e48-9e32-f77071168bbb">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="8d2577e3-1baf-4931-91c7-0d5d03545d4b">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -853,7 +838,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>dt</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="1d2b58cd-9653-4902-874a-8a0324c63b0c">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="59f8b479-d144-43ed-9759-83a503878f16">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -861,7 +846,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>fNum</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="413396ff-a5ac-4700-8067-38713a877094">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="900d726f-b374-490c-a563-8154318248fc">
         <dimensions>3</dimensions>
         <dimensions>3</dimensions>
         <isUsed>true</isUsed>
@@ -869,7 +854,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>gamma</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="f683545b-9836-496d-a093-04e1de321106">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="6c79d21b-2adc-4b7a-8416-ef3dfa4193b0">
         <dimensions>1</dimensions>
         <dimensions>3</dimensions>
         <isUsed>true</isUsed>
@@ -877,7 +862,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>home_states_BLACK</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="27c4204f-3120-4693-838a-997900c8ca58">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="1c15c01b-f9f3-406f-a1e1-3e4cfb713db5">
         <dimensions>1</dimensions>
         <dimensions>3</dimensions>
         <isUsed>true</isUsed>
@@ -885,7 +870,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>home_states_BLUE</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="8386792a-ee69-48cd-95c6-f3adabfb73cf">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="41b4dfa1-70e3-4f9b-97a4-2143a54977bc">
         <dimensions>1</dimensions>
         <dimensions>3</dimensions>
         <isUsed>true</isUsed>
@@ -893,7 +878,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>home_states_RED</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="a410ab59-66c2-44d0-abdf-ba987fc5c6e2">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="63feadc3-4db0-48b0-91e2-44192f24bdcd">
         <dimensions>1</dimensions>
         <dimensions>3</dimensions>
         <isUsed>true</isUsed>
@@ -901,7 +886,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>init_states_BLACK</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="e51c3560-5764-4d52-9a3a-c6f871a990c0">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="5b81244a-ce21-4e74-9c93-f709f020ea9e">
         <dimensions>1</dimensions>
         <dimensions>3</dimensions>
         <isUsed>true</isUsed>
@@ -909,7 +894,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>init_states_BLUE</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="f5c930cc-ebb6-4f7b-9f2a-cd90373701f0">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="00710cce-c190-4986-a5eb-7b3b7c4e303c">
         <dimensions>1</dimensions>
         <dimensions>3</dimensions>
         <isUsed>true</isUsed>
@@ -917,7 +902,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>init_states_RED</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="2096dec9-f595-4f99-804e-8e811b06578d">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="05d0e77f-b4e5-4d09-989e-0eabbcbe647d">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -925,7 +910,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>k</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="5cc0e76a-f01c-45fd-a525-a65a770710f3">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="310fceb2-b0b0-47b8-ba48-a98fba259cb1">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -933,7 +918,15 @@
         <numDimensions>2</numDimensions>
         <parameterName>platformSelection</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="f78e412b-afd6-4adb-af19-fa9a83a304e1">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="f487f313-0638-4db4-8feb-cde864b11f9e">
+        <dimensions>1</dimensions>
+        <dimensions>1</dimensions>
+        <isUsed>true</isUsed>
+        <netSVCE>true</netSVCE>
+        <numDimensions>2</numDimensions>
+        <parameterName>scenario</parameterName>
+      </globalVariables>
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="16be42f2-52ff-4a04-896e-f7abb4374ab2">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -941,7 +934,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>sep1</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="df2cce9c-482a-46fa-a444-5462065f31f1">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="3d32a562-7ba2-4ed2-8b99-6f860b8b2942">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -949,7 +942,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>sep3</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="77e652f7-92ff-4f8c-b63c-4a340af8dc2a">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="9d78dbb0-8669-4dcd-b22a-d53a01566c9d">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -957,7 +950,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>simMode</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="a350e414-9934-4be1-b7eb-007ddf309c86">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="42a48b88-4412-4b2a-b913-c60aba0ee1ad">
         <dimensions>8</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -965,7 +958,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>thruster_dist2CG_BLACK</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="6a3a8796-91ee-4163-b9ec-befbd1036bbf">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="2d663c3a-c422-4f9a-8268-74d902b62b3e">
         <dimensions>8</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -973,7 +966,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>thruster_dist2CG_BLUE</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="2ba81cda-90da-4b0c-b685-899c0131ad7a">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="3ce33dab-47c9-4e6f-bdfd-0f114f623bfa">
         <dimensions>8</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -981,7 +974,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>thruster_dist2CG_RED</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="9cde9b14-a1f6-4d8a-8248-3672f0ad8e52">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="a745113d-fcee-4c6a-ada0-75eecb6d4004">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -989,7 +982,7 @@
         <numDimensions>2</numDimensions>
         <parameterName>xLength</parameterName>
       </globalVariables>
-      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="b54d9e8f-dfbf-4f65-836c-cdd208e2e339">
+      <globalVariables type="ModelRefInfoRepo.BuiltinParameter" uuid="308071ac-9fb0-4190-8509-3dde7194b1a3">
         <dimensions>1</dimensions>
         <dimensions>1</dimensions>
         <isUsed>true</isUsed>
@@ -998,11 +991,11 @@
         <parameterName>yLength</parameterName>
       </globalVariables>
     </interfaceParameterInfo>
-    <messageInfo type="ModelRefInfoRepo.MessageInformation" uuid="35ab6a4e-c1c7-4cd3-b6af-8d55afcf0b09"/>
-    <methodInfo type="ModelRefInfoRepo.MethodExistenceInfo" uuid="7ad7c1c8-9f3b-4fb5-9aae-99265f0dc407">
+    <messageInfo type="ModelRefInfoRepo.MessageInformation" uuid="25b80d83-380a-49ab-9af6-97b44fd45e5f"/>
+    <methodInfo type="ModelRefInfoRepo.MethodExistenceInfo" uuid="dfe5e3ce-197c-41c0-b850-8b1caf360d07">
       <hasTerminateMethod>true</hasTerminateMethod>
     </methodInfo>
-    <periodicEventPortUnsupportedBlockInfo type="ModelRefInfoRepo.PeriodicEventPortUnsupportedBlockInfo" uuid="0d51e29a-f5e8-4171-aad5-4376c54c3684">
+    <periodicEventPortUnsupportedBlockInfo type="ModelRefInfoRepo.PeriodicEventPortUnsupportedBlockInfo" uuid="b0290ab9-fa57-422f-837d-14c55d4f405b">
       <multiRateSubsystems>GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Receive and Process Phasespace Data/Check for Sychronization (Updated)/Enabled Subsystem2</multiRateSubsystems>
       <multiRateSubsystems>GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLACK Data/Calculate True  Time Step/Enabled Subsystem3</multiRateSubsystems>
       <multiRateSubsystems>GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store BLACK Data/Subsystem1/Enabled Subsystem</multiRateSubsystems>
@@ -1014,20 +1007,20 @@
       <multiRateSubsystems>GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store RED Data/Subsystem1/Enabled Subsystem</multiRateSubsystems>
       <multiRateSubsystems>GNC2026W/PhaseSpace Camera Code/Use Hardware to Obtain States/Store RED Data/Subsystem2/Enabled Subsystem</multiRateSubsystems>
     </periodicEventPortUnsupportedBlockInfo>
-    <portGroupsRequireSameRate type="ModelRefInfoRepo.PortGroupsRequireSameRate" uuid="f2afa17f-7bd3-4427-8f7a-cc534541587f">
-      <DSMPortGroups type="ModelRefInfoRepo.NameToPortGroupIdxVectMap" uuid="e05b37cd-0a41-4572-baec-e65e87a4d47e"/>
-      <GlobalDSMPortGroups type="ModelRefInfoRepo.NameToPortGroupIdxVectMap" uuid="454f753d-2509-44e2-892a-404c2467e000"/>
-      <mergedPortGroups type="ModelRefInfoRepo.NameToPortGroupIdxVectMap" uuid="ff8a3645-2d1a-4542-8887-5d8e6c4a6ffb"/>
+    <portGroupsRequireSameRate type="ModelRefInfoRepo.PortGroupsRequireSameRate" uuid="20eded7b-cde3-4b79-af6a-1b13e4ed3b0f">
+      <DSMPortGroups type="ModelRefInfoRepo.NameToPortGroupIdxVectMap" uuid="1ddb68d3-f863-4e04-9b45-8572801d823f"/>
+      <GlobalDSMPortGroups type="ModelRefInfoRepo.NameToPortGroupIdxVectMap" uuid="7d0cda16-b21f-4721-9a61-8e4558fd8e9e"/>
+      <mergedPortGroups type="ModelRefInfoRepo.NameToPortGroupIdxVectMap" uuid="e4aea23c-f7a6-414f-b738-9fe6cedcc542"/>
     </portGroupsRequireSameRate>
-    <rateBasedMdlGlobalDSMRateSpec type="ModelRefInfoRepo.GlobalDSMRateSpecMap" uuid="e3a0c17d-89b3-4a52-a57f-93f695ebedab"/>
-    <rateSpecOfGlobalDSMAccessedByDescExpFcnMdlMap type="ModelRefInfoRepo.GlobalDSMRateSpecMap" uuid="345f0658-2cac-4d8a-91cb-6b8e8cf72e6c"/>
-    <rootBlockDiagramInterface type="ci.Model" uuid="342b32bf-fc4a-4ba4-8c66-e66aa30737c0">
-      <p_RootComponentInterface type="ci.ComponentInterface" uuid="f73e08f9-ebb8-4198-938d-065d8d70a55e">
+    <rateBasedMdlGlobalDSMRateSpec type="ModelRefInfoRepo.GlobalDSMRateSpecMap" uuid="488f3c3f-57e2-4194-9c03-00a366ae6aeb"/>
+    <rateSpecOfGlobalDSMAccessedByDescExpFcnMdlMap type="ModelRefInfoRepo.GlobalDSMRateSpecMap" uuid="a5a37e4e-3691-48f2-bc36-9f307f17b964"/>
+    <rootBlockDiagramInterface type="ci.Model" uuid="cb18a8db-92ae-4540-acd3-380e93e734ed">
+      <p_RootComponentInterface type="ci.ComponentInterface" uuid="f588d99c-73c3-4ea1-8642-e847e5fb1187">
         <p_Name>GNC2026W</p_Name>
         <p_Type>ROOT</p_Type>
       </p_RootComponentInterface>
     </rootBlockDiagramInterface>
-    <simulinkFunctions type="ModelRefInfoRepo.SimulinkFunctions" uuid="79bfc3aa-98c3-4659-b626-6fc6132f7301">
+    <simulinkFunctions type="ModelRefInfoRepo.SimulinkFunctions" uuid="ced8aea4-e47a-4afd-8cb7-1777376bd9ad">
       <compSimulinkFunctionCatalog></compSimulinkFunctionCatalog>
     </simulinkFunctions>
     <sltpContext type="sltp.mm.core.Context" uuid="eaa72d88-4ee5-416d-b060-e92534399baf">
@@ -1077,19 +1070,19 @@
         </subgraph>
       </rootTask>
     </sltpContext>
-    <stateWriterToOwnerMap type="ModelRefInfoRepo.StateWriterInfo" uuid="8e877eb2-aa17-4e6d-b5ba-3e0ec3cc2445"/>
-    <stoClientDataRegistry type="sto.ClientDataRegistry" uuid="1c79f938-295c-47c0-8646-dc3cfd279929">
-      <dataSets type="sto.ClientClockNamedDataSet" uuid="d415c19d-6f1d-41bc-845b-2c069a1a4354">
+    <stateWriterToOwnerMap type="ModelRefInfoRepo.StateWriterInfo" uuid="27904aa8-e7ad-4246-839f-391a4fd69c1c"/>
+    <stoClientDataRegistry type="sto.ClientDataRegistry" uuid="d3786927-97e1-4e68-b072-a9c540807c2c">
+      <dataSets type="sto.ClientClockNamedDataSet" uuid="e251bec8-5123-4aed-a94d-942b0f1e4d3c">
         <tag>sltpEvents</tag>
       </dataSets>
-      <dataSets type="sto.ClientTaskHierarchyElementNamedDataSet" uuid="9365d69e-dc7d-4f21-b0b9-77a765c2f41e">
+      <dataSets type="sto.ClientTaskHierarchyElementNamedDataSet" uuid="0649ef73-abcf-49d9-9614-5aedad2dae11">
         <tag>sltpTaskGroups</tag>
       </dataSets>
-      <dataSets type="sto.ClientTaskHierarchyElementNamedDataSet" uuid="4548e0a9-46a7-4c47-b236-8361bfe4a432">
-        <dSet type="ModelRefInfoRepo.SltpTaskData" uuid="93bbc201-903f-4a4e-93b7-7952d23699a8"/>
-        <tSet type="ModelRefInfoRepo.SltpTaskData" uuid="93bbc201-903f-4a4e-93b7-7952d23699a8">
+      <dataSets type="sto.ClientTaskHierarchyElementNamedDataSet" uuid="d280a3df-a8e7-41f2-90c3-347878baa71e">
+        <dSet type="ModelRefInfoRepo.SltpTaskData" uuid="ae757ac5-6f0a-4816-abf2-72af642037ff"/>
+        <tSet type="ModelRefInfoRepo.SltpTaskData" uuid="ae757ac5-6f0a-4816-abf2-72af642037ff">
           <dataName>Cont</dataName>
-          <linkedSet type="sto.ClientTaskHierarchyElementNamedDataSet" uuid="4548e0a9-46a7-4c47-b236-8361bfe4a432"/>
+          <linkedSet type="sto.ClientTaskHierarchyElementNamedDataSet" uuid="d280a3df-a8e7-41f2-90c3-347878baa71e"/>
           <id type="sto.TaskHierarchyElementId">
             <clockId>GNC2026W::defaultTimer</clockId>
             <id>_task0</id>
@@ -1098,6 +1091,6 @@
         <tag>sltpTasks</tag>
       </dataSets>
     </stoClientDataRegistry>
-    <varTsUIDMap type="ModelRefInfoRepo.VarTsUIDMap" uuid="ba28818b-00d1-4779-8c4e-9325cc9ae67b"/>
+    <varTsUIDMap type="ModelRefInfoRepo.VarTsUIDMap" uuid="a73cba58-cc45-46a9-a9a1-2e55e5c97e32"/>
   </ModelRefInfoRepo.ModelRefInfoRoot>
 </MF0>

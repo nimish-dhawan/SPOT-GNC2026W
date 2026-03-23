@@ -215,6 +215,46 @@ ax.FontSize = 10;
 ax.FontName = "Times New Roman";
 
 % =========================================================================
+% Controller error
+% =========================================================================
+% For 3x1 plots, 0.4x0.4 size is recommended for placing next to trajectory
+% plot
+
+dx  = dat.dataClass_rt.RED_Px_m.Data...
+      - dat.dataClass_rt.RED_Px_Desired_m.Data;
+dy  = dat.dataClass_rt.RED_Py_m.Data ...
+      - dat.dataClass_rt.RED_Py_Desired_m.Data;
+dth = wrap(dat.dataClass_rt.RED_Rz_rad.Data ...
+      - dat.dataClass_rt.RED_Rz_Desired_rad.Data );
+
+figure('Name','Controller Error')
+subplot(3,1,1)
+plot(t,dx,'k')
+grid on;
+ylabel('\deltax [m]')
+xlim(period)
+ax = gca();
+ax.FontSize = 10;
+ax.FontName = "Times New Roman";
+subplot(3,1,2)
+plot(t,dy,'k')
+grid on;
+ylabel('\deltay [m]')
+xlim(period)
+ax = gca();
+ax.FontSize = 10;
+ax.FontName = "Times New Roman";
+subplot(3,1,3)
+plot(t,dth,'k')
+grid on;
+ylabel('\delta\theta [rad]'); xlabel('Time [s]')
+xlim(period)
+formatfig(0.4,0.4);
+ax = gca();
+ax.FontSize = 10;
+ax.FontName = "Times New Roman";
+
+% =========================================================================
 % Plotting VIS LAR States
 % =========================================================================
 % For 3x1 plots, 0.4x0.4 size is recommended for placing next to trajectory
@@ -355,7 +395,7 @@ ax.FontName = "Times New Roman";
 % =========================================================================
 
 if anim == 1 % Trajectory animation
-    stepsize = 5; % This controls how many frames of data are plotted
+    stepsize = 15; % This controls how many frames of data are plotted
     
     fig = figure();
     set(gcf,'color','w')
