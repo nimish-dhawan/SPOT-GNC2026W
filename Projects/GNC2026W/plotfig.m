@@ -9,10 +9,11 @@ close all
 
 % Loading the datafile
 [file,location] = uigetfile;
-filename = [location, file];
-if isempty(file) || strcmp(file," ")
+
+if isempty(file) || strcmp(file,"")
     return
 else
+    filename = [location, file];
     dat = load(filename);
 end
 
@@ -24,8 +25,9 @@ anim = 1;
 % Time frame for plotting
 t = dat.dataClass_rt.Time_s.Data;
 % For successful experiment : period = [t(1100), t(4700)];
-period = [t(1100), t(end)];
+period = [t(1185), t(end)];
 %%
+close all
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Plotting Data
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -228,28 +230,39 @@ dth = wrap(dat.dataClass_rt.RED_Rz_rad.Data ...
       - dat.dataClass_rt.RED_Rz_Desired_rad.Data );
 
 figure('Name','Controller Error')
-subplot(3,1,1)
-plot(t,dx,'k')
+subplot(3,2,1)
+plot(t,dat.dataClass_rt.error_Px_m.Data,'k')
 grid on;
 ylabel('\deltax [m]')
 xlim(period)
 ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
-subplot(3,1,2)
-plot(t,dy,'k')
+subplot(3,2,3)
+plot(t,dat.dataClass_rt.error_Py_m.Data,'k')
 grid on;
 ylabel('\deltay [m]')
 xlim(period)
 ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
-subplot(3,1,3)
-plot(t,dth,'k')
+subplot(3,2,5)
+plot(t,dat.dataClass_rt.error_Rz_rad.Data,'k')
 grid on;
 ylabel('\delta\theta [rad]'); xlabel('Time [s]')
 xlim(period)
-formatfig(0.4,0.4);
+ax = gca();
+ax.FontSize = 10;
+ax.FontName = "Times New Roman";
+
+subplot(3,2,[2 6])
+plot(t, dat.dataClass_rt.Separation_m.Data, 'k')
+hold on; grid on;
+plot(t, dat.dataClass_rt.Desired_Separation_m.Data, '--k')
+xlabel('Time [s]'); ylabel('Separation [m]');
+xlim(period)
+legend('Actual', 'Desired')
+formatfig(0.8,0.4)
 ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
@@ -307,6 +320,50 @@ formatfig(0.45,0.2)
 ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
+
+% =========================================================================
+% Ground Truth vs. VIS Measurements
+% =========================================================================
+r_LAR_cam_truth = zeros(length(t),3);
+r_T_I = [dat.dataClass_rt.BLACK_Px_m.Data, dat.dataClass_rt.BLACK_Py_m.Data, dat.dataClass_rt.BLACK_Rz_rad.Data];
+r_C_I = [dat.dataClass_rt.RED_Px_m.Data, dat.dataClass_rt.RED_Py_m.Data, dat.dataClass_rt.RED_Rz_rad.Data];
+
+for i = 1:length(t) 
+    r_LAR_cam_truth(i,:) = inertial2Cam(r_T_I(i,:)', r_C_I(i,:)');
+end
+
+figure('Name','VIS LAR States vs. Ground Truth')
+subplot(3,1,1)
+plot(t,dat.dataClass_rt.VIS_LAR_States_Px_mm.Data,'k')
+grid on; hold on;
+plot(t,r_LAR_cam_truth(:,1),'--r')
+ylabel('x_{LAR} [mm]')
+xlim(period)
+ax = gca();
+ax.FontSize = 10;
+ax.FontName = "Times New Roman";
+subplot(3,1,2)
+plot(t,dat.dataClass_rt.VIS_LAR_States_Py_mm.Data,'k')
+grid on; hold on;
+plot(t,r_LAR_cam_truth(:,2),'--r')
+ylabel('y_{LAR} [mm]')
+xlim(period)
+ax = gca();
+ax.FontSize = 10;
+ax.FontName = "Times New Roman";
+subplot(3,1,3)
+plot(t,dat.dataClass_rt.VIS_LAR_States_Rz_rad.Data,'k')
+grid on; hold on;
+plot(t,r_LAR_cam_truth(:,3),'--r')
+ylabel('\theta_{LAR} [rad]')
+xlabel('Time [s]')
+xlim(period)
+formatfig(0.4,0.4);
+ax = gca();
+ax.FontSize = 10;
+ax.FontName = "Times New Roman";
+
+
 
 % =========================================================================
 % Trajectory plots (Courtney's code, with LAR added)
@@ -395,7 +452,7 @@ ax.FontName = "Times New Roman";
 % =========================================================================
 
 if anim == 1 % Trajectory animation
-    stepsize = 15; % This controls how many frames of data are plotted
+    stepsize = 5; % This controls how many frames of data are plotted
     
     fig = figure();
     set(gcf,'color','w')
@@ -465,4 +522,30 @@ if savefigs == 1
                     'Error saving plots', 'Modal', true);
         end
     end
+end
+
+%%
+function r_LAR_cam = inertial2Cam(r_t_I, r_c_I)
+
+wrap = @(x) atan2(sin(x), cos(x));
+
+th_t = r_t_I(3); th_c = r_c_I(3);
+x_c_I = r_c_I(1); y_c_I = r_c_I(2);
+sc = sin(th_c); cc = cos(th_c);
+
+x_LAR   = 0.145;   % LAR offset in target BoF, m
+l_cam_x = 0.125;   % Offset in x from origin of Red, left camera, m
+l_cam_y = 0.03;    % )ffset in y from origin of Red, left camera, m
+
+A = [ cc sc 0;
+     -sc cc 0;
+      0  0  1];
+
+B = [x_LAR*cos(th_t-th_c) - x_c_I*cc - y_c_I*sc - l_cam_x;
+     x_LAR*sin(th_t-th_c) + x_c_I*sc - y_c_I*cc - l_cam_y;
+    -th_c ];
+
+r_LAR_cam = A*r_t_I + B;
+% r_LAR_cam(3) = wrap(r_LAR_cam(3));
+
 end
