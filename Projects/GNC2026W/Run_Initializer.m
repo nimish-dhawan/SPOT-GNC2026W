@@ -148,9 +148,9 @@ VISinLoop = 1;
 % scenario = 1 for rotational + translation 1
 % scenario = 2 for rotational + translation 2
 % scenario = 3 for rotation only
-scenario  = 3;
+scenario  = 2;
 
-if scenario == 3
+if scenario == 3 %|| scenario == 2
     R = diag([0.0025, 0.0025, 0.0025]); % Results quicker filter convergence
 end
 

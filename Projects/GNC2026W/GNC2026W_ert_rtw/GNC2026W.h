@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'GNC2026W'.
 //
-// Model version                  : 4.2160
+// Model version                  : 4.2193
 // Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
-// C/C++ source code generated on : Fri Mar 27 01:01:13 2026
+// C/C++ source code generated on : Fri Mar 27 18:02:32 2026
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: ARM Compatible->ARM Cortex-A (64-bit)
@@ -807,6 +807,7 @@ struct P_GNC2026W_T_ {
                                           //    '<S249>/Delay1'
                                           //    '<S65>/Desired X-Position (BLACK)1'
                                           //    '<S65>/Desired Y-Position (BLACK)1'
+                                          //    '<S70>/Desired Y-Position (BLACK)'
                                           //    '<S71>/Desired X-Position (BLACK)'
                                           //    '<S71>/Desired Y-Position (BLACK)'
                                           //    '<S77>/Desired X-Position (BLACK)'
@@ -2163,6 +2164,8 @@ extern volatile boolean_T runModel;
 //  Block '<S54>/Scope' : Unused code path elimination
 //  Block '<S65>/Desired X-Position (BLACK)' : Unused code path elimination
 //  Block '<S65>/Desired Y-Position (BLACK)' : Unused code path elimination
+//  Block '<S70>/Scope' : Unused code path elimination
+//  Block '<S62>/Scope' : Unused code path elimination
 //  Block '<S84>/Constant1' : Unused code path elimination
 //  Block '<S84>/Constant2' : Unused code path elimination
 //  Block '<S84>/Cos' : Unused code path elimination
@@ -2189,6 +2192,8 @@ extern volatile boolean_T runModel;
 //  Block '<S162>/Scope' : Unused code path elimination
 //  Block '<S162>/Scope1' : Unused code path elimination
 //  Block '<S162>/Scope2' : Unused code path elimination
+//  Block '<S177>/Scope' : Unused code path elimination
+//  Block '<S177>/Scope1' : Unused code path elimination
 //  Block '<S178>/Data Type Duplicate' : Unused code path elimination
 //  Block '<S179>/Data Type Duplicate' : Unused code path elimination
 //  Block '<S180>/Data Type Duplicate' : Unused code path elimination
