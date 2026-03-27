@@ -130,8 +130,7 @@ b = 2;
 k = 5;
 
 % Measurement noise covariance for UKF
-R = diag([0.0025, 0.0025, 0.0025]); % Results quicker filter convergence
-% R = diag([0.05, 0.05, 0.05]);
+R = diag([0.05, 0.05, 0.05]);
 
 dt = baseRate;
 
@@ -150,6 +149,10 @@ VISinLoop = 1;
 % scenario = 2 for rotational + translation 2
 % scenario = 3 for rotation only
 scenario  = 3;
+
+if scenario == 3
+    R = diag([0.0025, 0.0025, 0.0025]); % Results quicker filter convergence
+end
 
 %% This section of the code contains parameters should not be modified
 

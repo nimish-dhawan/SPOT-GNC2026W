@@ -387,9 +387,9 @@ expdata_BLUE_pos_x     = dat.dataClass_rt.BLUE_Px_m.Data(unique_inds);
 expdata_BLUE_pos_y     = dat.dataClass_rt.BLUE_Py_m.Data(unique_inds);
 expdata_BLUE_pos_th    = dat.dataClass_rt.BLUE_Rz_rad.Data(unique_inds);
 
-% ARMq1 = dataClass_rt.ARM_Shoulder_Rz_rad(unique_inds);
-% ARMq2 = dataClass_rt.ARM_Elbow_Rz_rad(unique_inds);
-% ARMq3 = dataClass_rt.ARM_Wrist_Rz_rad(unique_inds);
+ARMq1 = dat.dataClass_rt.Joint_q1.Data(unique_inds);
+ARMq2 = dat.dataClass_rt.Joint_q2.Data(unique_inds);
+ARMq3 = dat.dataClass_rt.Joint_q3.Data(unique_inds);
 
 % Static plot 
 figure('Name','Trajectory')
@@ -415,6 +415,11 @@ for ii = 1:length(plotting_indices)
 
     spacecraft = DrawSpacecraft([expdata_RED_pos_x(frame),expdata_RED_pos_y(frame),expdata_RED_pos_th(frame),3]);
     patch(spacecraft(:,1), spacecraft(:,2), 'w', 'facealpha', 0.5, 'edgecolor', 'r', 'edgealpha',alpha,'Linewidth',0.5)
+
+    [shoulder,elbow,wrist] = DrawARM([expdata_RED_pos_x(frame),expdata_RED_pos_y(frame),expdata_RED_pos_th(frame),ARMq1(frame),ARMq2(frame),ARMq3(frame)]);
+    patch(shoulder(:,1), shoulder(:,2), 'w', 'facealpha', alpha, 'edgecolor', 'r', 'edgealpha',alpha)
+    patch(elbow(:,1), elbow(:,2), 'w', 'facealpha', alpha, 'edgecolor', 'r', 'edgealpha',alpha)
+    patch(wrist(:,1), wrist(:,2), 'w', 'facealpha', alpha, 'edgecolor', 'r', 'edgealpha',alpha)
 
     spacecraft = DrawSpacecraft([expdata_BLACK_pos_x(frame),expdata_BLACK_pos_y(frame),expdata_BLACK_pos_th(frame),7]);
     patch(spacecraft(:,1), spacecraft(:,2), 'w', 'facealpha', 0.5, 'edgecolor', 'k', 'edgealpha',alpha,'Linewidth',0.5)
@@ -452,7 +457,7 @@ ax.FontName = "Times New Roman";
 % =========================================================================
 
 if anim == 1 % Trajectory animation
-    stepsize = 5; % This controls how many frames of data are plotted
+    stepsize = 10; % This controls how many frames of data are plotted
     
     fig = figure();
     set(gcf,'color','w')
@@ -469,6 +474,10 @@ if anim == 1 % Trajectory animation
 
         spacecraft = DrawSpacecraft([expdata_RED_pos_x(frame),expdata_RED_pos_y(frame),expdata_RED_pos_th(frame),3]);
         patch(spacecraft(:,1), spacecraft(:,2), 'w', 'facealpha', 0.5, 'edgecolor', 'r', 'edgealpha',1,'Linewidth',0.5)
+        [shoulder,elbow,wrist] = DrawARM([expdata_RED_pos_x(frame),expdata_RED_pos_y(frame),expdata_RED_pos_th(frame),ARMq1(frame),ARMq2(frame),ARMq3(frame)]);
+        patch(shoulder(:,1), shoulder(:,2), 'w', 'facealpha', alpha, 'edgecolor', 'r', 'edgealpha',alpha)
+        patch(elbow(:,1), elbow(:,2), 'w', 'facealpha', alpha, 'edgecolor', 'r', 'edgealpha',alpha)
+        patch(wrist(:,1), wrist(:,2), 'w', 'facealpha', alpha, 'edgecolor', 'r', 'edgealpha',alpha)
     
         spacecraft = DrawSpacecraft([expdata_BLACK_pos_x(frame),expdata_BLACK_pos_y(frame),expdata_BLACK_pos_th(frame),7]);
         patch(spacecraft(:,1), spacecraft(:,2), 'w', 'facealpha', 0.5, 'edgecolor', 'k', 'edgealpha',1,'Linewidth',0.5)
