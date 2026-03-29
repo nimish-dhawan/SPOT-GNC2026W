@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'DefaultSPOT'.
 //
-// Model version                  : 4.656
+// Model version                  : 4.662
 // Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
-// C/C++ source code generated on : Mon Mar 16 12:28:00 2026
+// C/C++ source code generated on : Sun Mar 29 14:38:06 2026
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: ARM Compatible->ARM Cortex-A (64-bit)
@@ -341,7 +341,7 @@ P_DefaultSPOT_T DefaultSPOT_P = {
   // Variable: init_states_RED
   //  Referenced by: '<S28>/Constant2'
 
-  { 2.655775, 1.209675, 3.1415926535897931 },
+  { 3.0, 1.209675, 3.1415926535897931 },
 
   // Variable: platformSelection
   //  Referenced by: '<S186>/MATLAB Function'

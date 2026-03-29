@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'GNC2026W'.
 //
-// Model version                  : 4.2193
+// Model version                  : 4.2233
 // Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
-// C/C++ source code generated on : Fri Mar 27 18:02:32 2026
+// C/C++ source code generated on : Sun Mar 29 14:19:08 2026
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: ARM Compatible->ARM Cortex-A (64-bit)
@@ -4826,7 +4826,7 @@ void GNC2026W_step(void)
   real_T rtb_H_final_g[24];
 
   {
-    real_T b_u1[164];
+    real_T b_u1[165];
     real_T Fi[78];
     real_T Xi_pre[78];
     real_T y[64];
@@ -5084,7 +5084,16 @@ void GNC2026W_step(void)
       GNC2026W_DW.LOS_Angle = rtb_TSamp_m2 / rtb_q_des_tmp_0;
       GNC2026W_DW.LOS_Angle = atan(GNC2026W_DW.LOS_Angle);
       if (GNC2026W_DW.Grab_Location_Reached == 1.0) {
-        if (GNC2026W_DW.k_p < 200.0) {
+        GNC2026W_DW.sendPacket = 1.0;
+      }
+
+      if (GNC2026W_DW.sendPacket == 1.0) {
+        if (GNC2026W_DW.packetSent == 0.0) {
+          GNC2026W_DW.EE_Desired[0] = 0.0;
+          GNC2026W_DW.EE_Desired[1] = 0.0;
+          GNC2026W_DW.EE_Desired[2] = 0.0;
+          GNC2026W_DW.packetSent = 1.0;
+        } else if (GNC2026W_DW.k_p < 200.0) {
           GNC2026W_DW.k_p++;
           vcol = (static_cast<int32_T>(GNC2026W_DW.k_p) - 1) << 1;
           GNC2026W_DW.store[vcol] = rtb_q_des_tmp_0 - 0.07;
@@ -7272,6 +7281,7 @@ void GNC2026W_step(void)
     //   DataStoreRead: '<S5>/Data Store Read45'
     //   DataStoreRead: '<S5>/Data Store Read46'
     //   DataStoreRead: '<S5>/Data Store Read47'
+    //   DataStoreRead: '<S5>/Data Store Read48'
     //   DataStoreWrite: '<S5>/Data Store Write2'
     //   MATLAB Function: '<S218>/MATLAB Function'
     //   SignalConversion generated from: '<S218>/MATLAB System'
@@ -7314,7 +7324,8 @@ void GNC2026W_step(void)
     b_u1[155] = GNC2026W_DW.residual[2];
     b_u1[158] = GNC2026W_DW.error[2];
     b_u1[163] = GNC2026W_DW.EE_Desired[2];
-    appendDataToFile(&b_u1[0], 164.0);
+    b_u1[164] = GNC2026W_DW.Grab_Location_Reached;
+    appendDataToFile(&b_u1[0], 165.0);
 
     // DataStoreWrite: '<S17>/Data Store Write' incorporates:
     //   Constant: '<S17>/Constant'

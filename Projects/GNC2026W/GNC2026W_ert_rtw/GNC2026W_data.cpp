@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'GNC2026W'.
 //
-// Model version                  : 4.2193
+// Model version                  : 4.2233
 // Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
-// C/C++ source code generated on : Fri Mar 27 18:02:32 2026
+// C/C++ source code generated on : Sun Mar 29 14:19:08 2026
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: ARM Compatible->ARM Cortex-A (64-bit)
@@ -314,7 +314,7 @@ P_GNC2026W_T GNC2026W_P = {
   // Variable: R
   //  Referenced by: '<S230>/Unscented Kalman Filter'
 
-  { 0.05, 0.0, 0.0, 0.0, 0.05, 0.0, 0.0, 0.0, 0.05 },
+  { 0.0025, 0.0, 0.0, 0.0, 0.0025, 0.0, 0.0, 0.0, 0.0025 },
 
   // Variable: Tz_lim_elarm
   //  Referenced by: '<S193>/Saturation1'
@@ -454,7 +454,7 @@ P_GNC2026W_T GNC2026W_P = {
   //    '<S284>/Delay'
   //    '<S284>/Delay1'
 
-  { 1.0, 1.773, -3.1415926535897931 },
+  { 1.755775, 1.209675, 0.0 },
 
   // Variable: init_states_BLUE
   //  Referenced by: '<S29>/Desired States (BLUE)'
@@ -467,7 +467,7 @@ P_GNC2026W_T GNC2026W_P = {
   //    '<S38>/Constant2'
   //    '<S58>/Constant2'
 
-  { 0.4, 0.4, 0.78539816339744828 },
+  { 3.0, 1.209675, 3.1415926535897931 },
 
   // Variable: k
   //  Referenced by: '<S230>/Unscented Kalman Filter'
@@ -482,7 +482,7 @@ P_GNC2026W_T GNC2026W_P = {
   // Variable: scenario
   //  Referenced by: '<S56>/Constant'
 
-  2.0,
+  3.0,
 
   // Variable: sep1
   //  Referenced by: '<S38>/Separation'

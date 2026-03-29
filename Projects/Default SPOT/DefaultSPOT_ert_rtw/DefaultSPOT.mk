@@ -2,7 +2,7 @@
 ## Makefile generated for component 'DefaultSPOT'. 
 ## 
 ## Makefile     : DefaultSPOT.mk
-## Generated on : Mon Mar 16 12:28:20 2026
+## Generated on : Sat Mar 28 15:44:57 2026
 ## Final product: $(RELATIVE_PATH_TO_ANCHOR)/DefaultSPOT.elf
 ## Product type : executable
 ## 

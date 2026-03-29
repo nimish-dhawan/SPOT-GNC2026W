@@ -119,14 +119,14 @@ function [rs,re,rw,ree] = CalculateArmPosition(param)
     q3 = param(6); 
 
     % Some of these parameters may be out of date.
-    a1 = 0.321;    
-    a2 = 0.35;   
+    a1 = 0.236940;    
+    a2 = 0.281536;   
     a3 = 0.0621;    
-    b0 = 0.16;   
-    b1 = 0.1117;    
-    b2 = 0.07;   
-    b3 = 0.15; 
-    Phi = 68.284*pi/180 ; 
+    b0 = 0.230400;   
+    b1 = 0.078980;    
+    b2 = 0.070384;   
+    b3 = 0.070685; 
+    Phi = 73.2749*pi/180 ; 
 
     rs     = [ x0 + ( b0)*cos(Phi + q0),y0 + ( b0)*sin(Phi + q0) ];                                    
     re     = [ x0 + ( b0)*cos(Phi + q0) + ( a1+ b1)*cos(pi/2 + q0 + q1),y0 + ( b0)*sin(Phi + q0) + ( a1+ b1)*sin(pi/2 + q0 + q1) ];

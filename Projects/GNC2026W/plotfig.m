@@ -43,7 +43,7 @@ wrap = @(x) atan2(sin(x), cos(x));
 
 
 % =========================================================================
-% Target pose estimates and ground truth
+% Target pose estimates and ground truth with filter performance
 % =========================================================================
 figure('Name','Target Pose Estimates and Ground Truth')
 subplot(3,2,1)
@@ -112,44 +112,6 @@ ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
 
-% =========================================================================
-% Filter Performance
-% =========================================================================
-% For 3x1 plots, 0.4x0.4 size is recommended for placing next to trajectory
-% plot
-dx  = dat.dataClass_rt.BLACK_Px_m.Data...
-      - dat.dataClass_rt.BLACK_Px_Filtered_m.Data;
-dy  = dat.dataClass_rt.BLACK_Py_m.Data ...
-      - dat.dataClass_rt.BLACK_Py_Filtered_m.Data;
-dth = wrap(dat.dataClass_rt.BLACK_Rz_rad.Data ...
-      - dat.dataClass_rt.BLACK_Rz_Filtered_rad.Data );
-
-figure('Name','Filter Performance')
-subplot(3,1,1)
-plot(t,dx,'k')
-grid on;
-ylabel('\deltax [m]')
-xlim(period)
-ax = gca();
-ax.FontSize = 10;
-ax.FontName = "Times New Roman";
-subplot(3,1,2)
-plot(t,dy,'k')
-grid on;
-ylabel('\deltay [m]')
-xlim(period)
-ax = gca();
-ax.FontSize = 10;
-ax.FontName = "Times New Roman";
-subplot(3,1,3)
-plot(t,dth,'k')
-grid on;
-ylabel('\delta\theta [rad]'); xlabel('Time [s]')
-xlim(period)
-formatfig(0.4,0.4);
-ax = gca();
-ax.FontSize = 10;
-ax.FontName = "Times New Roman";
 
 % =========================================================================
 % Controller effort
@@ -267,62 +229,10 @@ ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
 
-% =========================================================================
-% Plotting VIS LAR States
-% =========================================================================
-% For 3x1 plots, 0.4x0.4 size is recommended for placing next to trajectory
-% plot
-figure('Name','VIS LAR States')
-subplot(3,1,1)
-plot(t,dat.dataClass_rt.VIS_LAR_States_Px_mm.Data,'k')
-grid on;
-ylabel('x_{LAR} [mm]')
-xlim(period)
-ax = gca();
-% annotation('textbox', ...
-%     [0.45 0.79 0.26 0.12], ...
-%     'String','LAR outside camera FOV', ...
-%     'FontName','Times New Roman', ...
-%     'FitBoxToText','off', ...
-%     'BackgroundColor',[1 1 1]);
-ax.FontSize = 10;
-ax.FontName = "Times New Roman";
-subplot(3,1,2)
-plot(t,dat.dataClass_rt.VIS_LAR_States_Py_mm.Data,'k')
-grid on;
-ylabel('y_{LAR} [mm]')
-xlim(period)
-ax = gca();
-ax.FontSize = 10;
-ax.FontName = "Times New Roman";
-subplot(3,1,3)
-plot(t,dat.dataClass_rt.VIS_LAR_States_Rz_rad.Data,'k')
-grid on;
-ylabel('\theta_{LAR} [rad]')
-xlabel('Time [s]')
-xlim(period)
-formatfig(0.4,0.4);
-ax = gca();
-ax.FontSize = 10;
-ax.FontName = "Times New Roman";
 
+%%
 % =========================================================================
-% Plotting separation
-% =========================================================================
-figure('Name', 'Separation Distance')
-plot(t, dat.dataClass_rt.Separation_m.Data, 'k')
-hold on; grid on;
-plot(t, dat.dataClass_rt.Desired_Separation_m.Data, '--k')
-xlabel('Time [s]'); ylabel('Separation [m]');
-xlim(period)
-legend('Actual', 'Desired')
-formatfig(0.45,0.2)
-ax = gca();
-ax.FontSize = 10;
-ax.FontName = "Times New Roman";
-
-% =========================================================================
-% Ground Truth vs. VIS Measurements
+% VIS Performance
 % =========================================================================
 r_LAR_cam_truth = zeros(length(t),3);
 r_T_I = [dat.dataClass_rt.BLACK_Px_m.Data, dat.dataClass_rt.BLACK_Py_m.Data, dat.dataClass_rt.BLACK_Rz_rad.Data];
@@ -333,38 +243,68 @@ for i = 1:length(t)
 end
 
 figure('Name','VIS LAR States vs. Ground Truth')
-subplot(3,1,1)
+subplot(3,2,1)
 plot(t,dat.dataClass_rt.VIS_LAR_States_Px_mm.Data,'k')
 grid on; hold on;
 plot(t,r_LAR_cam_truth(:,1),'--r')
-ylabel('x_{LAR} [mm]')
-xlim(period)
+ylabel('x_{LAR} [m]')
+xlim(period); legend('Determined Pose', 'Ground Truth');
 ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
-subplot(3,1,2)
+subplot(3,2,3)
 plot(t,dat.dataClass_rt.VIS_LAR_States_Py_mm.Data,'k')
 grid on; hold on;
 plot(t,r_LAR_cam_truth(:,2),'--r')
-ylabel('y_{LAR} [mm]')
+ylabel('y_{LAR} [m]')
 xlim(period)
 ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
-subplot(3,1,3)
+subplot(3,2,5)
 plot(t,dat.dataClass_rt.VIS_LAR_States_Rz_rad.Data,'k')
 grid on; hold on;
 plot(t,r_LAR_cam_truth(:,3),'--r')
 ylabel('\theta_{LAR} [rad]')
 xlabel('Time [s]')
 xlim(period)
-formatfig(0.4,0.4);
+ax = gca();
+ax.FontSize = 10;
+ax.FontName = "Times New Roman";
+
+dx = dat.dataClass_rt.VIS_LAR_States_Px_mm.Data - r_LAR_cam_truth(:,1);
+dy = dat.dataClass_rt.VIS_LAR_States_Py_mm.Data - r_LAR_cam_truth(:,2);
+dth = wrap(dat.dataClass_rt.VIS_LAR_States_Rz_rad.Data - r_LAR_cam_truth(:,3));
+
+subplot(3,2,2)
+plot(t,dx,'k')
+grid on;
+ylabel('\deltax [m]')
+xlim(period)
+ax = gca();
+ax.FontSize = 10;
+ax.FontName = "Times New Roman";
+subplot(3,2,4)
+plot(t,dy,'k')
+grid on;
+ylabel('\deltay [m]')
+xlim(period)
+ax = gca();
+ax.FontSize = 10;
+ax.FontName = "Times New Roman";
+subplot(3,2,6)
+plot(t,dth,'k')
+grid on;
+ylabel('\delta\theta [rad]'); xlabel('Time [s]')
+xlim(period)
+formatfig(0.8,0.4);
 ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
 
 
 
+%%
 % =========================================================================
 % Trajectory plots (Courtney's code, with LAR added)
 % =========================================================================
@@ -457,7 +397,7 @@ ax.FontName = "Times New Roman";
 % =========================================================================
 
 if anim == 1 % Trajectory animation
-    stepsize = 5; % This controls how many frames of data are plotted
+    stepsize = 15; % This controls how many frames of data are plotted
     
     fig = figure();
     set(gcf,'color','w')
@@ -474,11 +414,11 @@ if anim == 1 % Trajectory animation
 
         spacecraft = DrawSpacecraft([expdata_RED_pos_x(frame),expdata_RED_pos_y(frame),expdata_RED_pos_th(frame),3]);
         patch(spacecraft(:,1), spacecraft(:,2), 'w', 'facealpha', 0.5, 'edgecolor', 'r', 'edgealpha',1,'Linewidth',0.5)
-        % [shoulder,elbow,wrist] = DrawARM([expdata_RED_pos_x(frame),expdata_RED_pos_y(frame),expdata_RED_pos_th(frame),ARMq1(frame),ARMq2(frame),ARMq3(frame)]);
-        % patch(shoulder(:,1), shoulder(:,2), 'w', 'facealpha', alpha, 'edgecolor', 'r', 'edgealpha',alpha)
-        % patch(elbow(:,1), elbow(:,2), 'w', 'facealpha', alpha, 'edgecolor', 'r', 'edgealpha',alpha)
-        % patch(wrist(:,1), wrist(:,2), 'w', 'facealpha', alpha, 'edgecolor', 'r', 'edgealpha',alpha)
-        % 
+        [shoulder,elbow,wrist] = DrawARM([expdata_RED_pos_x(frame),expdata_RED_pos_y(frame),expdata_RED_pos_th(frame),ARMq1(frame),ARMq2(frame),ARMq3(frame)]);
+        patch(shoulder(:,1), shoulder(:,2), 'w', 'facealpha', alpha, 'edgecolor', 'r', 'edgealpha',alpha)
+        patch(elbow(:,1), elbow(:,2), 'w', 'facealpha', alpha, 'edgecolor', 'r', 'edgealpha',alpha)
+        patch(wrist(:,1), wrist(:,2), 'w', 'facealpha', alpha, 'edgecolor', 'r', 'edgealpha',alpha)
+
         spacecraft = DrawSpacecraft([expdata_BLACK_pos_x(frame),expdata_BLACK_pos_y(frame),expdata_BLACK_pos_th(frame),7]);
         patch(spacecraft(:,1), spacecraft(:,2), 'w', 'facealpha', 0.5, 'edgecolor', 'k', 'edgealpha',1,'Linewidth',0.5)
 

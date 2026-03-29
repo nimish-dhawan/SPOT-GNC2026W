@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'GNC2026W'.
 //
-// Model version                  : 4.2193
+// Model version                  : 4.2233
 // Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
-// C/C++ source code generated on : Fri Mar 27 18:02:32 2026
+// C/C++ source code generated on : Sun Mar 29 14:19:08 2026
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: ARM Compatible->ARM Cortex-A (64-bit)
@@ -310,6 +310,8 @@ struct DW_GNC2026W_T {
   real_T k_k;                          // '<S162>/MATLAB Function1'
   real_T k_p;                          // '<S142>/LOS Calculation'
   real_T store[400];                   // '<S142>/LOS Calculation'
+  real_T sendPacket;                   // '<S142>/LOS Calculation'
+  real_T packetSent;                   // '<S142>/LOS Calculation'
   real_T counter;                      // '<S59>/First Fit Detector'
   real_T firstfit;                     // '<S59>/First Fit Detector'
   real_T prev;                         // '<S59>/First Fit Detector'
