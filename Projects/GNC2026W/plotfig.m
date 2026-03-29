@@ -490,8 +490,8 @@ A = [ cc sc 0;
      -sc cc 0;
       0  0  1];
 
-B = [x_LAR*cos(th_t-th_c) - x_c_I*cc - y_c_I*sc - l_cam_x;
-     x_LAR*sin(th_t-th_c) + x_c_I*sc - y_c_I*cc - l_cam_y;
+B = [x_LAR*cos(wrap(th_t-th_c)) - x_c_I*cc - y_c_I*sc - l_cam_x;
+     x_LAR*sin(wrap(th_t-th_c)) + x_c_I*sc - y_c_I*cc - l_cam_y;
     -th_c ];
 
 r_LAR_cam = A*r_t_I + B;
