@@ -7,7 +7,7 @@
 %endfunction
 %function ChartDataMap(block, system) void
   %createrecord ChartDataElements {\
-    NumChartData   5 \
+    NumChartData   7 \
     ChartDataDefaults {\
       RecordType   "ChartData"\
       Dimensions   []\
@@ -18,7 +18,7 @@
       Description  "EmlPersistent"\
       SFName       ""\
       Path         ""\
-      SrcLocation  "GNC2026W:31935:458-459"\
+      SrcLocation  "GNC2026W:31935:474-475"\
       Dimensions   [5]\
     }\
     ChartData {\
@@ -26,14 +26,14 @@
       Description  "EmlPersistent"\
       SFName       ""\
       Path         ""\
-      SrcLocation  "GNC2026W:31935:460-461"\
+      SrcLocation  "GNC2026W:31935:476-477"\
     }\
     ChartData {\
       Name         "P"\
       Description  "EmlPersistent"\
       SFName       ""\
       Path         ""\
-      SrcLocation  "GNC2026W:31935:462-463"\
+      SrcLocation  "GNC2026W:31935:478-479"\
       Dimensions   [6,6]\
     }\
     ChartData {\
@@ -41,14 +41,28 @@
       Description  "EmlPersistent"\
       SFName       ""\
       Path         ""\
-      SrcLocation  "GNC2026W:31935:468-478"\
+      SrcLocation  "GNC2026W:31935:484-494"\
     }\
     ChartData {\
       Name         "theta_cont"\
       Description  "EmlPersistent"\
       SFName       ""\
       Path         ""\
-      SrcLocation  "GNC2026W:31935:479-489"\
+      SrcLocation  "GNC2026W:31935:495-505"\
+    }\
+    ChartData {\
+      Name         "converge"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "GNC2026W:31935:506-514"\
+    }\
+    ChartData {\
+      Name         "k"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "GNC2026W:31935:2827-2828"\
     }\
   }
   %return ChartDataElements
