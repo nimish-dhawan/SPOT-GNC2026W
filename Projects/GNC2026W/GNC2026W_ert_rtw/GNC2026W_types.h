@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'GNC2026W'.
 //
-// Model version                  : 4.2233
+// Model version                  : 4.2260
 // Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
-// C/C++ source code generated on : Sun Mar 29 14:19:08 2026
+// C/C++ source code generated on : Mon Mar 30 11:31:51 2026
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: ARM Compatible->ARM Cortex-A (64-bit)
@@ -122,8 +122,8 @@ struct Dynamixel_Controller_GNC2026W_T
 // Parameters for system: '<S1>/Phase #0: Synchronization'
 typedef struct P_Phase0Synchronization_GNC20_T_ P_Phase0Synchronization_GNC20_T;
 
-// Parameters for system: '<S59>/If Action Subsystem'
-typedef struct P_IfActionSubsystem_GNC2026W_T_ P_IfActionSubsystem_GNC2026W_T;
+// Parameters for system: '<S59>/Hold position till the filter converges'
+typedef struct P_Holdpositiontillthefilterco_T_ P_Holdpositiontillthefilterco_T;
 
 // Parameters for system: '<S1>/Phase #4: Return Home'
 typedef struct P_Phase4ReturnHome_GNC2026W_T_ P_Phase4ReturnHome_GNC2026W_T;

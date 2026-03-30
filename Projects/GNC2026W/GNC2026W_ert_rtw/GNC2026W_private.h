@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'GNC2026W'.
 //
-// Model version                  : 4.2233
+// Model version                  : 4.2260
 // Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
-// C/C++ source code generated on : Sun Mar 29 14:19:08 2026
+// C/C++ source code generated on : Mon Mar 30 11:31:51 2026
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: ARM Compatible->ARM Cortex-A (64-bit)
@@ -37,8 +37,9 @@ extern void GNC2026W_Phase0Synchronization(real_T *rtd_ARM_Control_Law_Enabler,
   *rtd_BLUE_Path_Planner_Selection, real_T *rtd_Float_State, real_T
   *rtd_RED_Control_Law_Enabler, char_T rtd_RED_Logger[256], real_T
   *rtd_RED_Path_Planner_Selection, P_Phase0Synchronization_GNC20_T *localP);
-extern void GNC2026W_IfActionSubsystem(real_T *rtd_RED_Control_Law_Enabler,
-  real_T *rtd_RED_Path_Planner_Selection, P_IfActionSubsystem_GNC2026W_T *localP);
+extern void Holdpositiontillthefilterconver(real_T *rtd_RED_Control_Law_Enabler,
+  real_T *rtd_RED_Path_Planner_Selection, P_Holdpositiontillthefilterco_T
+  *localP);
 extern void GNC2026W_Phase4ReturnHome(real_T *rtd_ARM_Control_Law_Enabler,
   real_T rtd_ARM_Desired_States[3], real_T *rtd_ARM_Path_Planner_Selection,
   real_T *rtd_BLACK_Control_Law_Enabler, real_T rtd_BLACK_Desired_States[3],

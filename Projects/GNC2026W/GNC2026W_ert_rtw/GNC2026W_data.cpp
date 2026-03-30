@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'GNC2026W'.
 //
-// Model version                  : 4.2233
+// Model version                  : 4.2260
 // Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
-// C/C++ source code generated on : Sun Mar 29 14:19:08 2026
+// C/C++ source code generated on : Mon Mar 30 11:31:51 2026
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: ARM Compatible->ARM Cortex-A (64-bit)
@@ -21,7 +21,7 @@
 // Block parameters (default storage)
 P_GNC2026W_T GNC2026W_P = {
   // Variable: A_c
-  //  Referenced by: '<S162>/Constant7'
+  //  Referenced by: '<S163>/Constant7'
 
   { 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0 },
 
@@ -66,12 +66,12 @@ P_GNC2026W_T GNC2026W_P = {
   { 0.2825, 0.2825, 0.2825, 0.2825, 0.2825, 0.2825, 0.2825, 0.2825 },
 
   // Variable: F_u
-  //  Referenced by: '<S162>/Constant3'
+  //  Referenced by: '<S163>/Constant3'
 
   { 0.0, 0.0, 0.0 },
 
   // Variable: K_BLACK
-  //  Referenced by: '<S163>/Constant2'
+  //  Referenced by: '<S164>/Constant2'
 
   { 0.40261011025699511, -3.4287825942218297E-15, -7.6568971511887352E-15,
     4.896176968930996E-15, 0.40261011025700855, -3.7902115134773985E-15,
@@ -81,7 +81,7 @@ P_GNC2026W_T GNC2026W_P = {
     -7.5643673053589907E-16, -7.9653463685425227E-16, 0.40690949597934273 },
 
   // Variable: K_BLUE
-  //  Referenced by: '<S164>/Constant2'
+  //  Referenced by: '<S165>/Constant2'
 
   { 0.40261011025701493, 1.2206182528119487E-14, -1.4639288893715909E-15,
     -9.4230274216387939E-15, 0.40261011025700266, 4.1197784005288409E-15,
@@ -91,7 +91,7 @@ P_GNC2026W_T GNC2026W_P = {
     -6.4042550040150137E-16, 3.4893935173859177E-16, 0.40554915553132265 },
 
   // Variable: K_RED
-  //  Referenced by: '<S165>/Constant2'
+  //  Referenced by: '<S166>/Constant2'
 
   { 0.40256594667683754, 2.0662088914679269E-14, -1.7996031327371092E-15,
     2.6520865059578737E-16, 0.40256594667684487, 1.2018851384452491E-14,
@@ -111,17 +111,17 @@ P_GNC2026W_T GNC2026W_P = {
   1.0,
 
   // Variable: Kd_tb
-  //  Referenced by: '<S167>/Gain5'
-
-  1.8,
-
-  // Variable: Kd_tblue
   //  Referenced by: '<S168>/Gain5'
 
   1.8,
 
-  // Variable: Kd_tr
+  // Variable: Kd_tblue
   //  Referenced by: '<S169>/Gain5'
+
+  1.8,
+
+  // Variable: Kd_tr
+  //  Referenced by: '<S170>/Gain5'
 
   1.8,
 
@@ -131,32 +131,32 @@ P_GNC2026W_T GNC2026W_P = {
   0.6,
 
   // Variable: Kd_xb
-  //  Referenced by: '<S167>/Gain3'
-
-  3.6,
-
-  // Variable: Kd_xblue
   //  Referenced by: '<S168>/Gain3'
 
   3.6,
 
-  // Variable: Kd_xr
+  // Variable: Kd_xblue
   //  Referenced by: '<S169>/Gain3'
 
   3.6,
 
-  // Variable: Kd_yb
-  //  Referenced by: '<S167>/Gain4'
+  // Variable: Kd_xr
+  //  Referenced by: '<S170>/Gain3'
 
   3.6,
 
-  // Variable: Kd_yblue
+  // Variable: Kd_yb
   //  Referenced by: '<S168>/Gain4'
 
   3.6,
 
-  // Variable: Kd_yr
+  // Variable: Kd_yblue
   //  Referenced by: '<S169>/Gain4'
+
+  3.6,
+
+  // Variable: Kd_yr
+  //  Referenced by: '<S170>/Gain4'
 
   3.6,
 
@@ -171,17 +171,17 @@ P_GNC2026W_T GNC2026W_P = {
   1.5,
 
   // Variable: Kp_tb
-  //  Referenced by: '<S167>/Gain2'
-
-  0.5,
-
-  // Variable: Kp_tblue
   //  Referenced by: '<S168>/Gain2'
 
   0.5,
 
-  // Variable: Kp_tr
+  // Variable: Kp_tblue
   //  Referenced by: '<S169>/Gain2'
+
+  0.5,
+
+  // Variable: Kp_tr
+  //  Referenced by: '<S170>/Gain2'
 
   0.5,
 
@@ -191,37 +191,37 @@ P_GNC2026W_T GNC2026W_P = {
   1.0,
 
   // Variable: Kp_xb
-  //  Referenced by: '<S167>/Gain'
-
-  1.0,
-
-  // Variable: Kp_xblue
   //  Referenced by: '<S168>/Gain'
 
   1.0,
 
-  // Variable: Kp_xr
+  // Variable: Kp_xblue
   //  Referenced by: '<S169>/Gain'
 
   1.0,
 
-  // Variable: Kp_yb
-  //  Referenced by: '<S167>/Gain1'
+  // Variable: Kp_xr
+  //  Referenced by: '<S170>/Gain'
 
   1.0,
 
-  // Variable: Kp_yblue
+  // Variable: Kp_yb
   //  Referenced by: '<S168>/Gain1'
 
   1.0,
 
-  // Variable: Kp_yr
+  // Variable: Kp_yblue
   //  Referenced by: '<S169>/Gain1'
 
   1.0,
 
+  // Variable: Kp_yr
+  //  Referenced by: '<S170>/Gain1'
+
+  1.0,
+
   // Variable: Mc_inv
-  //  Referenced by: '<S162>/MATLAB Function3'
+  //  Referenced by: '<S163>/MATLAB Function3'
 
   { 0.082392683529702554, 0.0, 0.0, 0.0, 0.082392683529702554, 0.0, 0.0, 0.0,
     5.0463923588119766 },
@@ -366,7 +366,7 @@ P_GNC2026W_T GNC2026W_P = {
   1.0,
 
   // Variable: alpha
-  //  Referenced by: '<S162>/MATLAB Function3'
+  //  Referenced by: '<S163>/MATLAB Function3'
 
   { 2.0, 0.0, 0.0, 0.0, 2.0, 0.0, 0.0, 0.0, 2.0 },
 
@@ -377,7 +377,7 @@ P_GNC2026W_T GNC2026W_P = {
 
   // Variable: baseRate
   //  Referenced by:
-  //    '<S162>/MATLAB Function2'
+  //    '<S142>/Error Calculation'
   //    '<S226>/Read Joint Positions using  Dynamixel Encoders'
   //    '<S310>/WhoAmI'
   //    '<S315>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
@@ -408,7 +408,7 @@ P_GNC2026W_T GNC2026W_P = {
   1.0,
 
   // Variable: gamma
-  //  Referenced by: '<S162>/MATLAB Function3'
+  //  Referenced by: '<S163>/MATLAB Function3'
 
   { 0.1, 0.0, 0.0, 0.0, 0.1, 0.0, 0.0, 0.0, 0.5 },
 
@@ -436,8 +436,8 @@ P_GNC2026W_T GNC2026W_P = {
   // Variable: init_states_BLACK
   //  Referenced by:
   //    '<S28>/Desired States (BLACK)'
-  //    '<S155>/Delay'
-  //    '<S155>/Delay1'
+  //    '<S156>/Delay'
+  //    '<S156>/Delay1'
   //    '<S234>/Delay'
   //    '<S234>/Delay1'
   //    '<S240>/Delay'
@@ -467,7 +467,7 @@ P_GNC2026W_T GNC2026W_P = {
   //    '<S38>/Constant2'
   //    '<S58>/Constant2'
 
-  { 3.0, 1.209675, 3.1415926535897931 },
+  { 3.0, 2.0, 3.9269908169872414 },
 
   // Variable: k
   //  Referenced by: '<S230>/Unscented Kalman Filter'
@@ -1174,19 +1174,24 @@ P_GNC2026W_T GNC2026W_P = {
   0.3,
 
   // Computed Parameter: Path_Y0
-  //  Referenced by: '<S154>/Path'
+  //  Referenced by: '<S155>/Path'
 
   0.0,
 
   // Expression: zeros(6,1)
-  //  Referenced by: '<S150>/Constant'
+  //  Referenced by: '<S151>/Constant'
 
   { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 },
 
   // Expression: 0
-  //  Referenced by: '<S150>/Switch'
+  //  Referenced by: '<S151>/Switch'
 
   0.0,
+
+  // Expression: zeros(9,1)
+  //  Referenced by: '<S142>/Unit Delay'
+
+  { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 },
 
   // Computed Parameter: TSamp_WtEt
   //  Referenced by: '<S211>/TSamp'
@@ -1204,17 +1209,17 @@ P_GNC2026W_T GNC2026W_P = {
   20.0,
 
   // Expression: -1
-  //  Referenced by: '<S169>/Gain6'
+  //  Referenced by: '<S170>/Gain6'
 
   -1.0,
 
   // Expression: -1
-  //  Referenced by: '<S169>/Gain7'
+  //  Referenced by: '<S170>/Gain7'
 
   -1.0,
 
   // Expression: -1
-  //  Referenced by: '<S169>/Gain8'
+  //  Referenced by: '<S170>/Gain8'
 
   -1.0,
 
@@ -1249,17 +1254,17 @@ P_GNC2026W_T GNC2026W_P = {
   20.0,
 
   // Expression: -1
-  //  Referenced by: '<S167>/Gain6'
+  //  Referenced by: '<S168>/Gain6'
 
   -1.0,
 
   // Expression: -1
-  //  Referenced by: '<S167>/Gain7'
+  //  Referenced by: '<S168>/Gain7'
 
   -1.0,
 
   // Expression: -1
-  //  Referenced by: '<S167>/Gain8'
+  //  Referenced by: '<S168>/Gain8'
 
   -1.0,
 
@@ -1294,17 +1299,17 @@ P_GNC2026W_T GNC2026W_P = {
   20.0,
 
   // Expression: -1
-  //  Referenced by: '<S168>/Gain6'
+  //  Referenced by: '<S169>/Gain6'
 
   -1.0,
 
   // Expression: -1
-  //  Referenced by: '<S168>/Gain7'
+  //  Referenced by: '<S169>/Gain7'
 
   -1.0,
 
   // Expression: -1
-  //  Referenced by: '<S168>/Gain8'
+  //  Referenced by: '<S169>/Gain8'
 
   -1.0,
 
@@ -1339,32 +1344,32 @@ P_GNC2026W_T GNC2026W_P = {
   20.0,
 
   // Expression: 1
-  //  Referenced by: '<S166>/Constant7'
+  //  Referenced by: '<S167>/Constant7'
 
   1.0,
 
   // Computed Parameter: Merge3_InitialOutput
-  //  Referenced by: '<S166>/Merge3'
+  //  Referenced by: '<S167>/Merge3'
 
   0.0,
 
   // Computed Parameter: Merge4_InitialOutput
-  //  Referenced by: '<S166>/Merge4'
+  //  Referenced by: '<S167>/Merge4'
 
   0.0,
 
   // Computed Parameter: Merge5_InitialOutput
-  //  Referenced by: '<S166>/Merge5'
+  //  Referenced by: '<S167>/Merge5'
 
   0.0,
 
   // Expression: 0
-  //  Referenced by: '<S170>/Constant7'
+  //  Referenced by: '<S171>/Constant7'
 
   0.0,
 
   // Expression: 0
-  //  Referenced by: '<S170>/Zero'
+  //  Referenced by: '<S171>/Zero'
 
   0.0,
 
@@ -2608,7 +2613,7 @@ P_GNC2026W_T GNC2026W_P = {
   // Start of '<S3>/Custom Control (ARM)'
   {
     // Expression: 0
-    //  Referenced by: '<S161>/Zero'
+    //  Referenced by: '<S162>/Zero'
 
     0.0
   }
@@ -2619,7 +2624,7 @@ P_GNC2026W_T GNC2026W_P = {
   // Start of '<S3>/Disable Thrusters (BLUE)'
   {
     // Expression: 0
-    //  Referenced by: '<S172>/Zero'
+    //  Referenced by: '<S173>/Zero'
 
     0.0
   }
@@ -2630,7 +2635,7 @@ P_GNC2026W_T GNC2026W_P = {
   // Start of '<S3>/Disable Thrusters (BLACK)'
   {
     // Expression: 0
-    //  Referenced by: '<S171>/Zero'
+    //  Referenced by: '<S172>/Zero'
 
     0.0
   }
@@ -2641,7 +2646,7 @@ P_GNC2026W_T GNC2026W_P = {
   // Start of '<S3>/Disable Thrusters (RED)'
   {
     // Expression: 0
-    //  Referenced by: '<S173>/Zero'
+    //  Referenced by: '<S174>/Zero'
 
     0.0
   }
@@ -2877,87 +2882,23 @@ P_GNC2026W_T GNC2026W_P = {
 
   // End of '<S1>/Phase #4: Return Home'
 
-  // Start of '<S59>/If Action Subsystem5'
+  // Start of '<S59>/Keep moving if frame drops after convergence'
   {
     // Expression: 3
-    //  Referenced by: '<S95>/Constant'
-
-    3.0,
-
-    // Expression: 1
-    //  Referenced by: '<S95>/Constant1'
-
-    1.0
-  }
-  ,
-
-  // End of '<S59>/If Action Subsystem5'
-
-  // Start of '<S59>/If Action Subsystem4'
-  {
-    // Expression: 2
-    //  Referenced by: '<S94>/Constant'
-
-    2.0,
-
-    // Expression: 2
-    //  Referenced by: '<S94>/Constant1'
-
-    2.0
-  }
-  ,
-
-  // End of '<S59>/If Action Subsystem4'
-
-  // Start of '<S59>/If Action Subsystem3'
-  {
-    // Expression: 2
     //  Referenced by: '<S93>/Constant'
 
-    2.0,
-
-    // Expression: 2
-    //  Referenced by: '<S93>/Constant1'
-
-    2.0
-  }
-  ,
-
-  // End of '<S59>/If Action Subsystem3'
-
-  // Start of '<S59>/If Action Subsystem2'
-  {
-    // Expression: 3
-    //  Referenced by: '<S92>/Constant'
-
     3.0,
 
     // Expression: 1
-    //  Referenced by: '<S92>/Constant1'
+    //  Referenced by: '<S93>/Constant1'
 
     1.0
   }
   ,
 
-  // End of '<S59>/If Action Subsystem2'
+  // End of '<S59>/Keep moving if frame drops after convergence'
 
-  // Start of '<S59>/If Action Subsystem1'
-  {
-    // Expression: 2
-    //  Referenced by: '<S91>/Constant'
-
-    2.0,
-
-    // Expression: 2
-    //  Referenced by: '<S91>/Constant1'
-
-    2.0
-  }
-  ,
-
-  // End of '<S59>/If Action Subsystem1'
-
-  // Start of '<S59>/If Action Subsystem'
+  // Start of '<S59>/Hold position if frame drops before convergence'
   {
     // Expression: 2
     //  Referenced by: '<S90>/Constant'
@@ -2971,7 +2912,71 @@ P_GNC2026W_T GNC2026W_P = {
   }
   ,
 
-  // End of '<S59>/If Action Subsystem'
+  // End of '<S59>/Hold position if frame drops before convergence'
+
+  // Start of '<S59>/Reset counter and hold position'
+  {
+    // Expression: 2
+    //  Referenced by: '<S94>/Constant'
+
+    2.0,
+
+    // Expression: 2
+    //  Referenced by: '<S94>/Constant1'
+
+    2.0
+  }
+  ,
+
+  // End of '<S59>/Reset counter and hold position'
+
+  // Start of '<S59>/Start moving after convergence'
+  {
+    // Expression: 3
+    //  Referenced by: '<S95>/Constant'
+
+    3.0,
+
+    // Expression: 1
+    //  Referenced by: '<S95>/Constant1'
+
+    1.0
+  }
+  ,
+
+  // End of '<S59>/Start moving after convergence'
+
+  // Start of '<S59>/Initiate filter'
+  {
+    // Expression: 2
+    //  Referenced by: '<S92>/Constant'
+
+    2.0,
+
+    // Expression: 2
+    //  Referenced by: '<S92>/Constant1'
+
+    2.0
+  }
+  ,
+
+  // End of '<S59>/Initiate filter'
+
+  // Start of '<S59>/Hold position till the filter converges'
+  {
+    // Expression: 2
+    //  Referenced by: '<S91>/Constant'
+
+    2.0,
+
+    // Expression: 2
+    //  Referenced by: '<S91>/Constant1'
+
+    2.0
+  }
+  ,
+
+  // End of '<S59>/Hold position till the filter converges'
 
   // Start of '<S1>/Phase #1: Start Floating '
   {

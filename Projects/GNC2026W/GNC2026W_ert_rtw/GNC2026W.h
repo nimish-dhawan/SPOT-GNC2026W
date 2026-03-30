@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'GNC2026W'.
 //
-// Model version                  : 4.2233
+// Model version                  : 4.2260
 // Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
-// C/C++ source code generated on : Sun Mar 29 14:19:08 2026
+// C/C++ source code generated on : Mon Mar 30 11:31:51 2026
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: ARM Compatible->ARM Cortex-A (64-bit)
@@ -145,7 +145,7 @@ struct B_GNC2026W_T {
   real_T Merge_k[6];                   // '<S227>/Merge'
   real_T Merge_d[3];                   // '<S239>/Merge'
   real_T Merge_b[3];                   // '<S248>/Merge'
-  real_T In1_g20a[3];                  // '<S154>/In1'
+  real_T In1_g20a[3];                  // '<S155>/In1'
   real_T Merge_h[3];                   // '<S56>/Merge'
   real32_T UDPReceive_o1[6];           // '<S313>/UDP Receive'
   real32_T UDPReceive_o1_a[4];         // '<S311>/UDP Receive'
@@ -222,14 +222,13 @@ struct DW_GNC2026W_T {
   real_T UD_DSTATE_eg;                 // '<S211>/UD'
   real_T UD_DSTATE_cd;                 // '<S212>/UD'
   real_T UD_DSTATE_hd;                 // '<S213>/UD'
-  real_T Delay_DSTATE_h0;              // '<S155>/Delay'
-  real_T Delay1_DSTATE_lo;             // '<S155>/Delay1'
+  real_T Delay_DSTATE_h0;              // '<S156>/Delay'
+  real_T Delay1_DSTATE_lo;             // '<S156>/Delay1'
+  real_T UnitDelay_DSTATE[9];          // '<S142>/Unit Delay'
   creal_T q;                           // '<S229>/MEKF'
   real_T NextOutput;                   // '<Root>/Gaussian Noise'
   real_T UDPSend_NetworkLib[137];      // '<S18>/UDP Send'
   real_T L0;                           // '<Root>/Data Store Memory'
-  real_T RED_desired[9];               // '<Root>/Data Store Memory1'
-  real_T LOS_Angle;                    // '<Root>/Data Store Memory2'
   real_T lambda[3];                    // '<Root>/Data Store Memory3'
   real_T lambdaFirstOrder[3];          // '<Root>/Data Store Memory4'
   real_T ARM_Joint_Angles_rad[3];      // '<Root>/Data Store Memory6'
@@ -303,15 +302,15 @@ struct DW_GNC2026W_T {
   real_T UDPSend3_NetworkLib[137];     // '<S224>/UDP Send3'
   real_T UDPSend2_NetworkLib[137];     // '<S223>/UDP Send2'
   real_T UDPSend1_NetworkLib[137];     // '<S222>/UDP Send1'
-  real_T l1;                           // '<S162>/MATLAB Function2'
-  real_T l2;                           // '<S162>/MATLAB Function2'
-  real_T x_k[3];                       // '<S162>/MATLAB Function2'
-  real_T P_i[9];                       // '<S162>/MATLAB Function2'
-  real_T k_k;                          // '<S162>/MATLAB Function1'
+  real_T k_k;                          // '<S163>/MATLAB Function1'
   real_T k_p;                          // '<S142>/LOS Calculation'
   real_T store[400];                   // '<S142>/LOS Calculation'
   real_T sendPacket;                   // '<S142>/LOS Calculation'
   real_T packetSent;                   // '<S142>/LOS Calculation'
+  real_T l1;                           // '<S142>/Error Calculation'
+  real_T l2;                           // '<S142>/Error Calculation'
+  real_T x_k[3];                       // '<S142>/Error Calculation'
+  real_T P_i[9];                       // '<S142>/Error Calculation'
   real_T counter;                      // '<S59>/First Fit Detector'
   real_T firstfit;                     // '<S59>/First Fit Detector'
   real_T prev;                         // '<S59>/First Fit Detector'
@@ -345,7 +344,7 @@ struct DW_GNC2026W_T {
   // '<S265>/This IF block determines whether or not to run the RED sim//exp '
   boolean_T k_not_empty;               // '<S270>/Sample and Hold'
   boolean_T initial_theta;             // '<S228>/EKF'
-  boolean_T x_not_empty;               // '<S162>/MATLAB Function2'
+  boolean_T x_not_empty;               // '<S142>/Error Calculation'
   DW_ChangeBLACKBehavior_GNC2_g_T ChangeREDBehavior_h;// '<S19>/Change RED Behavior' 
   DW_ChangeBLACKBehavior_GNC2_g_T ChangeBLUEBehavior_e;// '<S19>/Change BLUE Behavior' 
   DW_ChangeBLACKBehavior_GNC2_g_T ChangeBLACKBehavior_i;// '<S19>/Change BLACK Behavior' 
@@ -408,13 +407,13 @@ struct P_Phase0Synchronization_GNC20_T_ {
 
 };
 
-// Parameters for system: '<S59>/If Action Subsystem'
-struct P_IfActionSubsystem_GNC2026W_T_ {
+// Parameters for system: '<S59>/Hold position till the filter converges'
+struct P_Holdpositiontillthefilterco_T_ {
   real_T Constant_Value;               // Expression: 2
-                                          //  Referenced by: '<S90>/Constant'
+                                          //  Referenced by: '<S91>/Constant'
 
   real_T Constant1_Value;              // Expression: 2
-                                          //  Referenced by: '<S90>/Constant1'
+                                          //  Referenced by: '<S91>/Constant1'
 
 };
 
@@ -470,14 +469,14 @@ struct P_Phase4ReturnHome_GNC2026W_T_ {
 // Parameters for system: '<S3>/Disable Thrusters (RED)'
 struct P_DisableThrustersRED_GNC2026_T_ {
   real_T Zero_Value;                   // Expression: 0
-                                          //  Referenced by: '<S173>/Zero'
+                                          //  Referenced by: '<S174>/Zero'
 
 };
 
 // Parameters for system: '<S3>/Disable Thrusters (BLACK)'
 struct P_DisableThrustersBLACK_GNC20_T_ {
   real_T Zero_Value;                   // Expression: 0
-                                          //  Referenced by: '<S171>/Zero'
+                                          //  Referenced by: '<S172>/Zero'
 
 };
 
@@ -534,7 +533,7 @@ struct P_ChangeBLACKBehavior_GNC20_b_T_ {
 // Parameters (default storage)
 struct P_GNC2026W_T_ {
   real_T A_c[9];                       // Variable: A_c
-                                          //  Referenced by: '<S162>/Constant7'
+                                          //  Referenced by: '<S163>/Constant7'
 
   real_T CVrate;                       // Variable: CVrate
                                           //  Referenced by:
@@ -565,16 +564,16 @@ struct P_GNC2026W_T_ {
                                           //  Referenced by: '<S352>/MATLAB Function'
 
   real_T F_u[3];                       // Variable: F_u
-                                          //  Referenced by: '<S162>/Constant3'
+                                          //  Referenced by: '<S163>/Constant3'
 
   real_T K_BLACK[18];                  // Variable: K_BLACK
-                                          //  Referenced by: '<S163>/Constant2'
-
-  real_T K_BLUE[18];                   // Variable: K_BLUE
                                           //  Referenced by: '<S164>/Constant2'
 
-  real_T K_RED[18];                    // Variable: K_RED
+  real_T K_BLUE[18];                   // Variable: K_BLUE
                                           //  Referenced by: '<S165>/Constant2'
+
+  real_T K_RED[18];                    // Variable: K_RED
+                                          //  Referenced by: '<S166>/Constant2'
 
   real_T Kd_elarm;                     // Variable: Kd_elarm
                                           //  Referenced by: '<S194>/kd_elarm'
@@ -583,34 +582,34 @@ struct P_GNC2026W_T_ {
                                           //  Referenced by: '<S195>/kd_sharm'
 
   real_T Kd_tb;                        // Variable: Kd_tb
-                                          //  Referenced by: '<S167>/Gain5'
-
-  real_T Kd_tblue;                     // Variable: Kd_tblue
                                           //  Referenced by: '<S168>/Gain5'
 
-  real_T Kd_tr;                        // Variable: Kd_tr
+  real_T Kd_tblue;                     // Variable: Kd_tblue
                                           //  Referenced by: '<S169>/Gain5'
+
+  real_T Kd_tr;                        // Variable: Kd_tr
+                                          //  Referenced by: '<S170>/Gain5'
 
   real_T Kd_wrarm;                     // Variable: Kd_wrarm
                                           //  Referenced by: '<S196>/kd_wrarm'
 
   real_T Kd_xb;                        // Variable: Kd_xb
-                                          //  Referenced by: '<S167>/Gain3'
-
-  real_T Kd_xblue;                     // Variable: Kd_xblue
                                           //  Referenced by: '<S168>/Gain3'
 
-  real_T Kd_xr;                        // Variable: Kd_xr
+  real_T Kd_xblue;                     // Variable: Kd_xblue
                                           //  Referenced by: '<S169>/Gain3'
 
-  real_T Kd_yb;                        // Variable: Kd_yb
-                                          //  Referenced by: '<S167>/Gain4'
+  real_T Kd_xr;                        // Variable: Kd_xr
+                                          //  Referenced by: '<S170>/Gain3'
 
-  real_T Kd_yblue;                     // Variable: Kd_yblue
+  real_T Kd_yb;                        // Variable: Kd_yb
                                           //  Referenced by: '<S168>/Gain4'
 
-  real_T Kd_yr;                        // Variable: Kd_yr
+  real_T Kd_yblue;                     // Variable: Kd_yblue
                                           //  Referenced by: '<S169>/Gain4'
+
+  real_T Kd_yr;                        // Variable: Kd_yr
+                                          //  Referenced by: '<S170>/Gain4'
 
   real_T Kp_elarm;                     // Variable: Kp_elarm
                                           //  Referenced by: '<S194>/kp_elarm'
@@ -619,37 +618,37 @@ struct P_GNC2026W_T_ {
                                           //  Referenced by: '<S195>/kp_sharm'
 
   real_T Kp_tb;                        // Variable: Kp_tb
-                                          //  Referenced by: '<S167>/Gain2'
-
-  real_T Kp_tblue;                     // Variable: Kp_tblue
                                           //  Referenced by: '<S168>/Gain2'
 
-  real_T Kp_tr;                        // Variable: Kp_tr
+  real_T Kp_tblue;                     // Variable: Kp_tblue
                                           //  Referenced by: '<S169>/Gain2'
+
+  real_T Kp_tr;                        // Variable: Kp_tr
+                                          //  Referenced by: '<S170>/Gain2'
 
   real_T Kp_wrarm;                     // Variable: Kp_wrarm
                                           //  Referenced by: '<S196>/kp_wrarm'
 
   real_T Kp_xb;                        // Variable: Kp_xb
-                                          //  Referenced by: '<S167>/Gain'
-
-  real_T Kp_xblue;                     // Variable: Kp_xblue
                                           //  Referenced by: '<S168>/Gain'
 
-  real_T Kp_xr;                        // Variable: Kp_xr
+  real_T Kp_xblue;                     // Variable: Kp_xblue
                                           //  Referenced by: '<S169>/Gain'
 
-  real_T Kp_yb;                        // Variable: Kp_yb
-                                          //  Referenced by: '<S167>/Gain1'
+  real_T Kp_xr;                        // Variable: Kp_xr
+                                          //  Referenced by: '<S170>/Gain'
 
-  real_T Kp_yblue;                     // Variable: Kp_yblue
+  real_T Kp_yb;                        // Variable: Kp_yb
                                           //  Referenced by: '<S168>/Gain1'
 
-  real_T Kp_yr;                        // Variable: Kp_yr
+  real_T Kp_yblue;                     // Variable: Kp_yblue
                                           //  Referenced by: '<S169>/Gain1'
 
+  real_T Kp_yr;                        // Variable: Kp_yr
+                                          //  Referenced by: '<S170>/Gain1'
+
   real_T Mc_inv[9];                    // Variable: Mc_inv
-                                          //  Referenced by: '<S162>/MATLAB Function3'
+                                          //  Referenced by: '<S163>/MATLAB Function3'
 
   real_T PWMFreq;                      // Variable: PWMFreq
                                           //  Referenced by:
@@ -749,14 +748,14 @@ struct P_GNC2026W_T_ {
                                           //  Referenced by: '<S230>/Unscented Kalman Filter'
 
   real_T alpha[9];                     // Variable: alpha
-                                          //  Referenced by: '<S162>/MATLAB Function3'
+                                          //  Referenced by: '<S163>/MATLAB Function3'
 
   real_T b;                            // Variable: b
                                           //  Referenced by: '<S230>/Unscented Kalman Filter'
 
   real_T baseRate;                     // Variable: baseRate
                                           //  Referenced by:
-                                          //    '<S162>/MATLAB Function2'
+                                          //    '<S142>/Error Calculation'
                                           //    '<S226>/Read Joint Positions using  Dynamixel Encoders'
                                           //    '<S310>/WhoAmI'
                                           //    '<S315>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
@@ -779,7 +778,7 @@ struct P_GNC2026W_T_ {
                                           //  Referenced by: '<S227>/Constant'
 
   real_T gamma[9];                     // Variable: gamma
-                                          //  Referenced by: '<S162>/MATLAB Function3'
+                                          //  Referenced by: '<S163>/MATLAB Function3'
 
   real_T home_states_BLACK[3];         // Variable: home_states_BLACK
                                           //  Referenced by:
@@ -799,8 +798,8 @@ struct P_GNC2026W_T_ {
   real_T init_states_BLACK[3];         // Variable: init_states_BLACK
                                           //  Referenced by:
                                           //    '<S28>/Desired States (BLACK)'
-                                          //    '<S155>/Delay'
-                                          //    '<S155>/Delay1'
+                                          //    '<S156>/Delay'
+                                          //    '<S156>/Delay1'
                                           //    '<S234>/Delay'
                                           //    '<S234>/Delay1'
                                           //    '<S240>/Delay'
@@ -1276,13 +1275,16 @@ struct P_GNC2026W_T_ {
                                           //  Referenced by: '<S128>/Constant'
 
   real_T Path_Y0;                      // Computed Parameter: Path_Y0
-                                          //  Referenced by: '<S154>/Path'
+                                          //  Referenced by: '<S155>/Path'
 
   real_T Constant_Value_a5[6];         // Expression: zeros(6,1)
-                                          //  Referenced by: '<S150>/Constant'
+                                          //  Referenced by: '<S151>/Constant'
 
   real_T Switch_Threshold;             // Expression: 0
-                                          //  Referenced by: '<S150>/Switch'
+                                          //  Referenced by: '<S151>/Switch'
+
+  real_T UnitDelay_InitialCondition[9];// Expression: zeros(9,1)
+                                          //  Referenced by: '<S142>/Unit Delay'
 
   real_T TSamp_WtEt;                   // Computed Parameter: TSamp_WtEt
                                           //  Referenced by: '<S211>/TSamp'
@@ -1294,13 +1296,13 @@ struct P_GNC2026W_T_ {
                                           //  Referenced by: '<S213>/TSamp'
 
   real_T Gain6_Gain;                   // Expression: -1
-                                          //  Referenced by: '<S169>/Gain6'
+                                          //  Referenced by: '<S170>/Gain6'
 
   real_T Gain7_Gain;                   // Expression: -1
-                                          //  Referenced by: '<S169>/Gain7'
+                                          //  Referenced by: '<S170>/Gain7'
 
   real_T Gain8_Gain;                   // Expression: -1
-                                          //  Referenced by: '<S169>/Gain8'
+                                          //  Referenced by: '<S170>/Gain8'
 
   real_T TSamp_WtEt_h;                 // Computed Parameter: TSamp_WtEt_h
                                           //  Referenced by: '<S188>/TSamp'
@@ -1321,13 +1323,13 @@ struct P_GNC2026W_T_ {
                                           //  Referenced by: '<S203>/TSamp'
 
   real_T Gain6_Gain_g;                 // Expression: -1
-                                          //  Referenced by: '<S167>/Gain6'
+                                          //  Referenced by: '<S168>/Gain6'
 
   real_T Gain7_Gain_b;                 // Expression: -1
-                                          //  Referenced by: '<S167>/Gain7'
+                                          //  Referenced by: '<S168>/Gain7'
 
   real_T Gain8_Gain_m;                 // Expression: -1
-                                          //  Referenced by: '<S167>/Gain8'
+                                          //  Referenced by: '<S168>/Gain8'
 
   real_T TSamp_WtEt_nd;                // Computed Parameter: TSamp_WtEt_nd
                                           //  Referenced by: '<S178>/TSamp'
@@ -1348,13 +1350,13 @@ struct P_GNC2026W_T_ {
                                           //  Referenced by: '<S208>/TSamp'
 
   real_T Gain6_Gain_a;                 // Expression: -1
-                                          //  Referenced by: '<S168>/Gain6'
+                                          //  Referenced by: '<S169>/Gain6'
 
   real_T Gain7_Gain_e;                 // Expression: -1
-                                          //  Referenced by: '<S168>/Gain7'
+                                          //  Referenced by: '<S169>/Gain7'
 
   real_T Gain8_Gain_g;                 // Expression: -1
-                                          //  Referenced by: '<S168>/Gain8'
+                                          //  Referenced by: '<S169>/Gain8'
 
   real_T TSamp_WtEt_ft;                // Computed Parameter: TSamp_WtEt_ft
                                           //  Referenced by: '<S183>/TSamp'
@@ -1375,22 +1377,22 @@ struct P_GNC2026W_T_ {
                                           //  Referenced by: '<S199>/TSamp'
 
   real_T Constant7_Value;              // Expression: 1
-                                          //  Referenced by: '<S166>/Constant7'
+                                          //  Referenced by: '<S167>/Constant7'
 
   real_T Merge3_InitialOutput;       // Computed Parameter: Merge3_InitialOutput
-                                        //  Referenced by: '<S166>/Merge3'
+                                        //  Referenced by: '<S167>/Merge3'
 
   real_T Merge4_InitialOutput;       // Computed Parameter: Merge4_InitialOutput
-                                        //  Referenced by: '<S166>/Merge4'
+                                        //  Referenced by: '<S167>/Merge4'
 
   real_T Merge5_InitialOutput;       // Computed Parameter: Merge5_InitialOutput
-                                        //  Referenced by: '<S166>/Merge5'
+                                        //  Referenced by: '<S167>/Merge5'
 
   real_T Constant7_Value_h;            // Expression: 0
-                                          //  Referenced by: '<S170>/Constant7'
+                                          //  Referenced by: '<S171>/Constant7'
 
   real_T Zero_Value;                   // Expression: 0
-                                          //  Referenced by: '<S170>/Zero'
+                                          //  Referenced by: '<S171>/Zero'
 
   real_T GPIOWrite1_gpioPin;           // Expression: 428
                                           //  Referenced by: '<S225>/GPIO Write1'
@@ -2028,12 +2030,17 @@ struct P_GNC2026W_T_ {
   P_Phase0Synchronization_GNC20_T Phase6CleanShutdown;// '<S1>/Phase #6: Clean Shutdown' 
   P_Phase4ReturnHome_GNC2026W_T Phase5HoldHome;// '<S1>/Phase #5: Hold Home'
   P_Phase4ReturnHome_GNC2026W_T Phase4ReturnHome;// '<S1>/Phase #4: Return Home' 
-  P_IfActionSubsystem_GNC2026W_T IfActionSubsystem5;// '<S59>/If Action Subsystem5' 
-  P_IfActionSubsystem_GNC2026W_T IfActionSubsystem4;// '<S59>/If Action Subsystem4' 
-  P_IfActionSubsystem_GNC2026W_T IfActionSubsystem3;// '<S59>/If Action Subsystem3' 
-  P_IfActionSubsystem_GNC2026W_T IfActionSubsystem2;// '<S59>/If Action Subsystem2' 
-  P_IfActionSubsystem_GNC2026W_T IfActionSubsystem1;// '<S59>/If Action Subsystem1' 
-  P_IfActionSubsystem_GNC2026W_T IfActionSubsystem_a;// '<S59>/If Action Subsystem' 
+  P_Holdpositiontillthefilterco_T Keepmovingifframedropsafterconv;
+                        // '<S59>/Keep moving if frame drops after convergence'
+  P_Holdpositiontillthefilterco_T Holdpositionifframedropsbeforec;
+                     // '<S59>/Hold position if frame drops before convergence'
+  P_Holdpositiontillthefilterco_T Resetcounterandholdposition;
+                                     // '<S59>/Reset counter and hold position'
+  P_Holdpositiontillthefilterco_T Startmovingafterconvergence;
+                                      // '<S59>/Start moving after convergence'
+  P_Holdpositiontillthefilterco_T Initiatefilter;// '<S59>/Initiate filter'
+  P_Holdpositiontillthefilterco_T Holdpositiontillthefilterconv_a;
+                             // '<S59>/Hold position till the filter converges'
   P_Phase0Synchronization_GNC20_T Phase1StartFloating;// '<S1>/Phase #1: Start Floating ' 
   P_Phase0Synchronization_GNC20_T Phase0Synchronization;// '<S1>/Phase #0: Synchronization' 
 };
@@ -2188,12 +2195,10 @@ extern volatile boolean_T runModel;
 //  Block '<S59>/Scope' : Unused code path elimination
 //  Block '<S59>/Scope1' : Unused code path elimination
 //  Block '<S59>/Scope2' : Unused code path elimination
-//  Block '<S150>/Scope' : Unused code path elimination
+//  Block '<S151>/Scope' : Unused code path elimination
 //  Block '<S142>/Scope' : Unused code path elimination
 //  Block '<S142>/Scope1' : Unused code path elimination
-//  Block '<S162>/Scope' : Unused code path elimination
-//  Block '<S162>/Scope1' : Unused code path elimination
-//  Block '<S162>/Scope2' : Unused code path elimination
+//  Block '<S163>/Scope1' : Unused code path elimination
 //  Block '<S177>/Scope' : Unused code path elimination
 //  Block '<S177>/Scope1' : Unused code path elimination
 //  Block '<S178>/Data Type Duplicate' : Unused code path elimination
@@ -2205,7 +2210,7 @@ extern volatile boolean_T runModel;
 //  Block '<S188>/Data Type Duplicate' : Unused code path elimination
 //  Block '<S189>/Data Type Duplicate' : Unused code path elimination
 //  Block '<S190>/Data Type Duplicate' : Unused code path elimination
-//  Block '<S166>/Scope' : Unused code path elimination
+//  Block '<S167>/Scope' : Unused code path elimination
 //  Block '<S197>/Data Type Duplicate' : Unused code path elimination
 //  Block '<S198>/Data Type Duplicate' : Unused code path elimination
 //  Block '<S199>/Data Type Duplicate' : Unused code path elimination
@@ -2237,7 +2242,7 @@ extern volatile boolean_T runModel;
 //  Block '<S318>/Scope1' : Unused code path elimination
 //  Block '<S318>/Scope4' : Unused code path elimination
 //  Block '<S318>/Scope5' : Unused code path elimination
-//  Block '<S162>/Reshape1' : Reshape block reduction
+//  Block '<S163>/Reshape1' : Reshape block reduction
 //  Block '<S222>/Data Type Conversion1' : Eliminate redundant data type conversion
 //  Block '<S223>/Data Type Conversion2' : Eliminate redundant data type conversion
 //  Block '<S224>/Data Type Conversion' : Eliminate redundant data type conversion
@@ -2354,12 +2359,12 @@ extern volatile boolean_T runModel;
 //  '<S87>'  : 'GNC2026W/1 - Experiment Logic/Phase #3: Experiment/Sub-Phase #2 /Desired Position RED/Wrap'
 //  '<S88>'  : 'GNC2026W/1 - Experiment Logic/Phase #3: Experiment/Sub-Phase #2 /Desired Position RED/Calculate Time since Phase #3 Start/Subsystem'
 //  '<S89>'  : 'GNC2026W/1 - Experiment Logic/Phase #3: Experiment/Sub-Phase #2 /Red Control Logic/First Fit Detector'
-//  '<S90>'  : 'GNC2026W/1 - Experiment Logic/Phase #3: Experiment/Sub-Phase #2 /Red Control Logic/If Action Subsystem'
-//  '<S91>'  : 'GNC2026W/1 - Experiment Logic/Phase #3: Experiment/Sub-Phase #2 /Red Control Logic/If Action Subsystem1'
-//  '<S92>'  : 'GNC2026W/1 - Experiment Logic/Phase #3: Experiment/Sub-Phase #2 /Red Control Logic/If Action Subsystem2'
-//  '<S93>'  : 'GNC2026W/1 - Experiment Logic/Phase #3: Experiment/Sub-Phase #2 /Red Control Logic/If Action Subsystem3'
-//  '<S94>'  : 'GNC2026W/1 - Experiment Logic/Phase #3: Experiment/Sub-Phase #2 /Red Control Logic/If Action Subsystem4'
-//  '<S95>'  : 'GNC2026W/1 - Experiment Logic/Phase #3: Experiment/Sub-Phase #2 /Red Control Logic/If Action Subsystem5'
+//  '<S90>'  : 'GNC2026W/1 - Experiment Logic/Phase #3: Experiment/Sub-Phase #2 /Red Control Logic/Hold position if frame drops before convergence'
+//  '<S91>'  : 'GNC2026W/1 - Experiment Logic/Phase #3: Experiment/Sub-Phase #2 /Red Control Logic/Hold position till the filter converges'
+//  '<S92>'  : 'GNC2026W/1 - Experiment Logic/Phase #3: Experiment/Sub-Phase #2 /Red Control Logic/Initiate filter'
+//  '<S93>'  : 'GNC2026W/1 - Experiment Logic/Phase #3: Experiment/Sub-Phase #2 /Red Control Logic/Keep moving if frame drops after convergence'
+//  '<S94>'  : 'GNC2026W/1 - Experiment Logic/Phase #3: Experiment/Sub-Phase #2 /Red Control Logic/Reset counter and hold position'
+//  '<S95>'  : 'GNC2026W/1 - Experiment Logic/Phase #3: Experiment/Sub-Phase #2 /Red Control Logic/Start moving after convergence'
 //  '<S96>'  : 'GNC2026W/1 - Experiment Logic/Phase #3: Experiment/Sub-Phase #3 /Desired Joint Angles RED'
 //  '<S97>'  : 'GNC2026W/1 - Experiment Logic/Phase #3: Experiment/Sub-Phase #3 /Desired Position BLACK'
 //  '<S98>'  : 'GNC2026W/1 - Experiment Logic/Phase #3: Experiment/Sub-Phase #3 /Desired Position BLUE'
@@ -2414,32 +2419,32 @@ extern volatile boolean_T runModel;
 //  '<S147>' : 'GNC2026W/2 - Guidance/Custom PPL (ARM)/Desired Position'
 //  '<S148>' : 'GNC2026W/2 - Guidance/Custom PPL (BLACK)/Desired Position'
 //  '<S149>' : 'GNC2026W/2 - Guidance/Custom PPL (BLUE)/Desired Position'
-//  '<S150>' : 'GNC2026W/2 - Guidance/Custom PPL (RED)/Grab Logic'
-//  '<S151>' : 'GNC2026W/2 - Guidance/Custom PPL (RED)/LOS Calculation'
-//  '<S152>' : 'GNC2026W/2 - Guidance/Custom PPL (RED)/MATLAB Function4'
-//  '<S153>' : 'GNC2026W/2 - Guidance/Custom PPL (RED)/Unwrap1'
-//  '<S154>' : 'GNC2026W/2 - Guidance/Custom PPL (RED)/Grab Logic/Enabled Subsystem'
-//  '<S155>' : 'GNC2026W/2 - Guidance/Custom PPL (RED)/Unwrap1/Unwrap'
-//  '<S156>' : 'GNC2026W/2 - Guidance/Custom PPL (RED)/Unwrap1/Unwrap/MATLAB Function'
-//  '<S157>' : 'GNC2026W/2 - Guidance/Disable PPL (ARM)/Desired Position'
-//  '<S158>' : 'GNC2026W/2 - Guidance/Disable PPL (BLACK)/Desired Position'
-//  '<S159>' : 'GNC2026W/2 - Guidance/Disable PPL (BLUE)/Desired Position'
-//  '<S160>' : 'GNC2026W/2 - Guidance/Disable PPL (RED)/Desired Position'
-//  '<S161>' : 'GNC2026W/3 - Control/Custom Control (ARM)'
-//  '<S162>' : 'GNC2026W/3 - Control/Custom Control (RED)'
-//  '<S163>' : 'GNC2026W/3 - Control/Default LQR Control (BLACK)'
-//  '<S164>' : 'GNC2026W/3 - Control/Default LQR Control (BLUE)'
-//  '<S165>' : 'GNC2026W/3 - Control/Default LQR Control (RED)'
-//  '<S166>' : 'GNC2026W/3 - Control/Default PD (ARM)'
-//  '<S167>' : 'GNC2026W/3 - Control/Default PD Control (BLACK)'
-//  '<S168>' : 'GNC2026W/3 - Control/Default PD Control (BLUE)'
-//  '<S169>' : 'GNC2026W/3 - Control/Default PD Control (RED)'
-//  '<S170>' : 'GNC2026W/3 - Control/Disable Control (ARM)'
-//  '<S171>' : 'GNC2026W/3 - Control/Disable Thrusters (BLACK)'
-//  '<S172>' : 'GNC2026W/3 - Control/Disable Thrusters (BLUE)'
-//  '<S173>' : 'GNC2026W/3 - Control/Disable Thrusters (RED)'
-//  '<S174>' : 'GNC2026W/3 - Control/Custom Control (RED)/MATLAB Function1'
-//  '<S175>' : 'GNC2026W/3 - Control/Custom Control (RED)/MATLAB Function2'
+//  '<S150>' : 'GNC2026W/2 - Guidance/Custom PPL (RED)/Error Calculation'
+//  '<S151>' : 'GNC2026W/2 - Guidance/Custom PPL (RED)/Grab Logic'
+//  '<S152>' : 'GNC2026W/2 - Guidance/Custom PPL (RED)/LOS Calculation'
+//  '<S153>' : 'GNC2026W/2 - Guidance/Custom PPL (RED)/Path Planning'
+//  '<S154>' : 'GNC2026W/2 - Guidance/Custom PPL (RED)/Unwrap1'
+//  '<S155>' : 'GNC2026W/2 - Guidance/Custom PPL (RED)/Grab Logic/Enabled Subsystem'
+//  '<S156>' : 'GNC2026W/2 - Guidance/Custom PPL (RED)/Unwrap1/Unwrap'
+//  '<S157>' : 'GNC2026W/2 - Guidance/Custom PPL (RED)/Unwrap1/Unwrap/MATLAB Function'
+//  '<S158>' : 'GNC2026W/2 - Guidance/Disable PPL (ARM)/Desired Position'
+//  '<S159>' : 'GNC2026W/2 - Guidance/Disable PPL (BLACK)/Desired Position'
+//  '<S160>' : 'GNC2026W/2 - Guidance/Disable PPL (BLUE)/Desired Position'
+//  '<S161>' : 'GNC2026W/2 - Guidance/Disable PPL (RED)/Desired Position'
+//  '<S162>' : 'GNC2026W/3 - Control/Custom Control (ARM)'
+//  '<S163>' : 'GNC2026W/3 - Control/Custom Control (RED)'
+//  '<S164>' : 'GNC2026W/3 - Control/Default LQR Control (BLACK)'
+//  '<S165>' : 'GNC2026W/3 - Control/Default LQR Control (BLUE)'
+//  '<S166>' : 'GNC2026W/3 - Control/Default LQR Control (RED)'
+//  '<S167>' : 'GNC2026W/3 - Control/Default PD (ARM)'
+//  '<S168>' : 'GNC2026W/3 - Control/Default PD Control (BLACK)'
+//  '<S169>' : 'GNC2026W/3 - Control/Default PD Control (BLUE)'
+//  '<S170>' : 'GNC2026W/3 - Control/Default PD Control (RED)'
+//  '<S171>' : 'GNC2026W/3 - Control/Disable Control (ARM)'
+//  '<S172>' : 'GNC2026W/3 - Control/Disable Thrusters (BLACK)'
+//  '<S173>' : 'GNC2026W/3 - Control/Disable Thrusters (BLUE)'
+//  '<S174>' : 'GNC2026W/3 - Control/Disable Thrusters (RED)'
+//  '<S175>' : 'GNC2026W/3 - Control/Custom Control (RED)/MATLAB Function1'
 //  '<S176>' : 'GNC2026W/3 - Control/Custom Control (RED)/MATLAB Function3'
 //  '<S177>' : 'GNC2026W/3 - Control/Default LQR Control (BLACK)/Calculate Error'
 //  '<S178>' : 'GNC2026W/3 - Control/Default LQR Control (BLACK)/Discrete Derivative'
