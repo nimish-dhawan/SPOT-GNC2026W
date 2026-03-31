@@ -7,7 +7,7 @@
 %endfunction
 %function ChartDataMap(block, system) void
   %createrecord ChartDataElements {\
-    NumChartData   4 \
+    NumChartData   5 \
     ChartDataDefaults {\
       RecordType   "ChartData"\
       Dimensions   []\
@@ -41,6 +41,14 @@
       SFName       ""\
       Path         ""\
       SrcLocation  "GNC2026W:31850:186-196"\
+    }\
+    ChartData {\
+      Name         "errPrev"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "GNC2026W:31850:208-215"\
+      Dimensions   [2]\
     }\
   }
   %return ChartDataElements

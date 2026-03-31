@@ -302,6 +302,47 @@ ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
 
+% =========================================================================
+% Covariance Evolution
+% =========================================================================
+figure('Name','Covariance and Residual Evolution')
+subplot(3,2,[1 3 5])
+hold on; grid on; box on;
+% cov = dat.dataClass_rt.P_est.Data;
+res = [dat.dataClass_rt.x_res_m.Data, dat.dataClass_rt.y_res_m.Data,...
+       dat.dataClass_rt.theta_res_rad.Data];
+% for km = 1:36
+%     plot(t, cov(:,km))
+% end
+xlim(period)
+formatfig(0.8,0.4);
+ax = gca();
+ax.FontSize = 10;
+ax.FontName = "Times New Roman";
+
+subplot(3,2,2)
+plot(t, res(:,1), 'k')
+grid on; box on;
+xlim(period)
+ax = gca();
+ax.FontSize = 10;
+ax.FontName = "Times New Roman";
+
+subplot(3,2,4)
+plot(t, res(:,2), 'k')
+grid on; box on;
+xlim(period)
+ax = gca();
+ax.FontSize = 10;
+ax.FontName = "Times New Roman";
+
+subplot(3,2,6)
+plot(t, res(:,3), 'k')
+grid on; box on;
+xlim(period)
+ax = gca();
+ax.FontSize = 10;
+ax.FontName = "Times New Roman";
 
 
 %%
@@ -478,7 +519,7 @@ function r_LAR_cam = inertial2Cam(r_t_I, r_c_I)
 
 wrap = @(x) atan2(sin(x), cos(x));
 
-th_t = r_t_I(3); th_c = r_c_I(3);
+th_t = unwrap(r_t_I(3)); th_c = unwrap(r_c_I(3));
 x_c_I = r_c_I(1); y_c_I = r_c_I(2);
 sc = sin(th_c); cc = cos(th_c);
 

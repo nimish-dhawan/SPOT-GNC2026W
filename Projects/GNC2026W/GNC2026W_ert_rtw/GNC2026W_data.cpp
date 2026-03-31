@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'GNC2026W'.
 //
-// Model version                  : 4.2260
+// Model version                  : 4.2324
 // Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
-// C/C++ source code generated on : Mon Mar 30 11:31:51 2026
+// C/C++ source code generated on : Tue Mar 31 17:58:26 2026
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: ARM Compatible->ARM Cortex-A (64-bit)
@@ -277,7 +277,7 @@ P_GNC2026W_T GNC2026W_P = {
   // Variable: Phase3_End
   //  Referenced by: '<S1>/Constant2'
 
-  235.0,
+  415.0,
 
   // Variable: Phase3_SubPhase1_End
   //  Referenced by:
@@ -289,32 +289,39 @@ P_GNC2026W_T GNC2026W_P = {
   // Variable: Phase3_SubPhase2_End
   //  Referenced by: '<S23>/Constant1'
 
-  235.0,
+  415.0,
 
   // Variable: Phase3_SubPhase3_End
   //  Referenced by: '<S23>/Constant2'
 
-  235.0,
+  415.0,
 
   // Variable: Phase3_SubPhase4_End
   //  Referenced by: '<S23>/Constant3'
 
-  235.0,
+  415.0,
 
   // Variable: Phase4_End
   //  Referenced by: '<S1>/Constant3'
 
-  265.0,
+  445.0,
 
   // Variable: Phase5_End
   //  Referenced by: '<S1>/Constant6'
 
-  285.0,
+  465.0,
+
+  // Variable: Q
+  //  Referenced by: '<S230>/Unscented Kalman Filter'
+
+  { 1.0E-10, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-10, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    1.0E-10, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-10, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    1.0E-10, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-10 },
 
   // Variable: R
   //  Referenced by: '<S230>/Unscented Kalman Filter'
 
-  { 0.0025, 0.0, 0.0, 0.0, 0.0025, 0.0, 0.0, 0.0, 0.0025 },
+  { 0.025, 0.0, 0.0, 0.0, 0.025, 0.0, 0.0, 0.0, 0.25 },
 
   // Variable: Tz_lim_elarm
   //  Referenced by: '<S193>/Saturation1'
@@ -858,15 +865,15 @@ P_GNC2026W_T GNC2026W_P = {
 
   0.03490659,
 
-  // Expression: 0.01
+  // Expression: 0.01/2
   //  Referenced by: '<S71>/Constant1'
 
-  0.01,
+  0.005,
 
-  // Expression: -0.005
+  // Expression: -0.005/2
   //  Referenced by: '<S71>/Constant'
 
-  -0.005,
+  -0.0025,
 
   // Expression: 0.03490659
   //  Referenced by: '<S76>/Desired Rate (BLACK)'

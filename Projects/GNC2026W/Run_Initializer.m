@@ -129,8 +129,9 @@ a = 1;
 b = 2;
 k = 5;
 
-% Measurement noise covariance for UKF
-R = diag([0.05, 0.05, 0.05]);
+% Noise covariance for UKF
+R = diag([0.05, 0.05, 0.5]);
+Q = 1e-10*eye(6);
 
 dt = baseRate;
 
@@ -151,7 +152,7 @@ VISinLoop = 1;
 scenario  = 3;
 
 if scenario == 3 %|| scenario == 2
-    R = diag([0.0025, 0.0025, 0.0025]); % Results quicker filter convergence
+    R = diag([0.025, 0.025, 0.25]); % Results quicker filter convergence
 end
 
 %% This section of the code contains parameters should not be modified

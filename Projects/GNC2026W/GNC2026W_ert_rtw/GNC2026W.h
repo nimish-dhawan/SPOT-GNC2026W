@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'GNC2026W'.
 //
-// Model version                  : 4.2260
+// Model version                  : 4.2324
 // Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
-// C/C++ source code generated on : Mon Mar 30 11:31:51 2026
+// C/C++ source code generated on : Tue Mar 31 17:58:26 2026
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: ARM Compatible->ARM Cortex-A (64-bit)
@@ -307,6 +307,7 @@ struct DW_GNC2026W_T {
   real_T store[400];                   // '<S142>/LOS Calculation'
   real_T sendPacket;                   // '<S142>/LOS Calculation'
   real_T packetSent;                   // '<S142>/LOS Calculation'
+  real_T errPrev[2];                   // '<S142>/LOS Calculation'
   real_T l1;                           // '<S142>/Error Calculation'
   real_T l2;                           // '<S142>/Error Calculation'
   real_T x_k[3];                       // '<S142>/Error Calculation'
@@ -713,6 +714,9 @@ struct P_GNC2026W_T_ {
   real_T Phase5_End;                   // Variable: Phase5_End
                                           //  Referenced by: '<S1>/Constant6'
 
+  real_T Q[36];                        // Variable: Q
+                                          //  Referenced by: '<S230>/Unscented Kalman Filter'
+
   real_T R[9];                         // Variable: R
                                           //  Referenced by: '<S230>/Unscented Kalman Filter'
 
@@ -1085,10 +1089,10 @@ struct P_GNC2026W_T_ {
   real_T DesiredRateBLACK_Value_b;     // Expression: 0.03490659
                                           //  Referenced by: '<S70>/Desired Rate (BLACK)'
 
-  real_T Constant1_Value_h;            // Expression: 0.01
+  real_T Constant1_Value_h;            // Expression: 0.01/2
                                           //  Referenced by: '<S71>/Constant1'
 
-  real_T Constant_Value_l;             // Expression: -0.005
+  real_T Constant_Value_l;             // Expression: -0.005/2
                                           //  Referenced by: '<S71>/Constant'
 
   real_T DesiredRateBLACK_Value_c;     // Expression: 0.03490659
@@ -2223,12 +2227,15 @@ extern volatile boolean_T runModel;
 //  Block '<S211>/Data Type Duplicate' : Unused code path elimination
 //  Block '<S212>/Data Type Duplicate' : Unused code path elimination
 //  Block '<S213>/Data Type Duplicate' : Unused code path elimination
+//  Block '<S5>/Reshape' : Unused code path elimination
 //  Block '<S5>/Scope' : Unused code path elimination
 //  Block '<Root>/If 'simMode' set to '1', then this is a simulation and the dynamics will be simulated. Otherwise, this is an experiment, and the simulation will not be run.' : Unused code path elimination
 //  Block '<S228>/Scope' : Unused code path elimination
 //  Block '<S229>/Scope' : Unused code path elimination
 //  Block '<S229>/Scope1' : Unused code path elimination
 //  Block '<S227>/Scope1' : Unused code path elimination
+//  Block '<S230>/Scope' : Unused code path elimination
+//  Block '<S230>/Scope1' : Unused code path elimination
 //  Block '<S276>/Scope' : Unused code path elimination
 //  Block '<S270>/Scope1' : Unused code path elimination
 //  Block '<S270>/Scope2' : Unused code path elimination
