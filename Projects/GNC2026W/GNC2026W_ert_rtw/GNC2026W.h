@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'GNC2026W'.
 //
-// Model version                  : 4.2324
+// Model version                  : 4.2357
 // Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
-// C/C++ source code generated on : Tue Mar 31 17:58:26 2026
+// C/C++ source code generated on : Wed Apr  1 16:17:53 2026
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: ARM Compatible->ARM Cortex-A (64-bit)
@@ -751,7 +751,7 @@ struct P_GNC2026W_T_ {
   real_T a;                            // Variable: a
                                           //  Referenced by: '<S230>/Unscented Kalman Filter'
 
-  real_T alpha[9];                     // Variable: alpha
+  real_T alpha;                        // Variable: alpha
                                           //  Referenced by: '<S163>/MATLAB Function3'
 
   real_T b;                            // Variable: b
@@ -2227,7 +2227,6 @@ extern volatile boolean_T runModel;
 //  Block '<S211>/Data Type Duplicate' : Unused code path elimination
 //  Block '<S212>/Data Type Duplicate' : Unused code path elimination
 //  Block '<S213>/Data Type Duplicate' : Unused code path elimination
-//  Block '<S5>/Reshape' : Unused code path elimination
 //  Block '<S5>/Scope' : Unused code path elimination
 //  Block '<Root>/If 'simMode' set to '1', then this is a simulation and the dynamics will be simulated. Otherwise, this is an experiment, and the simulation will not be run.' : Unused code path elimination
 //  Block '<S228>/Scope' : Unused code path elimination

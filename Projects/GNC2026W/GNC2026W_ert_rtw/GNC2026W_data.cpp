@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'GNC2026W'.
 //
-// Model version                  : 4.2324
+// Model version                  : 4.2357
 // Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
-// C/C++ source code generated on : Tue Mar 31 17:58:26 2026
+// C/C++ source code generated on : Wed Apr  1 16:17:53 2026
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: ARM Compatible->ARM Cortex-A (64-bit)
@@ -314,14 +314,14 @@ P_GNC2026W_T GNC2026W_P = {
   // Variable: Q
   //  Referenced by: '<S230>/Unscented Kalman Filter'
 
-  { 1.0E-10, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-10, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-    1.0E-10, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-10, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-    1.0E-10, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-10 },
+  { 1.0E-6, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-6, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    1.0E-6, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-6, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    1.0E-6, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-6 },
 
   // Variable: R
   //  Referenced by: '<S230>/Unscented Kalman Filter'
 
-  { 0.025, 0.0, 0.0, 0.0, 0.025, 0.0, 0.0, 0.0, 0.25 },
+  { 0.0001, 0.0, 0.0, 0.0, 0.0001, 0.0, 0.0, 0.0, 0.00062500000000000012 },
 
   // Variable: Tz_lim_elarm
   //  Referenced by: '<S193>/Saturation1'
@@ -375,7 +375,7 @@ P_GNC2026W_T GNC2026W_P = {
   // Variable: alpha
   //  Referenced by: '<S163>/MATLAB Function3'
 
-  { 2.0, 0.0, 0.0, 0.0, 2.0, 0.0, 0.0, 0.0, 2.0 },
+  1.0,
 
   // Variable: b
   //  Referenced by: '<S230>/Unscented Kalman Filter'

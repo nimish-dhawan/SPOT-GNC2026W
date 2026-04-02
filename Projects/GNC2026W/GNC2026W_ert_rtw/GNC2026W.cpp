@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'GNC2026W'.
 //
-// Model version                  : 4.2324
+// Model version                  : 4.2357
 // Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
-// C/C++ source code generated on : Tue Mar 31 17:58:26 2026
+// C/C++ source code generated on : Wed Apr  1 16:17:53 2026
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: ARM Compatible->ARM Cortex-A (64-bit)
@@ -5241,12 +5241,12 @@ void GNC2026W_step(void)
       }
 
       for (r = 0; r < 3; r++) {
-        avg_idx_1 = rtb_q_des[3 * r + 1];
-        q = rtb_q_des[3 * r];
-        sc = rtb_q_des[3 * r + 2];
+        avg_idx_0 = rtb_q_des[3 * r + 1];
+        avg_idx_1 = rtb_q_des[3 * r];
+        q = rtb_q_des[3 * r + 2];
         for (vcol = 0; vcol < 3; vcol++) {
-          GNC2026W_DW.P_i[vcol + 3 * r] = (phi_tmp[vcol + 3] * avg_idx_1 + q *
-            phi_tmp[vcol]) + phi_tmp[vcol + 6] * sc;
+          GNC2026W_DW.P_i[vcol + 3 * r] = (phi_tmp[vcol + 3] * avg_idx_0 +
+            avg_idx_1 * phi_tmp[vcol]) + phi_tmp[vcol + 6] * q;
         }
       }
 
@@ -6870,12 +6870,12 @@ void GNC2026W_step(void)
       }
 
       for (r = 0; r < 3; r++) {
-        avg_idx_1 = rtb_q_des[3 * r + 1];
-        q = rtb_q_des[3 * r];
-        sc = rtb_q_des[3 * r + 2];
+        avg_idx_0 = rtb_q_des[3 * r + 1];
+        avg_idx_1 = rtb_q_des[3 * r];
+        q = rtb_q_des[3 * r + 2];
         for (vcol = 0; vcol < 3; vcol++) {
           rtb_TmpSignalConversionAtSFun_n[vcol + 3 * r] = (phi_tmp[vcol + 3] *
-            avg_idx_1 + q * phi_tmp[vcol]) + phi_tmp[vcol + 6] * sc;
+            avg_idx_0 + avg_idx_1 * phi_tmp[vcol]) + phi_tmp[vcol + 6] * q;
         }
       }
 
@@ -6960,22 +6960,20 @@ void GNC2026W_step(void)
 
       for (r = 0; r < 3; r++) {
         diff_idx_0 = 0.0;
-        avg_idx_0 = 0.0;
         LOS_Angle = 0.0;
-        avg_idx_1 = rtb_q_des[r + 3];
-        q = rtb_q_des[r];
-        sc = rtb_q_des[r + 6];
+        avg_idx_0 = rtb_q_des[r + 3];
+        avg_idx_1 = rtb_q_des[r];
+        q = rtb_q_des[r + 6];
         for (vcol = 0; vcol < 3; vcol++) {
           r3 = 3 * vcol + r;
-          diff_idx_0 += GNC2026W_DW.error[vcol + 3] * GNC2026W_P.alpha[r3];
-          LOS_Angle += GNC2026W_P.gamma[r3] * GNC2026W_DW.error[vcol];
-          rtb_TmpSignalConversionAtSFun_n[r3] = (phi[3 * vcol + 1] * avg_idx_1 +
-            phi[3 * vcol] * q) + phi[3 * vcol + 2] * sc;
-          avg_idx_0 += phi_tmp[r3] * GNC2026W_P.F_u[vcol];
+          diff_idx_0 += GNC2026W_P.gamma[r3] * GNC2026W_DW.error[vcol];
+          LOS_Angle += phi_tmp[r3] * GNC2026W_P.F_u[vcol];
+          rtb_TmpSignalConversionAtSFun_n[r3] = (phi[3 * vcol + 1] * avg_idx_0 +
+            phi[3 * vcol] * avg_idx_1) + phi[3 * vcol + 2] * q;
         }
 
-        rtb_r_REL[r] = ((-GNC2026W_DW.error[r + 6] - diff_idx_0) - LOS_Angle) -
-          avg_idx_0;
+        rtb_r_REL[r] = ((-GNC2026W_DW.error[r + 6] - GNC2026W_DW.error[r + 3] *
+                         GNC2026W_P.alpha) - diff_idx_0) - LOS_Angle;
       }
 
       diff_idx_0 = rtb_r_REL[1];
