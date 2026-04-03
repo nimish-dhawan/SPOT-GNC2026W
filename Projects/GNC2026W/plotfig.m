@@ -86,9 +86,14 @@ dy  = dat.dataClass_rt.BLACK_Py_m.Data ...
 dth = wrap(dat.dataClass_rt.BLACK_Rz_rad.Data ...
       - dat.dataClass_rt.BLACK_Rz_Filtered_rad.Data );
 
+dxVis = dat.dataClass_rt.VIS_LAR_States_Px_mm.Data - r_LAR_cam_truth(:,1);
+dyVis = dat.dataClass_rt.VIS_LAR_States_Py_mm.Data - r_LAR_cam_truth(:,2);
+dthVis = wrap(dat.dataClass_rt.VIS_LAR_States_Rz_rad.Data - r_LAR_cam_truth(:,3));
+
 subplot(3,2,2)
 plot(t,dx,'k')
-grid on;
+grid on; hold on;
+plot(t,dxVis,'ro','MarkerSize',0.2)
 ylabel('\deltax [m]')
 xlim(period)
 ax = gca();
@@ -96,7 +101,8 @@ ax.FontSize = 10;
 ax.FontName = "Times New Roman";
 subplot(3,2,4)
 plot(t,dy,'k')
-grid on;
+grid on; hold on;
+plot(t,dyVis,'ro','MarkerSize',0.2)
 ylabel('\deltay [m]')
 xlim(period)
 ax = gca();
@@ -104,7 +110,8 @@ ax.FontSize = 10;
 ax.FontName = "Times New Roman";
 subplot(3,2,6)
 plot(t,dth,'k')
-grid on;
+grid on; hold on;
+plot(t,dthVis,'ro','MarkerSize',0.2)
 ylabel('\delta\theta [rad]'); xlabel('Time [s]')
 xlim(period)
 formatfig(0.8,0.4);
@@ -272,12 +279,12 @@ ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
 
-dx = dat.dataClass_rt.VIS_LAR_States_Px_mm.Data - r_LAR_cam_truth(:,1);
-dy = dat.dataClass_rt.VIS_LAR_States_Py_mm.Data - r_LAR_cam_truth(:,2);
-dth = wrap(dat.dataClass_rt.VIS_LAR_States_Rz_rad.Data - r_LAR_cam_truth(:,3));
+dxVis = dat.dataClass_rt.VIS_LAR_States_Px_mm.Data - r_LAR_cam_truth(:,1);
+dyVis = dat.dataClass_rt.VIS_LAR_States_Py_mm.Data - r_LAR_cam_truth(:,2);
+dthVis = wrap(dat.dataClass_rt.VIS_LAR_States_Rz_rad.Data - r_LAR_cam_truth(:,3));
 
 subplot(3,2,2)
-plot(t,dx,'k')
+plot(t,dxVis,'k')
 grid on;
 ylabel('\deltax [m]')
 xlim(period)
@@ -285,7 +292,7 @@ ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
 subplot(3,2,4)
-plot(t,dy,'k')
+plot(t,dyVis,'k')
 grid on;
 ylabel('\deltay [m]')
 xlim(period)
@@ -293,7 +300,7 @@ ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
 subplot(3,2,6)
-plot(t,dth,'k')
+plot(t,dthVis,'k')
 grid on;
 ylabel('\delta\theta [rad]'); xlabel('Time [s]')
 xlim(period)
@@ -394,7 +401,7 @@ for ii = 1:length(plotting_indices)
     frame = plotting_indices(ii);
     alpha = alpha_values(ii);
 
-    spacecraft = DrawSpacecraft([expdata_RED_pos_x(frame),expdata_RED_pos_y(frame),expdata_RED_pos_th(frame),3]);
+    spacecraft = DrawSpacecraft([expdata_RED_pos_x(frame),expdata_RED_pos_y(frame),expdata_RED_pos_th(frame),5]);
     patch(spacecraft(:,1), spacecraft(:,2), 'w', 'facealpha', 0.5, 'edgecolor', 'r', 'edgealpha',alpha,'Linewidth',0.5)
 
     [shoulder,elbow,wrist] = DrawARM([expdata_RED_pos_x(frame),expdata_RED_pos_y(frame),expdata_RED_pos_th(frame),ARMq1(frame),ARMq2(frame),ARMq3(frame)]);
@@ -453,7 +460,7 @@ if anim == 1 % Trajectory animation
         
         % Plotting spacecraft shapes
 
-        spacecraft = DrawSpacecraft([expdata_RED_pos_x(frame),expdata_RED_pos_y(frame),expdata_RED_pos_th(frame),3]);
+        spacecraft = DrawSpacecraft([expdata_RED_pos_x(frame),expdata_RED_pos_y(frame),expdata_RED_pos_th(frame),5]);
         patch(spacecraft(:,1), spacecraft(:,2), 'w', 'facealpha', 0.5, 'edgecolor', 'r', 'edgealpha',1,'Linewidth',0.5)
         [shoulder,elbow,wrist] = DrawARM([expdata_RED_pos_x(frame),expdata_RED_pos_y(frame),expdata_RED_pos_th(frame),ARMq1(frame),ARMq2(frame),ARMq3(frame)]);
         patch(shoulder(:,1), shoulder(:,2), 'w', 'facealpha', alpha, 'edgecolor', 'r', 'edgealpha',alpha)
@@ -463,8 +470,8 @@ if anim == 1 % Trajectory animation
         spacecraft = DrawSpacecraft([expdata_BLACK_pos_x(frame),expdata_BLACK_pos_y(frame),expdata_BLACK_pos_th(frame),7]);
         patch(spacecraft(:,1), spacecraft(:,2), 'w', 'facealpha', 0.5, 'edgecolor', 'k', 'edgealpha',1,'Linewidth',0.5)
 
-        cone = DrawPositionCone([expdata_BLACK_pos_x(frame),expdata_BLACK_pos_y(frame),expdata_BLACK_pos_th(frame)]);
-        patch(cone(:,1), cone(:,2), 'k', 'facealpha', 0.05, 'edgecolor', 'k', 'edgealpha', 0.7, 'Linewidth',0.5)
+        % cone = DrawPositionCone([expdata_BLACK_pos_x(frame),expdata_BLACK_pos_y(frame),expdata_BLACK_pos_th(frame)]);
+        % patch(cone(:,1), cone(:,2), 'k', 'facealpha', 0.05, 'edgecolor', 'k', 'edgealpha', 0.7, 'Linewidth',0.5)
     
         xlabel('X-Position [m]')
         ylabel('Y-Position [m]')

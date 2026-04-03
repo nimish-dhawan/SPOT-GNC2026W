@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'GNC2026W'.
 //
-// Model version                  : 4.2357
+// Model version                  : 4.2391
 // Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
-// C/C++ source code generated on : Wed Apr  1 16:17:53 2026
+// C/C++ source code generated on : Thu Apr  2 20:44:35 2026
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: ARM Compatible->ARM Cortex-A (64-bit)
@@ -147,7 +147,7 @@ struct B_GNC2026W_T {
   real_T Merge_b[3];                   // '<S248>/Merge'
   real_T In1_g20a[3];                  // '<S155>/In1'
   real_T Merge_h[3];                   // '<S56>/Merge'
-  real32_T UDPReceive_o1[6];           // '<S313>/UDP Receive'
+  real32_T UDPReceive_o1[10];          // '<S313>/UDP Receive'
   real32_T UDPReceive_o1_a[4];         // '<S311>/UDP Receive'
   uint8_T StringtoASCII[31];           // '<S224>/String to ASCII'
   uint8_T StringtoASCII2[31];          // '<S223>/String to ASCII2'
@@ -271,7 +271,9 @@ struct DW_GNC2026W_T {
   real_T Grab_Location_Reached;        // '<Root>/Universal_Time45'
   real_T Begin_Grab;                   // '<Root>/Universal_Time46'
   real_T Begin_Berth;                  // '<Root>/Universal_Time47'
-  real_T EE_Desired[3];                // '<Root>/Universal_Time48'
+  real_T EE_Goal[3];                   // '<Root>/Universal_Time48'
+  real_T EE_Path[2];                   // '<Root>/Universal_Time49'
+  real_T EE_Desired[2];                // '<Root>/Universal_Time50'
   real_T BLUE_Saturated_Controls[3];   // '<Root>/Universal_Time6'
   real_T ARM_Desired_States[3];        // '<Root>/Universal_Time8'
   real_T VIS_Confidence;               // '<Root>/Universal_Time9'
@@ -296,9 +298,9 @@ struct DW_GNC2026W_T {
   real_T theta_cont;                   // '<S229>/MEKF'
   real_T k_g;                          // '<S229>/MEKF'
   real_T converge;                     // '<S230>/Unscented Kalman Filter'
-  real_T x_i[6];                       // '<S230>/Unscented Kalman Filter'
-  real_T P_f[36];                      // '<S230>/Unscented Kalman Filter'
-  real_T k_c;                          // '<S230>/Unscented Kalman Filter'
+  real_T x_c[6];                       // '<S230>/Unscented Kalman Filter'
+  real_T P_d[36];                      // '<S230>/Unscented Kalman Filter'
+  real_T isValid_pre;                  // '<S230>/Unscented Kalman Filter'
   real_T UDPSend3_NetworkLib[137];     // '<S224>/UDP Send3'
   real_T UDPSend2_NetworkLib[137];     // '<S223>/UDP Send2'
   real_T UDPSend1_NetworkLib[137];     // '<S222>/UDP Send1'
@@ -345,6 +347,7 @@ struct DW_GNC2026W_T {
   // '<S265>/This IF block determines whether or not to run the RED sim//exp '
   boolean_T k_not_empty;               // '<S270>/Sample and Hold'
   boolean_T initial_theta;             // '<S228>/EKF'
+  boolean_T converge_not_empty;        // '<S230>/Unscented Kalman Filter'
   boolean_T x_not_empty;               // '<S142>/Error Calculation'
   DW_ChangeBLACKBehavior_GNC2_g_T ChangeREDBehavior_h;// '<S19>/Change RED Behavior' 
   DW_ChangeBLACKBehavior_GNC2_g_T ChangeBLUEBehavior_e;// '<S19>/Change BLUE Behavior' 
@@ -540,7 +543,6 @@ struct P_GNC2026W_T_ {
                                           //  Referenced by:
                                           //    '<S228>/EKF'
                                           //    '<S229>/MEKF'
-                                          //    '<S230>/Unscented Kalman Filter'
                                           //    '<S270>/Sample and Hold'
 
   real_T F_red_X_nominal;              // Variable: F_red_X_nominal
@@ -650,6 +652,9 @@ struct P_GNC2026W_T_ {
 
   real_T Mc_inv[9];                    // Variable: Mc_inv
                                           //  Referenced by: '<S163>/MATLAB Function3'
+
+  real_T P0[36];                       // Variable: P0
+                                          //  Referenced by: '<S230>/Unscented Kalman Filter'
 
   real_T PWMFreq;                      // Variable: PWMFreq
                                           //  Referenced by:
@@ -765,7 +770,6 @@ struct P_GNC2026W_T_ {
                                           //    '<S315>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
                                           //    '<S228>/EKF'
                                           //    '<S229>/MEKF'
-                                          //    '<S230>/Unscented Kalman Filter'
                                           //    '<S270>/Sample and Hold'
                                           //    '<S276>/MATLAB Function1'
 
@@ -859,6 +863,9 @@ struct P_GNC2026W_T_ {
                                           //    '<S337>/MATLAB Function5'
                                           //    '<S349>/MATLAB Function5'
                                           //    '<S352>/MATLAB Function'
+
+  real_T x0[6];                        // Variable: x0
+                                          //  Referenced by: '<S230>/Unscented Kalman Filter'
 
   real_T xLength;                      // Variable: xLength
                                           //  Referenced by:
@@ -1887,8 +1894,14 @@ struct P_GNC2026W_T_ {
   real_T Universal_Time48_InitialValue[3];// Expression: [0;0;0]
                                              //  Referenced by: '<Root>/Universal_Time48'
 
+  real_T Universal_Time49_InitialValue[2];// Expression: zeros(2,1)
+                                             //  Referenced by: '<Root>/Universal_Time49'
+
   real_T Universal_Time5_InitialValue[3];// Expression: [0;0;0]
                                             //  Referenced by: '<Root>/Universal_Time5'
+
+  real_T Universal_Time50_InitialValue[2];// Expression: zeros(2,1)
+                                             //  Referenced by: '<Root>/Universal_Time50'
 
   real_T Universal_Time6_InitialValue[3];// Expression: [0;0;0]
                                             //  Referenced by: '<Root>/Universal_Time6'
@@ -2202,6 +2215,7 @@ extern volatile boolean_T runModel;
 //  Block '<S151>/Scope' : Unused code path elimination
 //  Block '<S142>/Scope' : Unused code path elimination
 //  Block '<S142>/Scope1' : Unused code path elimination
+//  Block '<S142>/Scope2' : Unused code path elimination
 //  Block '<S163>/Scope1' : Unused code path elimination
 //  Block '<S177>/Scope' : Unused code path elimination
 //  Block '<S177>/Scope1' : Unused code path elimination
@@ -2241,7 +2255,6 @@ extern volatile boolean_T runModel;
 //  Block '<S270>/Scope3' : Unused code path elimination
 //  Block '<S270>/Scope4' : Unused code path elimination
 //  Block '<S313>/Cast To Double1' : Unused code path elimination
-//  Block '<S313>/Display' : Unused code path elimination
 //  Block '<S313>/Scope' : Unused code path elimination
 //  Block '<S314>/Scope1' : Unused code path elimination
 //  Block '<S314>/Scope2' : Unused code path elimination

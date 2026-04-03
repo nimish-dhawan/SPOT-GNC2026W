@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'GNC2026W'.
 //
-// Model version                  : 4.2357
+// Model version                  : 4.2391
 // Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
-// C/C++ source code generated on : Wed Apr  1 16:17:53 2026
+// C/C++ source code generated on : Thu Apr  2 20:44:35 2026
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: ARM Compatible->ARM Cortex-A (64-bit)
@@ -4826,7 +4826,7 @@ void GNC2026W_step(void)
   real_T rtb_H_final_g[24];
 
   {
-    real_T b_u1[165];
+    real_T b_u1[169];
     real_T Fi[78];
     real_T Xi_pre[78];
     real_T y[64];
@@ -4866,13 +4866,13 @@ void GNC2026W_step(void)
     real_T avg_idx_1;
     real_T diff_idx_0;
     real_T diff_idx_1;
-    real_T q;
     real_T sampleTime;
     real_T sampleTime_0;
     real_T sampleTime_1;
     real_T sc;
     real_T scale;
     real_T t;
+    real_T th_c;
     int32_T ar;
     int32_T boffset;
     int32_T br;
@@ -5031,12 +5031,12 @@ void GNC2026W_step(void)
       //   SignalConversion generated from: '<S152>/ SFunction '
       //   UnitDelay: '<S142>/Unit Delay'
 
-      GNC2026W_DW.EE_Desired[0] = 0.0;
-      GNC2026W_DW.EE_Desired[1] = 0.0;
-      GNC2026W_DW.EE_Desired[2] = 0.0;
+      GNC2026W_DW.EE_Goal[0] = 0.0;
+      GNC2026W_DW.EE_Goal[1] = 0.0;
+      GNC2026W_DW.EE_Goal[2] = 0.0;
       avg_idx_0 = 0.0;
       avg_idx_1 = 0.0;
-      q = sin(GNC2026W_DW.Delay1_DSTATE_lo);
+      th_c = sin(GNC2026W_DW.Delay1_DSTATE_lo);
       LOS_Angle = cos(GNC2026W_DW.Delay1_DSTATE_lo);
       scale = ((diff_idx_0 * 0.145 + -sc * 0.0) +
                GNC2026W_DW.BLACK_Filtered_States[0]) -
@@ -5044,13 +5044,13 @@ void GNC2026W_step(void)
       absxk = ((sc * 0.145 + diff_idx_0 * 0.0) +
                GNC2026W_DW.BLACK_Filtered_States[1]) -
         GNC2026W_DW.RED_Measured_States[1];
-      sc = LOS_Angle * scale + q * absxk;
+      sc = LOS_Angle * scale + th_c * absxk;
       diff_idx_0 = GNC2026W_DW.UnitDelay_DSTATE[0] - GNC2026W_DW.errPrev[0];
       GNC2026W_DW.errPrev[0] = GNC2026W_DW.UnitDelay_DSTATE[0];
-      q = -q * scale + LOS_Angle * absxk;
+      th_c = -th_c * scale + LOS_Angle * absxk;
       diff_idx_1 = GNC2026W_DW.UnitDelay_DSTATE[1] - GNC2026W_DW.errPrev[1];
       GNC2026W_DW.errPrev[1] = GNC2026W_DW.UnitDelay_DSTATE[1];
-      LOS_Angle = atan(q / sc);
+      LOS_Angle = atan(th_c / sc);
       if (GNC2026W_DW.Grab_Location_Reached == 1.0) {
         scale = 3.3121686421112381E-170;
         absxk = fabs(diff_idx_0);
@@ -5079,15 +5079,15 @@ void GNC2026W_step(void)
 
       if (GNC2026W_DW.sendPacket == 1.0) {
         if (GNC2026W_DW.packetSent == 0.0) {
-          GNC2026W_DW.EE_Desired[0] = 0.0;
-          GNC2026W_DW.EE_Desired[1] = 0.0;
-          GNC2026W_DW.EE_Desired[2] = 0.0;
+          GNC2026W_DW.EE_Goal[0] = 0.0;
+          GNC2026W_DW.EE_Goal[1] = 0.0;
+          GNC2026W_DW.EE_Goal[2] = 0.0;
           GNC2026W_DW.packetSent = 1.0;
         } else if (GNC2026W_DW.k_p < 200.0) {
           GNC2026W_DW.k_p++;
           vcol = (static_cast<int32_T>(GNC2026W_DW.k_p) - 1) << 1;
           GNC2026W_DW.store[vcol] = sc - 0.07;
-          GNC2026W_DW.store[vcol + 1] = q + 0.15;
+          GNC2026W_DW.store[vcol + 1] = th_c + 0.15;
         } else {
           for (r3 = 0; r3 < 200; r3++) {
             r = r3 << 1;
@@ -5095,9 +5095,9 @@ void GNC2026W_step(void)
             avg_idx_1 += GNC2026W_DW.store[r + 1];
           }
 
-          GNC2026W_DW.EE_Desired[0] = 1.0;
-          GNC2026W_DW.EE_Desired[1] = avg_idx_0 / GNC2026W_DW.k_p;
-          GNC2026W_DW.EE_Desired[2] = avg_idx_1 / GNC2026W_DW.k_p;
+          GNC2026W_DW.EE_Goal[0] = 1.0;
+          GNC2026W_DW.EE_Goal[1] = avg_idx_0 / GNC2026W_DW.k_p;
+          GNC2026W_DW.EE_Goal[2] = avg_idx_1 / GNC2026W_DW.k_p;
         }
       }
 
@@ -5168,11 +5168,11 @@ void GNC2026W_step(void)
         rtb_TmpSignalConversionAtSFun_b[r] = diff_idx_0;
         avg_idx_0 = phi[r + 3];
         avg_idx_1 = phi[r];
-        q = phi[r + 6];
+        th_c = phi[r + 6];
         for (vcol = 0; vcol < 3; vcol++) {
           phi_1[r + 3 * vcol] = (GNC2026W_DW.P_i[3 * vcol + 1] * avg_idx_0 +
             GNC2026W_DW.P_i[3 * vcol] * avg_idx_1) + GNC2026W_DW.P_i[3 * vcol +
-            2] * q;
+            2] * th_c;
         }
       }
 
@@ -5180,11 +5180,11 @@ void GNC2026W_step(void)
       for (r3 = 0; r3 < 3; r3++) {
         avg_idx_0 = phi_1[r3 + 3];
         avg_idx_1 = phi_1[r3];
-        q = phi_1[r3 + 6];
+        th_c = phi_1[r3 + 6];
         for (r = 0; r < 3; r++) {
           br = 3 * r + r3;
           rtb_q_des[br] = ((phi[r + 3] * avg_idx_0 + avg_idx_1 * phi[r]) + phi[r
-                           + 6] * q) + c[br];
+                           + 6] * th_c) + c[br];
         }
 
         vcol = b_a_0[r3];
@@ -5212,7 +5212,7 @@ void GNC2026W_step(void)
       for (r3 = 0; r3 < 3; r3++) {
         avg_idx_0 = ((rtb_q_des[r3 + 3] * static_cast<real_T>(r) + rtb_q_des[r3]
                       * static_cast<real_T>(vcol)) + rtb_q_des[r3 + 6] *
-                     static_cast<real_T>(br)) / diff_idx_0;
+                     static_cast<real_T>(br)) / (diff_idx_0 + 1.0E-9);
         K[r3] = avg_idx_0;
         GNC2026W_DW.x_k[r3] = avg_idx_0 * avg_idx_1 +
           rtb_TmpSignalConversionAtSFun_b[r3];
@@ -5243,10 +5243,10 @@ void GNC2026W_step(void)
       for (r = 0; r < 3; r++) {
         avg_idx_0 = rtb_q_des[3 * r + 1];
         avg_idx_1 = rtb_q_des[3 * r];
-        q = rtb_q_des[3 * r + 2];
+        th_c = rtb_q_des[3 * r + 2];
         for (vcol = 0; vcol < 3; vcol++) {
           GNC2026W_DW.P_i[vcol + 3 * r] = (phi_tmp[vcol + 3] * avg_idx_0 +
-            avg_idx_1 * phi_tmp[vcol]) + phi_tmp[vcol + 6] * q;
+            avg_idx_1 * phi_tmp[vcol]) + phi_tmp[vcol + 6] * th_c;
         }
       }
 
@@ -5524,23 +5524,24 @@ void GNC2026W_step(void)
 
       // MATLAB Function: '<S177>/MATLAB Function'
       if (rtIsNaN(diff_idx_0)) {
-        avg_idx_1 = (rtNaN);
+        avg_idx_0 = (rtNaN);
       } else if (rtIsInf(diff_idx_0)) {
-        avg_idx_1 = (rtNaN);
+        avg_idx_0 = (rtNaN);
       } else if (diff_idx_0 == 0.0) {
-        avg_idx_1 = 0.0;
+        avg_idx_0 = 0.0;
       } else {
-        avg_idx_1 = fmod(diff_idx_0, 6.2831853071795862);
-        rEQ0 = (avg_idx_1 == 0.0);
+        avg_idx_0 = fmod(diff_idx_0, 6.2831853071795862);
+        rEQ0 = (avg_idx_0 == 0.0);
         if (!rEQ0) {
-          q = fabs(diff_idx_0 / 6.2831853071795862);
-          rEQ0 = !(fabs(q - floor(q + 0.5)) > 2.2204460492503131E-16 * q);
+          avg_idx_1 = fabs(diff_idx_0 / 6.2831853071795862);
+          rEQ0 = !(fabs(avg_idx_1 - floor(avg_idx_1 + 0.5)) >
+                   2.2204460492503131E-16 * avg_idx_1);
         }
 
         if (rEQ0) {
-          avg_idx_1 = 0.0;
-        } else if (avg_idx_1 < 0.0) {
-          avg_idx_1 += 6.2831853071795862;
+          avg_idx_0 = 0.0;
+        } else if (avg_idx_0 < 0.0) {
+          avg_idx_0 += 6.2831853071795862;
         }
       }
 
@@ -5609,7 +5610,7 @@ void GNC2026W_step(void)
       //  About '<S180>/TSamp':
       //   y = u * K where K = 1 / ( w * Ts )
       //
-      avg_idx_0 = GNC2026W_DW.BLACK_Desired_States[2] * GNC2026W_P.TSamp_WtEt_no;
+      avg_idx_1 = GNC2026W_DW.BLACK_Desired_States[2] * GNC2026W_P.TSamp_WtEt_no;
 
       // End of Outputs for SubSystem: '<S2>/Custom PPL (BLACK)'
 
@@ -5624,7 +5625,7 @@ void GNC2026W_step(void)
       //
       //   Store in Global RAM
 
-      GNC2026W_DW.UD_DSTATE_d = avg_idx_0 - GNC2026W_DW.UD_DSTATE_d;
+      GNC2026W_DW.UD_DSTATE_d = avg_idx_1 - GNC2026W_DW.UD_DSTATE_d;
 
       // Sum: '<S164>/Subtract7' incorporates:
       //   DataStoreRead: '<S164>/Data Store Read13'
@@ -5703,7 +5704,7 @@ void GNC2026W_step(void)
       //
       //   Store in Global RAM
 
-      delta_x[2] = avg_idx_1 - 3.1415926535897931;
+      delta_x[2] = avg_idx_0 - 3.1415926535897931;
       delta_x[3] = GNC2026W_DW.UD_DSTATE_j;
       delta_x[4] = GNC2026W_DW.UD_DSTATE_c;
       delta_x[5] = GNC2026W_DW.UD_DSTATE_d;
@@ -5711,19 +5712,19 @@ void GNC2026W_step(void)
         // Product: '<S164>/Matrix Multiply' incorporates:
         //   Merge: '<S3>/Merge1'
 
-        avg_idx_1 = 0.0;
+        avg_idx_0 = 0.0;
         for (vcol = 0; vcol < 6; vcol++) {
           // Merge: '<S3>/Merge1' incorporates:
           //   Product: '<S164>/Matrix Multiply'
           //   Reshape: '<S164>/Reshape4'
 
-          avg_idx_1 += P_xy[3 * vcol + r] * delta_x[vcol];
+          avg_idx_0 += P_xy[3 * vcol + r] * delta_x[vcol];
         }
 
         // Merge: '<S3>/Merge1' incorporates:
         //   Product: '<S164>/Matrix Multiply'
 
-        GNC2026W_B.Merge1[r] = avg_idx_1;
+        GNC2026W_B.Merge1[r] = avg_idx_0;
       }
 
       // Update for UnitDelay: '<S178>/UD'
@@ -5748,7 +5749,7 @@ void GNC2026W_step(void)
       //
       //   Store in Global RAM
 
-      GNC2026W_DW.UD_DSTATE_d = avg_idx_0;
+      GNC2026W_DW.UD_DSTATE_d = avg_idx_1;
 
       // End of Outputs for SubSystem: '<S3>/Default LQR Control (BLACK)'
     } else {
@@ -6872,10 +6873,10 @@ void GNC2026W_step(void)
       for (r = 0; r < 3; r++) {
         avg_idx_0 = rtb_q_des[3 * r + 1];
         avg_idx_1 = rtb_q_des[3 * r];
-        q = rtb_q_des[3 * r + 2];
+        th_c = rtb_q_des[3 * r + 2];
         for (vcol = 0; vcol < 3; vcol++) {
           rtb_TmpSignalConversionAtSFun_n[vcol + 3 * r] = (phi_tmp[vcol + 3] *
-            avg_idx_0 + avg_idx_1 * phi_tmp[vcol]) + phi_tmp[vcol + 6] * q;
+            avg_idx_0 + avg_idx_1 * phi_tmp[vcol]) + phi_tmp[vcol + 6] * th_c;
         }
       }
 
@@ -6963,13 +6964,13 @@ void GNC2026W_step(void)
         LOS_Angle = 0.0;
         avg_idx_0 = rtb_q_des[r + 3];
         avg_idx_1 = rtb_q_des[r];
-        q = rtb_q_des[r + 6];
+        th_c = rtb_q_des[r + 6];
         for (vcol = 0; vcol < 3; vcol++) {
           r3 = 3 * vcol + r;
           diff_idx_0 += GNC2026W_P.gamma[r3] * GNC2026W_DW.error[vcol];
           LOS_Angle += phi_tmp[r3] * GNC2026W_P.F_u[vcol];
           rtb_TmpSignalConversionAtSFun_n[r3] = (phi[3 * vcol + 1] * avg_idx_0 +
-            phi[3 * vcol] * avg_idx_1) + phi[3 * vcol + 2] * q;
+            phi[3 * vcol] * avg_idx_1) + phi[3 * vcol + 2] * th_c;
         }
 
         rtb_r_REL[r] = ((-GNC2026W_DW.error[r + 6] - GNC2026W_DW.error[r + 3] *
@@ -7282,12 +7283,14 @@ void GNC2026W_step(void)
     //   DataStoreRead: '<S5>/Data Store Read39'
     //   DataStoreRead: '<S5>/Data Store Read40'
     //   DataStoreRead: '<S5>/Data Store Read41'
+    //   DataStoreRead: '<S5>/Data Store Read42'
     //   DataStoreRead: '<S5>/Data Store Read43'
     //   DataStoreRead: '<S5>/Data Store Read44'
     //   DataStoreRead: '<S5>/Data Store Read45'
     //   DataStoreRead: '<S5>/Data Store Read46'
     //   DataStoreRead: '<S5>/Data Store Read47'
     //   DataStoreRead: '<S5>/Data Store Read48'
+    //   DataStoreRead: '<S5>/Data Store Read49'
     //   DataStoreWrite: '<S5>/Data Store Write2'
     //   MATLAB Function: '<S218>/MATLAB Function'
     //   SignalConversion generated from: '<S218>/MATLAB System'
@@ -7313,7 +7316,7 @@ void GNC2026W_step(void)
     b_u1[148] = GNC2026W_DW.ARM_Joint_Angles_rad[0];
     b_u1[153] = GNC2026W_DW.residual[0];
     b_u1[156] = GNC2026W_DW.error[0];
-    b_u1[161] = GNC2026W_DW.EE_Desired[0];
+    b_u1[161] = GNC2026W_DW.EE_Goal[0];
     b_u1[133] = GNC2026W_DW.VIS_LAR_States[1];
     b_u1[138] = GNC2026W_DW.sigma3[1];
     b_u1[143] = GNC2026W_DW.lambda[1];
@@ -7321,7 +7324,7 @@ void GNC2026W_step(void)
     b_u1[149] = GNC2026W_DW.ARM_Joint_Angles_rad[1];
     b_u1[154] = GNC2026W_DW.residual[1];
     b_u1[157] = GNC2026W_DW.error[1];
-    b_u1[162] = GNC2026W_DW.EE_Desired[1];
+    b_u1[162] = GNC2026W_DW.EE_Goal[1];
     b_u1[134] = GNC2026W_DW.VIS_LAR_States[2];
     b_u1[139] = GNC2026W_DW.sigma3[2];
     b_u1[144] = GNC2026W_DW.lambda[2];
@@ -7329,9 +7332,13 @@ void GNC2026W_step(void)
     b_u1[150] = GNC2026W_DW.ARM_Joint_Angles_rad[2];
     b_u1[155] = GNC2026W_DW.residual[2];
     b_u1[158] = GNC2026W_DW.error[2];
-    b_u1[163] = GNC2026W_DW.EE_Desired[2];
+    b_u1[163] = GNC2026W_DW.EE_Goal[2];
     b_u1[164] = GNC2026W_DW.Grab_Location_Reached;
-    appendDataToFile(&b_u1[0], 165.0);
+    b_u1[165] = GNC2026W_DW.EE_Path[0];
+    b_u1[167] = GNC2026W_DW.EE_Desired[0];
+    b_u1[166] = GNC2026W_DW.EE_Path[1];
+    b_u1[168] = GNC2026W_DW.EE_Desired[1];
+    appendDataToFile(&b_u1[0], 169.0);
 
     // DataStoreWrite: '<S17>/Data Store Write' incorporates:
     //   Constant: '<S17>/Constant'
@@ -8445,12 +8452,12 @@ void GNC2026W_step(void)
         //   DataStoreRead: '<S59>/Data Store Read'
         //   DataStoreRead: '<S59>/Data Store Read4'
 
-        if ((GNC2026W_DW.isValid == 1.0) && (GNC2026W_DW.firstfit == 0.0)) {
+        if ((GNC2026W_DW.isValid != 0.0) && (GNC2026W_DW.firstfit == 0.0)) {
           GNC2026W_DW.firstfit = 1.0;
         }
 
-        if ((GNC2026W_DW.firstfit == 1.0) && (GNC2026W_DW.isValid == 1.0) &&
-            (GNC2026W_DW.prev == 1.0)) {
+        if ((GNC2026W_DW.firstfit == 1.0) && (GNC2026W_DW.isValid != 0.0) &&
+            (GNC2026W_DW.prev != 0.0)) {
           if (GNC2026W_DW.counter < 5.0) {
             GNC2026W_DW.phase = 0.0;
           } else if ((GNC2026W_DW.counter > 5.0) &&
@@ -9206,6 +9213,15 @@ void GNC2026W_step(void)
         //   DataStoreWrite: '<S230>/Data Store Write1'
         //   DataStoreWrite: '<S230>/Data Store Write2'
 
+        if (!GNC2026W_DW.converge_not_empty) {
+          GNC2026W_DW.converge_not_empty = true;
+          for (r3 = 0; r3 < 6; r3++) {
+            GNC2026W_DW.x_c[r3] = GNC2026W_P.x0[r3];
+          }
+
+          memcpy(&GNC2026W_DW.P_d[0], &GNC2026W_P.P0[0], 36U * sizeof(real_T));
+        }
+
         absxk = GNC2026W_P.a * GNC2026W_P.a;
         sampleTime = (GNC2026W_P.k + 6.0) * absxk - 6.0;
         memset(&P_est[0], 0, 36U * sizeof(real_T));
@@ -9220,7 +9236,7 @@ void GNC2026W_step(void)
         memset(&rtb_TmpSignalConversionAtSFun_n[0], 0, 9U * sizeof(real_T));
         avg_idx_0 = GNC2026W_DW.RED_Measured_States[0];
         avg_idx_1 = GNC2026W_DW.RED_Measured_States[1];
-        q = GNC2026W_DW.RED_Measured_States[2];
+        th_c = GNC2026W_DW.RED_Measured_States[2];
         sc = sin(GNC2026W_DW.RED_Measured_States[2]);
         scale = cos(GNC2026W_DW.RED_Measured_States[2]);
         for (r3 = 0; r3 < 13; r3++) {
@@ -9235,28 +9251,28 @@ void GNC2026W_step(void)
           }
         }
 
-        GNC2026W_chol(GNC2026W_DW.P_f);
+        GNC2026W_chol(GNC2026W_DW.P_d);
         for (r = 0; r < 6; r++) {
           for (vcol = 0; vcol < 6; vcol++) {
-            phi_0[vcol + 6 * r] = GNC2026W_DW.P_f[6 * vcol + r];
+            phi_0[vcol + 6 * r] = GNC2026W_DW.P_d[6 * vcol + r];
           }
         }
 
         for (r3 = 0; r3 < 13; r3++) {
           if (r3 + 1 == 1) {
             for (r = 0; r < 6; r++) {
-              Xi_pre[r + 6 * r3] = GNC2026W_DW.x_i[r];
+              Xi_pre[r + 6 * r3] = GNC2026W_DW.x_c[r];
             }
           } else if ((r3 + 1 > 1) && (r3 + 1 <= 7)) {
             diff_idx_0 = sqrt(sampleTime + 6.0);
             for (r = 0; r < 6; r++) {
               Xi_pre[r + 6 * r3] = phi_0[(r3 - 1) * 6 + r] * diff_idx_0 +
-                GNC2026W_DW.x_i[r];
+                GNC2026W_DW.x_c[r];
             }
           } else {
             diff_idx_0 = sqrt(sampleTime + 6.0);
             for (r = 0; r < 6; r++) {
-              Xi_pre[r + 6 * r3] = GNC2026W_DW.x_i[r] - phi_0[(r3 - 7) * 6 + r] *
+              Xi_pre[r + 6 * r3] = GNC2026W_DW.x_c[r] - phi_0[(r3 - 7) * 6 + r] *
                 diff_idx_0;
             }
           }
@@ -9340,7 +9356,7 @@ void GNC2026W_step(void)
             Ks_data[3 * r + 2] = c_1[r];
           }
 
-          diff_idx_0 = Xi_pre[6 * r3 + 2] - q;
+          diff_idx_0 = Xi_pre[6 * r3 + 2] - th_c;
           rtb_r_REL[0] = ((cos(diff_idx_0) * 0.145 - avg_idx_0 * scale) -
                           avg_idx_1 * sc) - 0.125;
           rtb_r_REL[1] = ((sin(diff_idx_0) * 0.145 + avg_idx_0 * sc) - avg_idx_1
@@ -9359,8 +9375,8 @@ void GNC2026W_step(void)
         }
 
         scale = 3.3121686421112381E-170;
-        avg_idx_0 = GNC2026W_B.Merge_b[0] - RED_Path[0];
-        avg_idx_0 = rt_atan2d_snf(sin(avg_idx_0), cos(avg_idx_0));
+        th_c = GNC2026W_B.Merge_b[0] - RED_Path[0];
+        avg_idx_0 = rt_atan2d_snf(sin(th_c), cos(th_c));
         K[0] = avg_idx_0;
         absxk = fabs(avg_idx_0);
         if (absxk > 3.3121686421112381E-170) {
@@ -9371,8 +9387,8 @@ void GNC2026W_step(void)
           diff_idx_0 = t * t;
         }
 
-        avg_idx_0 = GNC2026W_B.Merge_b[1] - RED_Path[1];
-        avg_idx_0 = rt_atan2d_snf(sin(avg_idx_0), cos(avg_idx_0));
+        th_c = GNC2026W_B.Merge_b[1] - RED_Path[1];
+        avg_idx_0 = rt_atan2d_snf(sin(th_c), cos(th_c));
         K[1] = avg_idx_0;
         absxk = fabs(avg_idx_0);
         if (absxk > scale) {
@@ -9384,8 +9400,8 @@ void GNC2026W_step(void)
           diff_idx_0 += t * t;
         }
 
-        avg_idx_0 = GNC2026W_B.Merge_b[2] - RED_Path[2];
-        avg_idx_0 = rt_atan2d_snf(sin(avg_idx_0), cos(avg_idx_0));
+        th_c = GNC2026W_B.Merge_b[2] - RED_Path[2];
+        avg_idx_0 = rt_atan2d_snf(sin(th_c), cos(th_c));
         K[2] = avg_idx_0;
         absxk = fabs(avg_idx_0);
         if (absxk > scale) {
@@ -9486,47 +9502,14 @@ void GNC2026W_step(void)
           }
         }
 
-        r = 0;
-        sampleTime = GNC2026W_P.CVrate / GNC2026W_P.baseRate;
-        avg_idx_1 = GNC2026W_DW.k_c;
-        if (sampleTime == 0.0) {
-          if (GNC2026W_DW.k_c == 0.0) {
-            avg_idx_1 = sampleTime;
-          }
-        } else if (rtIsNaN(GNC2026W_DW.k_c)) {
-          avg_idx_1 = (rtNaN);
-        } else if (rtIsNaN(sampleTime)) {
-          avg_idx_1 = (rtNaN);
-        } else if (rtIsInf(GNC2026W_DW.k_c)) {
-          avg_idx_1 = (rtNaN);
-        } else if (GNC2026W_DW.k_c == 0.0) {
-          avg_idx_1 = 0.0 / sampleTime;
-        } else if (rtIsInf(sampleTime)) {
-          if ((sampleTime < 0.0) != (GNC2026W_DW.k_c < 0.0)) {
-            avg_idx_1 = sampleTime;
-          }
+        if (GNC2026W_DW.isValid != 0.0) {
+          r = (GNC2026W_DW.isValid - GNC2026W_DW.isValid_pre != 0.0);
+          GNC2026W_DW.isValid_pre = GNC2026W_DW.isValid;
         } else {
-          avg_idx_1 = fmod(GNC2026W_DW.k_c, sampleTime);
-          rEQ0 = (avg_idx_1 == 0.0);
-          if ((!rEQ0) && (sampleTime > floor(sampleTime))) {
-            q = fabs(GNC2026W_DW.k_c / sampleTime);
-            rEQ0 = !(fabs(q - floor(q + 0.5)) > 2.2204460492503131E-16 * q);
-          }
-
-          if (rEQ0) {
-            avg_idx_1 = sampleTime * 0.0;
-          } else if (((avg_idx_1 < 0.0) && (!(sampleTime < 0.0))) ||
-                     ((!(avg_idx_1 < 0.0)) && (sampleTime < 0.0))) {
-            avg_idx_1 += sampleTime;
-          }
+          r = 0;
         }
 
-        if (avg_idx_1 == 0.0) {
-          r = 1;
-        }
-
-        GNC2026W_DW.k_c++;
-        if ((GNC2026W_DW.isValid == 1.0) && (r == 1)) {
+        if ((GNC2026W_DW.isValid != 0.0) && (r == 1)) {
           for (r = 0; r < 6; r++) {
             GNC2026W_B.Merge_k[r] = delta_x[r];
           }
@@ -9537,10 +9520,10 @@ void GNC2026W_step(void)
         GNC2026W_B.Merge_k[2] = rt_atan2d_snf(sin(GNC2026W_B.Merge_k[2]), cos
           (GNC2026W_B.Merge_k[2]));
         for (r3 = 0; r3 < 6; r3++) {
-          GNC2026W_DW.x_i[r3] = GNC2026W_B.Merge_k[r3];
+          GNC2026W_DW.x_c[r3] = GNC2026W_B.Merge_k[r3];
         }
 
-        memcpy(&GNC2026W_DW.P_f[0], &P_est[0], 36U * sizeof(real_T));
+        memcpy(&GNC2026W_DW.P_d[0], &P_est[0], 36U * sizeof(real_T));
 
         // DataStoreWrite: '<S230>/Data Store Write3' incorporates:
         //   MATLAB Function: '<S230>/Unscented Kalman Filter'
@@ -10614,7 +10597,7 @@ void GNC2026W_step(void)
       RED_Path[2] = GNC2026W_B.ReceivePhaseSpaceData_o1[6];
 
       // MATLAB Function: '<S270>/BLK CoM to LAR'
-      q = sin(RED_Path[2]);
+      th_c = sin(RED_Path[2]);
       sc = cos(RED_Path[2]);
 
       // MATLAB Function: '<S270>/Inertial to Camera Frame (HARDWARE)' incorporates:
@@ -10625,9 +10608,9 @@ void GNC2026W_step(void)
 
       diff_idx_0 = sin(GNC2026W_B.y);
       avg_idx_0 = cos(GNC2026W_B.y);
-      avg_idx_1 = ((sc * 0.145 + -q * 0.0) + GNC2026W_B.ConvertBLAXfrommmtom) -
-        GNC2026W_DW.RED_Measured_States[0];
-      q = ((q * 0.145 + sc * 0.0) + sampleTime) -
+      avg_idx_1 = ((sc * 0.145 + -th_c * 0.0) + GNC2026W_B.ConvertBLAXfrommmtom)
+        - GNC2026W_DW.RED_Measured_States[0];
+      th_c = ((th_c * 0.145 + sc * 0.0) + sampleTime) -
         GNC2026W_DW.RED_Measured_States[1];
 
       // Sum: '<S270>/Sum' incorporates:
@@ -10636,9 +10619,9 @@ void GNC2026W_step(void)
       //   MATLAB Function: '<S270>/Inertial to Camera Frame (HARDWARE)'
       //   SignalConversion generated from: '<S279>/ SFunction '
 
-      rtb_r_REL[0] = ((avg_idx_0 * avg_idx_1 + diff_idx_0 * q) - 0.125) +
+      rtb_r_REL[0] = ((avg_idx_0 * avg_idx_1 + diff_idx_0 * th_c) - 0.125) +
         BLACK_Exp_Noise;
-      rtb_r_REL[1] = ((-diff_idx_0 * avg_idx_1 + avg_idx_0 * q) - 0.03) +
+      rtb_r_REL[1] = ((-diff_idx_0 * avg_idx_1 + avg_idx_0 * th_c) - 0.03) +
         BLACK_Exp_Noise;
       rtb_r_REL[2] = (RED_Path[2] - GNC2026W_B.y) + BLACK_Exp_Noise;
 
@@ -10652,7 +10635,7 @@ void GNC2026W_step(void)
         rtb_r_REL[2] += diff_idx_0;
       }
 
-      avg_idx_0 = rt_roundd_snf(rtb_r_REL[0] / 0.0001) * 0.0001;
+      th_c = rt_roundd_snf(rtb_r_REL[0] / 0.0001) * 0.0001;
       BLACK_Exp_Noise = rt_roundd_snf(rtb_r_REL[1] / 0.0001) * 0.0001;
       sc = rt_roundd_snf(rtb_r_REL[2] / 0.0001) * 0.0001;
 
@@ -10663,47 +10646,48 @@ void GNC2026W_step(void)
 
       if (!GNC2026W_DW.k_not_empty) {
         GNC2026W_DW.k_not_empty = true;
-        GNC2026W_DW.y_hold[0] = avg_idx_0;
+        GNC2026W_DW.y_hold[0] = th_c;
         GNC2026W_DW.y_hold[1] = BLACK_Exp_Noise;
         GNC2026W_DW.y_hold[2] = sc;
       }
 
       diff_idx_0 = GNC2026W_P.CVrate / GNC2026W_P.baseRate;
-      avg_idx_1 = GNC2026W_DW.k;
+      avg_idx_0 = GNC2026W_DW.k;
       if (diff_idx_0 == 0.0) {
         if (GNC2026W_DW.k == 0.0) {
-          avg_idx_1 = diff_idx_0;
+          avg_idx_0 = diff_idx_0;
         }
       } else if (rtIsNaN(GNC2026W_DW.k)) {
-        avg_idx_1 = (rtNaN);
+        avg_idx_0 = (rtNaN);
       } else if (rtIsNaN(diff_idx_0)) {
-        avg_idx_1 = (rtNaN);
+        avg_idx_0 = (rtNaN);
       } else if (rtIsInf(GNC2026W_DW.k)) {
-        avg_idx_1 = (rtNaN);
+        avg_idx_0 = (rtNaN);
       } else if (GNC2026W_DW.k == 0.0) {
-        avg_idx_1 = 0.0 / diff_idx_0;
+        avg_idx_0 = 0.0 / diff_idx_0;
       } else if (rtIsInf(diff_idx_0)) {
         if ((diff_idx_0 < 0.0) != (GNC2026W_DW.k < 0.0)) {
-          avg_idx_1 = diff_idx_0;
+          avg_idx_0 = diff_idx_0;
         }
       } else {
-        avg_idx_1 = fmod(GNC2026W_DW.k, diff_idx_0);
-        rEQ0 = (avg_idx_1 == 0.0);
+        avg_idx_0 = fmod(GNC2026W_DW.k, diff_idx_0);
+        rEQ0 = (avg_idx_0 == 0.0);
         if ((!rEQ0) && (diff_idx_0 > floor(diff_idx_0))) {
-          q = fabs(GNC2026W_DW.k / diff_idx_0);
-          rEQ0 = !(fabs(q - floor(q + 0.5)) > 2.2204460492503131E-16 * q);
+          avg_idx_1 = fabs(GNC2026W_DW.k / diff_idx_0);
+          rEQ0 = !(fabs(avg_idx_1 - floor(avg_idx_1 + 0.5)) >
+                   2.2204460492503131E-16 * avg_idx_1);
         }
 
         if (rEQ0) {
-          avg_idx_1 = diff_idx_0 * 0.0;
-        } else if (((avg_idx_1 < 0.0) && (!(diff_idx_0 < 0.0))) || ((!(avg_idx_1
+          avg_idx_0 = diff_idx_0 * 0.0;
+        } else if (((avg_idx_0 < 0.0) && (!(diff_idx_0 < 0.0))) || ((!(avg_idx_0
           < 0.0)) && (diff_idx_0 < 0.0))) {
-          avg_idx_1 += diff_idx_0;
+          avg_idx_0 += diff_idx_0;
         }
       }
 
-      if (avg_idx_1 == 0.0) {
-        GNC2026W_DW.y_hold[0] = avg_idx_0;
+      if (avg_idx_0 == 0.0) {
+        GNC2026W_DW.y_hold[0] = th_c;
         GNC2026W_DW.y_hold[1] = BLACK_Exp_Noise;
         GNC2026W_DW.y_hold[2] = sc;
       }
@@ -11244,7 +11228,7 @@ void GNC2026W_step(void)
 
       // S-Function (sdspFromNetwork): '<S313>/UDP Receive'
       sErr = GetErrorBuffer(&GNC2026W_DW.UDPReceive_NetworkLib[0U]);
-      samplesRead_1 = 6;
+      samplesRead_1 = 10;
       LibOutputs_Network(&GNC2026W_DW.UDPReceive_NetworkLib[0U],
                          &GNC2026W_B.UDPReceive_o1[0U], &samplesRead_1);
       if (*sErr != 0) {
@@ -11272,6 +11256,20 @@ void GNC2026W_step(void)
       //   DataStoreWrite: '<S313>/Data Store Write3'
 
       GNC2026W_DW.Grab_Location_Reached = GNC2026W_B.UDPReceive_o1[0];
+
+      // DataStoreWrite: '<S313>/Data Store Write4' incorporates:
+      //   DataTypeConversion: '<S313>/Cast To Double8'
+      //   DataTypeConversion: '<S313>/Cast To Double9'
+
+      GNC2026W_DW.EE_Desired[0] = GNC2026W_B.UDPReceive_o1[8];
+      GNC2026W_DW.EE_Desired[1] = GNC2026W_B.UDPReceive_o1[9];
+
+      // DataStoreWrite: '<S313>/Data Store Write5' incorporates:
+      //   DataTypeConversion: '<S313>/Cast To Double6'
+      //   DataTypeConversion: '<S313>/Cast To Double7'
+
+      GNC2026W_DW.EE_Path[0] = GNC2026W_B.UDPReceive_o1[6];
+      GNC2026W_DW.EE_Path[1] = GNC2026W_B.UDPReceive_o1[7];
 
       // End of Outputs for SubSystem: '<S13>/ROB UDP'
     } else {
@@ -11513,10 +11511,10 @@ void GNC2026W_step(void)
       //   DataStoreWrite: '<S318>/Data Store Write4'
 
       GNC2026W_B.TmpSignalConversionAtUDPSendI_o[0] = GNC2026W_DW.ARM_Extend;
-      GNC2026W_B.TmpSignalConversionAtUDPSendI_o[1] = GNC2026W_DW.EE_Desired[0];
+      GNC2026W_B.TmpSignalConversionAtUDPSendI_o[1] = GNC2026W_DW.EE_Goal[0];
       GNC2026W_B.TmpSignalConversionAtUDPSendI_o[2] = GNC2026W_DW.Begin_Berth;
-      GNC2026W_B.TmpSignalConversionAtUDPSendI_o[3] = GNC2026W_DW.EE_Desired[1];
-      GNC2026W_B.TmpSignalConversionAtUDPSendI_o[4] = GNC2026W_DW.EE_Desired[2];
+      GNC2026W_B.TmpSignalConversionAtUDPSendI_o[3] = GNC2026W_DW.EE_Goal[1];
+      GNC2026W_B.TmpSignalConversionAtUDPSendI_o[4] = GNC2026W_DW.EE_Goal[2];
 
       // Update for S-Function (sdspToNetwork): '<S318>/UDP Send' incorporates:
       //   SignalConversion generated from: '<S318>/UDP Send'
@@ -11846,9 +11844,6 @@ void GNC2026W_initialize(void)
     int32_T t;
     uint32_T seed;
     char_T *sErr;
-    static const real_T c[6] = { 1.0, 1.0, 0.31415926535897931, 0.05, 0.0025,
-      0.03490659 };
-
     static const real_T b[6] = { 0.5, 0.5, 1.0, 1.0, 0.5, 0.5 };
 
     static const real_T b_0[6] = { 1.0, 1.0, 0.05, 0.05, 1.0, 0.05 };
@@ -12265,7 +12260,31 @@ void GNC2026W_initialize(void)
     GNC2026W_DW.residual[0] = GNC2026W_P.Universal_Time44_InitialValue[0];
 
     // Start for DataStoreMemory: '<Root>/Universal_Time48'
-    GNC2026W_DW.EE_Desired[0] = GNC2026W_P.Universal_Time48_InitialValue[0];
+    GNC2026W_DW.EE_Goal[0] = GNC2026W_P.Universal_Time48_InitialValue[0];
+
+    // Start for DataStoreMemory: '<Root>/Universal_Time44'
+    GNC2026W_DW.residual[1] = GNC2026W_P.Universal_Time44_InitialValue[1];
+
+    // Start for DataStoreMemory: '<Root>/Universal_Time48'
+    GNC2026W_DW.EE_Goal[1] = GNC2026W_P.Universal_Time48_InitialValue[1];
+
+    // Start for DataStoreMemory: '<Root>/Universal_Time44'
+    GNC2026W_DW.residual[2] = GNC2026W_P.Universal_Time44_InitialValue[2];
+
+    // Start for DataStoreMemory: '<Root>/Universal_Time48'
+    GNC2026W_DW.EE_Goal[2] = GNC2026W_P.Universal_Time48_InitialValue[2];
+
+    // Start for DataStoreMemory: '<Root>/Universal_Time49'
+    GNC2026W_DW.EE_Path[0] = GNC2026W_P.Universal_Time49_InitialValue[0];
+
+    // Start for DataStoreMemory: '<Root>/Universal_Time50'
+    GNC2026W_DW.EE_Desired[0] = GNC2026W_P.Universal_Time50_InitialValue[0];
+
+    // Start for DataStoreMemory: '<Root>/Universal_Time49'
+    GNC2026W_DW.EE_Path[1] = GNC2026W_P.Universal_Time49_InitialValue[1];
+
+    // Start for DataStoreMemory: '<Root>/Universal_Time50'
+    GNC2026W_DW.EE_Desired[1] = GNC2026W_P.Universal_Time50_InitialValue[1];
 
     // Start for DataStoreMemory: '<Root>/Universal_Time6'
     GNC2026W_DW.BLUE_Saturated_Controls[0] =
@@ -12275,12 +12294,6 @@ void GNC2026W_initialize(void)
     GNC2026W_DW.ARM_Desired_States[0] = GNC2026W_P.Universal_Time8_InitialValue
       [0];
 
-    // Start for DataStoreMemory: '<Root>/Universal_Time44'
-    GNC2026W_DW.residual[1] = GNC2026W_P.Universal_Time44_InitialValue[1];
-
-    // Start for DataStoreMemory: '<Root>/Universal_Time48'
-    GNC2026W_DW.EE_Desired[1] = GNC2026W_P.Universal_Time48_InitialValue[1];
-
     // Start for DataStoreMemory: '<Root>/Universal_Time6'
     GNC2026W_DW.BLUE_Saturated_Controls[1] =
       GNC2026W_P.Universal_Time6_InitialValue[1];
@@ -12288,12 +12301,6 @@ void GNC2026W_initialize(void)
     // Start for DataStoreMemory: '<Root>/Universal_Time8'
     GNC2026W_DW.ARM_Desired_States[1] = GNC2026W_P.Universal_Time8_InitialValue
       [1];
-
-    // Start for DataStoreMemory: '<Root>/Universal_Time44'
-    GNC2026W_DW.residual[2] = GNC2026W_P.Universal_Time44_InitialValue[2];
-
-    // Start for DataStoreMemory: '<Root>/Universal_Time48'
-    GNC2026W_DW.EE_Desired[2] = GNC2026W_P.Universal_Time48_InitialValue[2];
 
     // Start for DataStoreMemory: '<Root>/Universal_Time6'
     GNC2026W_DW.BLUE_Saturated_Controls[2] =
@@ -12815,18 +12822,6 @@ void GNC2026W_initialize(void)
     // InitializeConditions for Delay: '<S249>/Delay1'
     GNC2026W_DW.Delay1_DSTATE_a = GNC2026W_P.init_states_BLACK[2];
 
-    // SystemInitialize for Merge: '<S248>/Merge'
-    GNC2026W_B.Merge_b[0] = GNC2026W_P.Merge_InitialOutput_e;
-    GNC2026W_B.Merge_b[1] = GNC2026W_P.Merge_InitialOutput_e;
-    GNC2026W_B.Merge_b[2] = GNC2026W_P.Merge_InitialOutput_e;
-
-    // SystemInitialize for MATLAB Function: '<S230>/Unscented Kalman Filter'
-    memset(&GNC2026W_DW.P_f[0], 0, 36U * sizeof(real_T));
-    for (i = 0; i < 6; i++) {
-      GNC2026W_DW.P_f[i + 6 * i] = c[i];
-    }
-
-    // End of SystemInitialize for MATLAB Function: '<S230>/Unscented Kalman Filter' 
     // End of SystemInitialize for SubSystem: '<S227>/UKF'
 
     // SystemInitialize for IfAction SubSystem: '<S227>/MEKF'
@@ -12836,9 +12831,40 @@ void GNC2026W_initialize(void)
     // InitializeConditions for Delay: '<S240>/Delay1'
     GNC2026W_DW.Delay1_DSTATE_d = GNC2026W_P.init_states_BLACK[2];
 
+    // End of SystemInitialize for SubSystem: '<S227>/MEKF'
+
+    // SystemInitialize for IfAction SubSystem: '<S227>/UKF'
+    // SystemInitialize for Merge: '<S248>/Merge'
+    GNC2026W_B.Merge_b[0] = GNC2026W_P.Merge_InitialOutput_e;
+
+    // End of SystemInitialize for SubSystem: '<S227>/UKF'
+
+    // SystemInitialize for IfAction SubSystem: '<S227>/MEKF'
     // SystemInitialize for Merge: '<S239>/Merge'
     GNC2026W_B.Merge_d[0] = GNC2026W_P.Merge_InitialOutput_p;
+
+    // End of SystemInitialize for SubSystem: '<S227>/MEKF'
+
+    // SystemInitialize for IfAction SubSystem: '<S227>/UKF'
+    // SystemInitialize for Merge: '<S248>/Merge'
+    GNC2026W_B.Merge_b[1] = GNC2026W_P.Merge_InitialOutput_e;
+
+    // End of SystemInitialize for SubSystem: '<S227>/UKF'
+
+    // SystemInitialize for IfAction SubSystem: '<S227>/MEKF'
+    // SystemInitialize for Merge: '<S239>/Merge'
     GNC2026W_B.Merge_d[1] = GNC2026W_P.Merge_InitialOutput_p;
+
+    // End of SystemInitialize for SubSystem: '<S227>/MEKF'
+
+    // SystemInitialize for IfAction SubSystem: '<S227>/UKF'
+    // SystemInitialize for Merge: '<S248>/Merge'
+    GNC2026W_B.Merge_b[2] = GNC2026W_P.Merge_InitialOutput_e;
+
+    // End of SystemInitialize for SubSystem: '<S227>/UKF'
+
+    // SystemInitialize for IfAction SubSystem: '<S227>/MEKF'
+    // SystemInitialize for Merge: '<S239>/Merge'
     GNC2026W_B.Merge_d[2] = GNC2026W_P.Merge_InitialOutput_p;
 
     // SystemInitialize for MATLAB Function: '<S229>/MEKF'

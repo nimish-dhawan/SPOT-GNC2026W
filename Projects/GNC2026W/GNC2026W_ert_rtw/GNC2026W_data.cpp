@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'GNC2026W'.
 //
-// Model version                  : 4.2357
+// Model version                  : 4.2391
 // Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
-// C/C++ source code generated on : Wed Apr  1 16:17:53 2026
+// C/C++ source code generated on : Thu Apr  2 20:44:35 2026
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: ARM Compatible->ARM Cortex-A (64-bit)
@@ -29,7 +29,6 @@ P_GNC2026W_T GNC2026W_P = {
   //  Referenced by:
   //    '<S228>/EKF'
   //    '<S229>/MEKF'
-  //    '<S230>/Unscented Kalman Filter'
   //    '<S270>/Sample and Hold'
 
   0.2,
@@ -226,6 +225,14 @@ P_GNC2026W_T GNC2026W_P = {
   { 0.082392683529702554, 0.0, 0.0, 0.0, 0.082392683529702554, 0.0, 0.0, 0.0,
     5.0463923588119766 },
 
+  // Variable: P0
+  //  Referenced by: '<S230>/Unscented Kalman Filter'
+
+  { 2.25, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    9.869604401089358, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0025000000000000005, 0.0,
+    0.0, 0.0, 0.0, 0.0, 0.0, 6.25E-6, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    0.0012184700254281 },
+
   // Variable: PWMFreq
   //  Referenced by:
   //    '<S18>/PWM Frequency'
@@ -314,9 +321,9 @@ P_GNC2026W_T GNC2026W_P = {
   // Variable: Q
   //  Referenced by: '<S230>/Unscented Kalman Filter'
 
-  { 1.0E-6, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-6, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-    1.0E-6, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-6, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-    1.0E-6, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-6 },
+  { 1.0E-9, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-9, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    1.0E-9, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-9, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    1.0E-9, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-9 },
 
   // Variable: R
   //  Referenced by: '<S230>/Unscented Kalman Filter'
@@ -390,7 +397,6 @@ P_GNC2026W_T GNC2026W_P = {
   //    '<S315>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
   //    '<S228>/EKF'
   //    '<S229>/MEKF'
-  //    '<S230>/Unscented Kalman Filter'
   //    '<S270>/Sample and Hold'
   //    '<S276>/MATLAB Function1'
 
@@ -530,6 +536,11 @@ P_GNC2026W_T GNC2026W_P = {
   { 71.579508939606143, -60.420491060393836, 60.451141138666884,
     -84.0488588613331, 63.420491060393836, -70.579508939606143, 76.5488588613331,
     -52.951141138666891 },
+
+  // Variable: x0
+  //  Referenced by: '<S230>/Unscented Kalman Filter'
+
+  { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 },
 
   // Variable: xLength
   //  Referenced by:
@@ -2197,10 +2208,20 @@ P_GNC2026W_T GNC2026W_P = {
 
   { 0.0, 0.0, 0.0 },
 
+  // Expression: zeros(2,1)
+  //  Referenced by: '<Root>/Universal_Time49'
+
+  { 0.0, 0.0 },
+
   // Expression: [0;0;0]
   //  Referenced by: '<Root>/Universal_Time5'
 
   { 0.0, 0.0, 0.0 },
+
+  // Expression: zeros(2,1)
+  //  Referenced by: '<Root>/Universal_Time50'
+
+  { 0.0, 0.0 },
 
   // Expression: [0;0;0]
   //  Referenced by: '<Root>/Universal_Time6'

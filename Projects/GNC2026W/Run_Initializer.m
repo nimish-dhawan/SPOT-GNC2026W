@@ -128,12 +128,15 @@ fNum = 1;
 a = 1;
 b = 2;
 k = 5;
+dt = baseRate;
 
 % Covariance and state initialization for UKF
-R = diag([0.05, 0.05, 0.5]);
-Q = 1e-06*eye(6);
-
-dt = baseRate;
+R  = diag([0.02, 0.02, 0.25].^2);               % Vision measurements really good
+G  = [0.5*dt^2*eye(3); dt*eye(3)];
+Qk = 1e-02*eye(3);
+Q  = G*Qk*G';                                   % The inertial dynamics doesn't account for arm, therefore cannot trust 
+x0 = [1.1*init_states_BLACK'; zeros(3,1)];      % Putting this as zeros is not a good idea
+P0 = 0.2*eye(6);                                % High values because state initialized at zeros(6,1)
 
 CVrate = 1/5; % sec
 
@@ -151,9 +154,9 @@ VISinLoop = 1;
 % scenario = 3 for rotation only
 scenario  = 3;
 
-if scenario == 3 %|| scenario == 2
-    R = diag([0.01, 0.01, 0.025].^2); % Results quicker filter convergence
-end
+% if scenario == 3 %|| scenario == 2
+%     R = diag([0.01, 0.01, 0.025].^2); % Results quicker filter convergence
+% end
 
 %% This section of the code contains parameters should not be modified
 
