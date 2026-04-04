@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'GNC2026W'.
 //
-// Model version                  : 4.2424
+// Model version                  : 4.2443
 // Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
-// C/C++ source code generated on : Fri Apr  3 21:47:35 2026
+// C/C++ source code generated on : Sat Apr  4 16:38:35 2026
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: ARM Compatible->ARM Cortex-A (64-bit)
@@ -760,7 +760,7 @@ struct P_GNC2026W_T_ {
   real_T a;                            // Variable: a
                                           //  Referenced by: '<S230>/Unscented Kalman Filter'
 
-  real_T alpha;                        // Variable: alpha
+  real_T alpha[9];                     // Variable: alpha
                                           //  Referenced by: '<S163>/MATLAB Function3'
 
   real_T b;                            // Variable: b
@@ -1091,10 +1091,10 @@ struct P_GNC2026W_T_ {
   real_T DesiredRateBLACK_Value_k;     // Expression: 0.03490659
                                           //  Referenced by: '<S64>/Desired Rate (BLACK)'
 
-  real_T Constant1_Value_f;            // Expression: 0.01
+  real_T Constant1_Value_f;            // Expression: 0.01/2
                                           //  Referenced by: '<S65>/Constant1'
 
-  real_T Constant_Value_f;             // Expression: 0.005
+  real_T Constant_Value_f;             // Expression: 0.005/2
                                           //  Referenced by: '<S65>/Constant'
 
   real_T DesiredRateBLACK_Value_b;     // Expression: 0.03490659

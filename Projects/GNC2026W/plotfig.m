@@ -97,7 +97,7 @@ ax.FontSize = 10;
 ax.FontName = "Times New Roman";
 
 err = x_est - r_t_I;
-
+err(3) = wrap(err(3));
 errVIS = y_I' - r_t_I;
 
 subplot(3,2,2)
@@ -418,7 +418,7 @@ figure('Name','Trajectory')
 % User can specify indices to show snapshots of the platforms. Typically, 
 % these would be the initial and final conditions, but can also include 
 % intermediate snapshots
-plotting_indices = [1,1836]; 
+plotting_indices = [1,3359]; 
 % plotting_indices = [1, unique_inds(end)]; 
 alpha_values     = [0.2, 1];
 % alpha_values     = [0.2*ones(1,length(plotting_indices)-1) 1];    % transparency for each snapshot; must be same length as 'plotting_indices'
@@ -496,9 +496,9 @@ if anim == 1 % Trajectory animation
         spacecraft = DrawSpacecraft([expdata_RED_pos_x(frame),expdata_RED_pos_y(frame),expdata_RED_pos_th(frame),5]);
         patch(spacecraft(:,1), spacecraft(:,2), 'w', 'facealpha', 0.5, 'edgecolor', 'r', 'edgealpha',1,'Linewidth',0.5)
         [shoulder,elbow,wrist] = DrawARM([expdata_RED_pos_x(frame),expdata_RED_pos_y(frame),expdata_RED_pos_th(frame),ARMq1(frame),ARMq2(frame),ARMq3(frame)]);
-        patch(shoulder(:,1), shoulder(:,2), 'w', 'facealpha', alpha, 'edgecolor', 'r', 'edgealpha',alpha)
-        patch(elbow(:,1), elbow(:,2), 'w', 'facealpha', alpha, 'edgecolor', 'r', 'edgealpha',alpha)
-        patch(wrist(:,1), wrist(:,2), 'w', 'facealpha', alpha, 'edgecolor', 'r', 'edgealpha',alpha)
+        % patch(shoulder(:,1), shoulder(:,2), 'w', 'facealpha', alpha, 'edgecolor', 'r', 'edgealpha',alpha)
+        % patch(elbow(:,1), elbow(:,2), 'w', 'facealpha', alpha, 'edgecolor', 'r', 'edgealpha',alpha)
+        % patch(wrist(:,1), wrist(:,2), 'w', 'facealpha', alpha, 'edgecolor', 'r', 'edgealpha',alpha)
 
         spacecraft = DrawSpacecraft([expdata_BLACK_pos_x(frame),expdata_BLACK_pos_y(frame),expdata_BLACK_pos_th(frame),7]);
         patch(spacecraft(:,1), spacecraft(:,2), 'w', 'facealpha', 0.5, 'edgecolor', 'k', 'edgealpha',1,'Linewidth',0.5)

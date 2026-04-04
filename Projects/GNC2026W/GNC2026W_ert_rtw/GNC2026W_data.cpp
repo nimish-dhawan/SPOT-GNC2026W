@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'GNC2026W'.
 //
-// Model version                  : 4.2424
+// Model version                  : 4.2443
 // Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
-// C/C++ source code generated on : Fri Apr  3 21:47:35 2026
+// C/C++ source code generated on : Sat Apr  4 16:38:35 2026
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: ARM Compatible->ARM Cortex-A (64-bit)
@@ -286,7 +286,7 @@ P_GNC2026W_T GNC2026W_P = {
   // Variable: Phase3_End
   //  Referenced by: '<S1>/Constant2'
 
-  595.0,
+  415.0,
 
   // Variable: Phase3_SubPhase1_End
   //  Referenced by:
@@ -298,27 +298,27 @@ P_GNC2026W_T GNC2026W_P = {
   // Variable: Phase3_SubPhase2_End
   //  Referenced by: '<S23>/Constant1'
 
-  595.0,
+  415.0,
 
   // Variable: Phase3_SubPhase3_End
   //  Referenced by: '<S23>/Constant2'
 
-  595.0,
+  415.0,
 
   // Variable: Phase3_SubPhase4_End
   //  Referenced by: '<S23>/Constant3'
 
-  595.0,
+  415.0,
 
   // Variable: Phase4_End
   //  Referenced by: '<S1>/Constant3'
 
-  625.0,
+  445.0,
 
   // Variable: Phase5_End
   //  Referenced by: '<S1>/Constant6'
 
-  645.0,
+  465.0,
 
   // Variable: Q
   //  Referenced by: '<S230>/Unscented Kalman Filter'
@@ -386,7 +386,7 @@ P_GNC2026W_T GNC2026W_P = {
   // Variable: alpha
   //  Referenced by: '<S163>/MATLAB Function3'
 
-  1.0,
+  { 2.0, 0.0, 0.0, 0.0, 2.0, 0.0, 0.0, 0.0, 2.0 },
 
   // Variable: b
   //  Referenced by: '<S230>/Unscented Kalman Filter'
@@ -865,15 +865,15 @@ P_GNC2026W_T GNC2026W_P = {
 
   0.03490659,
 
-  // Expression: 0.01
+  // Expression: 0.01/2
   //  Referenced by: '<S65>/Constant1'
 
-  0.01,
+  0.005,
 
-  // Expression: 0.005
+  // Expression: 0.005/2
   //  Referenced by: '<S65>/Constant'
 
-  0.005,
+  0.0025,
 
   // Expression: 0.03490659
   //  Referenced by: '<S70>/Desired Rate (BLACK)'
@@ -2405,7 +2405,7 @@ P_GNC2026W_T GNC2026W_P = {
   // Computed Parameter: ManualSwitch_CurrentSetting
   //  Referenced by: '<S314>/Manual Switch'
 
-  1U,
+  0U,
 
   // Computed Parameter: ManualSwitch1_CurrentSetting
   //  Referenced by: '<S314>/Manual Switch1'

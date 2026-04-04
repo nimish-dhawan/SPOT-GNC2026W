@@ -51,8 +51,8 @@ dt = 0.05;
 % Ryan's recommendation
 F = [eye(3), dt*eye(3); zeros(3), eye(3)];
 G = [0.5*(dt^2)*eye(3); dt*eye(3)];
-q = [1e-9, 1e-9, 1e-9];   
-% q = 1e-06*ones(3,1);
+% q = [1e-9, 1e-9, 1e-9];   
+q = 1e-06*ones(3,1);
 Q = G*diag(q)*G';
 P0 = F*(0.2*eye(6))*F' + Q;
 x0 = [1.1*r_t_I(1,:)'; zeros(3,1)]; 
@@ -70,6 +70,8 @@ P_est = zeros(6,6,length(t));
 res   = zeros(3,length(t));
 y_I   = zeros(3,length(t));
 NEES  = zeros(6,6,length(t));
+NIS   = zeros(length(t),1);
+dM    = zeros(length(t),1);
 
 % Running the UKF
 for i = 1185:length(t)
@@ -79,6 +81,8 @@ for i = 1185:length(t)
     x_est(:,i)   = est.x;
     P_est(:,:,i) = est.P;
     res(:,i)     = est.r;
+    NIS(i,1)     = est.NIS;
+    dM(i,1)      = sqrt(NIS(i,1));
 
     % Mapping VIS measurements to inertial frame
     y_I(:,i) =  rot(y(i,:)',r_c_I(i,:)');
@@ -90,7 +94,7 @@ for i = 1185:length(t)
 end
 
 %% Plotting results
-% close all
+close all
 
 % Filter pose estimates
 figure
@@ -117,7 +121,12 @@ plot(t,y_I(3,:),'bo','MarkerSize',0.5)
 plot(t,x_est_Exp(:,3),'m')
 xlim(period); xlabel('Time [s]')
 
-% save('x_est.mat', "x_est")
+figure
+plot(t,NIS)
+
+figure
+plot(t,dM)
+
 
 %% Functions ==============================================================
 function y_I = rot(y,r_C_I)

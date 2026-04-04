@@ -103,83 +103,87 @@ for i = 1 : (2*n+1)
 end
 
 %% Correction =============================================================
-S_minus = chol(P_minus)';        % Gives lower triangle
-
-% Sigma points calculation 
-for i = 1:2*n+1 
-    if i == 1
-        Xi_minus(:,i) = x_minus;
-    elseif i > 1 && i <= n+1
-        Xi_minus(:,i) = x_minus + sqrt(n + lambda) * S_minus(:,i-1);
-    else
-        Xi_minus(:,i) = x_minus - sqrt(n + lambda) * S_minus(:,i-n-1);
-    end
-end
-
-% Predicted measurement calculation 
-for i = 1 : (2*n+1)
-    % Measurement model
-    A = [cc sc 0 0 0 0;
-        -sc cc 0 0 0 0;
-         0  0  1 0 0 0];
-
-    B = [x_LAR*cos(Xi_minus(3,i)-th_c) - x_c_I*cc - y_c_I*sc - l_cam_x;
-         x_LAR*sin(Xi_minus(3,i)-th_c) + x_c_I*sc - y_c_I*cc - l_cam_y;
-        -th_c ];
-
-    h(:,i) = A*Xi_minus(:,i) + B;
-
-    y_hat = y_hat + wi_m(i) * h(:,i);
-end
-
-% Residual
-r = wrap(y - y_hat);
-
-% norm(r) = 0.05 works, DO NOT CHANGE (experimentally validated)
-% NEW - March 31st: Testing norm(r(1:2)) for convergence
-if norm(r) < 0.05 
-    converge = 1;
-end
-confidence = converge;
-
-% Estimated covariance calculation
-for i = 1 : (2*n+1)
-    P_yy = P_yy + wi_c(i) * (h(:,i)-y_hat) * (h(:,i)-y_hat)' + R;
-    P_xy = P_xy + wi_c(i) * (Xi_minus(:,i) - x_minus) * (h(:,i)-y_hat)';
-end
-
-% Posteriori state estimate and covariance 
-K = P_xy * inv(P_yy);
-
-P_plus = P_minus - K * P_yy * K';
-x_plus = x_minus + K * r;
-
-% Mahalanobis distance
-% dM          = sqrt(r' * inv(P_yy) * r);
-% isOutlier   = dM > 30;
-% 
-% if isOutlier == 1
-%     P_plus = P_minus;
-%     x_plus = x_minus;
-% end
-
-%% Updating memory
 newMeas = measurement_flag(isValid);
 
+% Run the correction step if there are new measurements without frame drops
 if isValid ~= 0 && newMeas == 1 
-    x_est = x_plus;
-    P_est = P_plus;
+    S_minus = chol(P_minus)';       
+
+    % Sigma points calculation 
+    for i = 1:2*n+1 
+        if i == 1
+            Xi_minus(:,i) = x_minus;
+        elseif i > 1 && i <= n+1
+            Xi_minus(:,i) = x_minus + sqrt(n + lambda) * S_minus(:,i-1);
+        else
+            Xi_minus(:,i) = x_minus - sqrt(n + lambda) * S_minus(:,i-n-1);
+        end
+    end
+    
+    % Predicted measurement calculation 
+    for i = 1 : (2*n+1)
+        % Measurement model
+        A = [cc sc 0 0 0 0;
+            -sc cc 0 0 0 0;
+             0  0  1 0 0 0];
+    
+        B = [x_LAR*cos(Xi_minus(3,i)-th_c) - x_c_I*cc - y_c_I*sc - l_cam_x;
+             x_LAR*sin(Xi_minus(3,i)-th_c) + x_c_I*sc - y_c_I*cc - l_cam_y;
+            -th_c ];
+    
+        h(:,i) = A*Xi_minus(:,i) + B;
+    
+        y_hat = y_hat + wi_m(i) * h(:,i);
+    end
+    
+    % Residual
+    r = wrap(y - y_hat);
+    
+    % norm(r) = 0.05 works, DO NOT CHANGE (experimentally validated)
+    if norm(r) < 0.05 
+        converge = 1;
+    end
+    
+    % Estimated covariance calculation
+    for i = 1 : (2*n+1)
+        P_yy = P_yy + wi_c(i) * (h(:,i)-y_hat) * (h(:,i)-y_hat)' + R;
+        P_xy = P_xy + wi_c(i) * (Xi_minus(:,i) - x_minus) * (h(:,i)-y_hat)';
+    end
+    
+    % NIS calculation
+    NIS = r' * inv(P_yy) * r;
+    
+    % Posteriori state estimate and covariance 
+    K = P_xy * inv(P_yy);
+    
+    P_est = P_minus - K * P_yy * K';
+    x_est = x_minus + K * r;
+    x_est(3) = wrap(x_est(3));
+    
+    % Mahalanobis distance
+    dM          = sqrt(NIS);
+    isOutlier   = dM > chi2inv(97, dM);
+    % isOutlier   = dM > 10;
+
+    if isOutlier == 1
+        P_est = P_minus;
+        x_est= x_minus;
+    end
 else
+    r   = zeros(3,1);
+    NIS = 0;
+    dM  = 0;
     x_est = x_minus;
     P_est = P_minus;
 end
 
-x_est(3) = wrap(x_est(3));
+%% Updating memory
 
 est.x = x_est;
 est.P = P_est;
 est.r = r;
-est.conf = confidence;
+est.conf = converge;
+est.NIS  = NIS;
 
 x = x_est;
 P = P_est;

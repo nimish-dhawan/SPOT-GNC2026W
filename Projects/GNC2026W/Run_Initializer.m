@@ -165,10 +165,6 @@ VISinLoop = 1;
 % scenario = 3 for rotation only
 scenario  = 3;
 
-% if scenario == 3 %|| scenario == 2
-%     R = diag([0.01, 0.01, 0.025].^2); % Results quicker filter convergence
-% end
-
 %% This section of the code contains parameters should not be modified
 
 % Set the PWM frequency
