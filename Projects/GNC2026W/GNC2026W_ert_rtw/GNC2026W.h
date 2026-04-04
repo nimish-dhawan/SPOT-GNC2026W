@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'GNC2026W'.
 //
-// Model version                  : 4.2391
+// Model version                  : 4.2419
 // Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
-// C/C++ source code generated on : Thu Apr  2 20:44:35 2026
+// C/C++ source code generated on : Fri Apr  3 20:13:16 2026
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: ARM Compatible->ARM Cortex-A (64-bit)
@@ -318,6 +318,7 @@ struct DW_GNC2026W_T {
   real_T firstfit;                     // '<S59>/First Fit Detector'
   real_T prev;                         // '<S59>/First Fit Detector'
   real_T phase;                        // '<S59>/First Fit Detector'
+  real_T mode;                         // '<S54>/First Fit Detector'
   char_T RED_Logger[256];              // '<Root>/RED_Tz3'
   char_T BLACK_Logger[256];            // '<Root>/RED_Tz4'
   char_T BLUE_Logger[256];             // '<Root>/RED_Tz5'
@@ -1552,7 +1553,7 @@ struct P_GNC2026W_T_ {
   real_T Constant_Value_n1;            // Expression: 0
                                           //  Referenced by: '<S314>/Constant'
 
-  real_T Step_Time;                    // Expression: 140
+  real_T Step_Time;                    // Expression: 180
                                           //  Referenced by: '<S314>/Step'
 
   real_T Step_Y0;                      // Expression: 0

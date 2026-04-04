@@ -7,11 +7,18 @@
 %endfunction
 %function ChartDataMap(block, system) void
   %createrecord ChartDataElements {\
-    NumChartData   0 \
+    NumChartData   1 \
     ChartDataDefaults {\
       RecordType   "ChartData"\
       Dimensions   []\
       IsTestPoint  0\
+    }\
+    ChartData {\
+      Name         "mode"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "GNC2026W:32283:84-88"\
     }\
   }
   %return ChartDataElements

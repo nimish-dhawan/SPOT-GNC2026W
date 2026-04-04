@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'GNC2026W'.
 //
-// Model version                  : 4.2391
+// Model version                  : 4.2419
 // Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
-// C/C++ source code generated on : Thu Apr  2 20:44:35 2026
+// C/C++ source code generated on : Fri Apr  3 20:13:16 2026
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: ARM Compatible->ARM Cortex-A (64-bit)
@@ -228,10 +228,12 @@ P_GNC2026W_T GNC2026W_P = {
   // Variable: P0
   //  Referenced by: '<S230>/Unscented Kalman Filter'
 
-  { 2.25, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-    9.869604401089358, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0025000000000000005, 0.0,
-    0.0, 0.0, 0.0, 0.0, 0.0, 6.25E-6, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-    0.0012184700254281 },
+  { 0.20050000000156251, 0.0, 0.0, 0.010000000062500002, 0.0, 0.0, 0.0,
+    0.20050000000156251, 0.0, 0.0, 0.010000000062500002, 0.0, 0.0, 0.0,
+    0.20050000000156251, 0.0, 0.0, 0.010000000062500002, 0.010000000062500002,
+    0.0, 0.0, 0.20000000250000002, 0.0, 0.0, 0.0, 0.010000000062500002, 0.0, 0.0,
+    0.20000000250000002, 0.0, 0.0, 0.0, 0.010000000062500002, 0.0, 0.0,
+    0.20000000250000002 },
 
   // Variable: PWMFreq
   //  Referenced by:
@@ -284,7 +286,7 @@ P_GNC2026W_T GNC2026W_P = {
   // Variable: Phase3_End
   //  Referenced by: '<S1>/Constant2'
 
-  415.0,
+  595.0,
 
   // Variable: Phase3_SubPhase1_End
   //  Referenced by:
@@ -296,39 +298,41 @@ P_GNC2026W_T GNC2026W_P = {
   // Variable: Phase3_SubPhase2_End
   //  Referenced by: '<S23>/Constant1'
 
-  415.0,
+  595.0,
 
   // Variable: Phase3_SubPhase3_End
   //  Referenced by: '<S23>/Constant2'
 
-  415.0,
+  595.0,
 
   // Variable: Phase3_SubPhase4_End
   //  Referenced by: '<S23>/Constant3'
 
-  415.0,
+  595.0,
 
   // Variable: Phase4_End
   //  Referenced by: '<S1>/Constant3'
 
-  445.0,
+  625.0,
 
   // Variable: Phase5_End
   //  Referenced by: '<S1>/Constant6'
 
-  465.0,
+  645.0,
 
   // Variable: Q
   //  Referenced by: '<S230>/Unscented Kalman Filter'
 
-  { 1.0E-9, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-9, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-    1.0E-9, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-9, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-    1.0E-9, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-9 },
+  { 1.5625000000000007E-12, 0.0, 0.0, 6.25E-11, 0.0, 0.0, 0.0,
+    1.5625000000000007E-12, 0.0, 0.0, 6.25E-11, 0.0, 0.0, 0.0,
+    1.5625000000000007E-12, 0.0, 0.0, 6.25E-11, 6.2500000000000017E-11, 0.0, 0.0,
+    2.5E-9, 0.0, 0.0, 0.0, 6.2500000000000017E-11, 0.0, 0.0, 2.5E-9, 0.0, 0.0,
+    0.0, 6.2500000000000017E-11, 0.0, 0.0, 2.5E-9 },
 
   // Variable: R
   //  Referenced by: '<S230>/Unscented Kalman Filter'
 
-  { 0.0001, 0.0, 0.0, 0.0, 0.0001, 0.0, 0.0, 0.0, 0.00062500000000000012 },
+  { 1.0E-6, 0.0, 0.0, 0.0, 1.0E-6, 0.0, 0.0, 0.0, 0.0001 },
 
   // Variable: Tz_lim_elarm
   //  Referenced by: '<S193>/Saturation1'
@@ -540,7 +544,7 @@ P_GNC2026W_T GNC2026W_P = {
   // Variable: x0
   //  Referenced by: '<S230>/Unscented Kalman Filter'
 
-  { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 },
+  { 1.9313525000000002, 1.3306425000000002, 0.0, 0.0, 0.0, 0.0 },
 
   // Variable: xLength
   //  Referenced by:
@@ -1636,10 +1640,10 @@ P_GNC2026W_T GNC2026W_P = {
 
   0.0,
 
-  // Expression: 140
+  // Expression: 180
   //  Referenced by: '<S314>/Step'
 
-  140.0,
+  180.0,
 
   // Expression: 0
   //  Referenced by: '<S314>/Step'

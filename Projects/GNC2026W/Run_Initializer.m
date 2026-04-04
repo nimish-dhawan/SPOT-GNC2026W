@@ -131,12 +131,23 @@ k = 5;
 dt = baseRate;
 
 % Covariance and state initialization for UKF
-R  = diag([0.02, 0.02, 0.25].^2);               % Vision measurements really good
-G  = [0.5*dt^2*eye(3); dt*eye(3)];
-Qk = 1e-02*eye(3);
-Q  = G*Qk*G';                                   % The inertial dynamics doesn't account for arm, therefore cannot trust 
-x0 = [1.1*init_states_BLACK'; zeros(3,1)];      % Putting this as zeros is not a good idea
-P0 = 0.2*eye(6);                                % High values because state initialized at zeros(6,1)
+% R  = diag([0.02, 0.02, 0.25].^2);               % Vision measurements really good
+% G  = [0.5*dt^2*eye(3); dt*eye(3)];
+% Qk = 1e-02*eye(3);
+% Q  = G*Qk*G';                                   % The inertial dynamics doesn't account for arm, therefore cannot trust 
+% x0 = [1.1*init_states_BLACK'; zeros(3,1)];      % Putting this as zeros is not a good idea
+% P0 = 0.2*eye(6);                                % High values because state initialized at zeros(6,1)
+
+% Ryan's recommendation
+F  = [eye(3), dt*eye(3); zeros(3), eye(3)];
+G  = [0.5*(dt^2)*eye(3); dt*eye(3)];
+q  = [1e-6, 1e-6, 1e-6];
+Q  = G*diag(q)*G';
+P0 = F*(0.2*eye(6))*F' + Q;
+x0 = [1.1*init_states_BLACK'; zeros(3,1)]; 
+rx = 1e-6;
+rt = 1e-4;
+R = diag([rx, rx, rt]);
 
 CVrate = 1/5; % sec
 

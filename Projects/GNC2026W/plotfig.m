@@ -8,7 +8,7 @@ close all
 
 
 % Loading the datafile
-[file,location] = uigetfile;
+[file,location] = uigetfile('.mat');
 
 if isempty(file) || strcmp(file,"")
     return
@@ -45,73 +45,83 @@ wrap = @(x) atan2(sin(x), cos(x));
 % =========================================================================
 % Target pose estimates and ground truth with filter performance
 % =========================================================================
+
+% Extracting Data
+y       = [dat.dataClass_rt.VIS_LAR_States_Px_mm.Data,...
+           dat.dataClass_rt.VIS_LAR_States_Py_mm.Data,...
+           dat.dataClass_rt.VIS_LAR_States_Rz_rad.Data];
+isValid = dat.dataClass_rt.isValid.Data;
+r_c_I   = [dat.dataClass_rt.RED_Px_m.Data,...
+           dat.dataClass_rt.RED_Py_m.Data,...
+           dat.dataClass_rt.RED_Rz_rad.Data];
+r_t_I   = [dat.dataClass_rt.BLACK_Px_m.Data,...
+           dat.dataClass_rt.BLACK_Py_m.Data,...
+           dat.dataClass_rt.BLACK_Rz_rad.Data];
+y_I     = zeros(3,length(t));
+x_est   = [dat.dataClass_rt.BLACK_Px_Filtered_m.Data,...
+           dat.dataClass_rt.BLACK_Py_Filtered_m.Data,...
+           dat.dataClass_rt.BLACK_Rz_Filtered_rad.Data];
+
+for i = 1:length(t)
+    y_I(:,i) =  rot(y(i,:)',r_c_I(i,:)');
+end
+
 figure('Name','Target Pose Estimates and Ground Truth')
 subplot(3,2,1)
-plot(t,dat.dataClass_rt.BLACK_Px_Filtered_m.Data,'k')
-hold on
-plot(t,dat.dataClass_rt.BLACK_Px_m.Data,'--r')
-grid on;
-ylabel('x [m]')
-xlim(period)
-legend('Estimates', 'Ground Truth', 'Location','Best')
+plot(t,r_t_I(:,1), 'r')
+hold on; grid on;
+plot(t,x_est(:,1),'k')
+plot(t,y_I(1,:),'bo','MarkerSize',0.5)
+legend('Ground Truth', 'Estimates', 'Measurements','Location','best');
+xlim(period); 
 ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
 subplot(3,2,3)
-plot(t,dat.dataClass_rt.BLACK_Py_Filtered_m.Data,'k')
-hold on
-plot(t,dat.dataClass_rt.BLACK_Py_m.Data,'--r')
-grid on;
-ylabel("y [m]")
-xlim(period)
+plot(t,r_t_I(:,2), 'r')
+hold on; grid on;
+plot(t,x_est(:,2),'k')
+plot(t,y_I(2,:),'bo','MarkerSize',0.5)
+xlim(period);
 ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
 subplot(3,2,5)
-plot(t,wrap(dat.dataClass_rt.BLACK_Rz_Filtered_rad.Data),'k')
-hold on
-plot(t,dat.dataClass_rt.BLACK_Rz_rad.Data,'--r')
-grid on;
-ylabel('\theta_Z [rad]')
-xlabel('Time [s]')
-xlim(period)
+plot(t,r_t_I(:,3), 'r')
+hold on; grid on;
+plot(t,x_est(:,3),'k')
+plot(t,y_I(3,:),'bo','MarkerSize',0.5)
+xlim(period); xlabel('Time [s]')
 ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
 
-dx  = dat.dataClass_rt.BLACK_Px_m.Data...
-      - dat.dataClass_rt.BLACK_Px_Filtered_m.Data;
-dy  = dat.dataClass_rt.BLACK_Py_m.Data ...
-      - dat.dataClass_rt.BLACK_Py_Filtered_m.Data;
-dth = wrap(dat.dataClass_rt.BLACK_Rz_rad.Data ...
-      - dat.dataClass_rt.BLACK_Rz_Filtered_rad.Data );
+err = x_est - r_t_I;
 
-dxVis = dat.dataClass_rt.VIS_LAR_States_Px_mm.Data - r_LAR_cam_truth(:,1);
-dyVis = dat.dataClass_rt.VIS_LAR_States_Py_mm.Data - r_LAR_cam_truth(:,2);
-dthVis = wrap(dat.dataClass_rt.VIS_LAR_States_Rz_rad.Data - r_LAR_cam_truth(:,3));
+errVIS = y_I' - r_t_I;
 
 subplot(3,2,2)
-plot(t,dx,'k')
+plot(t,err(:,1),'k')
 grid on; hold on;
-plot(t,dxVis,'ro','MarkerSize',0.2)
+plot(t,errVIS(:,1),'bo','MarkerSize',0.2)
 ylabel('\deltax [m]')
 xlim(period)
 ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
 subplot(3,2,4)
-plot(t,dy,'k')
+plot(t,err(:,2),'k')
 grid on; hold on;
-plot(t,dyVis,'ro','MarkerSize',0.2)
+plot(t,errVIS(:,2),'bo','MarkerSize',0.2)
 ylabel('\deltay [m]')
 xlim(period)
 ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
 subplot(3,2,6)
-plot(t,dth,'k')
+plot(t,err(:,3),'k')
 grid on; hold on;
-plot(t,dthVis,'ro','MarkerSize',0.2)
+plot(t,errVIS(:,3),'bo','MarkerSize',0.2)
 ylabel('\delta\theta [rad]'); xlabel('Time [s]')
 xlim(period)
 formatfig(0.8,0.4);
@@ -236,6 +246,29 @@ ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
 
+% =========================================================================
+% ARM Performance
+% =========================================================================
+figure('Name','Arm Performance')
+subplot(2,1,1)
+plot(t,dat.dataClass_rt.EE_Px_Desired_m.Data,'k')
+hold on; grid on;
+plot(t,dat.dataClass_rt.EE_Px_m.Data,'r')
+ylabel('x_{EE} [m]'); xlim(period);
+legend('Desired','Actual')
+ax = gca();
+ax.FontSize = 10;
+ax.FontName = "Times New Roman";
+subplot(2,1,2)
+plot(t,dat.dataClass_rt.EE_Py_Desired_m.Data,'k')
+hold on; grid on;
+plot(t,dat.dataClass_rt.EE_Py_m.Data,'r')
+ylabel('x_{EE} [m]'); xlim(period);
+xlabel('Time [s]')
+formatfig(0.4,0.4)
+ax = gca();
+ax.FontSize = 10;
+ax.FontName = "Times New Roman";
 
 %%
 % =========================================================================
@@ -544,5 +577,31 @@ B = [x_LAR*cos(wrap(th_t-th_c)) - x_c_I*cc - y_c_I*sc - l_cam_x;
 
 r_LAR_cam = A*r_t_I + B;
 % r_LAR_cam(3) = wrap(r_LAR_cam(3));
+
+end
+
+function y_I = rot(y,r_C_I)
+% Takes measurements in camera reference frame and rotates to inertial
+    
+    wrap = @(x) atan2(sin(x), cos(x));
+
+    if norm(y(1:2)) == 0
+        y = [NaN; NaN; NaN];
+    end
+
+    l_cam_x = 0.125; %m, offset in x from origin of Red, left camera
+    l_cam_y = 0.03; %m, offset in y from origin of Red, left camera
+    LAR_x   = 0.145; %m
+    
+    y(1:2) = y(1:2) + [l_cam_x; l_cam_y];
+    th_C   = r_C_I(3);
+    th_REL = y(3);
+    th_T   = th_C+th_REL;
+    
+    C_IC    = [cos(th_C) -sin(th_C); sin(th_C) cos(th_C)]; % Chaser to inertial ref frame rotation matrix
+    C_IT    = [cos(th_T) -sin(th_T); sin(th_T) cos(th_T)]; % Target to inertial ref frame rotation matrix
+    xy_T_I  = r_C_I(1:2) + C_IC*y(1:2);
+    
+    y_I     = [xy_T_I-C_IT*[LAR_x;0]; wrap(th_T)];
 
 end
