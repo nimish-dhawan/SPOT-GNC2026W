@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'GNC2026W'.
 //
-// Model version                  : 4.2419
+// Model version                  : 4.2424
 // Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
-// C/C++ source code generated on : Fri Apr  3 20:13:16 2026
+// C/C++ source code generated on : Fri Apr  3 21:47:35 2026
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: ARM Compatible->ARM Cortex-A (64-bit)
@@ -35,32 +35,32 @@ P_GNC2026W_T GNC2026W_P = {
 
   // Variable: F_red_X_nominal
   //  Referenced by:
-  //    '<S325>/MATLAB Function5'
-  //    '<S337>/MATLAB Function5'
-  //    '<S349>/MATLAB Function5'
+  //    '<S328>/MATLAB Function5'
+  //    '<S340>/MATLAB Function5'
+  //    '<S352>/MATLAB Function5'
 
   0.2825,
 
   // Variable: F_red_Y_nominal
   //  Referenced by:
-  //    '<S325>/MATLAB Function5'
-  //    '<S337>/MATLAB Function5'
-  //    '<S349>/MATLAB Function5'
+  //    '<S328>/MATLAB Function5'
+  //    '<S340>/MATLAB Function5'
+  //    '<S352>/MATLAB Function5'
 
   0.2825,
 
   // Variable: F_thrusters_BLACK
-  //  Referenced by: '<S328>/MATLAB Function'
+  //  Referenced by: '<S331>/MATLAB Function'
 
   { 0.2825, 0.2825, 0.2825, 0.2825, 0.2825, 0.2825, 0.2825, 0.2825 },
 
   // Variable: F_thrusters_BLUE
-  //  Referenced by: '<S340>/MATLAB Function'
+  //  Referenced by: '<S343>/MATLAB Function'
 
   { 0.2825, 0.2825, 0.2825, 0.2825, 0.2825, 0.2825, 0.2825, 0.2825 },
 
   // Variable: F_thrusters_RED
-  //  Referenced by: '<S352>/MATLAB Function'
+  //  Referenced by: '<S355>/MATLAB Function'
 
   { 0.2825, 0.2825, 0.2825, 0.2825, 0.2825, 0.2825, 0.2825, 0.2825 },
 
@@ -238,12 +238,12 @@ P_GNC2026W_T GNC2026W_P = {
   // Variable: PWMFreq
   //  Referenced by:
   //    '<S18>/PWM Frequency'
-  //    '<S325>/MATLAB Function1'
-  //    '<S337>/MATLAB Function1'
-  //    '<S349>/MATLAB Function8'
-  //    '<S327>/Constant1'
-  //    '<S339>/Constant1'
-  //    '<S351>/Constant1'
+  //    '<S328>/MATLAB Function1'
+  //    '<S340>/MATLAB Function1'
+  //    '<S352>/MATLAB Function8'
+  //    '<S330>/Constant1'
+  //    '<S342>/Constant1'
+  //    '<S354>/Constant1'
 
   5.0,
 
@@ -398,7 +398,7 @@ P_GNC2026W_T GNC2026W_P = {
   //    '<S142>/Error Calculation'
   //    '<S226>/Read Joint Positions using  Dynamixel Encoders'
   //    '<S310>/WhoAmI'
-  //    '<S315>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
+  //    '<S318>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
   //    '<S228>/EKF'
   //    '<S229>/MEKF'
   //    '<S270>/Sample and Hold'
@@ -517,14 +517,14 @@ P_GNC2026W_T GNC2026W_P = {
   0.0,
 
   // Variable: thruster_dist2CG_BLACK
-  //  Referenced by: '<S328>/MATLAB Function'
+  //  Referenced by: '<S331>/MATLAB Function'
 
   { 73.881766499134855, -64.118233500865131, 56.874845513718384,
     -84.6251544862816, 64.118233500865131, -66.281766499134861, 79.1251544862816,
     -49.874845513718391 },
 
   // Variable: thruster_dist2CG_BLUE
-  //  Referenced by: '<S340>/MATLAB Function'
+  //  Referenced by: '<S343>/MATLAB Function'
 
   { 73.815115806582682, -64.1848841934173, 57.054043071921981, -84.445956928078,
     64.1848841934173, -66.215115806582673, 78.945956928078, -50.054043071921988
@@ -532,10 +532,10 @@ P_GNC2026W_T GNC2026W_P = {
 
   // Variable: thruster_dist2CG_RED
   //  Referenced by:
-  //    '<S325>/MATLAB Function5'
-  //    '<S337>/MATLAB Function5'
-  //    '<S349>/MATLAB Function5'
-  //    '<S352>/MATLAB Function'
+  //    '<S328>/MATLAB Function5'
+  //    '<S340>/MATLAB Function5'
+  //    '<S352>/MATLAB Function5'
+  //    '<S355>/MATLAB Function'
 
   { 71.579508939606143, -60.420491060393836, 60.451141138666884,
     -84.0488588613331, 63.420491060393836, -70.579508939606143, 76.5488588613331,
@@ -676,32 +676,32 @@ P_GNC2026W_T GNC2026W_P = {
   0.0,
 
   // Mask Parameter: MATLABFunction5_max_iters
-  //  Referenced by: '<S325>/MATLAB Function5'
+  //  Referenced by: '<S328>/MATLAB Function5'
 
   20.0,
 
   // Mask Parameter: MATLABFunction5_max_iters_b
-  //  Referenced by: '<S337>/MATLAB Function5'
+  //  Referenced by: '<S340>/MATLAB Function5'
 
   20.0,
 
   // Mask Parameter: MATLABFunction5_max_iters_e
-  //  Referenced by: '<S349>/MATLAB Function5'
+  //  Referenced by: '<S352>/MATLAB Function5'
 
   20.0,
 
   // Mask Parameter: MATLABFunction5_tol
-  //  Referenced by: '<S325>/MATLAB Function5'
+  //  Referenced by: '<S328>/MATLAB Function5'
 
   1.0E-6,
 
   // Mask Parameter: MATLABFunction5_tol_j
-  //  Referenced by: '<S337>/MATLAB Function5'
+  //  Referenced by: '<S340>/MATLAB Function5'
 
   1.0E-6,
 
   // Mask Parameter: MATLABFunction5_tol_g
-  //  Referenced by: '<S349>/MATLAB Function5'
+  //  Referenced by: '<S352>/MATLAB Function5'
 
   1.0E-6,
 
@@ -1671,132 +1671,132 @@ P_GNC2026W_T GNC2026W_P = {
   1.0,
 
   // Expression: 400
-  //  Referenced by: '<S315>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
+  //  Referenced by: '<S318>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
 
   400.0,
 
   // Expression: 0
-  //  Referenced by: '<S315>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
+  //  Referenced by: '<S318>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
 
   0.0,
 
   // Expression: 200
-  //  Referenced by: '<S315>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
+  //  Referenced by: '<S318>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
 
   200.0,
 
   // Expression: 3072
-  //  Referenced by: '<S315>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
+  //  Referenced by: '<S318>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
 
   3072.0,
 
   // Expression: 1024
-  //  Referenced by: '<S315>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
+  //  Referenced by: '<S318>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
 
   1024.0,
 
   // Expression: 0
-  //  Referenced by: '<S315>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
+  //  Referenced by: '<S318>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
 
   0.0,
 
   // Expression: 850
-  //  Referenced by: '<S315>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
+  //  Referenced by: '<S318>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
 
   850.0,
 
   // Expression: 400
-  //  Referenced by: '<S315>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
+  //  Referenced by: '<S318>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
 
   400.0,
 
   // Expression: 100
-  //  Referenced by: '<S315>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
+  //  Referenced by: '<S318>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
 
   100.0,
 
   // Expression: 20
-  //  Referenced by: '<S315>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
+  //  Referenced by: '<S318>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
 
   20.0,
 
   // Expression: 0
-  //  Referenced by: '<S315>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
+  //  Referenced by: '<S318>/Control Dynamixel Actuators in  either Position, Current, or Speed  Control Modes'
 
   0.0,
 
   // Computed Parameter: Out1_Y0
-  //  Referenced by: '<S332>/Out1'
+  //  Referenced by: '<S335>/Out1'
 
   0.0,
 
   // Computed Parameter: Out1_Y0_j
-  //  Referenced by: '<S333>/Out1'
+  //  Referenced by: '<S336>/Out1'
 
   0.0,
 
   // Computed Parameter: BLACKDC_Y0
-  //  Referenced by: '<S322>/BLACK DC'
+  //  Referenced by: '<S325>/BLACK DC'
 
   0.0,
 
   // Expression: 0.0
-  //  Referenced by: '<S327>/Delay'
+  //  Referenced by: '<S330>/Delay'
 
   0.0,
 
   // Expression: 0
-  //  Referenced by: '<S327>/Constant2'
+  //  Referenced by: '<S330>/Constant2'
 
   0.0,
 
   // Computed Parameter: Out1_Y0_n
-  //  Referenced by: '<S344>/Out1'
+  //  Referenced by: '<S347>/Out1'
 
   0.0,
 
   // Computed Parameter: Out1_Y0_js
-  //  Referenced by: '<S345>/Out1'
+  //  Referenced by: '<S348>/Out1'
 
   0.0,
 
   // Computed Parameter: BLUEDC_Y0
-  //  Referenced by: '<S323>/BLUE DC'
+  //  Referenced by: '<S326>/BLUE DC'
 
   0.0,
 
   // Expression: 0.0
-  //  Referenced by: '<S339>/Delay'
+  //  Referenced by: '<S342>/Delay'
 
   0.0,
 
   // Expression: 0
-  //  Referenced by: '<S339>/Constant2'
+  //  Referenced by: '<S342>/Constant2'
 
   0.0,
 
   // Computed Parameter: Out1_Y0_c
-  //  Referenced by: '<S356>/Out1'
+  //  Referenced by: '<S359>/Out1'
 
   0.0,
 
   // Computed Parameter: Out1_Y0_d
-  //  Referenced by: '<S357>/Out1'
+  //  Referenced by: '<S360>/Out1'
 
   0.0,
 
   // Computed Parameter: REDDC_Y0
-  //  Referenced by: '<S324>/RED DC'
+  //  Referenced by: '<S327>/RED DC'
 
   0.0,
 
   // Expression: 0.0
-  //  Referenced by: '<S351>/Delay'
+  //  Referenced by: '<S354>/Delay'
 
   0.0,
 
   // Expression: 0
-  //  Referenced by: '<S351>/Constant2'
+  //  Referenced by: '<S354>/Constant2'
 
   0.0,
 
@@ -2372,18 +2372,28 @@ P_GNC2026W_T GNC2026W_P = {
 
   50005,
 
+  // Computed Parameter: UDPReceive_Port_k
+  //  Referenced by: '<S315>/UDP Receive'
+
+  29854,
+
   // Computed Parameter: UDPReceive_Port_g
-  //  Referenced by: '<S313>/UDP Receive'
+  //  Referenced by: '<S317>/UDP Receive'
 
   13761,
 
   // Computed Parameter: UDPSend_Port
-  //  Referenced by: '<S316>/UDP Send'
+  //  Referenced by: '<S317>/UDP Send'
+
+  29854,
+
+  // Computed Parameter: UDPSend_Port_d
+  //  Referenced by: '<S319>/UDP Send'
 
   46875,
 
   // Computed Parameter: UDPSend_Port_b
-  //  Referenced by: '<S318>/UDP Send'
+  //  Referenced by: '<S321>/UDP Send'
 
   10294,
 
@@ -2395,7 +2405,7 @@ P_GNC2026W_T GNC2026W_P = {
   // Computed Parameter: ManualSwitch_CurrentSetting
   //  Referenced by: '<S314>/Manual Switch'
 
-  0U,
+  1U,
 
   // Computed Parameter: ManualSwitch1_CurrentSetting
   //  Referenced by: '<S314>/Manual Switch1'
@@ -2405,7 +2415,7 @@ P_GNC2026W_T GNC2026W_P = {
   // Start of '<S19>/Change RED Behavior'
   {
     // Computed Parameter: UDPSendClock_Port
-    //  Referenced by: '<S363>/UDP Send (Clock)'
+    //  Referenced by: '<S366>/UDP Send (Clock)'
 
     48740
   }
@@ -2416,7 +2426,7 @@ P_GNC2026W_T GNC2026W_P = {
   // Start of '<S19>/Change BLUE Behavior'
   {
     // Computed Parameter: UDPSendClock_Port
-    //  Referenced by: '<S362>/UDP Send (Clock)'
+    //  Referenced by: '<S365>/UDP Send (Clock)'
 
     48742
   }
@@ -2427,7 +2437,7 @@ P_GNC2026W_T GNC2026W_P = {
   // Start of '<S19>/Change BLACK Behavior'
   {
     // Computed Parameter: UDPSendClock_Port
-    //  Referenced by: '<S361>/UDP Send (Clock)'
+    //  Referenced by: '<S364>/UDP Send (Clock)'
 
     48741
   }
