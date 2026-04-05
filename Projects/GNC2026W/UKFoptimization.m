@@ -45,7 +45,7 @@ dt = 0.05;
 % G  = [0.5*dt^2*eye(3); dt*eye(3)];
 % Qk = 1e-06*eye(3);
 % Q  = G*Qk*G';                                   % The inertial dynamics doesn't account for arm, therefore cannot trust 
-% x0 = [1.1*r_t_I(1,:)'; zeros(3,1)];      % Putting this as zeros is not a good idea
+% x0 = [1.1*r_t_I(1,:)'; zeros(3,1)];             % Putting this as zeros is not a good idea
 % P0 = 0.2*eye(6);                                % High values because state initialized at zeros(6,1)
 
 % Ryan's recommendation
@@ -69,7 +69,7 @@ x_est = zeros(6,length(t));
 P_est = zeros(6,6,length(t));
 res   = zeros(3,length(t));
 y_I   = zeros(3,length(t));
-NEES  = zeros(6,6,length(t));
+NEES  = zeros(length(t),1);
 NIS   = zeros(length(t),1);
 dM    = zeros(length(t),1);
 
@@ -88,9 +88,9 @@ for i = 1185:length(t)
     y_I(:,i) =  rot(y(i,:)',r_c_I(i,:)');
 
     % NEES calculation
-    x_true  = [r_t_I(i,:)';v_t_I(i,:)'];
-    Pinv    = est.P;
-    NEES(:,:,i) = (x_true-x_est(:,i))' * Pinv * (x_true-x_est(:,i));
+    x_true    = [r_t_I(i,:)';v_t_I(i,:)'];
+    Pinv      = est.P;
+    NEES(i,1) = (x_true-x_est(:,i))' * Pinv * (x_true-x_est(:,i));
 end
 
 %% Plotting results
@@ -126,6 +126,9 @@ plot(t,NIS)
 
 figure
 plot(t,dM)
+
+figure
+plot(t,NEES)
 
 
 %% Functions ==============================================================

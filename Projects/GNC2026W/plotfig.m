@@ -26,6 +26,22 @@ anim = 1;
 t = dat.dataClass_rt.Time_s.Data;
 % For successful experiment : period = [t(1100), t(4700)];
 period = [t(1185), t(end)];
+
+% Finding the grab flag index
+try
+    clear found
+    found = 0;
+    for p = 1:length(t)
+        grab = dat.dataClass_rt.ARM_Grab_Complete.Data(p);
+        if grab == 1 && found == 0
+            grabIndex = p;
+            found     = 1;
+        end
+    end
+    periodgnc = [t(1185), t(grabIndex)];
+catch 
+    periodgnc = period;
+end
 %%
 close all
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -73,7 +89,7 @@ hold on; grid on;
 plot(t,x_est(:,1),'k')
 plot(t,y_I(1,:),'bo','MarkerSize',0.5)
 legend('Ground Truth', 'Estimates', 'Measurements','Location','best');
-xlim(period); 
+xlim(periodgnc); 
 ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
@@ -82,7 +98,7 @@ plot(t,r_t_I(:,2), 'r')
 hold on; grid on;
 plot(t,x_est(:,2),'k')
 plot(t,y_I(2,:),'bo','MarkerSize',0.5)
-xlim(period);
+xlim(periodgnc);
 ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
@@ -91,7 +107,7 @@ plot(t,r_t_I(:,3), 'r')
 hold on; grid on;
 plot(t,x_est(:,3),'k')
 plot(t,y_I(3,:),'bo','MarkerSize',0.5)
-xlim(period); xlabel('Time [s]')
+xlim(periodgnc); xlabel('Time [s]')
 ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
@@ -105,7 +121,7 @@ plot(t,err(:,1),'k')
 grid on; hold on;
 plot(t,errVIS(:,1),'bo','MarkerSize',0.2)
 ylabel('\deltax [m]')
-xlim(period)
+xlim(periodgnc)
 ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
@@ -114,7 +130,7 @@ plot(t,err(:,2),'k')
 grid on; hold on;
 plot(t,errVIS(:,2),'bo','MarkerSize',0.2)
 ylabel('\deltay [m]')
-xlim(period)
+xlim(periodgnc)
 ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
@@ -123,7 +139,7 @@ plot(t,err(:,3),'k')
 grid on; hold on;
 plot(t,errVIS(:,3),'bo','MarkerSize',0.2)
 ylabel('\delta\theta [rad]'); xlabel('Time [s]')
-xlim(period)
+xlim(periodgnc)
 formatfig(0.8,0.4);
 ax = gca();
 ax.FontSize = 10;
@@ -140,7 +156,7 @@ subplot(3,1,1)
 plot(t,dat.dataClass_rt.RED_Fx_Sat_N.Data,'k')
 grid on;
 ylabel('F_x [N]')
-xlim(period)
+xlim(periodgnc)
 ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
@@ -148,7 +164,7 @@ subplot(3,1,2)
 plot(t,dat.dataClass_rt.RED_Fy_Sat_N.Data,'k')
 grid on;
 ylabel('F_y [N]')
-xlim(period)
+xlim(periodgnc)
 ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
@@ -156,7 +172,7 @@ subplot(3,1,3)
 plot(t,dat.dataClass_rt.RED_Tz_Sat_Nm.Data,'k')
 grid on;
 ylabel('\tau_z [N.m]'); xlabel('Time [s]')
-xlim(period)
+xlim(periodgnc)
 formatfig(0.4,0.4);
 ax = gca();
 ax.FontSize = 10;
@@ -172,7 +188,7 @@ subplot(3,1,1)
 plot(t,dat.dataClass_rt.lambda_rad.Data,'k')
 grid on;
 ylabel('\lambda [rad]')
-xlim(period)
+xlim(periodgnc)
 ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
@@ -180,7 +196,7 @@ subplot(3,1,2)
 plot(t,dat.dataClass_rt.lambdaDot_radpers.Data,'k')
 grid on;
 ylabel("$\dot{\lambda}$ [rad/s]","Interpreter","latex")
-xlim(period)
+xlim(periodgnc)
 ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
@@ -189,7 +205,7 @@ plot(t,dat.dataClass_rt.lambdaDdot_radpers2.Data,'k')
 grid on;
 ylabel('$\ddot{\lambda}$ [rad/s$^{2}$]', 'Interpreter', 'latex')
 xlabel('Time [s]')
-xlim(period)
+xlim(periodgnc)
 formatfig(0.4,0.4);
 ax = gca();
 ax.FontSize = 10;
@@ -213,7 +229,7 @@ subplot(3,2,1)
 plot(t,dat.dataClass_rt.error_Px_m.Data,'k')
 grid on;
 ylabel('\deltax [m]')
-xlim(period)
+xlim(periodgnc)
 ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
@@ -221,7 +237,7 @@ subplot(3,2,3)
 plot(t,dat.dataClass_rt.error_Py_m.Data,'k')
 grid on;
 ylabel('\deltay [m]')
-xlim(period)
+xlim(periodgnc)
 ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
@@ -229,7 +245,7 @@ subplot(3,2,5)
 plot(t,dat.dataClass_rt.error_Rz_rad.Data,'k')
 grid on;
 ylabel('\delta\theta [rad]'); xlabel('Time [s]')
-xlim(period)
+xlim(periodgnc)
 ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
@@ -239,7 +255,7 @@ plot(t, dat.dataClass_rt.Separation_m.Data, 'k')
 hold on; grid on;
 plot(t, dat.dataClass_rt.Desired_Separation_m.Data, '--k')
 xlabel('Time [s]'); ylabel('Separation [m]');
-xlim(period)
+xlim(periodgnc)
 legend('Actual', 'Desired')
 formatfig(0.8,0.4)
 ax = gca();
@@ -288,7 +304,7 @@ plot(t,dat.dataClass_rt.VIS_LAR_States_Px_mm.Data,'k')
 grid on; hold on;
 plot(t,r_LAR_cam_truth(:,1),'--r')
 ylabel('x_{LAR} [m]')
-xlim(period); legend('Determined Pose', 'Ground Truth');
+xlim(periodgnc); legend('Determined Pose', 'Ground Truth');
 ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
@@ -297,7 +313,7 @@ plot(t,dat.dataClass_rt.VIS_LAR_States_Py_mm.Data,'k')
 grid on; hold on;
 plot(t,r_LAR_cam_truth(:,2),'--r')
 ylabel('y_{LAR} [m]')
-xlim(period)
+xlim(periodgnc)
 ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
@@ -307,7 +323,7 @@ grid on; hold on;
 plot(t,r_LAR_cam_truth(:,3),'--r')
 ylabel('\theta_{LAR} [rad]')
 xlabel('Time [s]')
-xlim(period)
+xlim(periodgnc)
 ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
@@ -320,7 +336,7 @@ subplot(3,2,2)
 plot(t,dxVis,'k')
 grid on;
 ylabel('\deltax [m]')
-xlim(period)
+xlim(periodgnc)
 ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
@@ -328,7 +344,7 @@ subplot(3,2,4)
 plot(t,dyVis,'k')
 grid on;
 ylabel('\deltay [m]')
-xlim(period)
+xlim(periodgnc)
 ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
@@ -336,7 +352,7 @@ subplot(3,2,6)
 plot(t,dthVis,'k')
 grid on;
 ylabel('\delta\theta [rad]'); xlabel('Time [s]')
-xlim(period)
+xlim(periodgnc)
 formatfig(0.8,0.4);
 ax = gca();
 ax.FontSize = 10;
@@ -354,7 +370,7 @@ res = [dat.dataClass_rt.x_res_m.Data, dat.dataClass_rt.y_res_m.Data,...
 % for km = 1:36
 %     plot(t, cov(:,km))
 % end
-xlim(period)
+xlim(periodgnc)
 formatfig(0.8,0.4);
 ax = gca();
 ax.FontSize = 10;
@@ -363,7 +379,7 @@ ax.FontName = "Times New Roman";
 subplot(3,2,2)
 plot(t, res(:,1), 'k')
 grid on; box on;
-xlim(period)
+xlim(periodgnc)
 ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
@@ -371,7 +387,7 @@ ax.FontName = "Times New Roman";
 subplot(3,2,4)
 plot(t, res(:,2), 'k')
 grid on; box on;
-xlim(period)
+xlim(periodgnc)
 ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
@@ -379,7 +395,7 @@ ax.FontName = "Times New Roman";
 subplot(3,2,6)
 plot(t, res(:,3), 'k')
 grid on; box on;
-xlim(period)
+xlim(periodgnc)
 ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
@@ -496,9 +512,9 @@ if anim == 1 % Trajectory animation
         spacecraft = DrawSpacecraft([expdata_RED_pos_x(frame),expdata_RED_pos_y(frame),expdata_RED_pos_th(frame),5]);
         patch(spacecraft(:,1), spacecraft(:,2), 'w', 'facealpha', 0.5, 'edgecolor', 'r', 'edgealpha',1,'Linewidth',0.5)
         [shoulder,elbow,wrist] = DrawARM([expdata_RED_pos_x(frame),expdata_RED_pos_y(frame),expdata_RED_pos_th(frame),ARMq1(frame),ARMq2(frame),ARMq3(frame)]);
-        % patch(shoulder(:,1), shoulder(:,2), 'w', 'facealpha', alpha, 'edgecolor', 'r', 'edgealpha',alpha)
-        % patch(elbow(:,1), elbow(:,2), 'w', 'facealpha', alpha, 'edgecolor', 'r', 'edgealpha',alpha)
-        % patch(wrist(:,1), wrist(:,2), 'w', 'facealpha', alpha, 'edgecolor', 'r', 'edgealpha',alpha)
+        patch(shoulder(:,1), shoulder(:,2), 'w', 'facealpha', alpha, 'edgecolor', 'r', 'edgealpha',alpha)
+        patch(elbow(:,1), elbow(:,2), 'w', 'facealpha', alpha, 'edgecolor', 'r', 'edgealpha',alpha)
+        patch(wrist(:,1), wrist(:,2), 'w', 'facealpha', alpha, 'edgecolor', 'r', 'edgealpha',alpha)
 
         spacecraft = DrawSpacecraft([expdata_BLACK_pos_x(frame),expdata_BLACK_pos_y(frame),expdata_BLACK_pos_th(frame),7]);
         patch(spacecraft(:,1), spacecraft(:,2), 'w', 'facealpha', 0.5, 'edgecolor', 'k', 'edgealpha',1,'Linewidth',0.5)
