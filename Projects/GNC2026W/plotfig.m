@@ -19,7 +19,7 @@ end
 
 %%
 % Toggle on/off saving all the plots automatically
-savefigs = 0;
+savefigs = 1;
 % Toggle on/off animation
 anim = 1;
 % Time frame for plotting
@@ -82,65 +82,73 @@ for i = 1:length(t)
     y_I(:,i) =  rot(y(i,:)',r_c_I(i,:)');
 end
 
-figure('Name','Target Pose Estimates and Ground Truth')
-subplot(3,2,1)
-plot(t,r_t_I(:,1), 'r')
-hold on; grid on;
-plot(t,x_est(:,1),'k')
-plot(t,y_I(1,:),'bo','MarkerSize',0.5)
-legend('Ground Truth', 'Estimates', 'Measurements','Location','best');
-xlim(periodgnc); 
-ax = gca();
-ax.FontSize = 10;
-ax.FontName = "Times New Roman";
-subplot(3,2,3)
-plot(t,r_t_I(:,2), 'r')
-hold on; grid on;
-plot(t,x_est(:,2),'k')
-plot(t,y_I(2,:),'bo','MarkerSize',0.5)
-xlim(periodgnc);
-ax = gca();
-ax.FontSize = 10;
-ax.FontName = "Times New Roman";
-subplot(3,2,5)
-plot(t,r_t_I(:,3), 'r')
-hold on; grid on;
-plot(t,x_est(:,3),'k')
-plot(t,y_I(3,:),'bo','MarkerSize',0.5)
-xlim(periodgnc); xlabel('Time [s]')
-ax = gca();
-ax.FontSize = 10;
-ax.FontName = "Times New Roman";
+mid = median(r_t_I);
+
+% figure('Name','Target Pose Estimates and Ground Truth')
+% subplot(3,2,1)
+% plot(t,r_t_I(:,1), 'r')
+% hold on; grid on;
+% plot(t,x_est(:,1),'k')
+% plot(t,y_I(1,:),'bo','MarkerSize',0.5)
+% legend('Ground Truth', 'Estimates', 'Measurements','Location','best');
+% xlim(periodgnc); ylabel('x [m]');
+% ylim([mid(1)-0.2, mid(1)+0.2])
+% ax = gca();
+% ax.FontSize = 10;
+% ax.FontName = "Times New Roman";
+% subplot(3,2,3)
+% plot(t,r_t_I(:,2), 'r')
+% hold on; grid on;
+% plot(t,x_est(:,2),'k')
+% plot(t,y_I(2,:),'bo','MarkerSize',0.5)
+% xlim(periodgnc); ylabel('y [m]')
+% ylim([mid(2)-0.1, mid(2)+0.1])
+% ax = gca();
+% ax.FontSize = 10;
+% ax.FontName = "Times New Roman";
+% subplot(3,2,5)
+% plot(t,r_t_I(:,3), 'r')
+% hold on; grid on;
+% plot(t,x_est(:,3),'k')
+% plot(t,y_I(3,:),'bo','MarkerSize',0.5)
+% xlim(periodgnc); xlabel('Time [s]')
+% ylabel('\theta [m]');
+% ax = gca();
+% ax.FontSize = 10;
+% ax.FontName = "Times New Roman";
 
 err = x_est - r_t_I;
 err(3) = wrap(err(3));
 errVIS = y_I' - r_t_I;
+midErr = median(err);
 
-subplot(3,2,2)
+figure('Name','Filter Performance')
+subplot(3,1,1)
 plot(t,err(:,1),'k')
 grid on; hold on;
-plot(t,errVIS(:,1),'bo','MarkerSize',0.2)
+plot(t,errVIS(:,1),'bo','MarkerSize',0.5)
 ylabel('\deltax [m]')
-xlim(periodgnc)
+xlim(periodgnc); ylim([midErr(1)-0.2, midErr(1)+0.2])
+legend('Estimates', 'Measurements','Location','best','Orientation','horizontal')
 ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
-subplot(3,2,4)
+subplot(3,1,2)
 plot(t,err(:,2),'k')
 grid on; hold on;
-plot(t,errVIS(:,2),'bo','MarkerSize',0.2)
+plot(t,errVIS(:,2),'bo','MarkerSize',0.5)
 ylabel('\deltay [m]')
-xlim(periodgnc)
+xlim(periodgnc); ylim([midErr(2)-0.1, midErr(2)+0.1])
 ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
-subplot(3,2,6)
+subplot(3,1,3)
 plot(t,err(:,3),'k')
 grid on; hold on;
-plot(t,errVIS(:,3),'bo','MarkerSize',0.2)
+plot(t,errVIS(:,3),'bo','MarkerSize',0.5)
 ylabel('\delta\theta [rad]'); xlabel('Time [s]')
-xlim(periodgnc)
-formatfig(0.8,0.4);
+xlim(periodgnc); ylim([midErr(3)-0.25, midErr(3)+0.25])
+formatfig(0.4,0.4);
 ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
@@ -434,16 +442,15 @@ figure('Name','Trajectory')
 % User can specify indices to show snapshots of the platforms. Typically, 
 % these would be the initial and final conditions, but can also include 
 % intermediate snapshots
-plotting_indices = [1,3359]; 
+plotting_indices = [1,3800]; 
 % plotting_indices = [1, unique_inds(end)]; 
-alpha_values     = [0.2, 1];
+alpha_values     = [0.2,1];
 % alpha_values     = [0.2*ones(1,length(plotting_indices)-1) 1];    % transparency for each snapshot; must be same length as 'plotting_indices'
 
 % Plotting trajectory
 exphdl = plot(expdata_RED_pos_x(1:plotting_indices(end)),expdata_RED_pos_y(1:plotting_indices(end)), 'r','Linewidth',1,'DisplayName','Trial');
 hold on
-plot(expdata_BLACK_pos_x(1:plotting_indices(end)),expdata_BLACK_pos_y(1:plotting_indices(end)), 'k','Linewidth',1)
-plot(expdata_BLUE_pos_x(1:plotting_indices(end)),expdata_BLUE_pos_y(1:plotting_indices(end)), 'b','Linewidth',1)
+% plot(expdata_BLACK_pos_x(1:plotting_indices(end)),expdata_BLACK_pos_y(1:plotting_indices(end)), 'k','Linewidth',1)
 
 % Plotting spacecraft shapes
 for ii = 1:length(plotting_indices)
@@ -469,7 +476,7 @@ box on
 axis equal
 xlim([0 3.5])
 ylim([0 2.4])
-legend(exphdl, 'Location', 'NorthWest')
+% legend(exphdl, 'Location', 'NorthWest')
 formatfig(0.7,0.4)
 ax = gca();
 ax.FontSize = 10;
@@ -554,7 +561,7 @@ if ~exist(savedplotsfolder, 'dir')
     mkdir(savedplotsfolder);
 end
 
-% Saving all open figures as plots
+% Saving all open figures as PDF plots
 if savefigs == 1
     figs = findall(groot, 'Type', 'figure');
     
@@ -563,6 +570,22 @@ if savefigs == 1
             fig = figs(k);
             name = get(fig, 'Name');
             exportgraphics(fig,[savedplotsfolder, name, '.pdf'])
+        catch ME
+            uialert(fig, ['Cannot save the following figure:', name],...
+                    'Error saving plots', 'Modal', true);
+        end
+    end
+end
+
+% Saving all open figures as PNG plots
+if savefigs == 1
+    figs = findall(groot, 'Type', 'figure');
+    
+    for k = 1:numel(figs)
+        try
+            fig = figs(k);
+            name = get(fig, 'Name');
+            exportgraphics(fig,[savedplotsfolder, name, '.png'])
         catch ME
             uialert(fig, ['Cannot save the following figure:', name],...
                     'Error saving plots', 'Modal', true);
