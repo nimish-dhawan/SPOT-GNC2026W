@@ -49,7 +49,7 @@ if nargin < 2 || isempty(height)
 end
 
 if nargin < 3 || isempty(linenwidth)
-    linewidth = 612;
+    linewidth = 550;
 end
 
 scale = [width*linewidth, height*linewidth];

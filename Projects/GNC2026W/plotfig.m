@@ -21,11 +21,25 @@ end
 % Toggle on/off saving all the plots automatically
 savefigs = 1;
 % Toggle on/off animation
-anim = 1;
+anim = 0;
 % Time frame for plotting
 t = dat.dataClass_rt.Time_s.Data;
-% For successful experiment : period = [t(1100), t(4700)];
-period = [t(1185), t(end)];
+
+% Finding index for 55s
+try
+    clear found
+    found = 0;
+    for k = 1:length(t)
+        if t(k) == 55.00 && found == 0
+            index55s = k+1;
+            found    = 1;
+        end
+    end
+    period = [t(index55s), t(end)];
+catch ME
+    uialert('Experiment too short');
+    return
+end
 
 % Finding the grab flag index
 try
@@ -38,9 +52,27 @@ try
             found     = 1;
         end
     end
-    periodgnc = [t(1185), t(grabIndex)];
 catch 
-    periodgnc = period;
+    grabIndex = length(t);
+end
+
+periodgnc = [t(index55s), t(grabIndex)];
+idx = index55s:grabIndex;
+
+% Finding extend arm flag index
+try
+    clear found p
+    found = 0;
+    for p = 1:length(t)
+        extend = dat.dataClass_rt.ARM_Extend.Data(p);
+        if extend == 1 && found == 0
+            extendIndex = p;
+            found     = 1;
+        end
+    end
+    periodARM = [t(extendIndex), t(end)];
+catch 
+    warning('Data not found');
 end
 %%
 close all
@@ -82,142 +114,66 @@ for i = 1:length(t)
     y_I(:,i) =  rot(y(i,:)',r_c_I(i,:)');
 end
 
-mid = median(r_t_I);
+maxlim = max(abs(r_t_I));
 
-% figure('Name','Target Pose Estimates and Ground Truth')
-% subplot(3,2,1)
-% plot(t,r_t_I(:,1), 'r')
-% hold on; grid on;
-% plot(t,x_est(:,1),'k')
-% plot(t,y_I(1,:),'bo','MarkerSize',0.5)
-% legend('Ground Truth', 'Estimates', 'Measurements','Location','best');
-% xlim(periodgnc); ylabel('x [m]');
-% ylim([mid(1)-0.2, mid(1)+0.2])
-% ax = gca();
-% ax.FontSize = 10;
-% ax.FontName = "Times New Roman";
-% subplot(3,2,3)
-% plot(t,r_t_I(:,2), 'r')
-% hold on; grid on;
-% plot(t,x_est(:,2),'k')
-% plot(t,y_I(2,:),'bo','MarkerSize',0.5)
-% xlim(periodgnc); ylabel('y [m]')
-% ylim([mid(2)-0.1, mid(2)+0.1])
-% ax = gca();
-% ax.FontSize = 10;
-% ax.FontName = "Times New Roman";
-% subplot(3,2,5)
-% plot(t,r_t_I(:,3), 'r')
-% hold on; grid on;
-% plot(t,x_est(:,3),'k')
-% plot(t,y_I(3,:),'bo','MarkerSize',0.5)
-% xlim(periodgnc); xlabel('Time [s]')
-% ylabel('\theta [m]');
-% ax = gca();
-% ax.FontSize = 10;
-% ax.FontName = "Times New Roman";
+figure('Name','Target Pose Estimates and Ground Truth')
+tiledlayout(3, 1, 'TileSpacing', 'compact', 'Padding', 'compact');
+labels = {'x [m]', 'y [m]', '\theta [rad]'};
+for i = 1:3
+    nexttile
+    plot(t, r_t_I(:,i),'r')
+    hold on; grid on;
+    plot(t, x_est(:,i),'k')
+    plot(t, y_I(i,:), 'b*', 'MarkerSize', 0.5)
+    ylabel(labels(i)); xlim(periodgnc); 
+    if i == 3
+        xlabel('Time [s]')
+    elseif i == 1
+        legend1 = legend('Ground Truth', 'Estimates', 'Measurements', 'Location',...
+                         'northoutside');
+        set(legend1,'NumColumns',2,'Location','northoutside');
+    end
+    ax = gca();
+    ax.FontSize = 10;
+    ax.FontName = "Times New Roman";
+end
+formatfig(0.4,0.4)
 
-err = x_est - r_t_I;
-err(3) = wrap(err(3));
-errVIS = y_I' - r_t_I;
-midErr = median(err);
+err = wrap(x_est - r_t_I);
+rootmeanerr = sqrt(mean(err(idx,1:3).^2));
+fprintf('RMSE for UKF [cm,cm,rad]: [%.4f, %.4f, %.4f]\n',...
+         rootmeanerr(1)*100,rootmeanerr(2)*100,rootmeanerr(3)*180/pi);
+errVIS = wrap(y_I' - r_t_I);
+rootmeanerrVIS = sqrt(mean(errVIS(idx,1:3).^2,'omitnan'));
+fprintf('RMSE for VIS [cm,cm,rad]: [%.4f, %.4f, %.4f]\n',...
+         rootmeanerrVIS(1)*100,rootmeanerrVIS(2)*100,rootmeanerrVIS(3)*180/pi);
+
 
 figure('Name','Filter Performance')
-subplot(3,1,1)
-plot(t,err(:,1),'k')
-grid on; hold on;
-plot(t,errVIS(:,1),'bo','MarkerSize',0.5)
-ylabel('\deltax [m]')
-xlim(periodgnc); ylim([midErr(1)-0.2, midErr(1)+0.2])
-legend('Estimates', 'Measurements','Location','best','Orientation','horizontal')
-ax = gca();
-ax.FontSize = 10;
-ax.FontName = "Times New Roman";
-subplot(3,1,2)
-plot(t,err(:,2),'k')
-grid on; hold on;
-plot(t,errVIS(:,2),'bo','MarkerSize',0.5)
-ylabel('\deltay [m]')
-xlim(periodgnc); ylim([midErr(2)-0.1, midErr(2)+0.1])
-ax = gca();
-ax.FontSize = 10;
-ax.FontName = "Times New Roman";
-subplot(3,1,3)
-plot(t,err(:,3),'k')
-grid on; hold on;
-plot(t,errVIS(:,3),'bo','MarkerSize',0.5)
-ylabel('\delta\theta [rad]'); xlabel('Time [s]')
-xlim(periodgnc); ylim([midErr(3)-0.25, midErr(3)+0.25])
-formatfig(0.4,0.4);
-ax = gca();
-ax.FontSize = 10;
-ax.FontName = "Times New Roman";
-
-
-% =========================================================================
-% Controller effort
-% =========================================================================
-% For 3x1 plots, 0.4x0.4 size is recommended for placing next to trajectory
-% plot
-figure('Name','Controller effort')
-subplot(3,1,1)
-plot(t,dat.dataClass_rt.RED_Fx_Sat_N.Data,'k')
-grid on;
-ylabel('F_x [N]')
-xlim(periodgnc)
-ax = gca();
-ax.FontSize = 10;
-ax.FontName = "Times New Roman";
-subplot(3,1,2)
-plot(t,dat.dataClass_rt.RED_Fy_Sat_N.Data,'k')
-grid on;
-ylabel('F_y [N]')
-xlim(periodgnc)
-ax = gca();
-ax.FontSize = 10;
-ax.FontName = "Times New Roman";
-subplot(3,1,3)
-plot(t,dat.dataClass_rt.RED_Tz_Sat_Nm.Data,'k')
-grid on;
-ylabel('\tau_z [N.m]'); xlabel('Time [s]')
-xlim(periodgnc)
-formatfig(0.4,0.4);
-ax = gca();
-ax.FontSize = 10;
-ax.FontName = "Times New Roman";
-
-% =========================================================================
-% LOS Angle
-% =========================================================================
-% For 3x1 plots, 0.4x0.4 size is recommended for placing next to trajectory
-
-figure('Name','LOS Angle')
-subplot(3,1,1)
-plot(t,dat.dataClass_rt.lambda_rad.Data,'k')
-grid on;
-ylabel('\lambda [rad]')
-xlim(periodgnc)
-ax = gca();
-ax.FontSize = 10;
-ax.FontName = "Times New Roman";
-subplot(3,1,2)
-plot(t,dat.dataClass_rt.lambdaDot_radpers.Data,'k')
-grid on;
-ylabel("$\dot{\lambda}$ [rad/s]","Interpreter","latex")
-xlim(periodgnc)
-ax = gca();
-ax.FontSize = 10;
-ax.FontName = "Times New Roman";
-subplot(3,1,3)
-plot(t,dat.dataClass_rt.lambdaDdot_radpers2.Data,'k')
-grid on;
-ylabel('$\ddot{\lambda}$ [rad/s$^{2}$]', 'Interpreter', 'latex')
-xlabel('Time [s]')
-xlim(periodgnc)
-formatfig(0.4,0.4);
-ax = gca();
-ax.FontSize = 10;
-ax.FontName = "Times New Roman";
+tiledlayout(3, 1, 'TileSpacing', 'compact', 'Padding', 'compact');
+labels = {'\deltax [cm]', '\deltay [cm]', '\delta\theta [rad]'};
+for i = 1:3
+    nexttile
+    hold on; grid on; box on;
+    if i ~= 3
+        plot(t, errVIS(:,i)*100,'b*', 'MarkerSize', 0.2)
+        plot(t, err(:,i)*100,'r')
+    else
+        plot(t, errVIS(:,i),'b*', 'MarkerSize', 0.2)
+        plot(t, err(:,i),'r')
+    end
+    ylabel(labels(i)); xlim(periodgnc);
+    if i == 3
+        xlabel('Time [s]')
+    elseif i == 1
+        legend('Measurements', 'Estimates', 'Location',...
+               'northoutside','Orientation','horizontal')
+    end
+    ax = gca();
+    ax.FontSize = 10;
+    ax.FontName = "Times New Roman";
+end
+formatfig(0.4,0.4)
 
 % =========================================================================
 % Controller error
@@ -226,42 +182,42 @@ ax.FontName = "Times New Roman";
 % plot
 
 dx  = dat.dataClass_rt.RED_Px_m.Data...
-      - dat.dataClass_rt.RED_Px_Desired_m.Data;
+      - dat.dataClass_rt.RED_Px_Path_m.Data;
 dy  = dat.dataClass_rt.RED_Py_m.Data ...
-      - dat.dataClass_rt.RED_Py_Desired_m.Data;
+      - dat.dataClass_rt.RED_Py_Path_m.Data;
 dth = wrap(dat.dataClass_rt.RED_Rz_rad.Data ...
-      - dat.dataClass_rt.RED_Rz_Desired_rad.Data );
+      - dat.dataClass_rt.RED_Rz_Path_rad.Data );
+
+try
+    delta = [dat.dataClass_rt.error_Px_m.Data,...
+             dat.dataClass_rt.error_Py_m.Data,...
+             dat.dataClass_rt.error_Rz_rad.Data];
+catch ME
+    delta = [dx, dy, dth];
+end
 
 figure('Name','Controller Error')
-subplot(3,2,1)
-plot(t,dat.dataClass_rt.error_Px_m.Data,'k')
-grid on;
-ylabel('\deltax [m]')
-xlim(periodgnc)
-ax = gca();
-ax.FontSize = 10;
-ax.FontName = "Times New Roman";
-subplot(3,2,3)
-plot(t,dat.dataClass_rt.error_Py_m.Data,'k')
-grid on;
-ylabel('\deltay [m]')
-xlim(periodgnc)
-ax = gca();
-ax.FontSize = 10;
-ax.FontName = "Times New Roman";
-subplot(3,2,5)
-plot(t,dat.dataClass_rt.error_Rz_rad.Data,'k')
-grid on;
-ylabel('\delta\theta [rad]'); xlabel('Time [s]')
-xlim(periodgnc)
-ax = gca();
-ax.FontSize = 10;
-ax.FontName = "Times New Roman";
+tiledlayout(3, 2, 'TileSpacing', 'compact', 'Padding', 'compact');
+labels = {'\deltax [m]', '\deltay [m]', '\delta\theta [rad]'};
+for i = 1:3
+    nexttile(2*i-1)   
 
-subplot(3,2,[2 6])
-plot(t, dat.dataClass_rt.Separation_m.Data, 'k')
+    plot(t, delta(:,i), 'k')
+    hold on; grid on;
+    ylabel(labels{i})
+    xlim(periodgnc)
+    if i == 3
+        xlabel('Time [s]')
+    end
+    ax = gca();
+    ax.FontSize = 10;
+    ax.FontName = "Times New Roman";
+end
+
+nexttile(2,[3 1])
+plot(t, dat.dataClass_rt.Separation_m.Data, 'r')
 hold on; grid on;
-plot(t, dat.dataClass_rt.Desired_Separation_m.Data, '--k')
+plot(t, dat.dataClass_rt.Desired_Separation_m.Data, 'k')
 xlabel('Time [s]'); ylabel('Separation [m]');
 xlim(periodgnc)
 legend('Actual', 'Desired')
@@ -269,145 +225,36 @@ formatfig(0.8,0.4)
 ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
+formatfig(0.9,0.4)
 
 % =========================================================================
 % ARM Performance
 % =========================================================================
+EEpos = [dat.dataClass_rt.EE_Px_m.Data,...
+         dat.dataClass_rt.EE_Py_m.Data];
+EEdes = [dat.dataClass_rt.EE_Px_Desired_m.Data,...
+         dat.dataClass_rt.EE_Py_Desired_m.Data];
+
 figure('Name','Arm Performance')
-subplot(2,1,1)
-plot(t,dat.dataClass_rt.EE_Px_Desired_m.Data,'k')
-hold on; grid on;
-plot(t,dat.dataClass_rt.EE_Px_m.Data,'r')
-ylabel('x_{EE} [m]'); xlim(period);
-legend('Desired','Actual')
-ax = gca();
-ax.FontSize = 10;
-ax.FontName = "Times New Roman";
-subplot(2,1,2)
-plot(t,dat.dataClass_rt.EE_Py_Desired_m.Data,'k')
-hold on; grid on;
-plot(t,dat.dataClass_rt.EE_Py_m.Data,'r')
-ylabel('x_{EE} [m]'); xlim(period);
-xlabel('Time [s]')
-formatfig(0.4,0.4)
-ax = gca();
-ax.FontSize = 10;
-ax.FontName = "Times New Roman";
-
-%%
-% =========================================================================
-% VIS Performance
-% =========================================================================
-r_LAR_cam_truth = zeros(length(t),3);
-r_T_I = [dat.dataClass_rt.BLACK_Px_m.Data, dat.dataClass_rt.BLACK_Py_m.Data, dat.dataClass_rt.BLACK_Rz_rad.Data];
-r_C_I = [dat.dataClass_rt.RED_Px_m.Data, dat.dataClass_rt.RED_Py_m.Data, dat.dataClass_rt.RED_Rz_rad.Data];
-
-for i = 1:length(t) 
-    r_LAR_cam_truth(i,:) = inertial2Cam(r_T_I(i,:)', r_C_I(i,:)');
+tiledlayout(2, 1, 'TileSpacing', 'compact', 'Padding', 'compact');
+labels = {'x_{ee}', 'y_{ee}'};
+for i = 1:2
+    nexttile 
+    plot(t, EEdes(:,i), 'k')
+    hold on; grid on;
+    plot(t, EEpos(:,i), 'r')
+    ylabel(labels{i})
+    xlim(periodARM)
+    if i == 1
+        legend('Desired','Actual','Location','northoutside','Orientation','horizontal');
+    elseif i == 2
+        xlabel('Time [s]')
+    end
+    ax = gca();
+    ax.FontSize = 10;
+    ax.FontName = "Times New Roman";
 end
-
-figure('Name','VIS LAR States vs. Ground Truth')
-subplot(3,2,1)
-plot(t,dat.dataClass_rt.VIS_LAR_States_Px_mm.Data,'k')
-grid on; hold on;
-plot(t,r_LAR_cam_truth(:,1),'--r')
-ylabel('x_{LAR} [m]')
-xlim(periodgnc); legend('Determined Pose', 'Ground Truth');
-ax = gca();
-ax.FontSize = 10;
-ax.FontName = "Times New Roman";
-subplot(3,2,3)
-plot(t,dat.dataClass_rt.VIS_LAR_States_Py_mm.Data,'k')
-grid on; hold on;
-plot(t,r_LAR_cam_truth(:,2),'--r')
-ylabel('y_{LAR} [m]')
-xlim(periodgnc)
-ax = gca();
-ax.FontSize = 10;
-ax.FontName = "Times New Roman";
-subplot(3,2,5)
-plot(t,dat.dataClass_rt.VIS_LAR_States_Rz_rad.Data,'k')
-grid on; hold on;
-plot(t,r_LAR_cam_truth(:,3),'--r')
-ylabel('\theta_{LAR} [rad]')
-xlabel('Time [s]')
-xlim(periodgnc)
-ax = gca();
-ax.FontSize = 10;
-ax.FontName = "Times New Roman";
-
-dxVis = dat.dataClass_rt.VIS_LAR_States_Px_mm.Data - r_LAR_cam_truth(:,1);
-dyVis = dat.dataClass_rt.VIS_LAR_States_Py_mm.Data - r_LAR_cam_truth(:,2);
-dthVis = wrap(dat.dataClass_rt.VIS_LAR_States_Rz_rad.Data - r_LAR_cam_truth(:,3));
-
-subplot(3,2,2)
-plot(t,dxVis,'k')
-grid on;
-ylabel('\deltax [m]')
-xlim(periodgnc)
-ax = gca();
-ax.FontSize = 10;
-ax.FontName = "Times New Roman";
-subplot(3,2,4)
-plot(t,dyVis,'k')
-grid on;
-ylabel('\deltay [m]')
-xlim(periodgnc)
-ax = gca();
-ax.FontSize = 10;
-ax.FontName = "Times New Roman";
-subplot(3,2,6)
-plot(t,dthVis,'k')
-grid on;
-ylabel('\delta\theta [rad]'); xlabel('Time [s]')
-xlim(periodgnc)
-formatfig(0.8,0.4);
-ax = gca();
-ax.FontSize = 10;
-ax.FontName = "Times New Roman";
-
-% =========================================================================
-% Covariance Evolution
-% =========================================================================
-figure('Name','Covariance and Residual Evolution')
-subplot(3,2,[1 3 5])
-hold on; grid on; box on;
-% cov = dat.dataClass_rt.P_est.Data;
-res = [dat.dataClass_rt.x_res_m.Data, dat.dataClass_rt.y_res_m.Data,...
-       dat.dataClass_rt.theta_res_rad.Data];
-% for km = 1:36
-%     plot(t, cov(:,km))
-% end
-xlim(periodgnc)
-formatfig(0.8,0.4);
-ax = gca();
-ax.FontSize = 10;
-ax.FontName = "Times New Roman";
-
-subplot(3,2,2)
-plot(t, res(:,1), 'k')
-grid on; box on;
-xlim(periodgnc)
-ax = gca();
-ax.FontSize = 10;
-ax.FontName = "Times New Roman";
-
-subplot(3,2,4)
-plot(t, res(:,2), 'k')
-grid on; box on;
-xlim(periodgnc)
-ax = gca();
-ax.FontSize = 10;
-ax.FontName = "Times New Roman";
-
-subplot(3,2,6)
-plot(t, res(:,3), 'k')
-grid on; box on;
-xlim(periodgnc)
-ax = gca();
-ax.FontSize = 10;
-ax.FontName = "Times New Roman";
-
+formatfig(0.4,0.4)
 
 %%
 % =========================================================================
@@ -417,7 +264,7 @@ ax.FontName = "Times New Roman";
 % plot, 0.4 width scale is recommended.
 [time,inds,~] = unique(t);
 
-DATA_STARTTIME = 1100;          
+DATA_STARTTIME = index55s;          
 
 unique_time = time(DATA_STARTTIME:end);
 unique_inds = inds(DATA_STARTTIME:end);
@@ -429,22 +276,40 @@ expdata_BLACK_pos_x    = dat.dataClass_rt.BLACK_Px_m.Data(unique_inds);
 expdata_BLACK_pos_y    = dat.dataClass_rt.BLACK_Py_m.Data(unique_inds);
 expdata_BLACK_pos_th   = dat.dataClass_rt.BLACK_Rz_rad.Data(unique_inds);
 expdata_BLUE_pos_x     = dat.dataClass_rt.BLUE_Px_m.Data(unique_inds);
-expdata_BLUE_pos_y     = dat.dataClass_rt.BLUE_Py_m.Data(unique_inds);
-expdata_BLUE_pos_th    = dat.dataClass_rt.BLUE_Rz_rad.Data(unique_inds);
 
-ARMq1 = dat.dataClass_rt.Joint_q1.Data(unique_inds);
-ARMq2 = dat.dataClass_rt.Joint_q2.Data(unique_inds);
-ARMq3 = dat.dataClass_rt.Joint_q3.Data(unique_inds);
+try
+    ARMq1 = dat.dataClass_rt.Joint_q1.Data(unique_inds);
+    ARMq2 = dat.dataClass_rt.Joint_q2.Data(unique_inds);
+    ARMq3 = dat.dataClass_rt.Joint_q3.Data(unique_inds);
+    ArmGrab = dat.dataClass_rt.ARM_Grab_Complete.Data(unique_inds);
+catch ME
+    warning('No data for arm.');
+end
+
+% Finding grab index in unique_inds
+try
+    clear found grabIndex
+    found = 0;
+    for p = 1:length(unique_time)
+        grab = ArmGrab(p);
+        if grab == 1 && found == 0
+            grabIndex = p;
+            found     = 1;
+        end
+    end
+catch 
+    warning('Index not found, using alternative');
+    grabIndex = length(expdata_RED_pos_x);
+end
 
 % Static plot 
 figure('Name','Trajectory')
-
 % User can specify indices to show snapshots of the platforms. Typically, 
 % these would be the initial and final conditions, but can also include 
 % intermediate snapshots
-plotting_indices = [1,3800]; 
+plotting_indices = [grabIndex,length(expdata_RED_pos_x)]; 
 % plotting_indices = [1, unique_inds(end)]; 
-alpha_values     = [0.2,1];
+alpha_values     = [0.3,1];
 % alpha_values     = [0.2*ones(1,length(plotting_indices)-1) 1];    % transparency for each snapshot; must be same length as 'plotting_indices'
 
 % Plotting trajectory
@@ -459,11 +324,15 @@ for ii = 1:length(plotting_indices)
 
     spacecraft = DrawSpacecraft([expdata_RED_pos_x(frame),expdata_RED_pos_y(frame),expdata_RED_pos_th(frame),5]);
     patch(spacecraft(:,1), spacecraft(:,2), 'w', 'facealpha', 0.5, 'edgecolor', 'r', 'edgealpha',alpha,'Linewidth',0.5)
-
-    [shoulder,elbow,wrist] = DrawARM([expdata_RED_pos_x(frame),expdata_RED_pos_y(frame),expdata_RED_pos_th(frame),ARMq1(frame),ARMq2(frame),ARMq3(frame)]);
-    patch(shoulder(:,1), shoulder(:,2), 'w', 'facealpha', alpha, 'edgecolor', 'r', 'edgealpha',alpha)
-    patch(elbow(:,1), elbow(:,2), 'w', 'facealpha', alpha, 'edgecolor', 'r', 'edgealpha',alpha)
-    patch(wrist(:,1), wrist(:,2), 'w', 'facealpha', alpha, 'edgecolor', 'r', 'edgealpha',alpha)
+    
+    try
+        [shoulder,elbow,wrist] = DrawARM([expdata_RED_pos_x(frame),expdata_RED_pos_y(frame),expdata_RED_pos_th(frame),ARMq1(frame),ARMq2(frame),ARMq3(frame)]);
+        patch(shoulder(:,1), shoulder(:,2), 'w', 'facealpha', alpha, 'edgecolor', 'r', 'edgealpha',alpha)
+        patch(elbow(:,1), elbow(:,2), 'w', 'facealpha', alpha, 'edgecolor', 'r', 'edgealpha',alpha)
+        patch(wrist(:,1), wrist(:,2), 'w', 'facealpha', alpha, 'edgecolor', 'r', 'edgealpha',alpha)
+    catch ME
+        warning('No arm data available')
+    end
 
     spacecraft = DrawSpacecraft([expdata_BLACK_pos_x(frame),expdata_BLACK_pos_y(frame),expdata_BLACK_pos_th(frame),7]);
     patch(spacecraft(:,1), spacecraft(:,2), 'w', 'facealpha', 0.5, 'edgecolor', 'k', 'edgealpha',alpha,'Linewidth',0.5)
@@ -482,18 +351,51 @@ ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
 
-% Angular Velocity
-figure('Name', 'Angular Velocity')
-plot(t, dat.dataClass_rt.BLACK_RzD_radpers.Data, 'k')
-hold on; grid on;
-plot(t, dat.dataClass_rt.RED_RzD_radpers.Data, 'r')
-xlabel('Time [s]'); ylabel('$\dot{\theta}$ [rad/s]', 'Interpreter', 'latex');
-xlim(period);
-legend('Target', 'Chaser')
-formatfig(0.45,0.2)
+% Arm motion
+figure('Name','Arm Motion')
+% User can specify indices to show snapshots of the platforms. Typically, 
+% these would be the initial and final conditions, but can also include 
+% intermediate snapshots
+plotting_indices = [grabIndex-200,grabIndex,grabIndex+200,length(expdata_RED_pos_x)]; 
+alpha_values     = [0.2*ones(1,2),0.4,1];
+
+% Plotting trajectory
+hold on
+
+% Plotting spacecraft shapes
+for ii = 1:length(plotting_indices)
+    frame = plotting_indices(ii);
+    alpha = alpha_values(ii);
+
+    spacecraft = DrawSpacecraft([expdata_RED_pos_x(frame),expdata_RED_pos_y(frame),expdata_RED_pos_th(frame),5]);
+    patch(spacecraft(:,1), spacecraft(:,2), 'w', 'facealpha', 0.5, 'edgecolor', 'r', 'edgealpha',alpha,'Linewidth',0.5)
+    
+    try
+        [shoulder,elbow,wrist] = DrawARM([expdata_RED_pos_x(frame),expdata_RED_pos_y(frame),expdata_RED_pos_th(frame),ARMq1(frame),ARMq2(frame),ARMq3(frame)]);
+        patch(shoulder(:,1), shoulder(:,2), 'w', 'facealpha', alpha, 'edgecolor', 'r', 'edgealpha',alpha)
+        patch(elbow(:,1), elbow(:,2), 'w', 'facealpha', alpha, 'edgecolor', 'r', 'edgealpha',alpha)
+        patch(wrist(:,1), wrist(:,2), 'w', 'facealpha', alpha, 'edgecolor', 'r', 'edgealpha',alpha)
+    catch ME
+        warning('No arm data available')
+    end
+
+    spacecraft = DrawSpacecraft([expdata_BLACK_pos_x(frame),expdata_BLACK_pos_y(frame),expdata_BLACK_pos_th(frame),7]);
+    patch(spacecraft(:,1), spacecraft(:,2), 'w', 'facealpha', 0.5, 'edgecolor', 'k', 'edgealpha',alpha,'Linewidth',0.5)
+end
+
+xlabel('X-Position [m]')
+ylabel('Y-Position [m]')
+grid on
+box on
+axis equal
+xlim([0 3.5])
+ylim([0 2.4])
+% legend(exphdl, 'Location', 'NorthWest')
+formatfig(0.7,0.4)
 ax = gca();
 ax.FontSize = 10;
 ax.FontName = "Times New Roman";
+
 
 %%
 % =========================================================================
@@ -571,8 +473,7 @@ if savefigs == 1
             name = get(fig, 'Name');
             exportgraphics(fig,[savedplotsfolder, name, '.pdf'])
         catch ME
-            uialert(fig, ['Cannot save the following figure:', name],...
-                    'Error saving plots', 'Modal', true);
+            warning(['Cannot save the following figure:  ', name]);
         end
     end
 end
@@ -587,8 +488,7 @@ if savefigs == 1
             name = get(fig, 'Name');
             exportgraphics(fig,[savedplotsfolder, name, '.png'])
         catch ME
-            uialert(fig, ['Cannot save the following figure:', name],...
-                    'Error saving plots', 'Modal', true);
+            warning(['Cannot save the following figure: ', name]);
         end
     end
 end
