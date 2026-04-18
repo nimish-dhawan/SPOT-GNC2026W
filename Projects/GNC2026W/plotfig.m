@@ -6,18 +6,17 @@
 % clc
 close all
 
-
 % Loading the datafile
 [file,location] = uigetfile('.mat');
 
-if isempty(file) || strcmp(file,"")
+if isequal(file,0)
     return
 else
     filename = [location, file];
     dat = load(filename);
 end
 
-%%
+%% Initializing script and time array =====================================
 % Toggle on/off saving all the plots automatically
 savefigs = 1;
 % Toggle on/off animation
@@ -494,31 +493,6 @@ if savefigs == 1
 end
 
 %%
-function r_LAR_cam = inertial2Cam(r_t_I, r_c_I)
-
-wrap = @(x) atan2(sin(x), cos(x));
-
-th_t = unwrap(r_t_I(3)); th_c = unwrap(r_c_I(3));
-x_c_I = r_c_I(1); y_c_I = r_c_I(2);
-sc = sin(th_c); cc = cos(th_c);
-
-x_LAR   = 0.145;   % LAR offset in target BoF, m
-l_cam_x = 0.125;   % Offset in x from origin of Red, left camera, m
-l_cam_y = 0.03;    % )ffset in y from origin of Red, left camera, m
-
-A = [ cc sc 0;
-     -sc cc 0;
-      0  0  1];
-
-B = [x_LAR*cos(wrap(th_t-th_c)) - x_c_I*cc - y_c_I*sc - l_cam_x;
-     x_LAR*sin(wrap(th_t-th_c)) + x_c_I*sc - y_c_I*cc - l_cam_y;
-    -th_c ];
-
-r_LAR_cam = A*r_t_I + B;
-% r_LAR_cam(3) = wrap(r_LAR_cam(3));
-
-end
-
 function y_I = rot(y,r_C_I)
 % Takes measurements in camera reference frame and rotates to inertial
     

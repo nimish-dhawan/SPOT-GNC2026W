@@ -73,23 +73,14 @@ Gamma4_wr = 0.029;
 Gamma5_wr = 800; 
 Gamma6_wr = 0.02;
 
-%% Custom
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% NIMISH DHAWAN
-% 2025
-% Custom Setup
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Constants
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% UKE Setup ==============================================================
 % Chaser properties
 M_c = diag([mRED, mRED, IRED]);
 Mc_inv = inv(M_c);
 A_c = eye(3);
 F_u = zeros(3,1); % No external forces/torques
 
-% Setup
+% Gains
 a1 = 2;
 a2 = 2;
 a3 = 2;
@@ -100,24 +91,53 @@ g2 = 1e-01;
 g3 = 5e-01;
 gamma = diag([g1; g2; g3]);
 
-% SUBPHASE 1
-X1_blk = 0.4;
-Y1_blk = 0.4;
-sep1 = 0.60;            % Desired separation between the platforms (m)
+%% Experiment scenario ====================================================
+% scenario = 1 for rotational + translation 1
+% scenario = 2 for rotational + translation 2
+% scenario = 3 for rotation only
+scenario  = 1;
 
-% SUBPHASE 2
-X2_blk = 0.4;
-Y2_blk = 0.4;
-sep2 = 0.30;            % Desired separation between the platforms (m)
+if scenario == 1
+    % Scenario 1
+    X0_blk = 0.60; % [m]
+    Y0_blk = 0.65; % [m]
+    Z0_blk = -45;  % [deg]
+    X0_red = 3.0;  % [m]
+    Y0_red = 1.50; % [m]
+    Z0_red = 180;  % [deg]
+elseif scenario == 2
+    % Scenario 2
+    X0_blk = 1.00; % [m]
+    Y0_blk = 1.77; % [m]
+    Z0_blk = -180; % [deg]
+    X0_red = 0.40; % [m]
+    Y0_red = 0.40; % [m]
+    Z0_red = 45.0; % [deg]
+elseif scenario == 3
+    % Scenario 3
+    X0_blk = 1.76; % [m]
+    Y0_blk = 1.21; % [m]
+    Z0_blk = 0.00; % [deg]
+    X0_red = 3.00; % [m]
+    Y0_red = 2.00; % [m]
+    Z0_red = 225;  % [deg]
+else
+    warning("Selected scenario does not exist. Please choose a defined scenario.");
+end
 
-% SUBPHASE 3
-X3_blk = 0.4;
-Y3_blk = 0.4;
-sep3 = 0.30;            % Desired separation between the platforms (m)
+% Updating initial conditions in GUI
+appHandle.SubAppInitialConditions.REDStartX.Value  = X0_red;  % [m]
+appHandle.SubAppInitialConditions.REDStartY.Value  = Y0_red;  % [m]
+appHandle.SubAppInitialConditions.REDStartTh.Value = Z0_red;  % [deg]
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Filter Parameters
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+appHandle.SubAppInitialConditions.BLACKStartX.Value  = X0_blk;
+appHandle.SubAppInitialConditions.BLACKStartY.Value  = Y0_blk;
+appHandle.SubAppInitialConditions.BLACKStartTh.Value = Z0_blk;
+
+appHandle.SubAppInitialConditions.UpdateInitialConditions();
+
+
+%% Navigation Initialization ==============================================
 % Select what filtering technique to use
 % For UKF : fNum = 1
 % For MEKF: fNum = 2
@@ -136,26 +156,18 @@ G  = [0.5*(dt^2)*eye(3); dt*eye(3)];
 q  = [1e-6, 1e-6, 1e-6];
 Q  = G*diag(q)*G';
 P0 = F*(0.2*eye(6))*F' + Q;
-x0 = [1.1*init_states_BLACK'; zeros(3,1)]; 
+x0 = [1.1*[X0_blk;Y0_blk;Z0_blk]; zeros(3,1)]; 
 rx = 1e-6;
 rt = 1e-4;
 R = diag([rx, rx, rt]);
 
 CVrate = 1/5; % sec
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% VIS Integration
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % VISinLoop = 1; for having CV states run in the loop
 % VISinLoop = 0; otherwise
-
 VISinLoop = 1;
 
-% Experiment scenario
-% scenario = 1 for rotational + translation 1
-% scenario = 2 for rotational + translation 2
-% scenario = 3 for rotation only
-scenario  = 3;
+
 
 %% This section of the code contains parameters should not be modified
 
@@ -289,16 +301,16 @@ appHandle.ARMCheckBox.Value    = 0;
 
 appHandle.ConfirmSettings();
 
-% Edit initial conditions
-appHandle.SubAppInitialConditions.REDStartX.Value  = 3;  % [m]
-appHandle.SubAppInitialConditions.REDStartY.Value  = 1.5;  % [m]
-appHandle.SubAppInitialConditions.REDStartTh.Value = 180;   % [deg]
-
-appHandle.SubAppInitialConditions.BLACKStartX.Value = X1_blk;
-appHandle.SubAppInitialConditions.BLACKStartY.Value = Y1_blk;
-appHandle.SubAppInitialConditions.BLACKStartTh.Value = -45;
-
-appHandle.SubAppInitialConditions.UpdateInitialConditions();
+% % Edit initial conditions
+% appHandle.SubAppInitialConditions.REDStartX.Value  = X0_red;  % [m]
+% appHandle.SubAppInitialConditions.REDStartY.Value  = Y0_red;  % [m]
+% appHandle.SubAppInitialConditions.REDStartTh.Value = Z0_red;  % [deg]
+% 
+% appHandle.SubAppInitialConditions.BLACKStartX.Value  = X0_blk;
+% appHandle.SubAppInitialConditions.BLACKStartY.Value  = Y0_blk;
+% appHandle.SubAppInitialConditions.BLACKStartTh.Value = Z0_blk;
+% 
+% appHandle.SubAppInitialConditions.UpdateInitialConditions();
 % 
 % % Edit mass properties
 % appHandle.SubAppMassProperties.OverridePropertiesCheckBox.Value = 1;
@@ -334,7 +346,7 @@ appHandle.SubAppInitialConditions.UpdateInitialConditions();
 
 % Edit subphase durations
 appHandle.SubPhase1EditField.Value = 0;      % [s]
-appHandle.SubPhase2EditField.Value = 180;     % [s]
+appHandle.SubPhase2EditField.Value = 360;     % [s]
 appHandle.SubPhase3EditField.Value = 0;       % [s]
 appHandle.SubPhase4EditField.Value = 0;       % [s]
 

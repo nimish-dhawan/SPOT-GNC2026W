@@ -98,9 +98,11 @@ end
 
 % Priori covariance estimate 
 for i = 1 : (2*n+1)
-    Pi = wi_c(i) * (Fi(:,i) - x_minus) * (Fi(:,i) - x_minus)' + Q;
+    Pi = wi_c(i) * (Fi(:,i) - x_minus) * (Fi(:,i) - x_minus)';
     P_minus = P_minus + Pi;
 end
+
+P_minus = P_minus + Q;
 
 %% Correction =============================================================
 newMeas = measurement_flag(isValid);
@@ -146,9 +148,10 @@ if isValid ~= 0 && newMeas == 1
     
     % Estimated covariance calculation
     for i = 1 : (2*n+1)
-        P_yy = P_yy + wi_c(i) * (h(:,i)-y_hat) * (h(:,i)-y_hat)' + R;
+        P_yy = P_yy + wi_c(i) * (h(:,i)-y_hat) * (h(:,i)-y_hat)';
         P_xy = P_xy + wi_c(i) * (Xi_minus(:,i) - x_minus) * (h(:,i)-y_hat)';
     end
+    P_yy =  P_yy + R;
     
     % NIS calculation
     NIS = r' * inv(P_yy) * r;
