@@ -58,6 +58,8 @@ try
         if grab == 1 && found == 0
             grabIndex = p;
             found     = 1;
+        else
+            grabIndex = length(t);
         end
     end
 catch 
@@ -72,13 +74,12 @@ k = 5;
 dt = 0.05;
 
 % Covariance and state initialization for UKF
-F = [eye(3), dt*eye(3); zeros(3), eye(3)];
-G = [0.5*(dt^2)*eye(3); dt*eye(3)];
-% q = [1e-9, 1e-9, 1e-9];   
-q = 1e-06*ones(3,1);
-Q = G*diag(q)*G';
+F  = [eye(3), dt*eye(3); zeros(3), eye(3)];
+G  = [0.5*(dt^2)*eye(3); dt*eye(3)];
+q  = [1e-6, 1e-6, 1e-6];
+Q  = G*diag(q)*G';
 P0 = F*(0.2*eye(6))*F' + Q;
-x0 = [1.1*r_t_I(1,:)'; zeros(3,1)]; 
+x0 = [1.1*[X0_blk;Y0_blk;Z0_blk]; zeros(3,1)]; 
 rx = 1e-6;
 rt = 1e-4;
 R = diag([rx, rx, rt]);

@@ -95,7 +95,7 @@ gamma = diag([g1; g2; g3]);
 % scenario = 1 for rotational + translation 1
 % scenario = 2 for rotational + translation 2
 % scenario = 3 for rotation only
-scenario  = 1;
+scenario  = 3;
 
 if scenario == 1
     % Scenario 1
@@ -117,7 +117,7 @@ elseif scenario == 3
     % Scenario 3
     X0_blk = 1.76; % [m]
     Y0_blk = 1.21; % [m]
-    Z0_blk = 0.00; % [deg]
+    Z0_blk = -90; % [deg]
     X0_red = 3.00; % [m]
     Y0_red = 2.00; % [m]
     Z0_red = 225;  % [deg]
