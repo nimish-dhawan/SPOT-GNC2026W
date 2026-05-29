@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'GNC2026W'.
 //
-// Model version                  : 4.2484
+// Model version                  : 4.2504
 // Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
-// C/C++ source code generated on : Mon May 11 15:28:53 2026
+// C/C++ source code generated on : Fri May 29 13:52:44 2026
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: ARM Compatible->ARM Cortex-A (64-bit)
@@ -38,7 +38,10 @@ extern void GNC2026W_Phase0Synchronization(real_T *rtd_ARM_Control_Law_Enabler,
   *rtd_RED_Control_Law_Enabler, char_T rtd_RED_Logger[256], real_T
   *rtd_RED_Path_Planner_Selection, P_Phase0Synchronization_GNC20_T *localP);
 extern void Holdpositiontillthefilterconver(real_T *rtd_RED_Control_Law_Enabler,
-  real_T *rtd_RED_Path_Planner_Selection, P_Holdpositiontillthefilterco_T
+  real_T *rtd_RED_Path_Planner_Selection, real_T *rtd_filterEnable,
+  P_Holdpositiontillthefilterco_T *localP);
+extern void GNC_Startmovingafterconvergence(real_T *rtd_RED_Control_Law_Enabler,
+  real_T *rtd_RED_Path_Planner_Selection, P_Startmovingafterconvergence_T
   *localP);
 extern void GNC2026W_Phase4ReturnHome(real_T *rtd_ARM_Control_Law_Enabler,
   real_T rtd_ARM_Desired_States[3], real_T *rtd_ARM_Path_Planner_Selection,
@@ -68,12 +71,12 @@ extern void GNC2026W_ExperimentalVISStates(real_T rty_Out1[3], const real_T
   *rtd_isSim);
 extern void GNC2026W_CameratoInertialFrame(const real_T rtu_r_C_I[2], real_T
   rtu_r_C_I_a, const real_T rtu_r_REL_C[3], real_T rty_r_T_I[3]);
-extern void GNC2_ChangeBLACKBehavior_j_Init(RT_MODEL_GNC2026W_T * const
-  GNC2026W_M, DW_ChangeBLACKBehavior_GNC2_l_T *localDW,
-  P_ChangeBLACKBehavior_GNC20_p_T *localP);
-extern void GN_ChangeBLACKBehavior_p_Update(RT_MODEL_GNC2026W_T * const
-  GNC2026W_M, real_T rtu_UniversalTime, DW_ChangeBLACKBehavior_GNC2_l_T *localDW);
-extern void GNC2026W_MATLABFunction_j(real_T rtu_dt, real_T rtu_dataRate, real_T
+extern void GNC2_ChangeBLACKBehavior_c_Init(RT_MODEL_GNC2026W_T * const
+  GNC2026W_M, DW_ChangeBLACKBehavior_GNC2_b_T *localDW,
+  P_ChangeBLACKBehavior_GNC20_b_T *localP);
+extern void GN_ChangeBLACKBehavior_j_Update(RT_MODEL_GNC2026W_T * const
+  GNC2026W_M, real_T rtu_UniversalTime, DW_ChangeBLACKBehavior_GNC2_b_T *localDW);
+extern void GNC2026W_MATLABFunction_l(real_T rtu_dt, real_T rtu_dataRate, real_T
   *rty_dt_out);
 extern void GNC2026W_EnabledSubsystem_Init(real_T rty_dydt[3],
   DW_EnabledSubsystem_GNC2026W_T *localDW, P_EnabledSubsystem_GNC2026W_T *localP);
@@ -85,17 +88,17 @@ extern void GNC2026W_EnabledSubsystem(const boolean_T rtu_Enable[3], const
   real_T rtu_y[3], real_T rtu_dt, real_T rty_dydt[3],
   B_EnabledSubsystem_GNC2026W_T *localB, DW_EnabledSubsystem_GNC2026W_T *localDW,
   P_EnabledSubsystem_GNC2026W_T *localP);
-extern void GNC2026_EnabledSubsystem_f_Init(real_T rty_dydt[3],
-  DW_EnabledSubsystem_GNC2026_c_T *localDW, P_EnabledSubsystem_GNC2026W_c_T
+extern void GNC2026_EnabledSubsystem_k_Init(real_T rty_dydt[3],
+  DW_EnabledSubsystem_GNC2026_c_T *localDW, P_EnabledSubsystem_GNC2026W_i_T
   *localP);
-extern void GNC2_EnabledSubsystem_p_Disable(DW_EnabledSubsystem_GNC2026_c_T
+extern void GNC2_EnabledSubsystem_j_Disable(DW_EnabledSubsystem_GNC2026_c_T
   *localDW);
-extern void GNC20_EnabledSubsystem_a_Update(B_EnabledSubsystem_GNC2026W_h_T
+extern void GNC20_EnabledSubsystem_e_Update(B_EnabledSubsystem_GNC2026W_j_T
   *localB, DW_EnabledSubsystem_GNC2026_c_T *localDW);
-extern void GNC2026W_EnabledSubsystem_g(const boolean_T rtu_Enable[3], real_T
-  rtu_y, real_T rtu_y_c, real_T rtu_y_k, real_T rtu_dt, real_T rty_dydt[3],
-  B_EnabledSubsystem_GNC2026W_h_T *localB, DW_EnabledSubsystem_GNC2026_c_T
-  *localDW, P_EnabledSubsystem_GNC2026W_c_T *localP);
+extern void GNC2026W_EnabledSubsystem_e(const boolean_T rtu_Enable[3], real_T
+  rtu_y, real_T rtu_y_i, real_T rtu_y_h, real_T rtu_dt, real_T rty_dydt[3],
+  B_EnabledSubsystem_GNC2026W_j_T *localB, DW_EnabledSubsystem_GNC2026_c_T
+  *localDW, P_EnabledSubsystem_GNC2026W_i_T *localP);
 extern void GNC2026W_MATLABFunction_e(real_T rtu_L_act, real_T rtu_L0, real_T
   rtu_Univ_Time, real_T *rty_y, DW_MATLABFunction_GNC2026W_l_T *localDW);
 extern void GNC2026W_Pseudoinverse1_Init(DW_Pseudoinverse1_GNC2026W_T *localDW);
@@ -107,10 +110,10 @@ extern void GNC2026W_MATLABFunction5(const real_T rtu_u_desired[3], const real_T
   rtu_x0[8], real_T rty_H_final[24], real_T rty_duty_cycles[8], real_T
   rtp_max_iters, real_T rtp_tol);
 extern void GNC2026W_CreateRotationMatrix(real_T rtu_Rz, real_T rty_C_Ib[4]);
-extern void GNC2026W_CreateRotationMatrix_a(real_T rtu_Rz, real_T rty_C_bI[4]);
+extern void GNC2026W_CreateRotationMatrix_n(real_T rtu_Rz, real_T rty_C_bI[4]);
 extern void GNC2_ChangeBLACKBehavior_e_Init(RT_MODEL_GNC2026W_T * const
   GNC2026W_M, DW_ChangeBLACKBehavior_GNC2_g_T *localDW,
-  P_ChangeBLACKBehavior_GNC20_b_T *localP);
+  P_ChangeBLACKBehavior_GNC2_bv_T *localP);
 extern void GN_ChangeBLACKBehavior_n_Update(RT_MODEL_GNC2026W_T * const
   GNC2026W_M, B_ChangeBLACKBehavior_GNC20_m_T *localB,
   DW_ChangeBLACKBehavior_GNC2_g_T *localDW);
@@ -118,8 +121,8 @@ extern void GNC2026W_ChangeBLACKBehavior_i(RT_MODEL_GNC2026W_T * const
   GNC2026W_M, B_ChangeBLACKBehavior_GNC20_m_T *localB);
 extern void GNC202_ChangeBLACKBehavior_Term(RT_MODEL_GNC2026W_T * const
   GNC2026W_M, DW_ChangeBLACKBehavior_GNC202_T *localDW);
-extern void GNC2_ChangeBLACKBehavior_j_Term(RT_MODEL_GNC2026W_T * const
-  GNC2026W_M, DW_ChangeBLACKBehavior_GNC2_l_T *localDW);
+extern void GNC2_ChangeBLACKBehavior_h_Term(RT_MODEL_GNC2026W_T * const
+  GNC2026W_M, DW_ChangeBLACKBehavior_GNC2_b_T *localDW);
 extern void GNC2_ChangeBLACKBehavior_f_Term(RT_MODEL_GNC2026W_T * const
   GNC2026W_M, DW_ChangeBLACKBehavior_GNC2_g_T *localDW);
 

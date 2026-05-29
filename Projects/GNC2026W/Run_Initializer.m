@@ -92,10 +92,11 @@ g3 = 5e-01;
 gamma = diag([g1; g2; g3]);
 
 %% Experiment scenario ====================================================
-% scenario = 1 for rotational + translation 1
-% scenario = 2 for rotational + translation 2
-% scenario = 3 for rotation only
-scenario  = 3;
+% scenario = 1 for rotational + translation 1 target
+% scenario = 2 for rotational + translation 2 target
+% scenario = 3 for rotation only target
+% scenario = 4 for stationary target
+scenario  = 4;
 
 if scenario == 1
     % Scenario 1
@@ -118,6 +119,13 @@ elseif scenario == 3
     X0_blk = 1.76; % [m]
     Y0_blk = 1.21; % [m]
     Z0_blk = -90; % [deg]
+    X0_red = 3.00; % [m]
+    Y0_red = 2.00; % [m]
+    Z0_red = 225;  % [deg]
+elseif scenario == 4
+    X0_blk = 1.76; % [m]
+    Y0_blk = 1.21; % [m]
+    Z0_blk = 0   ; % [deg]
     X0_red = 3.00; % [m]
     Y0_red = 2.00; % [m]
     Z0_red = 225;  % [deg]
@@ -167,7 +175,9 @@ CVrate = 1/5; % sec
 % VISinLoop = 0; otherwise
 VISinLoop = 1;
 
-
+%% Defining the arm grab location =========================================
+y_grab = 0.105; % m, desired y-position of the end effector (from the 
+% centre of the LAR)
 
 %% This section of the code contains parameters should not be modified
 
@@ -352,6 +362,6 @@ appHandle.SubPhase4EditField.Value = 0;       % [s]
 
 appHandle.UpdateTimes();
 
-appHandle.OpenInitialConditionAppButton.set('Enable','on');
-appHandle.UseVISintheLoopSwitch.Value = 'On';
-appHandle.VISlamp.Color = [0 1 0];
+% appHandle.OpenInitialConditionAppButton.set('Enable','on');
+% appHandle.UseVISintheLoopSwitch.Value = 'On';
+% appHandle.VISlamp.Color = [0 1 0];

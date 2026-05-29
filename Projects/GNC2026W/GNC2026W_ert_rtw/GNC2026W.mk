@@ -2,7 +2,7 @@
 ## Makefile generated for component 'GNC2026W'. 
 ## 
 ## Makefile     : GNC2026W.mk
-## Generated on : Mon May 11 13:07:43 2026
+## Generated on : Fri May 29 11:38:08 2026
 ## Final product: $(RELATIVE_PATH_TO_ANCHOR)/GNC2026W.elf
 ## Product type : executable
 ## 
@@ -160,7 +160,7 @@ BUILD_TYPE = "Top-Level Standalone Executable"
 ## INCLUDE PATHS
 ###########################################################################
 
-INCLUDES_BUILDINFO = -I$(START_DIR) -I$(MATLAB_ROOT)/toolbox/shared/spc/src_ml/extern/include -I$(MATLAB_WORKSPACE)/C/Users/srlre/OneDrive/Documents/GitHub/SPOT-GNC2026W/Custom_Library/Resources/CustomDataLogger/include -I$(MATLAB_WORKSPACE)/C/Users/srlre/OneDrive/Documents/GitHub/SPOT-GNC2026W/Custom_Library/NVIDIA_Jetson/include -I$(MATLAB_WORKSPACE)/C/Users/srlre/OneDrive/Documents/GitHub/SPOT-GNC2026W/Custom_Library/Dynamixel_Actuators/include -I$(MATLAB_WORKSPACE)/C/Users/srlre/OneDrive/Documents/GitHub/SPOT-GNC2026W/Custom_Library/Resources/IdentifyPlatform/include -I$(START_DIR)/GNC2026W_ert_rtw -I$(MATLAB_ROOT)/extern/include -I$(MATLAB_ROOT)/simulink/include -I$(MATLAB_ROOT)/rtw/c/src -I$(MATLAB_ROOT)/rtw/c/src/ext_mode/common -I$(MATLAB_ROOT)/rtw/c/ert -I$(MATLAB_WORKSPACE)/C/ProgramData/MATLAB/SupportPackages/R2024b/toolbox/target/supportpackages/nvidia/include -I$(MATLAB_WORKSPACE)/C/ProgramData/MATLAB/SupportPackages/R2024b/toolbox/target/supportpackages/nvidia/sources/utils -I$(MATLAB_ROOT)/toolbox/coder/rtiostream/src/utils -I$(MATLAB_ROOT)/toolbox/target/codertarget/rtos/inc
+INCLUDES_BUILDINFO = -I$(START_DIR) -I$(MATLAB_ROOT)/toolbox/shared/spc/src_ml/extern/include -I$(MATLAB_WORKSPACE)/C/Users/srlre/OneDrive/Documents/GitHub/SPOT-GNC2026W/Custom_Library/Resources/CustomDataLogger/include -I$(MATLAB_WORKSPACE)/C/Users/srlre/OneDrive/Documents/GitHub/SPOT-GNC2026W/Custom_Library/Dynamixel_Actuators/include -I$(MATLAB_WORKSPACE)/C/Users/srlre/OneDrive/Documents/GitHub/SPOT-GNC2026W/Custom_Library/Resources/IdentifyPlatform/include -I$(MATLAB_ROOT)/toolbox/target/shared/svd/common/include -I$(MATLAB_WORKSPACE)/C/ProgramData/MATLAB/SupportPackages/R2024b/toolbox/target/supportpackages/shared_nvidia_blocks/include -I$(START_DIR)/GNC2026W_ert_rtw -I$(MATLAB_ROOT)/extern/include -I$(MATLAB_ROOT)/simulink/include -I$(MATLAB_ROOT)/rtw/c/src -I$(MATLAB_ROOT)/rtw/c/src/ext_mode/common -I$(MATLAB_ROOT)/rtw/c/ert -I$(MATLAB_WORKSPACE)/C/ProgramData/MATLAB/SupportPackages/R2024b/toolbox/target/supportpackages/nvidia/include -I$(MATLAB_WORKSPACE)/C/ProgramData/MATLAB/SupportPackages/R2024b/toolbox/target/supportpackages/nvidia/sources/utils -I$(MATLAB_ROOT)/toolbox/coder/rtiostream/src/utils -I$(MATLAB_ROOT)/toolbox/target/codertarget/rtos/inc
 
 INCLUDES = $(INCLUDES_BUILDINFO)
 
@@ -181,7 +181,7 @@ DEFINES = $(DEFINES_) $(DEFINES_BUILD_ARGS) $(DEFINES_CUSTOM) $(DEFINES_OPTS) $(
 ## SOURCE FILES
 ###########################################################################
 
-SRCS = $(MATLAB_ROOT)/toolbox/shared/spc/src_ml/extern/src/DAHostLib_Network.c $(MATLAB_ROOT)/toolbox/shared/spc/src_ml/extern/src/DAHostLib_rtw.c $(MATLAB_WORKSPACE)/C/Users/srlre/OneDrive/Documents/GitHub/SPOT-GNC2026W/Custom_Library/Resources/CustomDataLogger/src/custom_data_logger.cpp $(MATLAB_WORKSPACE)/C/Users/srlre/OneDrive/Documents/GitHub/SPOT-GNC2026W/Custom_Library/NVIDIA_Jetson/src/gpio_control.cpp $(MATLAB_WORKSPACE)/C/Users/srlre/OneDrive/Documents/GitHub/SPOT-GNC2026W/Custom_Library/Dynamixel_Actuators/src/protocol2_packet_handler.cpp $(MATLAB_WORKSPACE)/C/Users/srlre/OneDrive/Documents/GitHub/SPOT-GNC2026W/Custom_Library/Dynamixel_Actuators/src/protocol1_packet_handler.cpp $(MATLAB_WORKSPACE)/C/Users/srlre/OneDrive/Documents/GitHub/SPOT-GNC2026W/Custom_Library/Dynamixel_Actuators/src/port_handler_windows.cpp $(MATLAB_WORKSPACE)/C/Users/srlre/OneDrive/Documents/GitHub/SPOT-GNC2026W/Custom_Library/Dynamixel_Actuators/src/port_handler_mac.cpp $(MATLAB_WORKSPACE)/C/Users/srlre/OneDrive/Documents/GitHub/SPOT-GNC2026W/Custom_Library/Dynamixel_Actuators/src/port_handler_linux.cpp $(MATLAB_WORKSPACE)/C/Users/srlre/OneDrive/Documents/GitHub/SPOT-GNC2026W/Custom_Library/Dynamixel_Actuators/src/port_handler_arduino.cpp $(MATLAB_WORKSPACE)/C/Users/srlre/OneDrive/Documents/GitHub/SPOT-GNC2026W/Custom_Library/Dynamixel_Actuators/src/port_handler.cpp $(MATLAB_WORKSPACE)/C/Users/srlre/OneDrive/Documents/GitHub/SPOT-GNC2026W/Custom_Library/Dynamixel_Actuators/src/packet_handler.cpp $(MATLAB_WORKSPACE)/C/Users/srlre/OneDrive/Documents/GitHub/SPOT-GNC2026W/Custom_Library/Dynamixel_Actuators/src/group_sync_write.cpp $(MATLAB_WORKSPACE)/C/Users/srlre/OneDrive/Documents/GitHub/SPOT-GNC2026W/Custom_Library/Dynamixel_Actuators/src/group_sync_read.cpp $(MATLAB_WORKSPACE)/C/Users/srlre/OneDrive/Documents/GitHub/SPOT-GNC2026W/Custom_Library/Dynamixel_Actuators/src/group_bulk_write.cpp $(MATLAB_WORKSPACE)/C/Users/srlre/OneDrive/Documents/GitHub/SPOT-GNC2026W/Custom_Library/Dynamixel_Actuators/src/group_bulk_read.cpp $(MATLAB_WORKSPACE)/C/Users/srlre/OneDrive/Documents/GitHub/SPOT-GNC2026W/Custom_Library/Dynamixel_Actuators/src/dynamixel_functions.cpp $(MATLAB_WORKSPACE)/C/Users/srlre/OneDrive/Documents/GitHub/SPOT-GNC2026W/Custom_Library/Resources/IdentifyPlatform/src/resource_functions.cpp $(START_DIR)/GNC2026W_ert_rtw/GNC2026W.cpp $(START_DIR)/GNC2026W_ert_rtw/GNC2026W_data.cpp $(START_DIR)/GNC2026W_ert_rtw/rtGetInf.cpp $(START_DIR)/GNC2026W_ert_rtw/rtGetNaN.cpp $(START_DIR)/GNC2026W_ert_rtw/rt_nonfinite.cpp $(MATLAB_WORKSPACE)/C/ProgramData/MATLAB/SupportPackages/R2024b/toolbox/target/supportpackages/nvidia/sources/utils/MW_nvidia_init.c $(MATLAB_ROOT)/toolbox/target/codertarget/rtos/src/linuxinitialize.cpp $(MATLAB_WORKSPACE)/C/ProgramData/MATLAB/SupportPackages/R2024b/toolbox/target/supportpackages/shared_nvidia_blocks/src/linuxUDP.c
+SRCS = $(MATLAB_ROOT)/toolbox/shared/spc/src_ml/extern/src/DAHostLib_Network.c $(MATLAB_ROOT)/toolbox/shared/spc/src_ml/extern/src/DAHostLib_rtw.c $(MATLAB_WORKSPACE)/C/Users/srlre/OneDrive/Documents/GitHub/SPOT-GNC2026W/Custom_Library/Resources/CustomDataLogger/src/custom_data_logger.cpp $(MATLAB_WORKSPACE)/C/Users/srlre/OneDrive/Documents/GitHub/SPOT-GNC2026W/Custom_Library/Dynamixel_Actuators/src/protocol2_packet_handler.cpp $(MATLAB_WORKSPACE)/C/Users/srlre/OneDrive/Documents/GitHub/SPOT-GNC2026W/Custom_Library/Dynamixel_Actuators/src/protocol1_packet_handler.cpp $(MATLAB_WORKSPACE)/C/Users/srlre/OneDrive/Documents/GitHub/SPOT-GNC2026W/Custom_Library/Dynamixel_Actuators/src/port_handler_windows.cpp $(MATLAB_WORKSPACE)/C/Users/srlre/OneDrive/Documents/GitHub/SPOT-GNC2026W/Custom_Library/Dynamixel_Actuators/src/port_handler_mac.cpp $(MATLAB_WORKSPACE)/C/Users/srlre/OneDrive/Documents/GitHub/SPOT-GNC2026W/Custom_Library/Dynamixel_Actuators/src/port_handler_linux.cpp $(MATLAB_WORKSPACE)/C/Users/srlre/OneDrive/Documents/GitHub/SPOT-GNC2026W/Custom_Library/Dynamixel_Actuators/src/port_handler_arduino.cpp $(MATLAB_WORKSPACE)/C/Users/srlre/OneDrive/Documents/GitHub/SPOT-GNC2026W/Custom_Library/Dynamixel_Actuators/src/port_handler.cpp $(MATLAB_WORKSPACE)/C/Users/srlre/OneDrive/Documents/GitHub/SPOT-GNC2026W/Custom_Library/Dynamixel_Actuators/src/packet_handler.cpp $(MATLAB_WORKSPACE)/C/Users/srlre/OneDrive/Documents/GitHub/SPOT-GNC2026W/Custom_Library/Dynamixel_Actuators/src/group_sync_write.cpp $(MATLAB_WORKSPACE)/C/Users/srlre/OneDrive/Documents/GitHub/SPOT-GNC2026W/Custom_Library/Dynamixel_Actuators/src/group_sync_read.cpp $(MATLAB_WORKSPACE)/C/Users/srlre/OneDrive/Documents/GitHub/SPOT-GNC2026W/Custom_Library/Dynamixel_Actuators/src/group_bulk_write.cpp $(MATLAB_WORKSPACE)/C/Users/srlre/OneDrive/Documents/GitHub/SPOT-GNC2026W/Custom_Library/Dynamixel_Actuators/src/group_bulk_read.cpp $(MATLAB_WORKSPACE)/C/Users/srlre/OneDrive/Documents/GitHub/SPOT-GNC2026W/Custom_Library/Dynamixel_Actuators/src/dynamixel_functions.cpp $(MATLAB_WORKSPACE)/C/Users/srlre/OneDrive/Documents/GitHub/SPOT-GNC2026W/Custom_Library/Resources/IdentifyPlatform/src/resource_functions.cpp $(MATLAB_WORKSPACE)/C/ProgramData/MATLAB/SupportPackages/R2024b/toolbox/target/supportpackages/shared_nvidia_blocks/src/MW_SCI.c $(START_DIR)/GNC2026W_ert_rtw/GNC2026W.cpp $(START_DIR)/GNC2026W_ert_rtw/GNC2026W_data.cpp $(START_DIR)/GNC2026W_ert_rtw/rtGetInf.cpp $(START_DIR)/GNC2026W_ert_rtw/rtGetNaN.cpp $(START_DIR)/GNC2026W_ert_rtw/rt_nonfinite.cpp $(MATLAB_WORKSPACE)/C/ProgramData/MATLAB/SupportPackages/R2024b/toolbox/target/supportpackages/nvidia/sources/utils/MW_nvidia_init.c $(MATLAB_ROOT)/toolbox/target/codertarget/rtos/src/linuxinitialize.cpp $(MATLAB_WORKSPACE)/C/ProgramData/MATLAB/SupportPackages/R2024b/toolbox/target/supportpackages/shared_nvidia_blocks/src/linuxUDP.c
 
 MAIN_SRC = $(START_DIR)/GNC2026W_ert_rtw/ert_main.cpp
 
@@ -191,7 +191,7 @@ ALL_SRCS = $(SRCS) $(MAIN_SRC)
 ## OBJECTS
 ###########################################################################
 
-OBJS = DAHostLib_Network.c.o DAHostLib_rtw.c.o custom_data_logger.cpp.o gpio_control.cpp.o protocol2_packet_handler.cpp.o protocol1_packet_handler.cpp.o port_handler_windows.cpp.o port_handler_mac.cpp.o port_handler_linux.cpp.o port_handler_arduino.cpp.o port_handler.cpp.o packet_handler.cpp.o group_sync_write.cpp.o group_sync_read.cpp.o group_bulk_write.cpp.o group_bulk_read.cpp.o dynamixel_functions.cpp.o resource_functions.cpp.o GNC2026W.cpp.o GNC2026W_data.cpp.o rtGetInf.cpp.o rtGetNaN.cpp.o rt_nonfinite.cpp.o MW_nvidia_init.c.o linuxinitialize.cpp.o linuxUDP.c.o
+OBJS = DAHostLib_Network.c.o DAHostLib_rtw.c.o custom_data_logger.cpp.o protocol2_packet_handler.cpp.o protocol1_packet_handler.cpp.o port_handler_windows.cpp.o port_handler_mac.cpp.o port_handler_linux.cpp.o port_handler_arduino.cpp.o port_handler.cpp.o packet_handler.cpp.o group_sync_write.cpp.o group_sync_read.cpp.o group_bulk_write.cpp.o group_bulk_read.cpp.o dynamixel_functions.cpp.o resource_functions.cpp.o MW_SCI.c.o GNC2026W.cpp.o GNC2026W_data.cpp.o rtGetInf.cpp.o rtGetNaN.cpp.o rt_nonfinite.cpp.o MW_nvidia_init.c.o linuxinitialize.cpp.o linuxUDP.c.o
 
 MAIN_OBJ = ert_main.cpp.o
 
@@ -354,6 +354,18 @@ $(PRODUCT) : $(OBJS) $(PREBUILT_OBJS) $(LIBS) $(MAIN_OBJ)
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 
+%.c.o : $(MATLAB_WORKSPACE)/C/ProgramData/MATLAB/SupportPackages/R2024b/toolbox/target/supportpackages/shared_nvidia_blocks/src/%.c
+	$(CC) $(CFLAGS) -o "$@" "$<"
+
+
+%.s.o : $(MATLAB_WORKSPACE)/C/ProgramData/MATLAB/SupportPackages/R2024b/toolbox/target/supportpackages/shared_nvidia_blocks/src/%.s
+	$(AS) $(ASFLAGS) -o "$@" "$<"
+
+
+%.cpp.o : $(MATLAB_WORKSPACE)/C/ProgramData/MATLAB/SupportPackages/R2024b/toolbox/target/supportpackages/shared_nvidia_blocks/src/%.cpp
+	$(CPP) $(CPPFLAGS) -o "$@" "$<"
+
+
 %.c.o : $(START_DIR)/GNC2026W_ert_rtw/%.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
@@ -414,10 +426,6 @@ custom_data_logger.cpp.o : $(MATLAB_WORKSPACE)/C/Users/srlre/OneDrive/Documents/
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 
-gpio_control.cpp.o : $(MATLAB_WORKSPACE)/C/Users/srlre/OneDrive/Documents/GitHub/SPOT-GNC2026W/Custom_Library/NVIDIA_Jetson/src/gpio_control.cpp
-	$(CPP) $(CPPFLAGS) -o "$@" "$<"
-
-
 protocol2_packet_handler.cpp.o : $(MATLAB_WORKSPACE)/C/Users/srlre/OneDrive/Documents/GitHub/SPOT-GNC2026W/Custom_Library/Dynamixel_Actuators/src/protocol2_packet_handler.cpp
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
@@ -472,6 +480,10 @@ dynamixel_functions.cpp.o : $(MATLAB_WORKSPACE)/C/Users/srlre/OneDrive/Documents
 
 resource_functions.cpp.o : $(MATLAB_WORKSPACE)/C/Users/srlre/OneDrive/Documents/GitHub/SPOT-GNC2026W/Custom_Library/Resources/IdentifyPlatform/src/resource_functions.cpp
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
+
+
+MW_SCI.c.o : $(MATLAB_WORKSPACE)/C/ProgramData/MATLAB/SupportPackages/R2024b/toolbox/target/supportpackages/shared_nvidia_blocks/src/MW_SCI.c
+	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
 ert_main.cpp.o : $(START_DIR)/GNC2026W_ert_rtw/ert_main.cpp

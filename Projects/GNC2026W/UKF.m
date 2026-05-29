@@ -53,8 +53,10 @@ P_yy     = zeros(3,3);
 % Additional parameters for measurement model
 x_c_I = r_c_I(1); y_c_I = r_c_I(2); th_c = r_c_I(3);
 sc = sin(th_c); cc = cos(th_c);
-x_LAR   = 0.145;   % LAR offset in target BoF, m
-l_cam_x = 0.125;   % m, offset in x from origin of Red, left camera
+x_LAR   = 0.145;           % LAR offset in target BoF, m
+x_COG   = 1.11/100;        % m, CoG offset in x direction from geometric centre
+y_COG   = -1.50/100;       % m, CoG offset in y direction from geometric centre
+l_cam_x = 0.125;           % m, offset in x from origin of Red, left camera
 l_cam_y = 0.03;    % m, offset in y from origin of Red, left camera
 
 % mean and covariance weights (Eq. 4.17f)

@@ -14,7 +14,7 @@ data = cell(totalfiles,1);
 for kl = 1:totalfiles
     [file,location] = uigetfile;
     filename = [location, file];
-    if isempty(file) || strcmp(file," ")
+    if isequal(file,0)
         return
     else
         data{kl} = load(filename);

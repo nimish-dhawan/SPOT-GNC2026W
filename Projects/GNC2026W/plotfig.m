@@ -42,15 +42,13 @@ end
 
 % Finding the grab flag index
 try
-    clear found
+    clear found p
     found = 0;
     for p = 1:length(t)
         grab = dat.dataClass_rt.ARM_Grab_Complete.Data(p);
         if grab == 1 && found == 0
             grabIndex = p;
             found     = 1;
-        else
-            grabIndex = length(t);
         end
     end
 catch 
@@ -72,6 +70,23 @@ try
         end
     end
     periodARM = [t(extendIndex), t(end)];
+catch 
+    warning('Data not found');
+end
+
+% Finding enable filter flag index
+try
+    clear found p
+    found = 0;
+    for p = 1:length(t)
+        filterON = dat.dataClass_rt.filterEnable.Data(p);
+        if filterON == 1 && found == 0
+            filterIndex = p;
+            found     = 1;
+        end
+    end
+    periodVIS = [t(filterIndex), t(grabIndex)];
+    idx = filterIndex:grabIndex;
 catch 
     warning('Data not found');
 end
@@ -126,7 +141,7 @@ for i = 1:3
     hold on; grid on;
     plot(t, x_est(:,i),'k')
     plot(t, y_I(i,:), 'b*', 'MarkerSize', 0.5)
-    ylabel(labels(i)); xlim(periodgnc); 
+    ylabel(labels(i)); xlim(periodVIS); 
     if i == 3
         xlabel('Time [s]')
     elseif i == 1
@@ -139,6 +154,8 @@ for i = 1:3
     ax.FontName = "Times New Roman";
 end
 formatfig(0.4,0.4)
+
+
 
 err = wrap(x_est - r_t_I);
 rootmeanerr = sqrt(mean(err(idx,1:3).^2));
@@ -163,7 +180,7 @@ for i = 1:3
         plot(t, errVIS(:,i),'b*', 'MarkerSize', 0.2)
         plot(t, err(:,i),'r')
     end
-    ylabel(labels(i)); xlim(periodgnc);
+    ylabel(labels(i)); xlim(periodVIS);
     if i == 3
         xlabel('Time [s]')
     elseif i == 1
@@ -421,10 +438,10 @@ if anim == 1 % Trajectory animation
 
         spacecraft = DrawSpacecraft([expdata_RED_pos_x(frame),expdata_RED_pos_y(frame),expdata_RED_pos_th(frame),5]);
         patch(spacecraft(:,1), spacecraft(:,2), 'w', 'facealpha', 0.5, 'edgecolor', 'r', 'edgealpha',1,'Linewidth',0.5)
-        % [shoulder,elbow,wrist] = DrawARM([expdata_RED_pos_x(frame),expdata_RED_pos_y(frame),expdata_RED_pos_th(frame),ARMq1(frame),ARMq2(frame),ARMq3(frame)]);
-        % patch(shoulder(:,1), shoulder(:,2), 'w', 'facealpha', alpha, 'edgecolor', 'r', 'edgealpha',alpha)
-        % patch(elbow(:,1), elbow(:,2), 'w', 'facealpha', alpha, 'edgecolor', 'r', 'edgealpha',alpha)
-        % patch(wrist(:,1), wrist(:,2), 'w', 'facealpha', alpha, 'edgecolor', 'r', 'edgealpha',alpha)
+        [shoulder,elbow,wrist] = DrawARM([expdata_RED_pos_x(frame),expdata_RED_pos_y(frame),expdata_RED_pos_th(frame),ARMq1(frame),ARMq2(frame),ARMq3(frame)]);
+        patch(shoulder(:,1), shoulder(:,2), 'w', 'facealpha', alpha, 'edgecolor', 'r', 'edgealpha',alpha)
+        patch(elbow(:,1), elbow(:,2), 'w', 'facealpha', alpha, 'edgecolor', 'r', 'edgealpha',alpha)
+        patch(wrist(:,1), wrist(:,2), 'w', 'facealpha', alpha, 'edgecolor', 'r', 'edgealpha',alpha)
 
         spacecraft = DrawSpacecraft([expdata_BLACK_pos_x(frame),expdata_BLACK_pos_y(frame),expdata_BLACK_pos_th(frame),7]);
         patch(spacecraft(:,1), spacecraft(:,2), 'w', 'facealpha', 0.5, 'edgecolor', 'k', 'edgealpha',1,'Linewidth',0.5)
